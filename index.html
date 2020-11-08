@@ -4703,7 +4703,7 @@
 					</td>
 				</tr></table>
 				<div id="assignAll">
-					<button class='storebtn' id="assignAllButton" style="width:135px" onclick='assignAll()'>分散</button>
+					<button class='storebtn' id="assignAllButton" style="width:135px" onclick='assignAll()'>分配</button>
 					<button class='storebtn' id="autoAssign" onclick='toggleAutoAssign()'>Auto: OFF</button>
 					<button class='storebtn' id="autoAssignRotate" style="width:135px" onclick='rotateAutoAssign()'>Rotation: None</button>
 				</div>
@@ -4776,36 +4776,36 @@
 					<td colspan=2><button class="gluonupgrade gb" id="generateGBGluons" onclick="generateGluons('gb')">從綠夸克生產 <span id="generateGBGluonsAmount">0</span> 綠藍膠子</button></td>
 					<td colspan=2><button class="gluonupgrade br" id="generateBRGluons" onclick="generateGluons('br')">從藍夸克生產 <span id="generateBRGluonsAmount">0</span> 藍紅膠子</button></td>
 				</tr><tr>
-					<td><button id='rgupg1' onclick='buyGluonUpg("rg",1)'>Remote Antimatter Galaxy cost scaling is approximately 2x slower.<br>價格：1 紅綠膠子</button></td>
-					<td><button id='rgupg2' onclick='buyGluonUpg("rg",2)'>Galaxies are more effective based on your free galaxies.<br><span id='rgupg2current'></span><br>價格：2 紅綠膠子</button></td>
-					<td><button id='gbupg1' onclick='buyGluonUpg("gb",1)' style='font-size:8.5px'>You gain replicanti faster based on your tickspeed reduction multiplier.<br><span id='gbupg1current'></span><br>價格：1 綠藍膠子</button></td>
-					<td><button id='gbupg2' onclick='buyGluonUpg("gb",2)'>Replicate interval scaling is 2x slower.<br>價格：2 綠藍膠子</button></td>
-					<td><button id='brupg1' onclick='buyGluonUpg("br",1)'>You gain more tachyon particles based on your dilated time.<br><span id='brupg1current'></span><br>價格：1 藍紅膠子</button></td>
-					<td><button id='brupg2' onclick='buyGluonUpg("br",2)'>Sacrifice boosts dilated time production.<br><span id='brupg2current'></span><br><span id='brupg1current'></span>價格：2 藍紅膠子</button></td>
+					<td><button id='rgupg1' onclick='buyGluonUpg("rg",1)'>遙遠反物質星系價格增幅大約慢 2x。<br>價格：1 紅綠膠子</button></td>
+					<td><button id='rgupg2' onclick='buyGluonUpg("rg",2)'>基於你的免費星系，星系效果更強。<br><span id='rgupg2current'></span><br>價格：2 紅綠膠子</button></td>
+					<td><button id='gbupg1' onclick='buyGluonUpg("gb",1)' style='font-size:8.5px'>基於你的時間速度減少加成，複製器複製速度更快。<br><span id='gbupg1current'></span><br>價格：1 綠藍膠子</button></td>
+					<td><button id='gbupg2' onclick='buyGluonUpg("gb",2)'>複製器間隔增幅慢 2x。<br>價格：2 綠藍膠子</button></td>
+					<td><button id='brupg1' onclick='buyGluonUpg("br",1)'>基於你的膨脹時間，你獲得更多超光速粒子。<br><span id='brupg1current'></span><br>價格：1 藍紅膠子</button></td>
+					<td><button id='brupg2' onclick='buyGluonUpg("br",2)'>犧牲影響膨脹時間獲得量。<br><span id='brupg2current'></span><br><span id='brupg1current'></span>價格：2 藍紅膠子</button></td>
 				</tr><tr>
-					<td><button id='rgupg3' onclick='buyGluonUpg("rg",3)'>Dimension boosts boost first Meta Dimensions.<br><span id='rgupg3current'></span><br>價格：4 紅綠膠子</button></td>
+					<td><button id='rgupg3' onclick='buyGluonUpg("rg",3)'>維度提升加強第一元維度。<br><span id='rgupg3current'></span><br>價格：4 紅綠膠子</button></td>
 					<td>
-						<button id='rgupg4' onclick='buyGluonUpg("rg",4)'>Galaxies are 50% stronger, but electrons are 30% weaker and normal galaxies are 60% weaker.<br>價格：100 紅綠膠子</button><br>
-						<button class="storebtn" id='rg4toggle' onclick='toggleRG4Upg()' style='width:142.5px; height:15px; font-size:9px'>Toggle: ON</button>
+						<button id='rgupg4' onclick='buyGluonUpg("rg",4)'>星系強 50%，但是電子弱 30%，而反物質星系弱 60%。<br>價格：100 紅綠膠子</button><br>
+						<button class="storebtn" id='rg4toggle' onclick='toggleRG4Upg()' style='width:142.5px; height:15px; font-size:9px'>切換：開啟</button>
 					</td>
-					<td><button id='gbupg3' onclick='buyGluonUpg("gb",3)'>The IP mult multiplies IP gain by 2.3x per upgrade.<br>價格：4 綠藍膠子</button></td>
-					<td><button id='gbupg4' onclick='buyGluonUpg("gb",4)'>Massively decrease the tickspeed cost multiplier increase to 1.25x.<br>價格：100 綠藍膠子</button></td>
-					<td><button id='brupg3' onclick='buyGluonUpg("br",3)'>Tachyon particles slightly boost dilated time production.<br>價格：4 藍紅膠子</button></td>
-					<td><button id='brupg4' onclick='buyGluonUpg("br",4)'>Multiplier per ten dimensions boosts Meta Dimensions.<br><span id='brupg4current'></span><br>價格：100 藍紅膠子</button></td>
+					<td><button id='gbupg3' onclick='buyGluonUpg("gb",3)'>每一個無限點數加成升級將無限點數獲得量增加 2.3x。<br>價格：4 綠藍膠子</button></td>
+					<td><button id='gbupg4' onclick='buyGluonUpg("gb",4)'>將時間速度升級價格增幅大幅減少至 1.25x。<br>價格：100 綠藍膠子</button></td>
+					<td><button id='brupg3' onclick='buyGluonUpg("br",3)'>超光速粒子稍微加強膨脹時間獲得量。<br>價格：4 藍紅膠子</button></td>
+					<td><button id='brupg4' onclick='buyGluonUpg("br",4)'>每十個維度的加成加強元維度。<br><span id='brupg4current'></span><br>價格：100 藍紅膠子</button></td>
 				</tr><tr id='gupgrow3'>
-					<td><button id='rgupg5' onclick='buyGluonUpg("rg",5)'>Slow down the Dark Matter Galaxy cost scaling by 13%.<br>價格：<span id='rgupg5cost'></span> 紅綠膠子</button></td>
-					<td><button id='rgupg6' onclick='buyGluonUpg("rg",6)'>Slow down the Distant Antimatter Galaxy cost scaling by 13.2%.<br>價格：<span id='rgupg6cost'></span> 紅綠膠子</button></td>
-					<td><button id='gbupg5' onclick='buyGluonUpg("gb",5)'>Normal replicated galaxies slow down the Dark Matter Galaxy cost scaling.<br><span id='gbupg5current'></span><br>價格：<span id='gbupg5cost'></span> 綠藍膠子</button></td>
-					<td><button id='gbupg6' onclick='buyGluonUpg("gb",6)'>Infinity power slows down the Distant Antimatter Galaxy cost scaling.<br><span id='gbupg6current'></span><br>價格：<span id='gbupg6cost'></span> 綠藍膠子</button></td>
-					<td><button id='brupg5' onclick='buyGluonUpg("br",5)'>Tachyon particles slow down the Dark Matter Galaxy cost scaling.<br><span id='brupg5current'></span><br>價格：<span id='brupg5cost'></span> 藍紅膠子</button></td>
-					<td><button id='brupg6' onclick='buyGluonUpg("br",6)' style='font-size:8.5px'>Meta-Dimension Boosts slow down the Distant Antimatter Galaxy cost scaling.<br><span id='brupg6current'></span><br>價格：<span id='brupg6cost'></span> 藍紅膠子</button></td>
+					<td><button id='rgupg5' onclick='buyGluonUpg("rg",5)'>將暗物質星系價格增幅減少 13%。<br>價格：<span id='rgupg5cost'></span> 紅綠膠子</button></td>
+					<td><button id='rgupg6' onclick='buyGluonUpg("rg",6)'>將遠處反物質星系價格增幅減少 13.2%。<br>價格：<span id='rgupg6cost'></span> 紅綠膠子</button></td>
+					<td><button id='gbupg5' onclick='buyGluonUpg("gb",5)'>普通複製器星系減少暗物質星系價格增幅。<br><span id='gbupg5current'></span><br>價格：<span id='gbupg5cost'></span> 綠藍膠子</button></td>
+					<td><button id='gbupg6' onclick='buyGluonUpg("gb",6)'>無限力量減少遠處反物質星系價格增幅。<br><span id='gbupg6current'></span><br>價格：<span id='gbupg6cost'></span> 綠藍膠子</button></td>
+					<td><button id='brupg5' onclick='buyGluonUpg("br",5)'>超光速粒子減少暗物質星系價格增幅。<br><span id='brupg5current'></span><br>價格：<span id='brupg5cost'></span> 藍紅膠子</button></td>
+					<td><button id='brupg6' onclick='buyGluonUpg("br",6)' style='font-size:8.5px'>元維度提升減少遠處反物質星系價格增幅。<br><span id='brupg6current'></span><br>價格：<span id='brupg6cost'></span> 藍紅膠子</button></td>
 				</tr><tr id='gupgrow4'>
-					<td id='rgupg7col' colspan=2><button id='rgupg7' onclick='buyGluonUpg("rg",7)'>Slow down the Remote Antimatter Galaxy scaling by 10%.<br>價格：<span id='rgupg7cost'></span> 紅綠膠子</button></td>
-					<td id='rgupg8col'><button id='rgupg8' onclick='buyGluonUpg("rg",8)'>Red unstable quarks decay slower based on your 紅綠膠子.<br><span id='rgupg8current'></span><br>價格：<span id='rgupg8cost'></span> 紅綠膠子</button></td>
-					<td id='gbupg7col' colspan=2><button id='gbupg7' onclick='buyGluonUpg("gb",7)'>Infinity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='gbupg7current'></span><br>價格：<span id='gbupg7cost'></span> 綠藍膠子</button></td>
-					<td id='gbupg8col'><button id='gbupg8' onclick='buyGluonUpg("gb",8)'>Green unstable quarks decay slower based on your 綠藍膠子.<br><span id='gbupg8current'></span><br>價格：<span id='gbupg8cost'></span> 綠藍膠子</button></td>
-					<td id='brupg7col' colspan=2><button id='brupg7' onclick='buyGluonUpg("br",7)'>Eternity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='brupg7current'></span><br>價格：<span id='brupg7cost'></span> 藍紅膠子</button></td>
-					<td id='brupg8col'><button id='brupg8' onclick='buyGluonUpg("br",8)'>Blue unstable quarks decay slower based on your 藍紅膠子.<br><span id='brupg8current'></span><br>價格：<span id='brupg8cost'></span> 藍紅膠子</button></td>
+					<td id='rgupg7col' colspan=2><button id='rgupg7' onclick='buyGluonUpg("rg",7)'>將遙遠反物質星系價格增幅減少 10%。<br>價格：<span id='rgupg7cost'></span> 紅綠膠子</button></td>
+					<td id='rgupg8col'><button id='rgupg8' onclick='buyGluonUpg("rg",8)'>基於你的紅綠膠子，紅不穩定夸克的衰變速度更慢。<br><span id='rgupg8current'></span><br>價格：<span id='rgupg8cost'></span> 紅綠膠子</button></td>
+					<td id='gbupg7col' colspan=2><button id='gbupg7' onclick='buyGluonUpg("gb",7)'>無限點數減少遙遠反物質星系價格增幅。<br><span id='gbupg7current'></span><br>價格：<span id='gbupg7cost'></span> 綠藍膠子</button></td>
+					<td id='gbupg8col'><button id='gbupg8' onclick='buyGluonUpg("gb",8)'>基於你的綠藍膠子，綠不穩定夸克的衰變速度更慢。<br><span id='gbupg8current'></span><br>價格：<span id='gbupg8cost'></span> 綠藍膠子</button></td>
+					<td id='brupg7col' colspan=2><button id='brupg7' onclick='buyGluonUpg("br",7)'>永恆點數減少遙遠反物質星系價格增幅。<br><span id='brupg7current'></span><br>價格：<span id='brupg7cost'></span> 藍紅膠子</button></td>
+					<td id='brupg8col'><button id='brupg8' onclick='buyGluonUpg("br",8)'>基於你的藍紅膠子，藍不穩定夸克的衰變速度更慢。<br><span id='brupg8current'></span><br>價格：<span id='brupg8cost'></span> 藍紅膠子</button></td>
 				</tr><tr><td colspan=6>
 					目前夸克獲得量加成：<span id='qkmultcurrent'></span>x
 				</td></tr><tr style='vertical-align:0'>
@@ -4819,7 +4819,7 @@
 				<br><br>
 			</div>
 			<div id="speedruns" class="quantumtab">
-				<div>Get your best quantum time faster than the requirement for a reward!</div>
+				<div>將你的最快量子時間比以下需求快，以獲得一個獎勵！</div>
 				<button class='storebtn' id='reward3disable' onclick='disableReward(3)' style='width:180px'>6 hours reward: ON</button>
 				<button class='storebtn' id='reward4disable' onclick='disableReward(4)' style='width:180px'>4.5 hours reward: ON</button>
 				<button class='storebtn' id='reward11disable' onclick='disableReward(11)' style='width:180px'>33.3 mins reward: ON</button>
