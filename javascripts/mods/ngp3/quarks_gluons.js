@@ -61,14 +61,14 @@ function changeAssortPercentage(x) {
 function assignQuark(color) {
 	var usedQuarks = getAssortAmount()
 	if (usedQuarks.eq(0)) {
-		$.notify("Make sure you are assigning at least one quark!")
+		$.notify("請確保你在分配至少一個夸克！")
 		return
 	}
-	if (tmp.ngp3l && color != "r" && tmp.qu.times < 2 && !ghostified) if (!confirm("It is strongly recommended to assign your first quarks to red. Are you sure you want to do that?")) return
+	if (tmp.ngp3l && color != "r" && tmp.qu.times < 2 && !ghostified) if (!confirm("強烈推薦你將第一個夸克分配到紅色。你確定要這樣做？")) return
 	var mult = getQuarkAssignMult()
 	tmp.qu.usedQuarks[color] = tmp.qu.usedQuarks[color].add(usedQuarks.times(mult)).round()
 	tmp.qu.quarks = tmp.qu.quarks.sub(usedQuarks)
-	document.getElementById("quarks").innerHTML = "You have <b class='QKAmount'>0</b> quarks."
+	document.getElementById("quarks").innerHTML = "你有 <b class='QKAmount'>0</b> 夸克。"
 	if (!mult.eq(1)) updateQuantumWorth()
 	updateColorCharge()
 	if (player.ghostify.another > 0) player.ghostify.another--
@@ -81,7 +81,7 @@ function assignAll(auto) {
 	var colors = ['r','g','b']
 	var mult = getQuarkAssignMult()
 	if (oldQuarks.lt(100)) {
-		if (!auto) $.notify("You can only use this feature if you will assign at least 100 quarks.")
+		if (!auto) $.notify("你會分配至少 100 個夸克就可以用這個功能。")
 		return
 	}
 	for (c = 0; c < 3; c++) {
@@ -135,13 +135,13 @@ function changeRatio(color) {
 
 function toggleAutoAssign() {
 	tmp.qu.autoOptions.assignQK = !tmp.qu.autoOptions.assignQK
-	document.getElementById('autoAssign').textContent="Auto: O"+(tmp.qu.autoOptions.assignQK?"N":"FF")
+	document.getElementById('autoAssign').textContent="自動："+(tmp.qu.autoOptions.assignQK?"開啟":"關閉")
 	if (tmp.qu.autoOptions.assignQK && tmp.qu.quarks.gt(0)) assignAll(true)
 }
 
 function rotateAutoAssign() {
 	tmp.qu.autoOptions.assignQKRotate=tmp.qu.autoOptions.assignQKRotate?(tmp.qu.autoOptions.assignQKRotate+1)%3:1
-	document.getElementById('autoAssignRotate').textContent="Rotation: "+(tmp.qu.autoOptions.assignQKRotate>1?"Left":tmp.qu.autoOptions.assignQKRotate?"Right":"None")
+	document.getElementById('autoAssignRotate').textContent="旋轉："+(tmp.qu.autoOptions.assignQKRotate>1?"左":tmp.qu.autoOptions.assignQKRotate?"右":"無")
 }
 
 //Color Charge
