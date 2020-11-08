@@ -503,10 +503,10 @@ function updateGluonsTab() {
 //Display: On load
 function updateQuarksTabOnUpdate(mode) {
 	var colors = ['r','g','b']
-	if (colorCharge.normal.charge.eq(0)) document.getElementById("colorCharge").innerHTML='neutral charge'
+	if (colorCharge.normal.charge.eq(0)) document.getElementById("colorCharge").innerHTML='沒有色荷。'
 	else {
 		var color = colorShorthands[colorCharge.normal.color]
-		document.getElementById("colorCharge").innerHTML='<span class="'+color+'">'+color+'</span> charge of <span class="'+color+'" style="font-size:35px">' + shortenDimensions(colorCharge.normal.charge) + "</span>"
+		document.getElementById("colorCharge").innerHTML='的色荷為<span class="'+color+'">'+color+'</span>，色荷為<span class="'+color+'" style="font-size:35px">' + shortenDimensions(colorCharge.normal.charge) + "</span>"
 	}
 	for (c = 0; c < 3; c++) document.getElementById(colors[c]+"PowerRate").textContent="+"+shorten(getColorPowerProduction(colors[c]))+"/s"
 
