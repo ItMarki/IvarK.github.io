@@ -1,2 +1,4 @@
-# Antimatter Dimensions - Aarex's Modifications
-This is my modification of Antimatter Dimensions. Some mods are ported to this mod, like NG--.
+# Antimatter Dimensions - Aarex's Modifications - Translation
+Translation of Aarex's modifications of Antimatter Dimensions.
+
+Some text is taken from https://gitee.com/likexia/fwzwd/tree/master and the translation of the mobile version of Antimatter Dimension.
