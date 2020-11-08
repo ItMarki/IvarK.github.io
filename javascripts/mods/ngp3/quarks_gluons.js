@@ -461,24 +461,24 @@ function updateQuarksTab(tab) {
 }
 
 function updateGluonsTab() {
-	document.getElementById("gbupg1current").textContent = "Currently: " + shortenMoney(getGB1Effect()) + "x"
-	document.getElementById("brupg1current").textContent = "Currently: " + shortenMoney(getBR1Effect()) + "x"
-	document.getElementById("rgupg2current").textContent = "Currently: " + (Math.pow(player.dilation.freeGalaxies / 5e3 + 1, 0.25) * 100 - 100).toFixed(1) + "%"
-	document.getElementById("brupg2current").textContent = "Currently: " + shortenMoney(Decimal.pow(2.2, Math.pow(tmp.sacPow.log10() / 1e6, 0.25))) + "x"
-	document.getElementById("rgupg3current").textContent = "Currently: " + shorten(getRG3Effect()) + "x"
-	document.getElementById("brupg4current").textContent = "Currently: " + shortenMoney(Decimal.pow(getDimensionPowerMultiplier(hasNU(13) && "no-rg4"), 0.0003).max(1)) + "x"
+	document.getElementById("gbupg1current").textContent = "目前： " + shortenMoney(getGB1Effect()) + "x"
+	document.getElementById("brupg1current").textContent = "目前： " + shortenMoney(getBR1Effect()) + "x"
+	document.getElementById("rgupg2current").textContent = "目前： " + (Math.pow(player.dilation.freeGalaxies / 5e3 + 1, 0.25) * 100 - 100).toFixed(1) + "%"
+	document.getElementById("brupg2current").textContent = "目前： " + shortenMoney(Decimal.pow(2.2, Math.pow(tmp.sacPow.log10() / 1e6, 0.25))) + "x"
+	document.getElementById("rgupg3current").textContent = "目前： " + shorten(getRG3Effect()) + "x"
+	document.getElementById("brupg4current").textContent = "目前： " + shortenMoney(Decimal.pow(getDimensionPowerMultiplier(hasNU(13) && "no-rg4"), 0.0003).max(1)) + "x"
 	if (player.masterystudies.includes("d9")) {
-		document.getElementById("gbupg5current").textContent = "Currently: " + (Math.sqrt(player.replicanti.galaxies) / 5.5).toFixed(1) + "%"
-		document.getElementById("brupg5current").textContent = "Currently: " + Math.min(Math.sqrt(player.dilation.tachyonParticles.max(1).log10())*1.3,14).toFixed(1) + "%"
-		document.getElementById("gbupg6current").textContent = "Currently: " + (100-100/(1 + Math.pow(player.infinityPower.plus(1).log10(),0.25)/2810)).toFixed(1) + "%"
-		document.getElementById("brupg6current").textContent = "Currently: " + (100-100/(1 + player.meta.resets/340)).toFixed(1) + "%"
-		document.getElementById("gbupg7current").textContent = "Currently: " + (100-100/(1 + Math.log10(1+player.infinityPoints.max(1).log10())/100)).toFixed(1) + "%"
-		document.getElementById("brupg7current").textContent = "Currently: " + (100-100/(1 + Math.log10(1+player.eternityPoints.max(1).log10())/80)).toFixed(1) + "%"
+		document.getElementById("gbupg5current").textContent = "目前： " + (Math.sqrt(player.replicanti.galaxies) / 5.5).toFixed(1) + "%"
+		document.getElementById("brupg5current").textContent = "目前： " + Math.min(Math.sqrt(player.dilation.tachyonParticles.max(1).log10())*1.3,14).toFixed(1) + "%"
+		document.getElementById("gbupg6current").textContent = "目前： " + (100-100/(1 + Math.pow(player.infinityPower.plus(1).log10(),0.25)/2810)).toFixed(1) + "%"
+		document.getElementById("brupg6current").textContent = "目前： " + (100-100/(1 + player.meta.resets/340)).toFixed(1) + "%"
+		document.getElementById("gbupg7current").textContent = "目前： " + (100-100/(1 + Math.log10(1+player.infinityPoints.max(1).log10())/100)).toFixed(1) + "%"
+		document.getElementById("brupg7current").textContent = "目前： " + (100-100/(1 + Math.log10(1+player.eternityPoints.max(1).log10())/80)).toFixed(1) + "%"
 	}
 	if (player.masterystudies.includes("d13")) {
-		document.getElementById("rgupg8current").textContent = "Currently: " + shorten(getGU8Effect("rg")) + "x"
-		document.getElementById("gbupg8current").textContent = "Currently: " + shorten(getGU8Effect("gb")) + "x"
-		document.getElementById("brupg8current").textContent = "Currently: " + shorten(getGU8Effect("br")) + "x"
+		document.getElementById("rgupg8current").textContent = "目前： " + shorten(getGU8Effect("rg")) + "x"
+		document.getElementById("gbupg8current").textContent = "目前： " + shorten(getGU8Effect("gb")) + "x"
+		document.getElementById("brupg8current").textContent = "目前： " + shorten(getGU8Effect("br")) + "x"
 	}
 	if (!tmp.ngp3l) {
 		let qkEnergy=tmp.qu.quarkEnergy
