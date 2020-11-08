@@ -28,17 +28,17 @@ function updateQuantumChallenges() {
 			var property = "pc" + pc
 			var sc1 = tmp.qu.pairedChallenges.order[pc] ? tmp.qu.pairedChallenges.order[pc][0] : 0
 			var sc2 = (sc1 ? tmp.qu.pairedChallenges.order[pc].length > 1 : false) ? tmp.qu.pairedChallenges.order[pc][1] : 0
-			document.getElementById(property+"desc").textContent = "Paired Challenge "+pc+": Both Quantum Challenge " + (sc1 ? sc1 : "?") + " and " + (sc2 ? sc2 : "?") + " are applied."
-			document.getElementById(property+"cost").textContent = "Cost: " + (sc2 ? getFullExpansion(getQCCost(pc + 8)) : "???") + " electrons"
-			document.getElementById(property+"goal").textContent = "Goal: " + (sc2 ? shortenCosts(Decimal.pow(10, getQCGoal(pc + 8))) : "???") + " antimatter"
-			document.getElementById(property).textContent = pcFocus == pc ? "Cancel" : (tmp.qu.pairedChallenges.order[pc] ? tmp.qu.pairedChallenges.order[pc].length < 2 : true) ? "Assign" : tmp.qu.pairedChallenges.completed >= pc ? "Completed" : tmp.qu.pairedChallenges.completed + 1 < pc ? "Locked" : tmp.qu.pairedChallenges.current == pc ? "Running" : "Start"
+			document.getElementById(property+"desc").textContent = "配對挑戰 "+pc+"：同時進行量子挑戰 " + (sc1 ? sc1 : "?") + " 和 " + (sc2 ? sc2 : "?") + "。"
+			document.getElementById(property+"cost").textContent = "價格：" + (sc2 ? getFullExpansion(getQCCost(pc + 8)) : "???") + " 電子"
+			document.getElementById(property+"goal").textContent = "目標：" + (sc2 ? shortenCosts(Decimal.pow(10, getQCGoal(pc + 8))) : "???") + " 反物質"
+			document.getElementById(property).textContent = pcFocus == pc ? "取消" : (tmp.qu.pairedChallenges.order[pc] ? tmp.qu.pairedChallenges.order[pc].length < 2 : true) ? "分配" : tmp.qu.pairedChallenges.completed >= pc ? "完成" : tmp.qu.pairedChallenges.completed + 1 < pc ? "被鎖定" : tmp.qu.pairedChallenges.current == pc ? "進行中" : "開始"
 			document.getElementById(property).className = pcFocus == pc || (tmp.qu.pairedChallenges.order[pc] ? tmp.qu.pairedChallenges.order[pc].length < 2 : true) ? "challengesbtn" : tmp.qu.pairedChallenges.completed >= pc ? "completedchallengesbtn" : tmp.qu.pairedChallenges.completed + 1 <pc ? "lockedchallengesbtn" : tmp.qu.pairedChallenges.current == pc ? "onchallengebtn" : "challengesbtn"
 
 			var sc1t = Math.min(sc1, sc2)
 			var sc2t = Math.max(sc1, sc2)
 			if (player.masterystudies.includes("d14")) {
 				document.getElementById(property + "br").style.display = ""
-				document.getElementById(property + "br").textContent = sc1t != 6 || sc2t != 8 ? "QC6 & 8" : tmp.qu.bigRip.active ? "Big Ripped" : tmp.qu.pairedChallenges.completed + 1 < pc ? "Locked" : "Big Rip"
+				document.getElementById(property + "br").textContent = sc1t != 6 || sc2t != 8 ? "QC6 & 8" : tmp.qu.bigRip.active ? "正在大撕裂" : tmp.qu.pairedChallenges.completed + 1 < pc ? "被鎖定" : "大撕裂"
 				document.getElementById(property + "br").className = sc1t != 6 || sc2t != 8 ? "lockedchallengesbtn" : tmp.qu.bigRip.active ? "onchallengebtn" : tmp.qu.pairedChallenges.completed + 1 < pc ? "lockedchallengesbtn" : "bigripbtn"
 			} else document.getElementById(property + "br").style.display = "none"
 		}
@@ -55,17 +55,17 @@ function updateQuantumChallenges() {
 	for (var qc = 1; qc <= 8; qc++) {
 		var property = "qc" + qc
 		document.getElementById(property + "div").style.display = (qc < 2 || QCIntensity(qc - 1)) ? "inline-block" : "none"
-		document.getElementById(property).textContent = ((!assigned.includes(qc) && pcFocus) ? "Choose" : inQC(qc) ? "Running" : QCIntensity(qc) ? (assigned.includes(qc) ? "Assigned" : "Completed") : "Start") + (assigned.includes(qc) ? " (PC" + assignedNums[qc] + ")" : "")
+		document.getElementById(property).textContent = ((!assigned.includes(qc) && pcFocus) ? "選擇" : inQC(qc) ? "進行中" : QCIntensity(qc) ? (assigned.includes(qc) ? "已分配" : "完成") : "開始") + (assigned.includes(qc) ? " (PC" + assignedNums[qc] + ")" : "")
 		document.getElementById(property).className = (!assigned.includes(qc) && pcFocus) ? "challengesbtn" : inQC(qc) ? "onchallengebtn" : QCIntensity(qc) ? "completedchallengesbtn" : "challengesbtn"
-		document.getElementById(property + "cost").textContent = "Cost: " + getFullExpansion(quantumChallenges.costs[qc]) + " electrons"
-		document.getElementById(property + "goal").textContent = "Goal: " + shortenCosts(Decimal.pow(10, getQCGoal(qc))) + " antimatter"
+		document.getElementById(property + "cost").textContent = "價格：" + getFullExpansion(quantumChallenges.costs[qc]) + " 電子"
+		document.getElementById(property + "goal").textContent = "目標：" + shortenCosts(Decimal.pow(10, getQCGoal(qc))) + " 反物質"
 	}
 	updateQCDisplaysSpecifics()
 }
 
 function updateQCDisplaysSpecifics(){
 	document.getElementById("qc2reward").textContent = Math.round(tmp.qcRewards[2] * 100 - 100)
-	document.getElementById("qc7desc").textContent = "Dimension and Tickspeed cost multiplier increases are " + shorten(Number.MAX_VALUE) + "x. Multiplier per ten Dimensions and meta-Antimatter boost to Dimension Boosts are disabled."
+	document.getElementById("qc7desc").textContent = "維度和時間速度升級價格加成增幅為 " + shorten(Number.MAX_VALUE) + "x。禁用每十個維度的加成和元反物質對維度提升的加成。"
 	document.getElementById("qc7reward").textContent = (100 - tmp.qcRewards[7] * 100).toFixed(2)
 	document.getElementById("qc8reward").textContent = tmp.qcRewards[8]
 }
@@ -122,14 +122,14 @@ function updateQCTimes() {
 	var temp = 0
 	var tempcounter = 0
 	for (var i = 1; i < 9; i++) {
-		setAndMaybeShow("qctime" + i, tmp.qu.challengeRecords[i], '"Quantum Challenge ' + i + ' time record: "+timeDisplayShort(tmp.qu.challengeRecords[' + i + '], false, 3)')
+		setAndMaybeShow("qctime" + i, tmp.qu.challengeRecords[i], '"量子挑戰 ' + i + ' 時間記錄："+timeDisplayShort(tmp.qu.challengeRecords[' + i + '], false, 3)')
 		if (tmp.qu.challengeRecords[i]) {
 			temp+=tmp.qu.challengeRecords[i]
 			tempcounter++
 		}
 	}
 	if (tempcounter > 0) document.getElementById("qcsbtn").style.display = "inline-block"
-	setAndMaybeShow("qctimesum", tempcounter > 1, '"The sum of your completed Quantum Challenge time records is "+timeDisplayShort(' + temp + ', false, 3)')
+	setAndMaybeShow("qctimesum", tempcounter > 1, '"完成的量子挑戰時間記錄的總和是 "+timeDisplayShort(' + temp + ', false, 3)')
 }
 
 var ranking=0
@@ -183,7 +183,7 @@ function updatePCCompletions() {
 				document.getElementById("qcm_" + id).setAttribute('ach-tooltip', qcm.descs[id] || "???")
 			} else {
 				document.getElementById("qcm_" + id).className = "unavailablebtn"
-				document.getElementById("qcm_" + id).setAttribute('ach-tooltip', 'Get ' + qcm.reqs[id] + ' Paired Challenges ranking to unlock this modifier. Ranking: ' + ranking.toFixed(1))
+				document.getElementById("qcm_" + id).setAttribute('ach-tooltip', '達到 ' + qcm.reqs[id] + ' 配對挑戰評分以解鎖這個模組。評分：' + ranking.toFixed(1))
 			}
 		}
 	} else document.getElementById("modifiersdiv").style.display = "none"
@@ -309,24 +309,24 @@ function updatePCTable() {
 			}
 		}
 	}
-	document.getElementById("upcc").textContent = (tmp.pct == "" ? "Unique PC completions" : (qcm.names[tmp.pct] || "???")) + ": " + (tmp.pcc.normal || 0) + " / 28"
+	document.getElementById("upcc").textContent = (tmp.pct == "" ? "獨特配對挑戰完成次數" : (qcm.names[tmp.pct] || "???")) + "：" + (tmp.pcc.normal || 0) + " / 28"
 	document.getElementById("udcc").style.display = tmp.pct == "" ? "block" : "none"
-	document.getElementById("udcc").textContent="No dilation: " + (tmp.pcc.noDil || 0) + " / 28"
+	document.getElementById("udcc").textContent="無膨脹：" + (tmp.pcc.noDil || 0) + " / 28"
 }
 
 var qcm={
 	modifiers:["ad", "sm"],
 	names:{
-		ad: "Anti-Dilation",
-		sm: "Supermastery"
+		ad: "無膨脹",
+		sm: "超精煉"
 	},
 	reqs:{
 		ad: 100,
 		sm: 165
 	},
 	descs:{
-		ad: "You always have no Tachyon particles. You can dilate time, but you can't gain Tachyon particles.",
-		sm: "You can't have normal Time Studies, and can't have more than 20 normal Mastery Studies."
+		ad: "你總是沒有超光速粒子。你可以膨脹時間，但是你不可以獲得超光速粒子。",
+		sm: "你不能有普通時間研究，而且最多只能有 20 個普通精煉研究。"
 	},
 	on: []
 }
