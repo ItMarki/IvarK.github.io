@@ -114,7 +114,7 @@
 		<div id="eternitystore" class="tab" style="font-size: 15px; margin: 0 auto; display: none" align="center">
 			<table class="table" align="center" style="margin: auto">
 				<tr>
-					<td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">時間研究</button></td>
+					<td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">時間研究s</button></td>
 					<td id="masterystudyunlock"><button class="secondarytabbtn" onclick="showEternityTab('masterystudies')">精煉研究</button></td>
 					<td><button class="secondarytabbtn" onclick="showEternityTab('eternityupgrades')">永恆挑戰</button></td>
 					<td><button class="secondarytabbtn" onclick="showEternityTab('milestones')">永恆里程碑</button></td>
@@ -4764,57 +4764,57 @@
 				</table>
 			</div>
 			<div class='quantumtab' id='gluons'>
-				<div>Your quantum worth (sum of quarks, colored quarks, and gluons) is currently <b class="QKAmount" id="quantumWorth2">0</b>.</div>
+				<div>你的量子價值（夸克、有色夸克和膠子的總和）是 <b class="QKAmount" id="quantumWorth2">0</b>。</div>
 				<table id='gluonupgrades'><tr>
-					<td class="rqC" colspan=2><p>You have <span id="rg" style="font-size:35px">0</span> red-green gluons.<br>You will gain <span id='rggain'>0</span> on next quantum,<br>but reduce your red quarks to <span id='rgnext'>0</span>.</p></td>
-					<td class="gqC" colspan=2><p>You have <span id="gb" style="font-size:35px">0</span> green-blue gluons.<br>You will gain <span id='gbgain'>0</span> on next quantum,<br>but reduce your green quarks to <span id='gbnext'>0</span>.</p></td>
-					<td class="bqC" colspan=2><p>You have <span id="br" style="font-size:35px">0</span> blue-red gluons.<br>You will gain <span id='brgain'>0</span> on next quantum,<br>but reduce your blue quarks to <span id='brnext'>0</span>.</p></td>
+					<td class="rqC" colspan=2><p>你有 <span id="rg" style="font-size:35px">0</span> 紅綠膠子。<br>你會在下一次量子裡獲得 <span id='rggain'>0</span> 個，<br>但是會將你的紅夸克減少至 <span id='rgnext'>0</span>。</p></td>
+					<td class="gqC" colspan=2><p>你有 <span id="gb" style="font-size:35px">0</span> 綠藍膠子。<br>你會在下一次量子裡獲得 <span id='gbgain'>0</span> 個，<br>但是會將你的綠夸克減少至 <span id='gbnext'>0</span>。</p></td>
+					<td class="bqC" colspan=2><p>你有 <span id="br" style="font-size:35px">0</span> 藍紅膠子。<br>你會在下一次量子裡獲得 <span id='brgain'>0</span> 個，<br>但是會將你的藍夸克減少至 <span id='brnext'>0</span>。</p></td>
 				</tr><tr id="gluonCharger1">
-					<td colspan=6>You have <span id="quarkEnergy" style="font-size:35px">0.0</span> quark energy, which allows you to generate up to <span id="quarkEnergyGluons" style="font-size:25px">0</span> gluons.</td>
+					<td colspan=6>你有 <span id="quarkEnergy" style="font-size:35px">0.0</span> 夸克能量，使你最多能夠生產 <span id="quarkEnergyGluons" style="font-size:25px">0</span> 膠子。</td>
 				</tr><tr id="gluonCharger2">
-					<td colspan=2><button class="gluonupgrade rg" id="generateRGGluons" onclick="generateGluons('rg')">Generate <span id="generateRGGluonsAmount">0</span> red-green gluons from red quarks</button></td>
-					<td colspan=2><button class="gluonupgrade gb" id="generateGBGluons" onclick="generateGluons('gb')">Generate <span id="generateGBGluonsAmount">0</span> green-blue gluons from green quarks</button></td>
-					<td colspan=2><button class="gluonupgrade br" id="generateBRGluons" onclick="generateGluons('br')">Generate <span id="generateBRGluonsAmount">0</span> blue-red gluons from blue quarks</button></td>
+					<td colspan=2><button class="gluonupgrade rg" id="generateRGGluons" onclick="generateGluons('rg')">從紅夸克生產 <span id="generateRGGluonsAmount">0</span> 紅綠膠子</button></td>
+					<td colspan=2><button class="gluonupgrade gb" id="generateGBGluons" onclick="generateGluons('gb')">從綠夸克生產 <span id="generateGBGluonsAmount">0</span> 綠藍膠子</button></td>
+					<td colspan=2><button class="gluonupgrade br" id="generateBRGluons" onclick="generateGluons('br')">從藍夸克生產 <span id="generateBRGluonsAmount">0</span> 藍紅膠子</button></td>
 				</tr><tr>
-					<td><button id='rgupg1' onclick='buyGluonUpg("rg",1)'>Remote Antimatter Galaxy cost scaling is approximately 2x slower.<br>價格：1 RG gluons</button></td>
-					<td><button id='rgupg2' onclick='buyGluonUpg("rg",2)'>Galaxies are more effective based on your free galaxies.<br><span id='rgupg2current'></span><br>價格：2 RG gluons</button></td>
-					<td><button id='gbupg1' onclick='buyGluonUpg("gb",1)' style='font-size:8.5px'>You gain replicanti faster based on your tickspeed reduction multiplier.<br><span id='gbupg1current'></span><br>價格：1 GB gluons</button></td>
-					<td><button id='gbupg2' onclick='buyGluonUpg("gb",2)'>Replicate interval scaling is 2x slower.<br>價格：2 GB gluons</button></td>
-					<td><button id='brupg1' onclick='buyGluonUpg("br",1)'>You gain more tachyon particles based on your dilated time.<br><span id='brupg1current'></span><br>價格：1 BR gluons</button></td>
-					<td><button id='brupg2' onclick='buyGluonUpg("br",2)'>Sacrifice boosts dilated time production.<br><span id='brupg2current'></span><br><span id='brupg1current'></span>價格：2 BR gluons</button></td>
+					<td><button id='rgupg1' onclick='buyGluonUpg("rg",1)'>Remote Antimatter Galaxy cost scaling is approximately 2x slower.<br>價格：1 紅綠膠子</button></td>
+					<td><button id='rgupg2' onclick='buyGluonUpg("rg",2)'>Galaxies are more effective based on your free galaxies.<br><span id='rgupg2current'></span><br>價格：2 紅綠膠子</button></td>
+					<td><button id='gbupg1' onclick='buyGluonUpg("gb",1)' style='font-size:8.5px'>You gain replicanti faster based on your tickspeed reduction multiplier.<br><span id='gbupg1current'></span><br>價格：1 綠藍膠子</button></td>
+					<td><button id='gbupg2' onclick='buyGluonUpg("gb",2)'>Replicate interval scaling is 2x slower.<br>價格：2 綠藍膠子</button></td>
+					<td><button id='brupg1' onclick='buyGluonUpg("br",1)'>You gain more tachyon particles based on your dilated time.<br><span id='brupg1current'></span><br>價格：1 藍紅膠子</button></td>
+					<td><button id='brupg2' onclick='buyGluonUpg("br",2)'>Sacrifice boosts dilated time production.<br><span id='brupg2current'></span><br><span id='brupg1current'></span>價格：2 藍紅膠子</button></td>
 				</tr><tr>
-					<td><button id='rgupg3' onclick='buyGluonUpg("rg",3)'>Dimension boosts boost first Meta Dimensions.<br><span id='rgupg3current'></span><br>價格：4 RG gluons</button></td>
+					<td><button id='rgupg3' onclick='buyGluonUpg("rg",3)'>Dimension boosts boost first Meta Dimensions.<br><span id='rgupg3current'></span><br>價格：4 紅綠膠子</button></td>
 					<td>
-						<button id='rgupg4' onclick='buyGluonUpg("rg",4)'>Galaxies are 50% stronger, but electrons are 30% weaker and normal galaxies are 60% weaker.<br>價格：100 RG gluons</button><br>
+						<button id='rgupg4' onclick='buyGluonUpg("rg",4)'>Galaxies are 50% stronger, but electrons are 30% weaker and normal galaxies are 60% weaker.<br>價格：100 紅綠膠子</button><br>
 						<button class="storebtn" id='rg4toggle' onclick='toggleRG4Upg()' style='width:142.5px; height:15px; font-size:9px'>Toggle: ON</button>
 					</td>
-					<td><button id='gbupg3' onclick='buyGluonUpg("gb",3)'>The IP mult multiplies IP gain by 2.3x per upgrade.<br>價格：4 GB gluons</button></td>
-					<td><button id='gbupg4' onclick='buyGluonUpg("gb",4)'>Massively decrease the tickspeed cost multiplier increase to 1.25x.<br>價格：100 GB gluons</button></td>
-					<td><button id='brupg3' onclick='buyGluonUpg("br",3)'>Tachyon particles slightly boost dilated time production.<br>價格：4 BR gluons</button></td>
-					<td><button id='brupg4' onclick='buyGluonUpg("br",4)'>Multiplier per ten dimensions boosts Meta Dimensions.<br><span id='brupg4current'></span><br>價格：100 BR gluons</button></td>
+					<td><button id='gbupg3' onclick='buyGluonUpg("gb",3)'>The IP mult multiplies IP gain by 2.3x per upgrade.<br>價格：4 綠藍膠子</button></td>
+					<td><button id='gbupg4' onclick='buyGluonUpg("gb",4)'>Massively decrease the tickspeed cost multiplier increase to 1.25x.<br>價格：100 綠藍膠子</button></td>
+					<td><button id='brupg3' onclick='buyGluonUpg("br",3)'>Tachyon particles slightly boost dilated time production.<br>價格：4 藍紅膠子</button></td>
+					<td><button id='brupg4' onclick='buyGluonUpg("br",4)'>Multiplier per ten dimensions boosts Meta Dimensions.<br><span id='brupg4current'></span><br>價格：100 藍紅膠子</button></td>
 				</tr><tr id='gupgrow3'>
-					<td><button id='rgupg5' onclick='buyGluonUpg("rg",5)'>Slow down the Dark Matter Galaxy cost scaling by 13%.<br>價格：<span id='rgupg5cost'></span> RG gluons</button></td>
-					<td><button id='rgupg6' onclick='buyGluonUpg("rg",6)'>Slow down the Distant Antimatter Galaxy cost scaling by 13.2%.<br>價格：<span id='rgupg6cost'></span> RG gluons</button></td>
-					<td><button id='gbupg5' onclick='buyGluonUpg("gb",5)'>Normal replicated galaxies slow down the Dark Matter Galaxy cost scaling.<br><span id='gbupg5current'></span><br>價格：<span id='gbupg5cost'></span> GB gluons</button></td>
-					<td><button id='gbupg6' onclick='buyGluonUpg("gb",6)'>Infinity power slows down the Distant Antimatter Galaxy cost scaling.<br><span id='gbupg6current'></span><br>價格：<span id='gbupg6cost'></span> GB gluons</button></td>
-					<td><button id='brupg5' onclick='buyGluonUpg("br",5)'>Tachyon particles slow down the Dark Matter Galaxy cost scaling.<br><span id='brupg5current'></span><br>價格：<span id='brupg5cost'></span> BR gluons</button></td>
-					<td><button id='brupg6' onclick='buyGluonUpg("br",6)' style='font-size:8.5px'>Meta-Dimension Boosts slow down the Distant Antimatter Galaxy cost scaling.<br><span id='brupg6current'></span><br>價格：<span id='brupg6cost'></span> BR gluons</button></td>
+					<td><button id='rgupg5' onclick='buyGluonUpg("rg",5)'>Slow down the Dark Matter Galaxy cost scaling by 13%.<br>價格：<span id='rgupg5cost'></span> 紅綠膠子</button></td>
+					<td><button id='rgupg6' onclick='buyGluonUpg("rg",6)'>Slow down the Distant Antimatter Galaxy cost scaling by 13.2%.<br>價格：<span id='rgupg6cost'></span> 紅綠膠子</button></td>
+					<td><button id='gbupg5' onclick='buyGluonUpg("gb",5)'>Normal replicated galaxies slow down the Dark Matter Galaxy cost scaling.<br><span id='gbupg5current'></span><br>價格：<span id='gbupg5cost'></span> 綠藍膠子</button></td>
+					<td><button id='gbupg6' onclick='buyGluonUpg("gb",6)'>Infinity power slows down the Distant Antimatter Galaxy cost scaling.<br><span id='gbupg6current'></span><br>價格：<span id='gbupg6cost'></span> 綠藍膠子</button></td>
+					<td><button id='brupg5' onclick='buyGluonUpg("br",5)'>Tachyon particles slow down the Dark Matter Galaxy cost scaling.<br><span id='brupg5current'></span><br>價格：<span id='brupg5cost'></span> 藍紅膠子</button></td>
+					<td><button id='brupg6' onclick='buyGluonUpg("br",6)' style='font-size:8.5px'>Meta-Dimension Boosts slow down the Distant Antimatter Galaxy cost scaling.<br><span id='brupg6current'></span><br>價格：<span id='brupg6cost'></span> 藍紅膠子</button></td>
 				</tr><tr id='gupgrow4'>
-					<td id='rgupg7col' colspan=2><button id='rgupg7' onclick='buyGluonUpg("rg",7)'>Slow down the Remote Antimatter Galaxy scaling by 10%.<br>價格：<span id='rgupg7cost'></span> RG gluons</button></td>
-					<td id='rgupg8col'><button id='rgupg8' onclick='buyGluonUpg("rg",8)'>Red unstable quarks decay slower based on your RG gluons.<br><span id='rgupg8current'></span><br>價格：<span id='rgupg8cost'></span> RG gluons</button></td>
-					<td id='gbupg7col' colspan=2><button id='gbupg7' onclick='buyGluonUpg("gb",7)'>Infinity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='gbupg7current'></span><br>價格：<span id='gbupg7cost'></span> GB gluons</button></td>
-					<td id='gbupg8col'><button id='gbupg8' onclick='buyGluonUpg("gb",8)'>Green unstable quarks decay slower based on your GB gluons.<br><span id='gbupg8current'></span><br>價格：<span id='gbupg8cost'></span> GB gluons</button></td>
-					<td id='brupg7col' colspan=2><button id='brupg7' onclick='buyGluonUpg("br",7)'>Eternity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='brupg7current'></span><br>價格：<span id='brupg7cost'></span> BR gluons</button></td>
-					<td id='brupg8col'><button id='brupg8' onclick='buyGluonUpg("br",8)'>Blue unstable quarks decay slower based on your BR gluons.<br><span id='brupg8current'></span><br>價格：<span id='brupg8cost'></span> BR gluons</button></td>
+					<td id='rgupg7col' colspan=2><button id='rgupg7' onclick='buyGluonUpg("rg",7)'>Slow down the Remote Antimatter Galaxy scaling by 10%.<br>價格：<span id='rgupg7cost'></span> 紅綠膠子</button></td>
+					<td id='rgupg8col'><button id='rgupg8' onclick='buyGluonUpg("rg",8)'>Red unstable quarks decay slower based on your 紅綠膠子.<br><span id='rgupg8current'></span><br>價格：<span id='rgupg8cost'></span> 紅綠膠子</button></td>
+					<td id='gbupg7col' colspan=2><button id='gbupg7' onclick='buyGluonUpg("gb",7)'>Infinity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='gbupg7current'></span><br>價格：<span id='gbupg7cost'></span> 綠藍膠子</button></td>
+					<td id='gbupg8col'><button id='gbupg8' onclick='buyGluonUpg("gb",8)'>Green unstable quarks decay slower based on your 綠藍膠子.<br><span id='gbupg8current'></span><br>價格：<span id='gbupg8cost'></span> 綠藍膠子</button></td>
+					<td id='brupg7col' colspan=2><button id='brupg7' onclick='buyGluonUpg("br",7)'>Eternity Points slow down the Remote Antimatter Galaxy scaling.<br><span id='brupg7current'></span><br>價格：<span id='brupg7cost'></span> 藍紅膠子</button></td>
+					<td id='brupg8col'><button id='brupg8' onclick='buyGluonUpg("br",8)'>Blue unstable quarks decay slower based on your 藍紅膠子.<br><span id='brupg8current'></span><br>價格：<span id='brupg8cost'></span> 藍紅膠子</button></td>
 				</tr><tr><td colspan=6>
-					Current QK gain multiplier: <span id='qkmultcurrent'></span>x
+					目前夸克獲得量加成：<span id='qkmultcurrent'></span>x
 				</td></tr><tr style='vertical-align:0'>
-					<td colspan=2><button id='rgqkbtn' onclick='buyQuarkMult("rg")'>You gain 2x more quarks.<br>價格：<span id='rgqkcost'></span> RG gluons</button></td>
+					<td colspan=2><button id='rgqkbtn' onclick='buyQuarkMult("rg")'>你獲得雙倍夸克。<br>價格：<span id='rgqkcost'></span> 紅綠膠子</button></td>
 					<td colspan=2>
-						<button id='gbqkbtn' onclick='buyQuarkMult("gb")'>You gain 2x more quarks.<br>價格：<span id='gbqkcost'></span> GB gluons</button><br>
-						<button class="storebtn" onclick='maxQuarkMult()' style='width:190px'>Max QK mult</button>
+						<button id='gbqkbtn' onclick='buyQuarkMult("gb")'>你獲得雙倍夸克。<br>價格：<span id='gbqkcost'></span> 綠藍膠子</button><br>
+						<button class="storebtn" onclick='maxQuarkMult()' style='width:190px'>最大購買夸克加成</button>
 					</td>
-					<td colspan=2><button id='brqkbtn' onclick='buyQuarkMult("br")'>You gain 2x more quarks.<br>價格：<span id='brqkcost'></span> BR gluons</button></td>
+					<td colspan=2><button id='brqkbtn' onclick='buyQuarkMult("br")'>你獲得雙倍夸克。<br>價格：<span id='brqkcost'></span> 藍紅膠子</button></td>
 				</tr></table>
 				<br><br>
 			</div>
