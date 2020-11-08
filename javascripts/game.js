@@ -1567,7 +1567,7 @@ function updateCoinPerSec() {
 	var element = document.getElementById("coinsPerSec");
 	var ret = getDimensionProductionPerSecond(1)
 	if (player.pSac !== undefined) ret = ret.div(getEC12Mult())
-	element.textContent = 'You are getting ' + shortenND(ret) + ' antimatter per second.'
+	element.textContent = '你每秒正在獲得 ' + shortenND(ret) + ' 反物質。'
 }
 
 var clickedAntimatter
@@ -6668,4 +6668,3 @@ function switchDecimalMode() {
 		document.location.reload(true)
 	}
 }
-
