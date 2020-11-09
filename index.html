@@ -114,7 +114,7 @@
 		<div id="eternitystore" class="tab" style="font-size: 15px; margin: 0 auto; display: none" align="center">
 			<table class="table" align="center" style="margin: auto">
 				<tr>
-					<td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">時間研究s</button></td>
+					<td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">時間研究</button></td>
 					<td id="masterystudyunlock"><button class="secondarytabbtn" onclick="showEternityTab('masterystudies')">精煉研究</button></td>
 					<td><button class="secondarytabbtn" onclick="showEternityTab('eternityupgrades')">永恆挑戰</button></td>
 					<td><button class="secondarytabbtn" onclick="showEternityTab('milestones')">永恆里程碑</button></td>
@@ -1297,7 +1297,7 @@
 			</div>
 			<div id="infinitydimensions" class="dimtab">
 				<div>
-					<p>你有 <span id="infPowAmount" style="font-size:35px; color: black">0</span> 無限力量，將反物質維度加強 <span id="infPowEffectPowerDiv"></span><span id="infDimMultAmount" style="font-size:35px; color: black">0</span>x。</p>
+					<p>你有 <span id="infPowAmount" style="font-size:35px; color: black">0</span> 無限力量，將反物質維度提升<span id="infPowEffectPowerDiv"></span> <span id="infDimMultAmount" style="font-size:35px; color: black">0</span>x。</p>
 				</div>
 				<div id="infPowPerSec">你每秒正在獲得 0 無限力量。</div>
 				<button id="maxAllID" class="storebtn" style="font-size: 12px" onclick="maxAllID()">全部最大量</Button>
@@ -1754,7 +1754,7 @@
 				<tr>
 					<td><button class="secondarytabbtn" onclick="showOptionTab('saving')">存檔</button></td>
 					<td><button class="secondarytabbtn" onclick="showOptionTab('otheroptions')">選項</button></td>
-					<td id="secretoptionsbtn"><button class="secondarytabbtn" onclick="showOptionTab('secrets')">祕密</button></td>
+					<td id="secretoptionsbtn"><button class="secondarytabbtn" onclick="showOptionTab('secrets')">隱藏</button></td>
 				</tr>
 			</table>
 			<div class='optionstab' id='saving'>
@@ -1857,12 +1857,12 @@
 			</div>
 			<div id="stats" class="statstab">
 				<div id='brfilter'><br></div>
-				<div id="totalmoney">You have made x antimatter.</div>
-				<div id="totalresets">You have made x dimensional boosts/shifts.</div>
+				<div id="totalmoney">你有 made x antimatter.</div>
+				<div id="totalresets">你有 made x dimensional boosts/shifts.</div>
 				<div id="lostResets"></div>
 				<div id="tdboosts"></div>
 				<div id="boosts"></div>
-				<div id="galaxies">You have made x Antimatter galaxies.</div>
+				<div id="galaxies">你有 made x Antimatter galaxies.</div>
 				<div id="spreadingCancer"></div>
 				<br>
 				<div id="ghostifyStatistics">
@@ -1885,21 +1885,21 @@
 					<br>
 				</div>
 				<div id="eternityStatistics">
-					<div id="eternitied">You have eternitied x times.</div>
+					<div id="eternitied">你有 eternitied x times.</div>
 					<div id="eternitiedBank"></div>
 					<div id="bankedEterGain"></div>
 					<div id="besteternity">Your fastest eternity is in x.</div>
-					<div id="thiseternity">You have spent x in this eternity</div>
+					<div id="thiseternity">你有 spent x in this eternity</div>
 					<div id="dilated"></div>
 					<div id="exdilated"></div>
 					<br>
 				</div>
 				<div id="infinityStatistics">
-					<div id="infinitied">You have infinitied x times.</div>
-					<div id="infinitiedBank">You have infinitied x times.</div>
+					<div id="infinitied">你有 infinitied x times.</div>
+					<div id="infinitiedBank">你有 infinitied x times.</div>
 					<div id="bankedInfGain">You will gain x banked infinities on next Eternity.</div>
 					<div id="bestInfinity">Your fastest infinity is in x.</div>
-					<div id="thisInfinity">You have spent x in this Infinity.</div>
+					<div id="thisInfinity">你有 spent x in this Infinity.</div>
 					<br>
 				</div>
 				<div id="gsStatistics">
@@ -1914,7 +1914,7 @@
 					<div id="thisPSac"></div>
 					<br>
 				</div>
-				<div id="totalTime">You have played for </div>
+				<div id="totalTime">你有 played for </div>
 				<div id="infoScale"></div>
 			</div>
 			<div id="challengetimes" class="statstab" >
@@ -2076,8 +2076,8 @@
 		<div id="achievements" class="tab">
 			<table class="table" align="center" style="margin: auto" id="achTabButtons">
 				<tr>
-					<td><button class="secondarytabbtn" onclick="showAchTab('normalachievements')">Achievements</button></td>
-					<td id='secretachsbtn'><button class="secondarytabbtn" onclick="showAchTab('secretachievements')">Secret Achievements</button></td>
+					<td><button class="secondarytabbtn" onclick="showAchTab('normalachievements')">成就</button></td>
+					<td id='secretachsbtn'><button class="secondarytabbtn" onclick="showAchTab('secretachievements')">隱藏成就</button></td>
 				</tr>
 			</table>
 			<div id="normalachievements" class="achtab">
@@ -3767,7 +3767,7 @@
 				</table>
 				<div id="bigrip">
 					To big rip the universe, you need to assign a PC with QC6 & 8 first.<br>
-					You have <span class="SSAmount" id="spaceShards" style="font-size:35px">0</span> Space Shards.
+					你有 <span class="SSAmount" id="spaceShards" style="font-size:35px">0</span> Space Shards.
 					<table class="table" align="center" style="margin: auto">
 						<tr>
 							<td><button class='gluonupgrade unavailablebtn' id="bigripupg1" onclick='buyBigRipUpg(1)' style='font-size: 10px'>Infinity Points boost Normal Dimensions, but buying other upgrades except for the 2nd nullify it.<br>目前：<span id="bigripupg1current">1.00</span>x<br>價格：<span id="bigripupg1cost"></span> Space Shards</button></td>
@@ -3822,7 +3822,7 @@
 		<div id="galaxy" class="tab" align="center" style="display: none">
 			<div id="vanillaGalaxyPoints">
 				<br>
-				<div id="galaxyPoints" style="color: #4169E1; font-size: 15px; width: 40%; margin: 0 auto">You have x galaxy points.</div>
+				<div id="galaxyPoints" style="color: #4169E1; font-size: 15px; width: 40%; margin: 0 auto">你有 x galaxy points.</div>
 				<br>
 			</div>
 			<table class="table" id="galTable" style="margin: 0 auto">
@@ -3945,16 +3945,16 @@
 		<div id="infinity" class="tab" align="center" style="display: none">
 			<br>
 			<div id='vanillaInfinityPoints'>
-				<div id="infinityPoints1" style="color: black; font-size: 15px; width: 40%; margin: 0 auto">You have made x Infinity points.</div>
+				<div id="infinityPoints1" style="color: black; font-size: 15px; width: 40%; margin: 0 auto">你有 made x Infinity points.</div>
 				<br>
 			</div>
 			<tr>
-				<td><button class="secondarytabbtn" onclick="showInfTab('preinf')">Upgrades</button><td>
-				<td><button id="autobuyersbtn" class="secondarytabbtn" onclick="showInfTab('autobuyers')">Autobuyers</button><td>
-				<td><button id="postinfbtn" class="secondarytabbtn" onclick="showInfTab('postinf')" >Break Infinity</button><td>
-				<td><button id="replicantitabbtn" class="secondarytabbtn" onclick="showInfTab('replicantis')">Replicantis</button><td>
-				<td><button id="singularitytabbtn" class="secondarytabbtn" onclick="showInfTab('singularity')">Singularity</button><td>
-				<td><button id="dimtechstabbtn" class="secondarytabbtn" onclick="showInfTab('dimtechs')">Dim-techs</button><td>
+				<td><button class="secondarytabbtn" onclick="showInfTab('preinf')">升級</button><td>
+				<td><button id="autobuyersbtn" class="secondarytabbtn" onclick="showInfTab('autobuyers')">自動購買器</button><td>
+				<td><button id="postinfbtn" class="secondarytabbtn" onclick="showInfTab('postinf')" >打破無限</button><td>
+				<td><button id="replicantitabbtn" class="secondarytabbtn" onclick="showInfTab('replicantis')">複製器</button><td>
+				<td><button id="singularitytabbtn" class="secondarytabbtn" onclick="showInfTab('singularity')">奇點</button><td>
+				<td><button id="dimtechstabbtn" class="secondarytabbtn" onclick="showInfTab('dimtechs')">維度科技</button><td>
 			</tr>
 			<div id="preinf" class="inftab">
 			<br>
@@ -4513,7 +4513,7 @@
 			<button class="storebtn" id="replicantiunlock" onclick="unlockReplicantis()" style="width:200px; height: 80px">Unlock Replicantis<br>價格：1e140 IP</button>
 			<div id="replicantidiv" style="display: none; width: 1000px">
 				<div id="eterc8repl" style="display: none;"></div>
-				<p style="font-size: 15px">You have <span id="replicantiamount" style="font-size:23px; color: black">0</span> replicanti. Translated to <span id="replicantimult" style="font-size:23px; color: black">0</span>x multiplier on all infinity dimensions</p>
+				<p style="font-size: 15px">你有 <span id="replicantiamount" style="font-size:23px; color: black">0</span> replicanti. Translated to <span id="replicantimult" style="font-size:23px; color: black">0</span>x multiplier on all infinity dimensions</p>
 				<br>
 				<button class="storebtn" id="replicantichance" onclick="upgradeReplicantiChance()" style="width:180px; height: 50px; font-size: 10px">Replicate chance: 1%<br>+1% Costs: 1e6969 IP</button>
 				<button class="storebtn" id="replicantiinterval" onclick="upgradeReplicantiInterval()" style="width:180px; height: 50px; font-size: 10px">Interval: 1000ms<br>-> 900 Costs: 1e6969 IP</button>
@@ -4556,10 +4556,10 @@
 			<br>
 			<button class="storebtn" id="singularityunlock" onclick="unlockSingularity()" style="width:200px; height: 80px">Unlock Singularity<br>價格：<span id="singularityunlcost"></span> IP</button>
 			<div id="singularitydiv" style="display: none;">
-				You have sacrificed <span id="sacrificedIP"></span> Infinity points.
-				<p>You have <span id="singularityPower" style="font-size:35px; color: black">0</span> singularity power.</p>
+				你有 sacrificed <span id="sacrificedIP"></span> Infinity points.
+				<p>你有 <span id="singularityPower" style="font-size:35px; color: black">0</span> singularity power.</p>
 				<button class="storebtn" id="sacrificeIP" onclick="sacrificeIP()" style="width: 200px; height: 70px; font-size: 12px">Sacrifice all of your infinity points, but gain <span id='singularityPowerGain'></span> singularity power.</button>
-				<p>You have <span id="darkMatter" style="font-size:35px; color: black">0.0</span> dark matter. Translated to <span id="darkMatterMult" style="font-size:35px; color: black">1.0</span>x faster tickspeed.</p>
+				<p>你有 <span id="darkMatter" style="font-size:35px; color: black">0.0</span> dark matter. Translated to <span id="darkMatterMult" style="font-size:35px; color: black">1.0</span>x faster tickspeed.</p>
 				You are getting <span id="darkMatterPerSecond" style="font-size:35px; color: black">0</span> dark matter per second.<br>
 				Next 2x dark matter production unlocks at <span id="nextUpgrade"></span> sacrificed IP.
 			</div>
@@ -4583,7 +4583,7 @@
 			<br>
 			<button class="storebtn" id="dimtechsunlock" onclick="unlockDimTechs()" style="width:200px; height: 80px">Unlock Dim-techs<br>價格：<span id="dimtechsunlcost"></span> IP</button>
 			<div id="dimtechsdiv" style="display: none;">
-				<p>You have <span id="darkMatterDT" style="font-size:35px; color: black">0.0</span> dark matter. The next discount upgrade is at <span id="nextDiscounts" style="font-size:35px; color: black">0.0</span>.</p>
+				<p>你有 <span id="darkMatterDT" style="font-size:35px; color: black">0.0</span> dark matter. The next discount upgrade is at <span id="nextDiscounts" style="font-size:35px; color: black">0.0</span>.</p>
 				<p id="discounts"></p>
 				<button class="storebtn" id="respecDimTechs" style="width: 180px; height: 36px" onclick="respecDimTechs()">Respec Dim-techs on the next crunch</button>
 				<table align=center>
@@ -4866,12 +4866,12 @@
 				</table>
 			</div>
 			<div class='quantumtab' id='electrons'>
-				You have <span id="normalGalaxies">0</span> normal galaxies.<br>
-				You sacrificed <span id='sacrificedGals'>0</span> galaxies.<br>
-				<button class='gluonupgrade storebtn' id='sacrificeGal' onclick='sacrificeGalaxy()' style='width:210px; height:90px'>Sacrifice <span id='sacrificeGals'>0</span> galaxies for <span id="electronsGain"></span> electrons.<br>Gain <span id='electronsGainMult'>2</span> electrons for each sacrificed galaxy.</button><br>
+				你有 <span id="normalGalaxies">0</span> 普通星系。<br>
+				你犧牲了 <span id='sacrificedGals'>0</span> 星系。<br>
+				<button class='gluonupgrade storebtn' id='sacrificeGal' onclick='sacrificeGalaxy()' style='width:210px; height:90px'>星系 <span id='sacrificeGals'>0</span> 星系以獲得 <span id="electronsGain"></span> 電子。<br>每犧牲一個星系可獲得 <span id='electronsGainMult'>2</span> 電子。</button><br>
 				<button class='storebtn' id='sacrificeAuto' onclick='toggleAutoQuantumContent("sacrifice")' style='width:210px'></button><br>
-				You have <span id="electronsAmount" style="font-size:35px">0</span> electrons.<br>
-				The multiplier per ten dimensions after being raised to the power of <span id="electronsTranslation" style="font-size:35px">1.00</span>, is currently <span id="electronsEffect" style="font-size:35px">2.00</span>x. (Base multiplier: <span id="linearPerTenMult">2.00</span>x)<br>
+				你有 <span id="electronsAmount" style="font-size:35px">0</span> 電子。<br>
+				加上 <span id="electronsTranslation" style="font-size:35px">1.00</span> 的次方之後，每十個維度的加成目前是 <span id="electronsEffect" style="font-size:35px">2.00</span>x。（基本加成：<span id="linearPerTenMult">2.00</span>x）<br>
 				<table class="table" align="center" style="margin: auto"><tr>
 					<td><button class='gluonupgrade storebtn' id='electronupg1' onclick='buyElectronUpg(1)'></button></td>
 					<td><button class='gluonupgrade storebtn' id='electronupg2' onclick='buyElectronUpg(2)'></button></td>
@@ -4880,90 +4880,90 @@
 				</tr></table>
 			</div>
 			<div class='quantumtab' id='replicants'>
-				You have <span id="replicantiAmount2">1</span> replicantis.<br>
-				You have <span class="rqC" id="rgRepl">1</span> red-green, <span class="gqC" id="gbRepl">1</span> green-blue, and <span class="bqC" id="brRepl">1</span> blue-red gluons.<br>
+				你有 <span id="replicantiAmount2">1</span> 複製器。<br>
+				你有 <span class="rqC" id="rgRepl">1</span> 紅綠、<span class="gqC" id="gbRepl">1</span> 綠藍和 <span class="bqC" id="brRepl">1</span> 藍紅膠子。<br>
 				<table class='qtable'><tr><td>
-					You have <span id="replicantAmount" style="font-size:35px">0</span> normal replicants.<br>
-					They are gathering <span id="normalReplGatherRate" style="font-size:25px">0</span> preons per second.<br>
+					你有 <span id="replicantAmount" style="font-size:35px">0</span> 普通複製體。<br>
+					它們每秒正在收集 <span id="normalReplGatherRate" style="font-size:25px">0</span> 前子。<br>
 					<button class="storebtn" id="replicantReset" style="width: 220px; height: 60px; font-size: 11px" onclick='replicantReset()'></button><br><button class="storebtn" id="autoReset" style="width: 220px" onclick='toggleAutoReset()'></button>
 				</td><td>
-					You have <span id="workerReplAmount" style="font-size:35px">0</span> total worker replicants.<br>
-					They are gathering <span id="workerReplGatherRate" style="font-size:25px">0</span> preons per second and producing <span id="eggonRate" style="font-size:25px">0</span> <span id="workerReplWhat">eggons</span> per <span id="eggonRateTimeframe">minute</span>.<br>
-					Feed your normal replicant to become a worker. <span id="workerProgress" style="font-size:15px">0.0%</span><br>
-					<button class='storebtn' id='feedNormal' style='width: 280px' onclick="feedReplicant(1)">Feed one with quantum food</button><br>
+					你總共有 <span id="workerReplAmount" style="font-size:35px">0</span> 工人複製體。<br>
+					它們每秒正在收集 <span id="workerReplGatherRate" style="font-size:25px">0</span> 前子，每<span id="eggonRateTimeframe">minute</span>生產 <span id="eggonRate" style="font-size:25px">0</span> <span id="workerReplWhat">eggons</span>。<br>
+					餵給你的普通複製體，可以將它們變成一個工人。<span id="workerProgress" style="font-size:15px">0.0%</span><br>
+					<button class='storebtn' id='feedNormal' style='width: 280px' onclick="feedReplicant(1)">用量子糧食餵給一個</button><br>
 					<button id='breakLimit' class='storebtn' style='width: 280px; height: 60px' onclick='breakLimit()'></button><br>
-					<button class='storebtn' style='width: 280px' onclick='maxBuyLimit()'>Max limit upgrades</button>
+					<button class='storebtn' style='width: 280px' onclick='maxBuyLimit()'>最大購買上限升級</button>
 				</td><td>
-					You have <span id="babyReplAmount" style="font-size:35px">0</span> baby replicants.<br>
-					They are gathering <span id="babyReplGatherRate" style="font-size:25px">0</span> preons per second.<br>
-					They will become normal replicants at <span id="growupRate" style="font-size:15px"></span> per <span id="growupRateUnit"></span>. <span id="growupProgress" style="font-size:15px">0.0%</span>.<br>
+					你有 <span id="babyReplAmount" style="font-size:35px">0</span> 嬰兒複製體。<br>
+					它們每秒正在收集 <span id="babyReplGatherRate" style="font-size:25px">0</span> 前子。<br>
+					它們以每 <span id="growupRateUnit"></span> <span id="growupRate" style="font-size:15px"></span> 個的速度變成普通複製體。<span id="growupProgress" style="font-size:15px">0.0%</span>。<br>
 				</td></tr><tr><td>
-					You have <span id="gatheredQuarks" style="font-size:35px">0</span> preons. <span id="gatherRate" style="font-size:25px">+0/s</span><br>
-					Translated to +<span id="quarkTranslation" style="font-size:35px">0</span>% added to green power.</p>
+					你有 <span id="gatheredQuarks" style="font-size:35px">0</span> 前子。<span id="gatherRate" style="font-size:25px">+0/s</span><br>
+					將綠色力量增加 +<span id="quarkTranslation" style="font-size:35px">0</span>%。</p>
 				</td><td>
-					You have <span id="quantumFoodAmount" style="font-size:35px">0</span> quantum food.<br>
+					你有 <span id="quantumFoodAmount" style="font-size:35px">0</span> 量子食糧。<br>
 					<button class='gluonupgrade storebtn' id='buyQuantumFood' onclick='buyQuantumFood()'></button><br>
-					<button class='storebtn' id='buyMaxQuantumFood' onclick='buyMaxQuantumFood()' style="width: 210px">Buy maximum quantum food</button>
+					<button class='storebtn' id='buyMaxQuantumFood' onclick='buyMaxQuantumFood()' style="width: 210px">最大購買量子食糧</button>
 				</td><td id="eggonsCell">
-					You have <span id="eggonAmount" style="font-size:35px">0</span> eggons. <span id="hatchProgress" style="font-size:15px">0.0%</span><br>
+					你有 <span id="eggonAmount" style="font-size:35px">0</span> 複製卵。<span id="hatchProgress" style="font-size:15px">0.0%</span><br>
 					<button class='storebtn' id='reduceHatchSpeed' style='width: 240px; height: 80px' onclick='reduceHatchSpeed()'></button><br>
-					<button class='storebtn' id='maxReduceHatchSpeed' onclick='maxReduceHatchSpeed()' style="width: 240px">Max reduce the hatch speed</button>
+					<button class='storebtn' id='maxReduceHatchSpeed' onclick='maxReduceHatchSpeed()' style="width: 240px">最大減少孵化速度</button>
 				</td></tr></table>
 			</div>
 			<div class='quantumtab' id='nanofield'>
 				<table id='nftabs' align="center" style="margin: auto">
 					<tr>
-						<td><button class="secondarytabbtn" onclick="showNFTab('nanoverse')">The Nanoverse</button></td>
-						<td><button class="secondarytabbtn" onclick="showNFTab('antipreon')"><span style="font-size:11px">Anti-Preontius' Lair</span></button></td>
+						<td><button class="secondarytabbtn" onclick="showNFTab('nanoverse')">納米宇宙</button></td>
+						<td><button class="secondarytabbtn" onclick="showNFTab('antipreon')"><span style="font-size:11px">反前子之靈的宮殿</span></button></td>
 					</tr>
 				</table>
 				<div class='nftab' id='nanoverse'>
-					You have <span id="quarksNanofield"></span> preons.<br>
+					你有 <span id="quarksNanofield"></span> 前子。<br>
 					<span id="ns"></span>
 					<table class="qtable"><tr><td>
-						You have <span id="preonEnergy" style="font-size:35px"></span> preon energy.<br>
-						You have <span id="quarkPower" style="font-size:35px"></span> preon power. Next at <span id="quarkPowerThreshold" style="font-size:35px"></span> preon energy.<br>
-						You are getting <span id="quarkEnergyRate"></span> preon energy per second if your preon anti-energy didn't reach its limit.
+						你有 <span id="preonEnergy" style="font-size:35px"></span> 前子能量。<br>
+						你有 <span id="quarkPower" style="font-size:35px"></span> 前子力量。下一個在 <span id="quarkPowerThreshold" style="font-size:35px"></span> 前子能量。<br>
+						如果前子反能量沒有達到它的上限，你每秒正在獲得 <span id="quarkEnergyRate"></span> 前子能量。
 					</td><td>
-						You have <span id="quarkCharge" style="font-size:35px"></span> preon charge.<br>
+						你有 <span id="quarkCharge" style="font-size:35px"></span> 前子動力。<br>
 						<button class="storebtn" id="produceQuarkCharge" onclick="startProduceQuarkCharge()"></button><br>
-						You are getting <span id="quarkChargeRate"></span> preon charge per second, but losing <span id="quarkLoss"></span> preons per second.
+						你每秒正在獲得 <span id="quarkChargeRate"></span> 前子動力，但是每秒正在失去 <span id="quarkLoss"></span> 前子。
 					</td><td>
-						You have <span id="quarkAntienergy" style="font-size:35px"></span> preon anti-energy. At <span id="quarkChargeProductionCap" style="font-size:35px"></span>, your preon charge will stop producing energy and anti-energy.<br>
-						You are getting <span id="quarkAntienergyRate"></span> preon anti-energy per second.
+						你有 <span id="quarkAntienergy" style="font-size:35px"></span> 前子反能量。如果它達到 <span id="quarkChargeProductionCap" style="font-size:35px"></span>，你的前子動力會停止生產能量和反能量。<br>
+						你每秒正在獲得 <span id="quarkAntienergyRate"></span> 前子反能量。
 					</td></tr></table>
-					You have <span id="rewards" style="font-size:35px"></span> rewards.
+					你有 <span id="rewards" style="font-size:35px"></span> 獎勵。
 					<table class="table" align=center style="margin: auto" id="nfRewards"></table>
 					<br><br>
 				</div>
 				<div class='nftab' id='antipreon'>
 					<div id="apgInfo">
-						You have <span id="rewards_AP" style="font-size:35px"></span> rewards.<br>
+						你有 <span id="rewards_AP" style="font-size:35px"></span> 獎勵。<br>
 						<span id="sleepy">
-							Anti-Preontius, the Anti-Preon Ghost, is currently sleepy...
-							<b class="warning">Don't get <span id="rewards_wake">104</span> rewards or else he will wake up and take over the Nanoverse!</b>
+							反前子的幽靈，反前子之靈正在睡覺……
+							<b class="warning">不要達到 <span id="rewards_wake">104</span> 獎勵，否則他會醒來，征服整個納米宇宙！</b>
 						</span>
-						<b id="woke" class="warning" style="font-size: 25px; display: none">Anti-Preontius, the Anti-Preon Ghost, has woken up and took control of the Nanoverse!</b><br><br>
-						The following effects will be applied when he wakes up:<br>
-						- When you get 1 preon power, you will lose preons faster if you are producing preon charge.<br>
-						- When you get 1 preon power, your preon charge production is 1.41x slower.<br>
-						- When you get 1 preon power, your anti-energy production is 1.41x faster.<br>
-						- Reward tiers are softcapped.<br><br>
-						However, the ghostly scientists from Bosonic Lab have created a special power. You will gain 0.5 extra tiers to your current reward when he wakes up.<br>
-						Good luck for getting more rewards. :)
+						<b id="woke" class="warning" style="font-size: 25px; display: none">反前子的幽靈，反前子之靈醒來了，他現在控制整個納米宇宙！</b><br><br>
+						醒來時，以下效果會生效：<br>
+						- 當你獲得 1 前子力量，如果你在生產前子動力，你會更快地失去前子。<br>
+						- 當你獲得 1 前子力量，前子動力的生產力慢 1.41x。<br>
+						- 當你獲得 1 前子力量，前子反能量的生產力快 1.41x。<br>
+						- 獎勵級別有軟限制。<br><br>
+						但是，玻色子實驗室的幽靈科學家創造了一個特殊的力量。他醒來時，你目前的獎勵會額外增加 0.5 個級別。<br>
+						祝你獲得更多的獎勵。:)
 					</div>
 				</div>
 			</div>
 			<div class='quantumtab' id='tod'>
 				<span id="todspeed"></span>
 				<table class="qtable"><tr id="todRow"></tr></table>
-				<button class="storebtn" onclick="unstableAll()" style="width: 210px">Gain all unstable quarks</button>
+				<button class="storebtn" onclick="unstableAll()" style="width: 210px">獲得所有不穩定夸克</button>
 				<table class="table" align="center" style="margin: auto">
 					<tr>
-						<td><button id="redBtn" class="secondarytabbtn" onclick="showBranchTab('red')">Red Branch Upgrades</button></td>
-						<td><button id="greenBtn" class="secondarytabbtn" onclick="showBranchTab('green')">Green Branch Upgrades</button></td>
-						<td><button id="blueBtn" class="secondarytabbtn" onclick="showBranchTab('blue')">Blue Branch Upgrades</button></td>
-						<td><button class="secondarytabbtn" onclick="showBranchTab('upgrades')">Tree Upgrades</button></td>
+						<td><button id="redBtn" class="secondarytabbtn" onclick="showBranchTab('red')">紅分支升級</button></td>
+						<td><button id="greenBtn" class="secondarytabbtn" onclick="showBranchTab('green')">綠分支升級</button></td>
+						<td><button id="blueBtn" class="secondarytabbtn" onclick="showBranchTab('blue')">藍分支升級</button></td>
+						<td><button class="secondarytabbtn" onclick="showBranchTab('upgrades')">樹升級</button></td>
 					</tr>
 				</table>
 				<div class="branchtab" id="redBranch"></div>
@@ -4982,7 +4982,7 @@
 						<td><button class='gluonupgrade unavailablebtn' id='treeupg7' onclick='buyTreeUpg(7)'>Replicantis boost dilated time production.<br>Level: <span id='treeupg7lvl'>?</span><br>目前：<span id='treeupg7current'>?</span>x<br><span id="treeupg7cost"></span></button></td>
 						<td><button class='gluonupgrade unavailablebtn' id='treeupg8' onclick='buyTreeUpg(8)' style='font-size:9px'>Your best-in-this-quantum meta-antimatter makes the meta-antimatter effect stronger.<br>Level: <span id='treeupg8lvl'>?</span><br>目前：+<span id='treeupg8current'>?</span> to exponent<br><span id="treeupg8cost"></span></button></td>
 					</tr></table>
-					<button class="storebtn" onclick="maxTreeUpg()" style="width: 190px">Max all upgrades</button>
+					<button class="storebtn" onclick="maxTreeUpg()" style="width: 190px">最大購買所有升級</button>
 				</div>
 				<br>
 				<br>
@@ -5006,11 +5006,11 @@
 		<div class='tab' id='ghostify'>
 			<table class="table" align="center" style="margin: auto">
 				<tr>
-					<td><button class="secondarytabbtn" onclick="showGhostifyTab('neutrinos')">Neutrinos</button></td>
-					<td><button class="secondarytabbtn" onclick="showGhostifyTab('automaticghosts')">Automator Ghosts</button></td>
-					<td><button class="secondarytabbtn" onclick="showGhostifyTab('bravemilestones')">Brave Milestones</button></td>
-					<td id="gphtabbtn"><button class="secondarytabbtn" onclick="showGhostifyTab('gphtab')">Ghostly Photons</button></td>
-					<td id="bltabbtn"><button class="secondarytabbtn" onclick="showGhostifyTab('bltab')">Bosonic Lab</button></td>
+					<td><button class="secondarytabbtn" onclick="showGhostifyTab('neutrinos')">微中子</button></td>
+					<td><button class="secondarytabbtn" onclick="showGhostifyTab('automaticghosts')">自動幽靈</button></td>
+					<td><button class="secondarytabbtn" onclick="showGhostifyTab('bravemilestones')">勇敢里程碑</button></td>
+					<td id="gphtabbtn"><button class="secondarytabbtn" onclick="showGhostifyTab('gphtab')">幽靈光子</button></td>
+					<td id="bltabbtn"><button class="secondarytabbtn" onclick="showGhostifyTab('bltab')">玻色子實驗室</button></td>
 				</tr>
 			</table>
 			<div id="neutrinos" class="ghostifytab">
@@ -5018,9 +5018,9 @@
 				<div id="neutrinosGainGhostify"></div>
 				<table class='qtable'>
 					<tr>
-						<td>You have <span class="neutrinos" id="electronNeutrinos">0</span> electron neutrinos.</td>
-						<td>You have <span class="neutrinos" id="muonNeutrinos">0</span> Muon neutrinos.</td>
-						<td>You have <span class="neutrinos" id="tauNeutrinos">0</span> Tau neutrinos.</td>
+						<td>你有 <span class="neutrinos" id="electronNeutrinos">0</span> electron neutrinos.</td>
+						<td>你有 <span class="neutrinos" id="muonNeutrinos">0</span> Muon neutrinos.</td>
+						<td>你有 <span class="neutrinos" id="tauNeutrinos">0</span> Tau neutrinos.</td>
 					</tr>
 					<tr class="neutrinoBoosts" id="neutrinoBoostRow1">
 						<td>They increase TP gain formula exponent from <span id="preNeutrinoBoost1"></span> to <span class="neutrinos" id="neutrinoBoost1">1.0</span>.</td>
@@ -5078,9 +5078,9 @@
 				<div>Your quantum worth (sum of quarks, colored quarks, and gluons) is currently <b class="QKAmount" id="quantumWorth3">0</b>.</div>
 				<table class='qtable'>
 					<tr>
-						<td>You have <span id="automatorGhostsAmount" style="font-size:35px">1</span> Automator Ghosts.<br>Next Automator Ghost at <span id="nextAutomatorGhost"style="font-size:35px">?.?</span>.</td>
-						<td>You have <span id="automaticCharge" style="font-size:35px">0.0</span> Automator Charge.</td>
-						<td>You have <span id="automaticPower" style="font-size:35px">0.0</span> Automator Power.<br>Automator Ghosts are using <span id="consumedPower" style="font-size:35px">0.0</span> Automator Power.<br><b id="tooMuchPowerConsumed" class="warning">WARNING: NOT ENOUGH POWER TO AUTOMATE!</b></td>
+						<td>你有 <span id="automatorGhostsAmount" style="font-size:35px">1</span> Automator Ghosts.<br>Next Automator Ghost at <span id="nextAutomatorGhost"style="font-size:35px">?.?</span>.</td>
+						<td>你有 <span id="automaticCharge" style="font-size:35px">0.0</span> Automator Charge.</td>
+						<td>你有 <span id="automaticPower" style="font-size:35px">0.0</span> Automator Power.<br>Automator Ghosts are using <span id="consumedPower" style="font-size:35px">0.0</span> Automator Power.<br><b id="tooMuchPowerConsumed" class="warning">WARNING: NOT ENOUGH POWER TO AUTOMATE!</b></td>
 					</tr>
 				</table>
 				<table style="margin: 0 auto">
@@ -5251,34 +5251,34 @@
 			<div id="gphtab" class="ghostifytab">
 				<div id="gphUnl"></div>
 				<div id="gphDiv">
-					You have <span id="dtGPH">0</span> dilated time.<br>
+					你有 <span id="dtGPH">0</span> dilated time.<br>
 					You are getting <span class="gphAmount" id="gphProduction">0</span> <span id="gphProductionType">Ghostly Photons</span> per second.<br>
 					<table class='qtable'><tr>
 						<td>
-							You have <span class="gphAmount" id="gph" style="font-size:35px"></span> Ghostly Photons.<br>
+							你有 <span class="gphAmount" id="gph" style="font-size:35px"></span> Ghostly Photons.<br>
 							They increase your Ghostly Rays production to <span class="gphAmount" id="ghrProduction"></span> per second.
 						</td>
 						<td>
-							You have <span class="ghr" id="ghr" style="font-size:35px"></span> Ghostly Rays.
+							你有 <span class="ghr" id="ghr" style="font-size:35px"></span> Ghostly Rays.
 						</td>
 						<td>
-							You have <span class="dmAmount" id="dm" style="font-size:35px"></span> Dark Matter.<br>
+							你有 <span class="dmAmount" id="dm" style="font-size:35px"></span> Dark Matter.<br>
 							They increase your limit amount of Ghostly Rays to <span class="dmAmount" id="ghrCap"></span>.
 						</td>
 					</tr></table>
 					<table class="qtable_4col"><tr>
 						<td class="red">
-							You have <span id="light1" style="font-size:35px"></span> red Light.<br>
-							You have made a best amount of <span class="red" id="lightMax1"></span> red Light.
+							你有 <span id="light1" style="font-size:35px"></span> red Light.<br>
+							你有 made a best amount of <span class="red" id="lightMax1"></span> red Light.
 						</td>
 						<td class="orange">
-							You have <span id="light2" style="font-size:35px"></span> orange Light.
+							你有 <span id="light2" style="font-size:35px"></span> orange Light.
 						</td>
 						<td class="yellow">
-							You have <span id="light3" style="font-size:35px"></span> yellow Light.
+							你有 <span id="light3" style="font-size:35px"></span> yellow Light.
 						</td>
 						<td class="green">
-							You have <span id="light4" style="font-size:35px"></span> green Light.
+							你有 <span id="light4" style="font-size:35px"></span> green Light.
 						</td>
 					</tr><tr>
 						<td>
@@ -5321,16 +5321,16 @@
 						</td>
 					</tr><tr>
 						<td class="blue">
-							You have <span class="blue" id="light5" style="font-size:35px"></span> blue Light.
+							你有 <span class="blue" id="light5" style="font-size:35px"></span> blue Light.
 						</td>
 						<td class="indigo">
-							You have <span class="indigo" id="light6" style="font-size:35px"></span> indigo Light.
+							你有 <span class="indigo" id="light6" style="font-size:35px"></span> indigo Light.
 						</td>
 						<td class="violet">
-							You have <span class="violet" id="light7" style="font-size:35px"></span> violet Light.
+							你有 <span class="violet" id="light7" style="font-size:35px"></span> violet Light.
 						</td>
 						<td class="uv">
-							You have <span class="uv" id="light8" style="font-size:35px"></span> ultraviolet Light.
+							你有 <span class="uv" id="light8" style="font-size:35px"></span> ultraviolet Light.
 						</td>
 					</tr><tr>
 						<td>
@@ -5372,7 +5372,7 @@
 						<td></td>
 					</tr><tr>
 						<td class="lEp" colspan=4>
-							You have <span class="lEp" id="lightEmpowerments" style="font-size:35px">0</span> <span id="lightEmpowermentScaling"></span>.
+							你有 <span class="lEp" id="lightEmpowerments" style="font-size:35px">0</span> <span id="lightEmpowermentScaling"></span>.
 						</td>
 					</tr><tr>
 						<td colspan=4>
@@ -5395,19 +5395,19 @@
 				<div id="blDiv">
 					<table class='qtable'><tr>
 						<td>
-							You have <span id="bWatt" style="font-size:35px"></span> Bosonic Watts.<br>Bosonic Speed: <span id="bSpeed" style="font-size:25px"></span>x<br>Bosonic Lab is currently running at <span id="bTotalSpeed" style="font-size:25px"></span>x.<br>You have played Bosonic Lab for <span id="bTicks"></span> ticks.
+							你有 <span id="bWatt" style="font-size:35px"></span> Bosonic Watts.<br>Bosonic Speed: <span id="bSpeed" style="font-size:25px"></span>x<br>Bosonic Lab is currently running at <span id="bTotalSpeed" style="font-size:25px"></span>x.<br>你有 played Bosonic Lab for <span id="bTicks"></span> ticks.
 						</td>
 						<td>
-							You have <span id="bAM" style="font-size:35px"></span> Bosonic Antimatter. <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">(reduced)<b>
+							你有 <span id="bAM" style="font-size:35px"></span> Bosonic Antimatter. <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">(reduced)<b>
 						</td>
 						<td>
-							You have <span id="bBt" style="font-size:35px"></span> Bosonic Battery. <span id="bBtProduction" style="font-size:25px"></span><br>
+							你有 <span id="bBt" style="font-size:35px"></span> Bosonic Battery. <span id="bBtProduction" style="font-size:25px"></span><br>
 							Overdrive Speed: <span id="odSpeed" style="font-size:25px"></span><span id="odSpeedWBBt"></span><br>
 							<input id="odSlider" style="width: 180px;" type="range" min="0" max="30" class="slider" oninput="changeOverdriveSpeed()">
 						</td>
 					</tr><tr id="bosonicResets">
 						<td colspan=3>
-							You have <span class="yellow" id="hb" style="font-size:35px">0</span> Higgs Bosons.
+							你有 <span class="yellow" id="hb" style="font-size:35px">0</span> Higgs Bosons.
 							<br>
 							<button class="gluonupgrade hb" id="hbReset" onclick="higgsReset()">Reset Bosonic Lab for <span id="hbResetGain">1</span> Higgs.<br>(Requires <span id="hbResetReq"></span> Bosonic Antimatter)</button>
 						</td>
@@ -5417,9 +5417,9 @@
 					<table id="bRunes" align="center" style="margin: auto"><tr></tr></table>
 					<table class="table" align="center" style="margin: auto">
 						<tr>
-							<td><button class="secondarytabbtn" onclick="showBLTab('bextab')">Bosonic Enchants</button></td>
-							<td><button class="secondarytabbtn" onclick="showBLTab('butab')">Bosonic Upgrades</button></td>
-							<td><button class="secondarytabbtn" onclick="showBLTab('wzbtab')">W & Z Bosons</button></td>
+							<td><button class="secondarytabbtn" onclick="showBLTab('bextab')">玻色子附魔</button></td>
+							<td><button class="secondarytabbtn" onclick="showBLTab('butab')">玻色子升級</button></td>
+							<td><button class="secondarytabbtn" onclick="showBLTab('wzbtab')">W 和 Z 玻色子</button></td>
 						</tr>
 					</table>
 					<div id="bextab" class="bltab">
@@ -5439,17 +5439,17 @@
 						<table class='qtable'>
 							<tr>
 								<td>
-									You have <span id="wpb" style="font-size:35px"></span> W+ Bosons and <span id="wnb" style="font-size:35px"></span> W- Bosons.<br>
+									你有 <span id="wpb" style="font-size:35px"></span> W+ Bosons and <span id="wnb" style="font-size:35px"></span> W- Bosons.<br>
 									Translated to <span id="wbTime" style="font-size:35px"></span>x faster extracting time, <span id="wbOscillate" style="font-size:35px"></span>x faster oscillate progression gain, <span id="wbProduction" style="font-size:35px"></span>x Bosonic Antimatter production speed.
 								</td>
 								<td></td>
 								<td>
-									You have <span id="zb" style="font-size:35px"></span> Z Bosons.<br>
+									你有 <span id="zb" style="font-size:35px"></span> Z Bosons.<br>
 									Translated to <span id="zbSpeed" style="font-size:35px"></span>x faster decay speed of W Boson and faster conversion speed of W- to W+.
 								</td>
 							</tr>
 							<tr><td colspan=3>
-									You have <span id="ap" style="font-size:35px"></span> Anti-Preons. <span id="apProduction" style="font-size:25px"></span><br>
+									你有 <span id="ap" style="font-size:35px"></span> Anti-Preons. <span id="apProduction" style="font-size:25px"></span><br>
 									<span id="apUse"></span><br>
 									<button class="storebtn" style="width:150px" onclick="useAntiPreon(0)">Gain Anti-Preons</button> <button class="storebtn" onclick="useAntiPreon(1)">Decay W Boson</button> <button class="storebtn" style="width:150px" onclick="useAntiPreon(3)">Convert W- to W+</button> <button class="storebtn" style="width:180px" onclick="useAntiPreon(2)">Oscillate Z Boson</button>
 							</td></tr>
@@ -5489,7 +5489,7 @@
 		</div>
 	</div>
 	<div class="popup" id="challfail">
-		<div id="failPopup">You have failed this challenge. Better luck next time. :(</div>
+		<div id="failPopup">你有 failed this challenge. Better luck next time. :(</div>
 		<button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">Okay</button>
 	</div>
 	<div class="popup" id="stuck" style="height: 180px; width: 480px">
@@ -5662,7 +5662,7 @@
 		<button class="timetheorembtn" onclick="buyWithIP()" id="theoremip" style="margin-left: -86px">Buy 時間定理 <br>價格：1 IP</button>
 		<button class="timetheorembtnlocked" onclick="buyWithEP()" id="theoremep" style="margin-left: 106px">Buy 時間定理 <br>價格：1 EP</button>
 		<div id="theorembuybackground"></div>
-		<p id="timetheorems" style="position: fixed;">You have 0 時間定理.</p>
+		<p id="timetheorems" style="position: fixed;">你有 0 時間定理.</p>
 	</div>
 	<div id="progress" style="display:none">
 		<div id="progressbar"><span id="progresspercent" ach-tooltip="Percentage until Infinity">0%</span></div>
