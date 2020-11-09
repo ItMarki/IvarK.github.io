@@ -251,7 +251,7 @@ function setupPCTableHTMLandData(){
 
 function setupToDHTMLandData(){
 	for (var c = 0; c < 3; c++) {
-		var color = (["紅", "green", "blue"])[c]
+		var color = (["red", "green", "blue"])[c]
 		var shorthand = (["r", "g", "b"])[c]
 		var branchUpgrades = ["獲得 <span id='" + color + "UpgPow1'></span>x " + color + " 夸克自旋，但是 " + color + " 夸克的衰變速度快 <span id='" + color + "UpgSpeed1'></span>x。",
 				      "" + color + " <span id='" + color + "UpgName2'></span> 夸克的獲得量乘以 x，然後 x^x。",
