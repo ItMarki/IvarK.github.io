@@ -1982,7 +1982,7 @@ function setOtherChallDisplay(){
         document.getElementById("ic7desc").textContent="你不能獲得反物質星系，但維度提升的倍數"+(player.galacticSacrifice?"變為它的立方":"提升至 10x")+"。"
         document.getElementById("ic7reward").textContent="獎勵：維度提升的倍數"+(player.galacticSacrifice? "變為它的平方。":"提升至 4x。")
         document.getElementById("replicantitabbtn").style.display=player.infinityUpgradesRespecced?"none":""
-        document.getElementById("replicantiresettoggle").textContent="星系自動購買器"+(player.replicanti.galaxybuyer?"開啟":"關閉")+(player.timestudy.studies.includes(131)&&speedrunMilestonesReached<20?"（禁用）":"")
+        document.getElementById("replicantiresettoggle").textContent="自動星系"+(player.replicanti.galaxybuyer?"開啟":"關閉")+(player.timestudy.studies.includes(131)&&speedrunMilestonesReached<20?"（禁用）":"")
 }
 
 function setTSDisplay(){
