@@ -69,9 +69,9 @@ function updateInfinityDimensions() {
 			var unl = player.infDimensionsUnlocked[tier-1]
 			document.getElementById("infRow" + tier).style.display = unl ? "" : "none"
 			if (unl) {
-				document.getElementById("infD" + tier).textContent = DISPLAY_NAMES[tier] + " Infinity Dimension x" + shortenMoney(DimensionPower(tier));
+				document.getElementById("infD" + tier).textContent = DISPLAY_NAMES[tier] + "無限維度 x" + shortenMoney(DimensionPower(tier));
 				document.getElementById("infAmount" + tier).textContent = DimensionDescription(tier);
-				document.getElementById("infMax" + tier).textContent = (quantumed ? '' : "Cost: ") + (player.pSac !== undefined ? shortenDimensions(player["infinityDimension" + tier].costAM) : shortenInfDimCosts(getIDCost(tier)) + " IP")
+				document.getElementById("infMax" + tier).textContent = (quantumed ? '' : "價格：") + (player.pSac !== undefined ? shortenDimensions(player["infinityDimension" + tier].costAM) : shortenInfDimCosts(getIDCost(tier)) + " 無限點數")
 				if (player.pSac !== undefined ? player.money.gte(player["infinityDimension"+tier].costAM) : player.infinityPoints.gte(getIDCost(tier))) document.getElementById("infMax"+tier).className = "storebtn"
 				else document.getElementById("infMax" + tier).className = "unavailablebtn"
 				document.getElementById("infRow" + tier).style.visibility = "visible";
@@ -284,10 +284,10 @@ function getInfinityPowerEffectExp() {
 function switchAutoInf(tier) {
 	if (player.infDimBuyers[tier - 1]) {
 		player.infDimBuyers[tier - 1] = false
-		document.getElementById("infauto"+tier).textContent = "Auto: OFF"
+		document.getElementById("infauto"+tier).textContent = "自動：關閉"
 	} else {
 		player.infDimBuyers[tier - 1] = true
-		document.getElementById("infauto"+tier).textContent = "Auto: ON"
+		document.getElementById("infauto"+tier).textContent = "自動：開啟"
 	}
 	hideMaxIDButton()
 }
@@ -296,13 +296,13 @@ function toggleAllInfDims() {
 	if (player.infDimBuyers[0]) {
 		for (var i = 1; i <= 8; i++) {
 			player.infDimBuyers[i - 1] = false
-			document.getElementById("infauto" + i).textContent = "Auto: OFF"
+			document.getElementById("infauto" + i).textContent = "自動：關閉"
 		}
 	} else {
 		for (var i=1; i <= 8; i++) {
 			if (getEternitied() - 10 >= i) {
 				player.infDimBuyers[i - 1] = true
-				document.getElementById("infauto" + i).textContent = "Auto: ON"
+				document.getElementById("infauto" + i).textContent = "自動：開啟"
 			}
 		}
 	}
@@ -311,8 +311,8 @@ function toggleAllInfDims() {
 
 function loadInfAutoBuyers() {
 	for (var i = 1; i <= 8; i++) {
-		if (player.infDimBuyers[i - 1]) document.getElementById("infauto" + i).textContent = "Auto: ON"
-		else document.getElementById("infauto" + i).textContent = "Auto: OFF"
+		if (player.infDimBuyers[i - 1]) document.getElementById("infauto" + i).textContent = "自動：開啟"
+		else document.getElementById("infauto" + i).textContent = "自動：關閉"
 	}
 	hideMaxIDButton(true)
 }
@@ -345,11 +345,11 @@ function updateInfPower() {
 	document.getElementById("infPowAmount").textContent = shortenMoney(player.infinityPower)
 	if (player.galacticSacrifice && player.pSac == undefined) document.getElementById("infPowEffectPower").textContent = tmp.infPowExp.toFixed(2)
 	document.getElementById("infDimMultAmount").textContent = shortenMoney(tmp.infPow)
-	if (player.currentEternityChall == "eterc7") document.getElementById("infPowPerSec").textContent = "You are getting " +shortenDimensions(DimensionProduction(1))+" Seventh Dimensions per second."
+	if (player.currentEternityChall == "eterc7") document.getElementById("infPowPerSec").textContent = "你每秒正在獲得 " +shortenDimensions(DimensionProduction(1))+" 第七維度。"
 	else {
 		let r = DimensionProduction(1)
 		if (player.pSac != undefined) r = r.div(getEC12Mult())
-		document.getElementById("infPowPerSec").textContent = "You are getting " + shortenDimensions(r) + " Infinity Power per second."
+		document.getElementById("infPowPerSec").textContent = "你每秒正在獲得 " + shortenDimensions(r) + " 無限力量。"
 	}
 }
 
