@@ -254,7 +254,7 @@ function setupToDHTMLandData(){
 		var color = (["紅", "綠", "藍"])[c]
 		var shorthand = (["r", "g", "b"])[c]
 		var branchUpgrades = ["獲得 <span id='" + color + "UpgPow1'></span>x " + color + "夸克自旋，但是 " + color + "夸克的衰變速度快 <span id='" + color + "UpgSpeed1'></span>x。",
-				      "" + color + " <span id='" + color + "UpgName2'></span>夸克的獲得量乘以 x，再 x^x。",
+				      color + " <span id='" + color + "UpgName2'></span>夸克的獲得量乘以 x，再 x^x。",
 				      (["紅", "綠", "藍"])[c]+" <span id='" + color + "UpgName3'></span>夸克的衰變速度慢<span id='" + color + "UpgEffDesc'> 4x</span>。"] //might need to change this to just "slower" once we have 1000+ upgrade 3's
 
 		var html = '你有 <span class="' + color + '" id="' + color + 'QuarksToD" style="font-size: 35px">0</span> ' + color + ' 夸克。<br>'
