@@ -14,7 +14,7 @@ var keySequence2 = 0;
 var failureCount = 0;
 var implosionCheck = 0;
 var TIER_NAMES = [ null, "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight" ];
-var DISPLAY_NAMES = [ null, "第一", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth" ];
+var DISPLAY_NAMES = [ null, "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth" ];
 var break_infinity_js
 var forceHardReset = false;
 var player
