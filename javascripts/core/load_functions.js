@@ -1755,7 +1755,7 @@ function doNGp3Init2(){
                 updateColorPowers()
                 tmp.be=tmp.qu.bigRip.active&&tmp.qu.breakEternity.break
                 document.getElementById("eggonsCell").style.display = player.ghostify.neutrinos.upgrades.includes(2) ? "none" : ""
-                document.getElementById("workerReplWhat").textContent = player.ghostify.neutrinos.upgrades.includes(2) ? "babies" : "eggons"
+                document.getElementById("workerReplWhat").textContent = player.ghostify.neutrinos.upgrades.includes(2) ? "嬰兒" : "複製卵"
                 updateQuantumWorth()
                 if (tmp.qu.autoOptions === undefined) tmp.qu.autoOptions = {}
                 if (tmp.qu.nonMAGoalReached === undefined || !tmp.qu.nonMAGoalReached.length) tmp.qu.nonMAGoalReached = []
