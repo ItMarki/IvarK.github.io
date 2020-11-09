@@ -467,23 +467,23 @@ function setSomeEterEraStuff(){
 		document.getElementById("replicantidiv").style.display="none"
 		document.getElementById("replicantiunlock").style.display="inline-block"
 	}
-        if (!player.replicanti.auto[0]) document.getElementById("replauto1").textContent = "Auto: OFF"
-	if (!player.replicanti.auto[1]) document.getElementById("replauto2").textContent = "Auto: OFF"
-	if (!player.replicanti.auto[2]) document.getElementById("replauto3").textContent = "Auto: OFF"
+        if (!player.replicanti.auto[0]) document.getElementById("replauto1").textContent = "自動：關閉"
+	if (!player.replicanti.auto[1]) document.getElementById("replauto2").textContent = "自動：關閉"
+	if (!player.replicanti.auto[2]) document.getElementById("replauto3").textContent = "自動：關閉"
 
 	updateNotationOption()
 
-	document.getElementById("floatingTextAnimBtn").textContent = "Floating text: " + ((player.options.animations.floatingText) ? "ON" : "OFF")
-	document.getElementById("bigCrunchAnimBtn").textContent = "Big crunch: " + (player.options.animations.bigCrunch === "always" ? "ALWAYS" : player.options.animations.bigCrunch ? "ON" : "OFF")
-	document.getElementById("tachyonParticleAnimBtn").textContent = "Tachyon particles: " + ((player.options.animations.tachyonParticles) ? "ON" : "OFF")
+	document.getElementById("floatingTextAnimBtn").textContent = "浮動文字：" + ((player.options.animations.floatingText) ? "開啟" : "關閉")
+	document.getElementById("bigCrunchAnimBtn").textContent = "大坍縮：" + (player.options.animations.bigCrunch === "always" ? "經常" : player.options.animations.bigCrunch ? "開啟" : "關閉")
+	document.getElementById("tachyonParticleAnimBtn").textContent = "超光速粒子：" + ((player.options.animations.tachyonParticles) ? "開啟" : "關閉")
 
 	if (player.infinitied == 0 && getEternitied() == 0) document.getElementById("infinityPoints2").style.display = "none"
 
 	if (player.eternityChallUnlocked === null) player.eternityChallUnlocked = 0
 	if (player.eternityChallUnlocked !== 0) document.getElementById("eterc"+player.eternityChallUnlocked+"div").style.display = "inline-block"
 
-	if (getEternitied()<1) document.getElementById("infmultbuyer").textContent="Max buy IP mult"
-	else document.getElementById("infmultbuyer").textContent="Autobuy IP mult O"+(player.infMultBuyer?"N":"FF")
+	if (getEternitied()<1) document.getElementById("infmultbuyer").textContent="最大購買無限點數加成"
+	else document.getElementById("infmultbuyer").textContent="無限點數加成自動購買器："+(player.infMultBuyer?"開啟":"關閉")
 
 	if (player.epmult === undefined || player.epmult == 0) {
 		player.epmult = new Decimal(1)
@@ -492,10 +492,10 @@ function setSomeEterEraStuff(){
 }
 
 function setSaveStuffHTML(){
-        document.getElementById("rename").innerHTML = "<p style='font-size:15px'>Rename</p>Name: "+(player.aarexModifications.save_name?player.aarexModifications.save_name:"Save #" + savePlacement)
-	document.getElementById("offlineProgress").textContent = "Offline progress: O"+(player.aarexModifications.offlineProgress?"N":"FF")
-	document.getElementById("autoSave").textContent = "Auto save: " + (player.aarexModifications.autoSave ? "ON" : "OFF")
-	document.getElementById("autoSaveInterval").textContent = "Auto-save interval: " + getAutoSaveInterval() + "s"
+        document.getElementById("rename").innerHTML = "<p style='font-size:15px'>重新命名</p>名稱："+(player.aarexModifications.save_name?player.aarexModifications.save_name:"Save #" + savePlacement)
+	document.getElementById("offlineProgress").textContent = "離線進度："+(player.aarexModifications.offlineProgress?"開啟":"關閉")
+	document.getElementById("autoSave").textContent = "自動保存：" + (player.aarexModifications.autoSave ? "開啟" : "關閉")
+	document.getElementById("autoSaveInterval").textContent = "自動保存間隔：" + getAutoSaveInterval() + " 秒"
 	document.getElementById("autoSaveIntervalSlider").value = getAutoSaveInterval()
 }
 
