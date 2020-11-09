@@ -14,7 +14,7 @@ var keySequence2 = 0;
 var failureCount = 0;
 var implosionCheck = 0;
 var TIER_NAMES = [ null, "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight" ];
-var DISPLAY_NAMES = [ null, "第一", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth" ];
+var DISPLAY_NAMES = [ null, "第一", "第二", "第三", "第四", "第五", "第六", "第七", "第八" ];
 var break_infinity_js
 var forceHardReset = false;
 var player
@@ -232,7 +232,7 @@ function setupPCTableHTMLandData(){
 		var row=pdsDiv.insertRow(d-1)
 		row.id = "pR" + d
 		row.style["font-size"] = "16px"
-		var html = '<td id="pD' + d + '" width="41%">' + DISPLAY_NAMES[d] + ' Paradox Dimension x1</td>'
+		var html = '<td id="pD' + d + '" width="41%">' + DISPLAY_NAMES[d] + '悖論維度 x1</td>'
 		html += '<td id="pA' + d + '">0 (0)</td>'
 		html += '<td align="right" width="10%"><button id="pB'+d+'" style="color:black; width:195px; height:30px" class="storebtn" align="right" onclick="buyPD('+d+')">Cost: ??? Px</button></td></tr>'
 		row.innerHTML = html
@@ -240,7 +240,7 @@ function setupPCTableHTMLandData(){
 		var row=edsDiv.insertRow(d - 1)
 		row.id = "empRow" + d
 		row.style["font-size"] = "15px"
-		var html = '<td id="empD' + d + '" width="41%">' + DISPLAY_NAMES[d] + ' Emperor Dimension x1</td>'
+		var html = '<td id="empD' + d + '" width="41%">' + DISPLAY_NAMES[d] + '皇帝維度 x1</td>'
 		html += '<td id="empAmount' + d + '"></td>'
 		html += '<td><span class="empQuarks" id="empQuarks' + d + '">0</span> preons/s</td>'
 		html += '<td align="right" width="2.5%"><button id="empFeedMax' + d + '" style="color:black; width:70px; font-size:10px" class="storebtn" align="right" onclick="feedReplicant('+d+', true)">Max</button></td>'
@@ -253,15 +253,15 @@ function setupToDHTMLandData(){
 	for (var c = 0; c < 3; c++) {
 		var color = (["red", "green", "blue"])[c]
 		var shorthand = (["r", "g", "b"])[c]
-		var branchUpgrades = ["Gain <span id='" + color + "UpgPow1'></span>x " + color + " quark spins, but " + color + " quarks decay <span id='" + color + "UpgSpeed1'></span>x faster.",
+		var branchUpgrades = ["獲得 <span id='" + color + "UpgPow1'></span>x " + color + " 夸克自旋，但是 " + color + " 夸克的衰變速度快 <span id='" + color + "UpgSpeed1'></span>x。",
 				      "The gain of " + color + " <span id='" + color + "UpgName2'></span> quarks is multiplied by x and then raised to the power of x.",
 				      (["Red", "Green", "Blue"])[c]+" <span id='" + color + "UpgName3'></span> quarks decay<span id='" + color + "UpgEffDesc'> 4x</span> slower."] //might need to change this to just "slower" once we have 1000+ upgrade 3's
 
-		var html = 'You have <span class="' + color + '" id="' + color + 'QuarksToD" style="font-size: 35px">0</span> ' + color + ' quarks.<br>'
+		var html = '你有 <span class="' + color + '" id="' + color + 'QuarksToD" style="font-size: 35px">0</span> ' + color + ' 夸克。<br>'
 		html += '<button class="storebtn" id="' + color + 'UnstableGain" style="width: 240px; height: 80px" onclick="unstableQuarks(\'' + shorthand + '\')"></button><br>'
-		html += 'You have <span class="' + color + '" id="' + color + 'QuarkSpin" style="font-size: 35px">0.0</span> ' + color + ' quark spin.'
+		html += '你有 <span class="' + color + '" id="' + color + 'QuarkSpin" style="font-size: 35px">0.0</span> ' + color + ' 夸克自旋。'
 		html += '<span class="' + color + '" id="' + color + 'QuarkSpinProduction" style="font-size: 25px">+0/s</span><br>'
-		html += "You have <span class='" + color + "' id='" + color + "UnstableQuarks' style='font-size: 35px'>0</span> " + color + " <span id='" + shorthand + "UQName'></span> quarks.<br>"
+		html += "你有 <span class='" + color + "' id='" + color + "UnstableQuarks' style='font-size: 35px'>0</span> " + color + " <span id='" + shorthand + "UQName'></span> 夸克。<br>"
 		html += "<span id='" + color + "QuarksDecayRate'></span>.<br>"
 		html += "They will last <span id='" + color + "QuarksDecayTime'></span>."
 		document.getElementById("todRow").insertCell(c).innerHTML = html
