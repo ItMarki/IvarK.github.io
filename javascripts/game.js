@@ -275,7 +275,7 @@ function setupToDHTMLandData(){
 		}
 		html += "</tr></tr><td></td><td><button class='gluonupgrade unavailablebtn' id='" + shorthand + "RadioactiveDecay' style='font-size:9px' onclick='radioactiveDecay(\"" + shorthand + "\")'>Reset to strengthen the 1st upgrade, but nerf this branch.<br><span id='" + shorthand + "RDReq'></span><br>Radioactive Decays: <span id='" + shorthand + "RDLvl'></span></button></td><td></td>"
 		html += "</tr></table>"
-		document.getElementById(color + "分支").innerHTML = html
+		document.getElementById(color + "Branch").innerHTML = html
 	}
 }
 
