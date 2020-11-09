@@ -2037,7 +2037,7 @@ function updateNGp3DisplayStuff(){
                 if (u%3==1) document.getElementById("neutrinoUpg"+u).parentElement.parentElement.style.display=u>player.ghostify.times+2?"none":""
                 else document.getElementById("neutrinoUpg"+u).style.display=u>player.ghostify.times+2?"none":""
         }
-        document.getElementById("neutrinoBoost3Effect").textContent = tmp.ngp3l ? "它們將第十四膨脹升級的上限從 3.00x 加強至" : "它們移除第十四膨脹升級的上限，然後將該升級加強 "
+        document.getElementById("neutrinoBoost3Effect").textContent = tmp.ngp3l ? "它們將第十四膨脹升級的上限從 3.00x 增加至" : "它們移除第十四膨脹升級的上限，然後將該升級加強 "
         document.getElementById("gphUnl").textContent="你需要在大撕裂裡達到 "+shortenCosts(Decimal.pow(10,6e9))+" 反物質才可以解鎖幽靈光子。"
         document.getElementById("lightBoost4Type").textContent=tmp.ngp3l?"前子":"總綠色力量"
         updateBLUnlockDisplay()
