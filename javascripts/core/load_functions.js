@@ -616,7 +616,7 @@ function doNGM1Versions(){
                 for (i=1;i<=8;i++) player["timeDimension"+i].power = player["timeDimension"+i].power.div(pow_div[i]);
                 if (player.eternityChalls.eterc11 == 1) delete player.eternityChalls.eterc11
                 else player.eternityChalls.eterc11--
-                $.notify('Your NG- save has been updated due to few balancing issues.', 'info')
+                $.notify('由於該模式有少許平衡問題，你的 NG- 存檔被更新。', 'info')
         }
 }
 
@@ -872,7 +872,7 @@ function doInitNGp2NOT3Stuff(){
                                 player.aarexModifications.quantumConf = true
                         }
                         player.aarexModifications.newGamePlusVersion = 1
-                        if (confirm("Do you want to migrate your NG++ save into new NG+++ mode?")) {
+                        if (confirm("你確定要講你的 NG++ 存檔移到新 NG+++ 模式？")) {
                                 doNGP3NewPlayerStuff()
                         }
                         player.dilation.upgrades=migratedUpgrades
@@ -959,7 +959,7 @@ function doQuantumRestore(){
         }
         if (player.aarexModifications.newGamePlusPlusVersion < 2.901) {
                 player.aarexModifications.quantumConf = true
-                $.notify('NG++ was updated to include quantum reset.', 'info')
+                $.notify('NG++ 已更新以包括量子重置。', 'info')
         }
         if (player.aarexModifications.newGamePlusPlusVersion < 2.9011 && player.autoEterOptions === undefined) {
                 player.autoEterOptions = {epmult:false}
@@ -1319,8 +1319,8 @@ function doNGp3v21tov221(){
                 tmp.bl=player.ghostify.bl
         }
         if (player.aarexModifications.newGame3PlusVersion < 2.21) {
-                if (prompt("Welcome to the NG+3.1 update! You are receiving this message because this save has been made before the update. This update changes and rebalances NG+3 significantly. It is recommended to migrate your save as NG+3.1 is the better rebalanced experience, but if you don't want to start playing NG+3.1 on this save yet, type 'legacy' on the input box. You can proceed to migrate later on.") == "legacy") {
-                        alert("WARNING: There are some boosts that work the same as in NG+3.1, not in the Bosonic Update. Have any questions or suggestions about these changes? Give feedback in the Discord server!")
+                if (prompt("歡迎來到 NG+3.1 模式！你在接收這個信息，因為這個存檔在該更新之前就已經被創造。此更新大幅更改及重新平衡 NG+3。很推薦移動你的存檔，因為 NG+3.1 更平衡，遊玩體驗也更好，但是如果你不想在這個存檔裡玩 NG+3.1，請在輸入箱裡輸入'legacy'。你可以後來移動存檔。") == "legacy") {
+                        alert("警告：有一些在 NG+3.1 裡運行方法相同的加成不在玻色子更新裡。如果你有提問或建議，你可以在 Discord 伺服器裡提供。")
                         player.aarexModifications.ngp3lV = 1
                         tmp.ngp3l = true
                 }
@@ -1388,7 +1388,7 @@ function doNGm2v11tov3(){
                 player.galacticSacrifice = {}
                 player.galacticSacrifice = resetGalacticSacrifice()
                 player.galacticSacrifice.galaxyPoints = player.galaxyPoints
-                $.notify('Your NG-- save has been updated because dan-simon made upgrades for Galactic Sacrifice.', 'info')
+                $.notify('你的 NG-- 存檔已更新，因為 dan-simon 製作了星系犧牲的升級。', 'info')
                 player.aarexModifications.newGameMinusMinusVersion = 1.2
                 delete player.galaxyPoints
         }
@@ -1682,7 +1682,7 @@ function doInitInfMultStuff(){
         if (GUBought("gb3")) ipMultPower=2.3
         if (player.aarexModifications.newGameExpVersion !== undefined) ipMultCostIncrease=4
         else ipMultCostIncrease=10
-        document.getElementById("infiMult").innerHTML = "You gain " + ipMultPower + "x more IP.<br>Currently: "+shortenDimensions(getIPMult()) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+        document.getElementById("infiMult").innerHTML = "你獲得 " + ipMultPower + "x 無限點數。<br>目前："+shortenDimensions(getIPMult()) +"x<br>價格："+shortenCosts(player.infMultCost)+" 無限點數"
 }
 
 function dov12tov122(){
@@ -1817,31 +1817,31 @@ function setConfirmationsDisplay(){
         document.getElementById("leConfirmBtn").style.display = ghostified && player.ghostify.ghostlyPhotons.enpowerments ? "inline-block" : "none"
 
         document.getElementById("confirmation").checked = !player.options.sacrificeConfirmation
-        document.getElementById("sacConfirmBtn").textContent = "Sacrifice confirmation: O" + (player.options.sacrificeConfirmation ? "N" : "FF")
+        document.getElementById("sacConfirmBtn").textContent = "犧牲確認：" + (player.options.sacrificeConfirmation ? "開啟" : "關閉")
         document.getElementById("gConfirmation").checked = !player.options.gSacrificeConfirmation
-        document.getElementById("gSacConfirmBtn").textContent = "Galactic sacrifice confirmation: O" + (player.options.gSacrificeConfirmation ? "N" : "FF")
-        document.getElementById("challengeconfirmation").textContent = "Challenge confirmation: O" + (player.options.challConf ? "N" : "FF")
-        document.getElementById("eternityconf").textContent = "Eternity confirmation: O" + (player.options.eternityconfirm ? "N" : "FF")
-        document.getElementById("dilationConfirmBtn").textContent = "Dilation confirmation: O" + (player.aarexModifications.dilationConf ? "N" : "FF")
-        document.getElementById("exdilationConfirmBtn").textContent = "Reverse dilation confirmation: O" + (player.options.exdilationconfirm ? "N" : "FF")
-        document.getElementById("quantumConfirmBtn").textContent = "Quantum confirmation: O" + (player.aarexModifications.quantumConf ? "N" : "FF")
-        document.getElementById("bigRipConfirmBtn").textContent = "Big Rip confirmation: O" + ((player.masterystudies === undefined ? false : tmp.qu.bigRip.conf) ? "N" : "FF")
-        document.getElementById("ghostifyConfirmBtn").textContent = "Ghostify confirmation: O" + (player.aarexModifications.ghostifyConf ? "N" : "FF")
-        document.getElementById("leConfirmBtn").textContent = "Light Empowerment confirmation: O" + (player.aarexModifications.leNoConf ? "FF" : "N")
+        document.getElementById("gSacConfirmBtn").textContent = "星系犧牲確認：" + (player.options.gSacrificeConfirmation ? "開啟" : "關閉")
+        document.getElementById("challengeconfirmation").textContent = "挑戰確認：" + (player.options.challConf ? "開啟" : "關閉")
+        document.getElementById("eternityconf").textContent = "永恆確認：" + (player.options.eternityconfirm ? "開啟" : "關閉")
+        document.getElementById("dilationConfirmBtn").textContent = "膨脹確認：" + (player.aarexModifications.dilationConf ? "開啟" : "關閉")
+        document.getElementById("exdilationConfirmBtn").textContent = "逆膨脹確認：" + (player.options.exdilationconfirm ? "開啟" : "關閉")
+        document.getElementById("quantumConfirmBtn").textContent = "量子確認：" + (player.aarexModifications.quantumConf ? "開啟" : "關閉")
+        document.getElementById("bigRipConfirmBtn").textContent = "大撕裂確認：" + ((player.masterystudies === undefined ? false : tmp.qu.bigRip.conf) ? "開啟" : "關閉")
+        document.getElementById("ghostifyConfirmBtn").textContent = "幽靈化確認：" + (player.aarexModifications.ghostifyConf ? "開啟" : "關閉")
+        document.getElementById("leConfirmBtn").textContent = "光強化確認：" + (player.aarexModifications.leNoConf ? "關閉" : "開啟")
 }
 
 function setOptionsDisplaysStuff1(){
-        document.getElementById("progressBarBtn").textContent = (player.aarexModifications.progressBar?"Hide":"Show")+" progress bar"
-        document.getElementById("toggleLogRateChange").textContent = "Logarithm rate: O"+(player.aarexModifications.logRateChange?"N":"FF")
-        document.getElementById("tabsSave").textContent = "Saved tabs: O"+(player.aarexModifications.tabsSave.on?"N":"FF")
+        document.getElementById("progressBarBtn").textContent = (player.aarexModifications.progressBar?"隱藏":"顯示")+"進度條"
+        document.getElementById("toggleLogRateChange").textContent = "對數速率："+(player.aarexModifications.logRateChange?"開啟":"關閉")
+        document.getElementById("tabsSave").textContent = "保存標籤："+(player.aarexModifications.tabsSave.on?"開啟":"關閉")
         updatePerformanceTicks()
         dimDescEnd = (player.aarexModifications.logRateChange?" OoM":"%")+"/s)"
 
         document.getElementById("maxHighestTD").parentElement.parentElement.style.display = player.aarexModifications.ngmX > 3 ? "" : "none"
-        document.getElementById("maxHighestTD").textContent = "Max only highest Time Dimensions: O"+(player.aarexModifications.maxHighestTD?"N":"FF")
+        document.getElementById("maxHighestTD").textContent = "只最大購買最高級時間維度："+(player.aarexModifications.maxHighestTD?"開啟":"關閉")
 
         document.getElementById("quickMReset").style.display = pSacrificed() ? "" : "none"
-        document.getElementById("quickMReset").textContent = "Quick matter reset: O"+(player.aarexModifications.quickReset?"N":"FF")
+        document.getElementById("quickMReset").textContent = "快速物質重置："+(player.aarexModifications.quickReset?"開啟":"關閉")
 
         document.getElementById("quantumtabbtn").style.display = quantumed ? "" : "none"
         document.getElementById("ghostifytabbtn").style.display = ghostified ? "" : "none"
@@ -1866,20 +1866,20 @@ function setOptionsDisplaysStuff1(){
 
         document.getElementsByClassName("hideInMorse").display = player.options.notation == "Morse code" ? "none" : ""
 
-        document.getElementById("decimalMode").textContent = "Big number library: "+(break_infinity_js?"break_infinity (slow)":"logarithmica_numerus (fast)")
+        document.getElementById("decimalMode").textContent = "大數字計算法："+(break_infinity_js?"break_infinity（慢）":"logarithmica_numerus（快）")
         document.getElementById("decimalMode").style.visibility = Decimal.gt(player.totalmoney,Decimal.pow(10, 9e15)) ? "hidden" : ""
-        document.getElementById("hideProductionTab").textContent = (player.aarexModifications.hideProductionTab?"Show":"Hide")+" production tab"
-        document.getElementById("hideRepresentation").textContent=(player.aarexModifications.hideRepresentation?"Show":"Hide")+" antimatter representation"
-        document.getElementById("showAchRowNums").textContent=(player.aarexModifications.showAchRowNums?"Hide":"Show")+" achievement row info"
-        document.getElementById("hideCompletedAchs").textContent=(player.aarexModifications.hideCompletedAchs?"Show":"Hide")+" completed achievement rows"
-        document.getElementById("hideSecretAchs").textContent=(player.aarexModifications.hideSecretAchs?"Show":"Hide")+" secret achievements"
+        document.getElementById("hideProductionTab").textContent = (player.aarexModifications.hideProductionTab?"顯示":"隱藏")+"生產圖表標籤"
+        document.getElementById("hideRepresentation").textContent=(player.aarexModifications.hideRepresentation?"顯示":"隱藏")+"反物質代表資料"
+        document.getElementById("showAchRowNums").textContent=(player.aarexModifications.showAchRowNums?"隱藏":"顯示")+"成就列資料"
+        document.getElementById("hideCompletedAchs").textContent=(player.aarexModifications.hideCompletedAchs?"顯示":"隱藏")+"完成的成就列"
+        document.getElementById("hideSecretAchs").textContent=(player.aarexModifications.hideSecretAchs?"顯示":"隱藏")+"隱藏成就"
 }
 
 function setDisplaysStuff1(){
         document.getElementById("secretstudy").style.opacity = 0
         document.getElementById("secretstudy").style.cursor = "pointer"
   
-        document.getElementById("bestAntimatterType").textContent = player.masterystudies && quantumed ? "Your best meta-antimatter for this quantum" : "Your best-ever meta-antimatter"
+        document.getElementById("bestAntimatterType").textContent = player.masterystudies && quantumed ? "在本次量子裡的最大量元反物質" : "在本存檔裡的最大量元反物質"
 
         document.getElementById("masterystudyunlock").style.display = player.dilation.upgrades.includes("ngpp6") && player.masterystudies ? "" : "none"
         document.getElementById("respecMastery").style.display = player.dilation.upgrades.includes("ngpp6") && player.masterystudies ? "block" : "none"
@@ -1933,7 +1933,7 @@ function setInfChallengeDisplay(){
                 document.getElementById("ic3div").style.display=""
                 document.getElementById("ic2div").appendChild(document.getElementById("postc2").parentElement.parentElement)
         }
-        document.getElementById("postc2reward").textContent = "Reward: "+(player.galacticSacrifice?"S":"Get the sacrifice autobuyer, and s")+"acrifice is more powerful."
+        document.getElementById("postc2reward").textContent = "獎勵："+(player.galacticSacrifice?"":"獲得犧牲自動購買器，而且")+"犧牲效果更強。"
         if (player.tickspeedBoosts == undefined) {
                 document.getElementById("icngm3_row").style.display="none"
                 document.getElementById("icngm3_row2").style.display="none"
@@ -1974,24 +1974,24 @@ function setOtherChallDisplay(){
         document.getElementById("postinfbtn").style.display=player.infinityUpgradesRespecced?"none":""
   
         if (player.infinityUpgradesRespecced != undefined) order = []
-        document.getElementById("ic1desc").textContent="All the previous challenges (except for the Tickspeed challenge"+(player.galacticSacrifice?',':" and")+" Automatic Big Crunch challenge"+(player.galacticSacrifice?", and Automatic Galactic Sacrifice challenge":"")+") are applied at once."
-        document.getElementById("ic1reward").textContent="Reward: Get "+(player.galacticSacrifice?2:1.3)+"x on all Infinity Dimensions for each Infinity Challenge completed."
-        document.getElementById("ic2desc").textContent=(player.tickspeedBoosts==undefined?"":"Infinity Dimensions are disabled, but Sacrifice is way stronger. ")+"You automatically sacrifice every 8 ticks once you have the 8th Dimension."
-        document.getElementById("ic4desc").textContent=player.tickspeedBoosts==undefined?"Only the latest bought Normal Dimension's production is normal, all other Normal Dimensions produce less.":"All Normal Dimension multipliers are square rooted without the dilation penalty."
-        document.getElementById("ic5desc").textContent=player.tickspeedBoosts==undefined?"When buying Normal Dimensions 1-4, everything with costs smaller or equal increases. When buying Normal Dimensions 5-8, everything with costs bigger or equal increases. When buying tickspeed, everything with the same cost increases.":"You can't get tickspeed upgrades and galaxies. Tickspeed Boosts boost tickspeed instead."
-        document.getElementById("ic7desc").textContent="You can't get Antimatter Galaxies, but the Dimension Boost multiplier "+(player.galacticSacrifice?"is cubed":"is increased to 10x")+"."
-        document.getElementById("ic7reward").textContent="Reward: The Dimension Boost multiplier "+(player.galacticSacrifice? "is squared":" is increased to 4x.")
+        document.getElementById("ic1desc").textContent="同時進行所有之前的挑戰（除了時間速度升級挑戰"+(player.galacticSacrifice?'、':"和")+"大坍縮自動購買器挑戰"+(player.galacticSacrifice?"和星系犧牲自動購買器挑戰":"")+"）。"
+        document.getElementById("ic1reward").textContent="獎勵：每完成一個無限挑戰，所有無限維度的倍數都會 "+(player.galacticSacrifice?2:1.3)+"x。"
+        document.getElementById("ic2desc").textContent=(player.tickspeedBoosts==undefined?"":"禁用無限維度，但是犧牲極強。")+"當你擁有第八反物質維度，每8個指令周期自動犧牲。"
+        document.getElementById("ic4desc").textContent=player.tickspeedBoosts==undefined?"只有最近購買的反物質維度正常地生產，其他反物質維度減少生產。":"所有反物質維度的加成都加上平方根，但沒有膨脹懲罰。"
+        document.getElementById("ic5desc").textContent=player.tickspeedBoosts==undefined?"購買第一至第四維度時，所有比它小的價格會上升；購買第五至第八維度時，所有比它大的價格會上升。購買時間速度升級時，所有跟它相同的價格會上升。":"你不能獲得時間速度升級和星系。時間速度提升加強時間速度。"
+        document.getElementById("ic7desc").textContent="你不能獲得反物質星系，但維度提升的倍數"+(player.galacticSacrifice?"變為它的立方":"提升至 10x")+"。"
+        document.getElementById("ic7reward").textContent="獎勵：維度提升的倍數"+(player.galacticSacrifice? "變為它的平方。":"提升至 4x。")
         document.getElementById("replicantitabbtn").style.display=player.infinityUpgradesRespecced?"none":""
-        document.getElementById("replicantiresettoggle").textContent="Auto galaxy "+(player.replicanti.galaxybuyer?"ON":"OFF")+(player.timestudy.studies.includes(131)&&speedrunMilestonesReached<20?" (disabled)":"")
+        document.getElementById("replicantiresettoggle").textContent="星系自動購買器"+(player.replicanti.galaxybuyer?"開啟":"關閉")+(player.timestudy.studies.includes(131)&&speedrunMilestonesReached<20?"（禁用）":"")
 }
 
 function setTSDisplay(){
         document.getElementById("41desc").textContent=tsMults[41]()
-        document.getElementById("42desc").textContent=player.galacticSacrifice?"Galaxy cost multiplier is reduced by "+Math.round(tsMults[42]()*15)+"/15x.":"Galaxy cost increases by "+(60*tsMults[42]())+" 8ths instead of 60."
+        document.getElementById("42desc").textContent=player.galacticSacrifice?"星系價格加成減少 "+Math.round(tsMults[42]()*15)+"/15x。":"購買星系所需的第八維度由增加 60 降至 "+(60*tsMults[42]())+"。"
         document.getElementById("61desc").innerHTML=tsMults[61]()
         document.getElementById("62desc").textContent=tsMults[62]()
-        document.getElementById("81desc").textContent=player.galacticSacrifice?"is cubed":"becomes 10x"
-        document.getElementById("181desc").textContent = player.galacticSacrifice !== undefined && player.tickspeedBoosts === undefined && !tmp.ngp3l ? "1% of your GP and IP gain on next reset" : "1% of your IP gained on crunch"
+        document.getElementById("81desc").textContent=player.galacticSacrifice?"變為它的立方":"變為 10x"
+        document.getElementById("181desc").textContent = player.galacticSacrifice !== undefined && player.tickspeedBoosts === undefined && !tmp.ngp3l ? "1% 的你下次重置能夠獲得的星系點數和無限點數" : "1% 的大擠壓能夠獲得的無限點數"
         document.getElementById("211desc").textContent=tsMults[211]()
         document.getElementById("213desc").textContent=tsMults[213]()
         document.getElementById("221").style["font-size"] = tmp.ngp3 ? "0.45rem" : "0.55rem"
@@ -2010,36 +2010,36 @@ function updateNGp3DisplayStuff(){
         if (quantumed) giveAchievement("Sub-atomic")
         if (tmp.qu.best<=10) giveAchievement("Quantum doesn't take so long")
         if (ghostified) giveAchievement("Kee-hee-hee!")
-        document.getElementById('reward3disable').textContent="6 hours reward: O"+(tmp.qu.disabledRewards[3]?"FF":"N")
-        document.getElementById('reward4disable').textContent="4.5 hours reward: O"+(tmp.qu.disabledRewards[4]?"FF":"N")
-        document.getElementById('reward11disable').textContent="33.3 mins reward: O"+(tmp.qu.disabledRewards[11]?"FF":"N")
-        document.getElementById('reward27disable').textContent="10 seconds reward: O"+(tmp.qu.disabledRewards[27]?"FF":"N")
-        document.getElementById('rebuyupgauto').textContent="Rebuyable upgrade auto: O"+(player.autoEterOptions.rebuyupg?"N":"FF")
-        document.getElementById('dilUpgsauto').textContent="Auto-buy dilation upgrades: O"+(player.autoEterOptions.dilUpgs?"N":"FF")
-        document.getElementById('metaboostauto').textContent="Meta-boost auto: O"+(player.autoEterOptions.metaboost?"N":"FF")
+        document.getElementById('reward3disable').textContent="6 小時獎勵："+(tmp.qu.disabledRewards[3]?"關閉":"開啟")
+        document.getElementById('reward4disable').textContent="4.5 小時獎勵："+(tmp.qu.disabledRewards[4]?"關閉":"開啟")
+        document.getElementById('reward11disable').textContent="33.3 分鐘獎勵："+(tmp.qu.disabledRewards[11]?"關閉":"開啟")
+        document.getElementById('reward27disable').textContent="10 秒獎勵："+(tmp.qu.disabledRewards[27]?"關閉":"開啟")
+        document.getElementById('rebuyupgauto').textContent="重複購買的升級自動購買器："+(player.autoEterOptions.rebuyupg?"開啟":"關閉")
+        document.getElementById('dilUpgsauto').textContent="自動購買膨脹升級："+(player.autoEterOptions.dilUpgs?"開啟":"關閉")
+        document.getElementById('metaboostauto').textContent="自動元維度提升："+(player.autoEterOptions.metaboost?"開啟":"關閉")
         document.getElementById('priorityquantum').value=formatValue("Scientific", new Decimal(tmp.qu.autobuyer.limit), 2, 0)
         document.getElementById("gluonCharger1").style.display = tmp.ngp3l ? "none" : ""
         document.getElementById("gluonCharger2").style.display = tmp.ngp3l ? "none" : ""
         document.getElementById('rg4toggle').style.display=(!tmp.ngp3l||inQC(1)||QCIntensity(1))?"none":""
-        document.getElementById('rg4toggle').textContent="Toggle: O"+(tmp.qu.rg4?"N":"FF")
+        document.getElementById('rg4toggle').textContent="切換："+(tmp.qu.rg4?"開啟":"關閉")
         document.getElementById("respecPC").className=tmp.qu.pairedChallenges.respec?"quantumbtn":"storebtn"
-        document.getElementById('sacrificeAuto').textContent="Auto: O"+(tmp.qu.autoOptions.sacrifice?"N":"FF")
-        document.getElementById("produceQuarkCharge").innerHTML="S" + (tmp.qu.nanofield.producingCharge ? "top" : "tart") + " production of preon charge." + (tmp.qu.nanofield.producingCharge ? "" : "<br>(You will not get preons when you do this.)")
+        document.getElementById('sacrificeAuto').textContent="自動："+(tmp.qu.autoOptions.sacrifice?"開啟":"關閉")
+        document.getElementById("produceQuarkCharge").innerHTML="" + (tmp.qu.nanofield.producingCharge ? "停止" : "開始") + "前子動力的生產。" + (tmp.qu.nanofield.producingCharge ? "" : "<br>（進行這個時你不會獲得前子。）")
         document.getElementById("ratio_r").value = tmp.qu.assignAllRatios.r
         document.getElementById("ratio_g").value = tmp.qu.assignAllRatios.g
         document.getElementById("ratio_b").value = tmp.qu.assignAllRatios.b
-        document.getElementById('autoAssign').textContent="Auto: O"+(tmp.qu.autoOptions.assignQK?"N":"FF")
-        document.getElementById('autoAssignRotate').textContent="Rotation: "+(tmp.qu.autoOptions.assignQKRotate>1?"Left":tmp.qu.autoOptions.assignQKRotate?"Right":"None")
-        document.getElementById('autoReset').textContent="Auto: O"+(tmp.qu.autoOptions.replicantiReset?"N":"FF")
+        document.getElementById('autoAssign').textContent="自動："+(tmp.qu.autoOptions.assignQK?"開啟":"關閉")
+        document.getElementById('autoAssignRotate').textContent="旋轉："+(tmp.qu.autoOptions.assignQKRotate>1?"左":tmp.qu.autoOptions.assignQKRotate?"右":"無")
+        document.getElementById('autoReset').textContent="自動："+(tmp.qu.autoOptions.replicantiReset?"開啟":"關閉")
         document.getElementById("nanofieldtabbtn").style.display=player.masterystudies.includes("d12")?"":"none"
-        document.getElementById("ghostifyAnimBtn").textContent="Ghostify: O"+(player.options.animations.ghostify?"N":"FF")
+        document.getElementById("ghostifyAnimBtn").textContent="幽靈化："+(player.options.animations.ghostify?"開啟":"關閉")
         for (var u=5;u<13;u++) {
                 if (u%3==1) document.getElementById("neutrinoUpg"+u).parentElement.parentElement.style.display=u>player.ghostify.times+2?"none":""
                 else document.getElementById("neutrinoUpg"+u).style.display=u>player.ghostify.times+2?"none":""
         }
-        document.getElementById("neutrinoBoost3Effect").textContent = tmp.ngp3l ? "They increase the limit of 14th dilation upgrade from 3.00x to" : "They remove the limit of 14th dilation upgrade and then boost that upgrade by "
-        document.getElementById("gphUnl").textContent="To unlock Ghostly Photons, you need to get "+shortenCosts(Decimal.pow(10,6e9))+" antimatter while your universe is Big Ripped first."
-        document.getElementById("lightBoost4Type").textContent=tmp.ngp3l?"preon":"total green power"
+        document.getElementById("neutrinoBoost3Effect").textContent = tmp.ngp3l ? "它們將第十四膨脹升級的上限從 3.00x 加強至" : "它們移除第十四膨脹升級的上限，然後將該升級加強 "
+        document.getElementById("gphUnl").textContent="你需要在大撕裂裡達到 "+shortenCosts(Decimal.pow(10,6e9))+" 反物質才可以解鎖幽靈光子。"
+        document.getElementById("lightBoost4Type").textContent=tmp.ngp3l?"前子":"總綠色力量"
         updateBLUnlockDisplay()
         document.getElementById("bpc68").textContent=shortenMoney(tmp.qu.pairedChallenges.pc68best)
         document.getElementById("odSlider").value=Math.round((tmp.bl.odSpeed-1)/4*50)
@@ -2058,7 +2058,7 @@ function updateNGp3DisplayStuff(){
         updateBLUnlocks()
         updateBosonicStuffCosts()
         if (!tmp.ngp3l) {
-                document.getElementById("nextParticle").textContent = "To unlock the next particle (Higgs Bosons), you need to get " + shortenCosts(Decimal.pow(10, 2e17)) + " antimatter and " + shortenCosts(getHiggsRequirement()) + " Bosonic Antimatter first."
+                document.getElementById("nextParticle").textContent = "你需要達到 " + shortenCosts(Decimal.pow(10, 2e17)) + " 反物質和 " + shortenCosts(getHiggsRequirement()) + " 玻色子反物質才可以解鎖下一個粒子（希格斯玻色子）。"
         }
         updateHiggsUnlocks()
 }
@@ -2067,16 +2067,16 @@ function setSomeQuantumAutomationDisplay(){
         var suffix = "NG" + (player.meta != undefined ? "pp" : "ud")
         document.getElementById("uhDiv" + suffix).appendChild(document.getElementById("Universal harmony"))
         document.getElementById("feDiv" + suffix).appendChild(document.getElementById("In the grim darkness of the far endgame"))
-        document.getElementById("dil14desc").textContent = player.aarexModifications.nguspV ? "The TP multiplier upgrade is more powerful." : "Increase the exponent of the TP formula."
+        document.getElementById("dil14desc").textContent = player.aarexModifications.nguspV ? "超光速粒子加成升級更強。" : "增加超光速粒子公式的指數。"
         document.getElementById("dil52").style["font-size"] = player.masterystudies == undefined || player.aarexModifications.nguspV !== undefined ? "10px" : "9px"
         document.getElementById("dil52formula").style.display = player.masterystudies == undefined || player.aarexModifications.nguspV !== undefined ? "none" : ""
-        document.getElementById("exDilationDesc").innerHTML = player.aarexModifications.nguspV ? 'making galaxies <span id="exDilationBenefit" style="font-size:25px; color: black">0</span>% stronger in dilation.' : 'making dilation <span id="exDilationBenefit" style="font-size:25px; color: black">0</span>% less severe.'
+        document.getElementById("exDilationDesc").innerHTML = player.aarexModifications.nguspV ? '將星系在膨脹裡強 <span id="exDilationBenefit" style="font-size:25px; color: black">0</span>%。' : '將膨脹的懲罰減輕 <span id="exDilationBenefit" style="font-size:25px; color: black">0</span>%。'
         document.getElementById("metaAntimatterEffectType").textContent=inQC(3) ? "multiplier on all Infinity Dimensions" : "extra multiplier per Dimension Boost"
         if (player.meta) {
-                document.getElementById('epmultauto').textContent="Auto: O"+(player.autoEterOptions.epmult?"N":"FF")
-                for (i=1;i<9;i++) document.getElementById("td"+i+'auto').textContent="Auto: O"+(player.autoEterOptions["td"+i]?"N":"FF")
+                document.getElementById('epmultauto').textContent="自動："+(player.autoEterOptions.epmult?"開啟":"關閉")
+                for (i=1;i<9;i++) document.getElementById("td"+i+'auto').textContent="自動："+(player.autoEterOptions["td"+i]?"開啟":"關閉")
         }
-        document.getElementById('replicantibulkmodetoggle').textContent="Mode: "+(player.galaxyMaxBulk?"Max":"Singles")
+        document.getElementById('replicantibulkmodetoggle').textContent="模式："+(player.galaxyMaxBulk?"最大量":"單個")
         document.getElementById('versionMod').textContent = tmp.ngp3l ? "NG+3: Legacy" : "New Game Plus 3"
         document.getElementById('versionDesc').style.display = tmp.ngp3 ? "" : "none"
         document.getElementById('sacrificeAuto').style.display=speedrunMilestonesReached>24?"":"none"
@@ -2097,10 +2097,10 @@ function setReplAutoDisplay(){
         document.getElementById("blackHoleAnimBtn").style.display="none"
         if (player.exdilation != undefined) {
                 if (player.dilation.studies.includes(1)) document.getElementById("dilationeterupgrow").style.display="table-row"
-                document.getElementById("blackHoleAnimBtn").textContent = "Black hole: " + ((player.options.animations.blackHole) ? "ON" : "OFF")
+                document.getElementById("blackHoleAnimBtn").textContent = "黑洞：" + ((player.options.animations.blackHole) ? "開啟" : "關閉")
                 document.getElementById("blackholeMax").style.display = player.aarexModifications.ngudpV || player.aarexModifications.nguspV ? "" : "none"
                 document.getElementById("blackholeAuto").style.display = player.aarexModifications.ngudpV && player.achievements.includes("ngpp17") ? "" : "none"
-                document.getElementById('blackholeAuto').textContent="Auto: O"+(player.aarexModifications.ngudpV&&player.autoEterOptions.blackhole?"N":"FF")
+                document.getElementById('blackholeAuto').textContent="自動："+(player.aarexModifications.ngudpV&&player.autoEterOptions.blackhole?"開啟":"關閉")
                 if (player.blackhole.unl == true) {
                         document.getElementById("blackholediv").style.display="inline-block"
                         document.getElementById("blackholeunlock").style.display="none"
