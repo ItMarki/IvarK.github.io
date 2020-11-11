@@ -258,13 +258,13 @@ function isLimitUpgAffordable() {
 
 function getLimitMsg() {
 	if (!player.masterystudies.includes("d11")) return tmp.qu.replicants.limit
-	return getFullExpansion(tmp.qu.replicants.limit) + " ED" + tmp.qu.replicants.limitDim + "s"
+	return getFullExpansion(tmp.qu.replicants.limit) + " ED" + tmp.qu.replicants.limitDim + ""
 }
 
 function getNextLimitMsg() {
 	if (!player.masterystudies.includes("d11")) return tmp.qu.replicants.limit+1
-	if (tmp.qu.replicants.limit > 9 && tmp.qu.replicants.limitDim < 8) return "1 ED" + (tmp.qu.replicants.limitDim + 1) + "s"
-	return getFullExpansion(tmp.qu.replicants.limit + 1) + " ED" + tmp.qu.replicants.limitDim + "s"
+	if (tmp.qu.replicants.limit > 9 && tmp.qu.replicants.limitDim < 8) return "1 ED" + (tmp.qu.replicants.limitDim + 1) + ""
+	return getFullExpansion(tmp.qu.replicants.limit + 1) + " ED" + tmp.qu.replicants.limitDim + ""
 }
 
 function getHatchSpeed() {
@@ -296,7 +296,7 @@ function updateEmperorDimensions() {
 			document.getElementById("empAmount" + d).textContent = d < limitDim ? shortenDimensions(tmp.eds[d].workers) + " (+" + shorten(getEmperorDimensionRateOfChange(d)) + dimDescEnd : getFullExpansion(tmp.eds[limitDim].perm)
 			document.getElementById("empQuarks" + d).textContent = shorten(production.workers[d])
 			document.getElementById("empFeed" + d).className = (canFeedReplicant(d) ? "stor" : "unavailabl") + "ebtn"
-			document.getElementById("empFeed" + d).textContent = "Feed (" + (d == limitDim || mults[d + 1].times(tmp.eds[d + 1].workers).div(20).lt(1e3) ? Math.round(tmp.eds[d].progress.toNumber() * 100) + "%, " : "") + getFullExpansion(tmp.eds[d].perm) + " kept)"
+			document.getElementById("empFeed" + d).textContent = "飼餵（" + (d == limitDim || mults[d + 1].times(tmp.eds[d + 1].workers).div(20).lt(1e3) ? Math.round(tmp.eds[d].progress.toNumber() * 100) + "%, " : "") + getFullExpansion(tmp.eds[d].perm) + " 個已保留)"
 			document.getElementById("empFeedMax" + d).className = (canFeedReplicant(d) ? "stor" : "unavailabl") + "ebtn"
 		}
 	}
