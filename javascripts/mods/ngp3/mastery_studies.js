@@ -314,14 +314,14 @@ var masteryStudies = {
 		391: "基於你的元反物質，孵化速度更快。",
 		392: "前子加強所有皇帝維度。",
 		393: "工人加強元維度。",
-		401: "基於你的前子，前子反能量的生產速度更慢。",
+		401: "基於你的前子，前子反能量的生產力更慢。",
 		402: "皇帝維度和孵化速度快 30x。",
-		411: "基於你的複製體，前子能量的生產速度更快。",
+		411: "基於你的複製體，前子能量的生產力更快。",
 		412: function() {
 			return tmp.ngp3l ? "前子效果強 25%。" : "再次減輕前子加成的軟限制。"
 		},
 		421: "時間速度加強前子能量生產力。",
-		431: "基於你的免費星系，膨脹時間的生產速度和分支更快。"
+		431: "基於你的免費星系，膨脹時間的生產力和分支更快。"
 	},
 	hasStudyEffect: [251, 252, 253, 262, 263, 264, 273, 281, 282, 301, 303, 322, 332, 341, 344, 351, 361, 371, 372, 373, 381, 382, 383, 391, 392, 393, 401, 411, 421, 431],
 	studyEffectDisplays: {
@@ -348,7 +348,7 @@ var masteryStudies = {
 		},
 		431: function(x) {
 			let msg = shorten(x) + "x"
-			if (shiftDown && tmp.eg431) msg += ", Galaxy amount: " + getFullExpansion(Math.floor(player.dilation.freeGalaxies)) + "+" + getFullExpansion(Math.floor(tmp.eg431))
+			if (shiftDown && tmp.eg431) msg += "，星系數量：" + getFullExpansion(Math.floor(player.dilation.freeGalaxies)) + "+" + getFullExpansion(Math.floor(tmp.eg431))
 			return msg
 		}
 	},
@@ -465,8 +465,8 @@ function setupMasteryStudiesHTML() {
 	for (id = 0; id < masteryStudies.timeStudies.length; id++) {
 		var name = masteryStudies.timeStudies[id]
 		var html = "<span id='ts" + name + "Desc'></span>"
-		if (masteryStudies.hasStudyEffect.includes(name)) html += "<br>Currently: <span id='ts" + name + "Current'></span>"
-		html += "<br>Cost: <span id='ts" + name + "Cost'></span> Time Theorems"
+		if (masteryStudies.hasStudyEffect.includes(name)) html += "<br>目前：<span id='ts" + name + "Current'></span>"
+		html += "<br>價格：<span id='ts" + name + "Cost'></span> 時間定理"
 		document.getElementById("timestudy" + name).innerHTML = html
 	}
 }
