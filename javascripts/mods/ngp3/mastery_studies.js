@@ -299,29 +299,29 @@ var masteryStudies = {
 		343: "免費星系的強度跟普通複製器星系的一樣。",
 		344: "基於你的前子，複製器星系更強。",
 		351: "時間碎片加強所有元維度。",
-		361: "Hatch speed is faster based on your tachyon particles.",
+		361: "基於你的超光速粒子，孵化速度更快。",
 		362: function() {
-			return "Reduce the softcap for the preon boost"+(player.aarexModifications.ngumuV?", but preons reduce the green power effect.":".")
+			return "減輕前子加成的軟限制"+(player.aarexModifications.ngumuV?"，但是前子減少綠色力量效果。":"。")
 		},
-		371: "Hatch speed is faster based on your extra replicated galaxies.",
-		372: "Hatch speed is faster based on your time shards.",
-		373: "You get more preons based on your galaxies.",
-		381: "Hatch speed is faster based on your tickspeed reduction multiplier.",
-		382: "Eighth Dimensions boost Meta Dimensions.",
+		371: "基於你的額外複製器星系，孵化速度更快。",
+		372: "基於你的時間碎片，孵化速度更快。",
+		373: "基於你的星系，你獲得更多前子。",
+		381: "基於你的時間速度減少加成，孵化速度更快。",
+		382: "第八維度加強元維度。",
 		383: function() {
-			return "Blue power " + (tmp.ngp3l ? "boosts" : " and meta-antimatter boost") + " Meta Dimensions."
+			return "藍色力量" + (tmp.ngp3l ? "加強" : "和元反物質加強") + "元維度。"
 		},
-		391: "Hatch speed is faster based on your meta-antimatter.",
-		392: "Preons boost all Emperor Dimensions.",
-		393: "Workers boost Meta Dimensions.",
-		401: "The production of preon anti-energy is slower based on your preons.",
-		402: "Emperor Dimensions and hatch speed are 30x faster.",
-		411: "The production of preon energy is faster based on your replicants.",
+		391: "基於你的元反物質，孵化速度更快。",
+		392: "前子加強所有皇帝維度。",
+		393: "工人加強元維度。",
+		401: "基於你的前子，前子反能量的生產速度更慢。",
+		402: "皇帝維度和孵化速度快 30x。",
+		411: "基於你的複製體，前子能量的生產速度更快。",
 		412: function() {
-			return tmp.ngp3l ? "Preon effect is 25% stronger." : "Further reduce the softcap of preon boost."
+			return tmp.ngp3l ? "前子效果強 25%。" : "再次減輕前子加成的軟限制。"
 		},
-		421: "Tickspeed boosts preon energy production.",
-		431: "DT production and branches are faster based on your free galaxies."
+		421: "時間速度加強前子能量生產力。",
+		431: "基於你的免費星系，膨脹時間的生產速度和分支更快。"
 	},
 	hasStudyEffect: [251, 252, 253, 262, 263, 264, 273, 281, 282, 301, 303, 322, 332, 341, 344, 351, 361, 371, 372, 373, 381, 382, 383, 391, 392, 393, 401, 411, 421, 431],
 	studyEffectDisplays: {
