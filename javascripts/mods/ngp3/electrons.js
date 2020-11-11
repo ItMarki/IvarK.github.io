@@ -18,16 +18,16 @@ function updateElectrons(retroactive) {
 	if (!tmp.qu.autoOptions.sacrifice) updateElectronsEffect()
 	for (var u = 1; u < 5; u++) {
 		var cost = getElectronUpgCost(u)
-		document.getElementById("electronupg" + u).innerHTML = "Increase the multiplier by " + (getElectronGainMult() * getElectronUpgIncrease(u)).toFixed(2) + "x.<br>" +
-			"Level: " + getFullExpansion(tmp.qu.electrons.rebuyables[u-1]) + "<br>" +
-			"Cost: " + ((u == 4 ? getFullExpansion : shortenCosts)(cost)) + " " + [null, "Time Theorems", "dilated time", "meta-antimatter", "Meta-Dimension Boosts"][u]
+		document.getElementById("electronupg" + u).innerHTML = "將倍數增加 " + (getElectronGainMult() * getElectronUpgIncrease(u)).toFixed(2) + "x。<br>" +
+			"等級：" + getFullExpansion(tmp.qu.electrons.rebuyables[u-1]) + "<br>" +
+			"價格：" + ((u == 4 ? getFullExpansion : shortenCosts)(cost)) + " " + [null, "時間研究", "膨脹時間", "元反物質", "元維度提升"][u]
 	}
 }
 
 function updateElectronsEffect() {
 	if (!tmp.qu.autoOptions.sacrifice) {
 		tmp.mpte = getElectronBoost()
-		document.getElementById("electronsAmount2").textContent = "You have " + getFullExpansion(Math.round(tmp.qu.electrons.amount)) + " electrons."
+		document.getElementById("electronsAmount2").textContent = "你有 " + getFullExpansion(Math.round(tmp.qu.electrons.amount)) + " 電子。"
 	}
 	document.getElementById("sacrificedGals").textContent = getFullExpansion(tmp.qu.electrons.sacGals)
 	document.getElementById("electronsAmount").textContent = getFullExpansion(Math.round(tmp.qu.electrons.amount))
@@ -39,7 +39,7 @@ function updateElectronsEffect() {
 function sacrificeGalaxy(auto = false) {
 	var amount = player.galaxies - tmp.qu.electrons.sacGals
 	if (amount < 1) return
-	if (player.options.sacrificeConfirmation && !auto) if (!confirm("You will perform a Galaxy reset, but you will exchange all your galaxies to electrons, which will give a boost to your Multiplier per Ten Dimensions.")) return
+	if (player.options.sacrificeConfirmation && !auto) if (!confirm("你會進行一個星系重置，但是你會將你所有的星系交換成電子，對每十個維度的加成提供一個加成。")) return
 	tmp.qu.electrons.sacGals = player.galaxies
 	tmp.qu.electrons.amount += getElectronGainFinalMult() * amount
 	if (!tmp.qu.autoOptions.sacrifice) updateElectronsEffect()
