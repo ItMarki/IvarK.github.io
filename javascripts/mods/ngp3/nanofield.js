@@ -143,40 +143,40 @@ var nanoRewards = {
 			return "複製卵的孵化速度快 " + shorten(x) + "x"
 		},
 		ma_effect_exp: function(x) {
-			return "meta-antimatter effect is buffed to ^" + x.toFixed(2)
+			return "元反物質效果加強成 ^" + x.toFixed(2)
 		},
 		dil_gal_gain: function(x) {
-			return "you gain " + (x * 100 - 100).toFixed(2) + "% more free galaxies"
+			return "你獲得 " + (x * 100 - 100).toFixed(2) + "% 更多免費星系"
 		},
 		dt_to_ma_exp: function(x) {
-			return "dilated time gives ^" + x.toFixed(3) + " boost to all Meta Dimensions"
+			return "膨脹時間將元維度加強 ^" + x.toFixed(3) + ""
 		},
 		dil_effect_exp: function(x) {
-			return "in dilation, Normal Dimension multipliers and Tickspeed are raised by ^" + x.toFixed(2)
+			return "膨脹時，反物質維度加成和時間速度 ^" + x.toFixed(2)
 		},
 		meta_boost_power: function(x) {
-			return "each meta-Dimension Boost gives " + x.toFixed(2) + "x boost"
+			return "每一個元維度有一個 " + x.toFixed(2) + "x 加成"
 		},
 		remote_start: function(x) {
-			return "Remote Antimatter Galaxies scaling starts " + getFullExpansion(Math.floor(x)) + " later"
+			return "遙遠反物質星系的價格增幅延後 " + getFullExpansion(Math.floor(x)) + " 個"
 		},
 		preon_charge: function(x) {
-			return "you produce " + shorten(x) + "x faster preon charge"
+			return "前子動力的生產速度快 " + shorten(x) + "x"
 		},
 		per_10_power: function(x) {
-			return "multiplier per ten dimensions is increased by " + x.toFixed(2) + "x before the electrons effect"
+			return " 應用電子效果前，每十個維度的加成增加 " + x.toFixed(2) + "x"
 		},
 		preon_energy: function(x) {
-			return "you produce " + shorten(x) + "x faster preon energy"
+			return "前子能量的生產速度快 " + shorten(x) + "x"
 		},
 		supersonic_start: function(x) {
-			return "Dimension Supersonic scaling starts " + getFullExpansion(Math.floor(x)) + " later"
+			return "維度超音速的價格增幅延後 " + getFullExpansion(Math.floor(x)) + " 個"
 		},
 		neutrinos: function(x) {
-			return "you gain " + shorten(x) + "x more neutrinos"
+			return "你獲得 " + shorten(x) + "x 更多微中子"
 		},
 		light_threshold_speed: function(x) {
-			return "Light threshold increases " + x.toFixed(2) + "x slower"
+			return "光的門檻的增長速度慢 " + x.toFixed(2) + "x"
 		}
 	},
 	effectsUsed: {
@@ -198,9 +198,9 @@ function isNanoEffectUsed(x) {
 
 function getNanofieldSpeedText(){
 	text = ""
-	if (ghostified) text += "幽靈化加成：" + shorten(tmp.qu.nanofield.rewards >= 16 ? 1 : (player.ghostify.milestone >= 1 ? 6 : 3)) + "x, "
-	if (!tmp.ngp3l && player.achievements.includes("ng3p78")) text += "'Aren't you already dead' 獎勵：" +shorten(Math.sqrt(getTreeUpgradeLevel(8) * tmp.tue + 1)) + "x, "
-	if (hasNU(15)) text += "第十五微中子升級：" + shorten(tmp.nu[6]) + "x, "
+	if (ghostified) text += "幽靈化加成：" + shorten(tmp.qu.nanofield.rewards >= 16 ? 1 : (player.ghostify.milestone >= 1 ? 6 : 3)) + "x、"
+	if (!tmp.ngp3l && player.achievements.includes("ng3p78")) text += "'Aren't you already dead' 獎勵：" +shorten(Math.sqrt(getTreeUpgradeLevel(8) * tmp.tue + 1)) + "x、"
+	if (hasNU(15)) text += "第十五微中子升級：" + shorten(tmp.nu[6]) + "x、"
 	if (text == "") return "目前沒有加成"
 	return text.slice(0, text.length-2)
 }
