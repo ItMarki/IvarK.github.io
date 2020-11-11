@@ -1991,7 +1991,7 @@ function setTSDisplay(){
         document.getElementById("61desc").innerHTML=tsMults[61]()
         document.getElementById("62desc").textContent=tsMults[62]()
         document.getElementById("81desc").textContent=player.galacticSacrifice?"變為它的立方":"變為 10x"
-        document.getElementById("181desc").textContent = player.galacticSacrifice !== undefined && player.tickspeedBoosts === undefined && !tmp.ngp3l ? "1% 的你下次重置能夠獲得的星系點數和無限點數" : "1% 的大擠壓能夠獲得的無限點數"
+        document.getElementById("181desc").textContent = player.galacticSacrifice !== undefined && player.tickspeedBoosts === undefined && !tmp.ngp3l ? "你下次重置能夠獲得的星系點數和無限點數的 1%" : "大擠壓能夠獲得的無限點數的 1%"
         document.getElementById("211desc").textContent=tsMults[211]()
         document.getElementById("213desc").textContent=tsMults[213]()
         document.getElementById("221").style["font-size"] = tmp.ngp3 ? "0.45rem" : "0.55rem"
