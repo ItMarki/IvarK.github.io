@@ -721,13 +721,13 @@ function updateMasteryStudyTextDisplay() {
 		if (!masteryStudies.unlocked.includes("ec"+id)) break
 		document.getElementById("ec" + id + "Cost").textContent = "價格：" + shorten(masteryStudies.costs.ec[id]) + " 時間定理"
 		document.getElementById("ec" + id + "Req").style.display = player.etercreq == id ? "none" : "block"
-		document.getElementById("ec" + id + "Req").textContent = "Requirement: " + masteryStudies.ecReqDisplays[id]()
+		document.getElementById("ec" + id + "Req").textContent = "要求：" + masteryStudies.ecReqDisplays[id]()
 	}
 	for (id = 7; id <= masteryStudies.unlocksUpTo; id++) {
 		if (!masteryStudies.unlocked.includes("d" + id)) break
 		var req = masteryStudies.unlockReqDisplays[id]&&masteryStudies.unlockReqDisplays[id]()
 		document.getElementById("ds" + id + "Cost").textContent = "價格：" + shorten(masteryStudies.costs.dil[id]) + " 時間定理"
-		if (req) document.getElementById("ds" + id + "Req").innerHTML = ghostified || !req ? "" : "<br>Requirement: " + req
+		if (req) document.getElementById("ds" + id + "Req").innerHTML = ghostified || !req ? "" : "<br>要求：" + req
 	}
 	if (quantumed) document.getElementById("321effect").textContent=shortenCosts(new Decimal("1e430"))
 }
