@@ -719,14 +719,14 @@ function updateMasteryStudyTextDisplay() {
 	}
 	for (id = 13; id <= masteryStudies.ecsUpTo; id++) {
 		if (!masteryStudies.unlocked.includes("ec"+id)) break
-		document.getElementById("ec" + id + "Cost").textContent = "Cost: " + shorten(masteryStudies.costs.ec[id]) + " Time Theorems"
+		document.getElementById("ec" + id + "Cost").textContent = "價格：" + shorten(masteryStudies.costs.ec[id]) + " 時間定理"
 		document.getElementById("ec" + id + "Req").style.display = player.etercreq == id ? "none" : "block"
 		document.getElementById("ec" + id + "Req").textContent = "Requirement: " + masteryStudies.ecReqDisplays[id]()
 	}
 	for (id = 7; id <= masteryStudies.unlocksUpTo; id++) {
 		if (!masteryStudies.unlocked.includes("d" + id)) break
 		var req = masteryStudies.unlockReqDisplays[id]&&masteryStudies.unlockReqDisplays[id]()
-		document.getElementById("ds" + id + "Cost").textContent = "Cost: " + shorten(masteryStudies.costs.dil[id]) + " Time Theorems"
+		document.getElementById("ds" + id + "Cost").textContent = "價格：" + shorten(masteryStudies.costs.dil[id]) + " 時間定理"
 		if (req) document.getElementById("ds" + id + "Req").innerHTML = ghostified || !req ? "" : "<br>Requirement: " + req
 	}
 	if (quantumed) document.getElementById("321effect").textContent=shortenCosts(new Decimal("1e430"))
