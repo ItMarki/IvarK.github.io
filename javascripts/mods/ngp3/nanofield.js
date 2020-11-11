@@ -1,6 +1,6 @@
 function getNanospeedText(){
 	s = getNanofieldSpeedText()
-	if (!shiftDown) s = ghostified || nanospeed != 1 ? "Your Nanofield speed is currently " + (nanospeed == 1 ? "" : shorten(tmp.ns) + " * " + shorten(nanospeed) + " = ") + shorten(getNanofieldFinalSpeed()) + "x (hold shift for details)" : ""
+	if (!shiftDown) s = ghostified || nanospeed != 1 ? "你的納米場速度目前是 " + (nanospeed == 1 ? "" : shorten(tmp.ns) + " * " + shorten(nanospeed) + " = ") + shorten(getNanofieldFinalSpeed()) + "x（長按 shift 以獲得詳情）" : ""
 	return s
 }
 
@@ -22,8 +22,8 @@ function updateNanoverseTab(){
 	for (var reward = 1; reward < 9; reward++) {
 		document.getElementById("nfReward" + reward).className = reward > rewards ? "nfRewardlocked" : "nfReward"
 		document.getElementById("nfReward" + reward).textContent = wordizeList(nanoRewards.effectsUsed[reward].map(x => nanoRewards.effectDisplays[x](tmp.nf.effects[x])), true) + "."
-		document.getElementById("nfRewardHeader" + reward).textContent = (rewards % 8 + 1 == reward ? "Next" : DISPLAY_NAMES[reward]) + " reward"
-		document.getElementById("nfRewardTier" + reward).textContent = "Tier " + getFullExpansion(Math.ceil((rewards + 1 - reward) / 8)) + " / Power: " + tmp.nf.powers[reward].toFixed(1)
+		document.getElementById("nfRewardHeader" + reward).textContent = (rewards % 8 + 1 == reward ? "下一個" : DISPLAY_NAMES[reward]) + "獎勵"
+		document.getElementById("nfRewardTier" + reward).textContent = "第 " + getFullExpansion(Math.ceil((rewards + 1 - reward) / 8)) + " 級 / 力量：" + tmp.nf.powers[reward].toFixed(1)
 	}
 	document.getElementById("nfReward5").textContent = (!tmp.ngp3l && tmp.nf.powers[5] > 15 ? nanoRewards.effectDisplays.light_threshold_speed(tmp.nf.effects.light_threshold_speed) : nanoRewards.effectDisplays.dil_effect_exp(tmp.nf.effects.dil_effect_exp)) + "."
 	document.getElementById("ns").textContent = getNanospeedText()
@@ -54,7 +54,7 @@ function getQuarkChargeProduction(noSpeed) {
 
 function startProduceQuarkCharge() {
 	tmp.qu.nanofield.producingCharge = !tmp.qu.nanofield.producingCharge
-	document.getElementById("produceQuarkCharge").innerHTML = (tmp.qu.nanofield.producingCharge ? "Stop" : "Start") + " production of preon charge." + (tmp.qu.nanofield.producingCharge ? "" : "<br>(You will not get preons when you do this.)")
+	document.getElementById("produceQuarkCharge").innerHTML = (tmp.qu.nanofield.producingCharge ? "停止" : "開始") + "前子動力的生產。" + (tmp.qu.nanofield.producingCharge ? "" : "<br>（進行這個時你不會獲得前子。）")
 }
 
 function getQuarkLossProduction() {
@@ -140,7 +140,7 @@ var nanoRewards = {
 	},
 	effectDisplays: {
 		hatch_speed: function(x) {
-			return "eggons hatch " + shorten(x) + "x faster"
+			return "複製卵的孵化速度快 " + shorten(x) + "x"
 		},
 		ma_effect_exp: function(x) {
 			return "meta-antimatter effect is buffed to ^" + x.toFixed(2)
@@ -198,10 +198,10 @@ function isNanoEffectUsed(x) {
 
 function getNanofieldSpeedText(){
 	text = ""
-	if (ghostified) text += "Ghostify Bonus: " + shorten(tmp.qu.nanofield.rewards >= 16 ? 1 : (player.ghostify.milestone >= 1 ? 6 : 3)) + "x, "
-	if (!tmp.ngp3l && player.achievements.includes("ng3p78")) text += "'Aren't you already dead' reward: " +shorten(Math.sqrt(getTreeUpgradeLevel(8) * tmp.tue + 1)) + "x, "
-	if (hasNU(15)) text += "Neutrino upgrade 15: " + shorten(tmp.nu[6]) + "x, "
-	if (text == "") return "No multipliers currently"
+	if (ghostified) text += "幽靈化加成：" + shorten(tmp.qu.nanofield.rewards >= 16 ? 1 : (player.ghostify.milestone >= 1 ? 6 : 3)) + "x, "
+	if (!tmp.ngp3l && player.achievements.includes("ng3p78")) text += "'Aren't you already dead' 獎勵：" +shorten(Math.sqrt(getTreeUpgradeLevel(8) * tmp.tue + 1)) + "x, "
+	if (hasNU(15)) text += "第十五微中子升級：" + shorten(tmp.nu[6]) + "x, "
+	if (text == "") return "目前沒有加成"
 	return text.slice(0, text.length-2)
 }
 
