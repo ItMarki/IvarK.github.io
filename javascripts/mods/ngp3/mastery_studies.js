@@ -28,10 +28,10 @@ var masteryStudies = {
 	ecReqsStored: {},
 	ecReqDisplays: {
 		13: function() {
-			return getFullExpansion(masteryStudies.ecReqsStored[13]) + " Dimension Boosts"
+			return getFullExpansion(masteryStudies.ecReqsStored[13]) + " 維度提升"
 		},
 		14: function() {
-			return getFullExpansion(masteryStudies.ecReqsStored[14]) + "% replicate chance"
+			return getFullExpansion(masteryStudies.ecReqsStored[14]) + "% 複製機率"
 		}
 	},
 	unlockReqConditions: {
@@ -62,28 +62,28 @@ var masteryStudies = {
 	},
 	unlockReqDisplays: {
 		7: function() {
-			if (!tmp.ngp3l) return "50 quantum worth"
+			if (!tmp.ngp3l) return "50 量子價值"
 		},
 		8: function() {
-			return getFullExpansion(16750) + " electrons"
+			return getFullExpansion(16750) + " 電子"
 		},
 		9: function() {
-			return "Complete Quantum Challenge 8"
+			return "完成第八量子挑戰"
 		},
 		10: function() {
-			return "Complete Paired Challenge 4"
+			return "完成第四配對挑戰"
 		},
 		11: function() {
-			return getFullExpansion(10) + " worker replicants"
+			return getFullExpansion(10) + " 工人複製體"
 		},
 		12: function() {
-			return getFullExpansion(10) + " Eighth Emperor Dimensions"
+			return getFullExpansion(10) + " 第八皇帝維度"
 		},
 		13: function() {
-			return getFullExpansion(16) + " Nanofield rewards"
+			return getFullExpansion(16) + " 納米場獎勵"
 		},
 		14: function() {
-			return "Get 'The Challenging Day' achievement"
+			return "獲得 'The Challenging Day' 成就"
 		}
 	},
 	types: {t: "time", ec: "ec", d: "dil"},
@@ -265,30 +265,30 @@ var masteryStudies = {
 		}
 	},
 	timeStudyDescs: {
-		241: "The IP mult multiplies IP gain by 2.2x per upgrade.",
-		251: "Remote galaxy scaling starts 1 galaxy later per 3,000 dimension boosts.",
-		252: "Remote galaxy scaling starts 1 galaxy later per 7 free galaxies.",
+		241: "無限點數加成升級效果提升為 2.2x。",
+		251: "每 3000 個維度提升，遙遠星系的價格增幅延後 1 個星系。",
+		252: "每 7 個免費星系，遙遠星系的價格增幅延後 1 個星系。",
 		253: function() {
 			return "Remote galaxy scaling starts "+(tmp.ngp3l?"20 galaxies later per 9 extra replicated galaxies.":"1 galaxy later per 4 total replicated galaxies.")
 		},
-		261: "Dimension Boost costs scale by another 1 less.",
-		262: "Dimension Boosts boost Meta Dimensions at a reduced rate.",
-		263: "Meta-dimension boosts boost dilated time production.",
-		264: "Gain more tachyon particles based on your normal galaxies.",
-		265: "Replicate chance upgrades can go over 100%.",
-		266: "Reduce the post-400 max replicated galaxy cost scaling.",
-		271: "You can buy beyond 1ms interval upgrades, but the cost begins to increase faster.",
-		272: "You can buy all Time Studies in all 3-way splits.",
-		273: "Replicate chance boosts itself.",
-		281: "Replicanti multiplier boosts DT production at a greatly reduced rate.",
-		282: "Replicanti multiplier boosts Meta Dimensions at a greatly reduced rate.",
-		291: "You gain 1% of your EP gained on Eternity per second.",
-		292: "You can gain tachyon particles without disabling dilation.",
-		301: "Remote galaxy scaling starts 1 galaxy later per 4.15 extra replicated galaxies.",
-		302: "You can buy all Time Studies before the mastery portal.",
-		303: "Meta Dimensions are stronger based on your galaxies.",
-		311: "Replicanti boost to all Infinity Dimensions is 17.3x stronger.",
-		312: "Meta-dimension boosts are 4.5% stronger and cost scale by 1 less.",
+		261: "維度提升的價格增幅額外少 1 個。",
+		262: "維度提升稍微影響元維度。",
+		263: "元維度提升加強膨脹時間的生產力。",
+		264: "基於你的反物質星系，獲得更多超光速粒子。",
+		265: "複製機率升級可以超過 100%。",
+		266: "減輕超過 400 個最大複製器星系的價格增幅。",
+		271: "你可以購買少於 1 毫秒的間隔升級，但是價格會大幅上升。",
+		272: "你可以在所有三路徑分叉路口選擇所有時間研究。",
+		273: "複製機率加強自己。",
+		281: "複製器加成極度輕微影響膨脹時間的生產力。",
+		282: "複製器加成極度輕微影響元維度。",
+		291: "你每秒獲得永恆能夠獲得的永恆點數的 1%",
+		292: "你可以不停止膨脹時間而獲得超光速粒子。",
+		301: "每 4.15 個額外複製器星系，遙遠星系的價格增幅延後 1 個星系。",
+		302: "你可以購買所有在精煉傳送門之前的時間研究。",
+		303: "基於你的星系，元維度更強。",
+		311: "複製器對所有無限維度的加成強 17.3x。",
+		312: "元維度提升強 4.5%，而且價格增幅少 1 個。",
 		321: "Buff multiplier per 10 normal Dimensions to <span id='321effect'></span>x if it is 1x.",
 		322: "Tickspeed boosts DT production at greatly reduced rate.",
 		323: "Cancel dilation penalty for the Normal Dimension boost from replicanti.",
