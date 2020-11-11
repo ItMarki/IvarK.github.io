@@ -269,7 +269,7 @@ var masteryStudies = {
 		251: "每 3000 個維度提升，遙遠星系的價格增幅延後 1 個星系。",
 		252: "每 7 個免費星系，遙遠星系的價格增幅延後 1 個星系。",
 		253: function() {
-			return "Remote galaxy scaling starts "+(tmp.ngp3l?"20 galaxies later per 9 extra replicated galaxies.":"1 galaxy later per 4 total replicated galaxies.")
+			return (tmp.ngp3l?"每 9 個額外複製器星系，遙遠星系的價格增幅延後 20 個。":"每 4 個額外複製器星系，遙遠星系的價格增幅延後 1 個。")
 		},
 		261: "維度提升的價格增幅額外少 1 個。",
 		262: "維度提升稍微影響元維度。",
