@@ -5,13 +5,13 @@ function getLogTotalSpin() {
 function updateToDSpeedDisplay(){
 	let t = ''
 	if (shiftDown) t = getBranchSpeedText()
-	else t = "Branch speed: " + (todspeed == 1 ? "" : shorten(tmp.branchSpeed) + " * " + shorten(todspeed) + " = ") + shorten(getBranchFinalSpeed()) + "x" + " (hold shift for details)"
+	else t = "分支速度：" + (todspeed == 1 ? "" : shorten(tmp.branchSpeed) + " * " + shorten(todspeed) + " = ") + shorten(getBranchFinalSpeed()) + "x" + "（長按 shift 以獲得詳情）"
 	document.getElementById("todspeed").textContent = t
 }
 
 function getTreeUpgradeEfficiencyDisplayText(){
 	s = getTreeUpgradeEfficiencyText()
-	if (!shiftDown) s = "Tree upgrade efficiency: "+(tmp.tue*100).toFixed(1)+"%"
+	if (!shiftDown) s = "樹升級效果："+(tmp.tue*100).toFixed(1)+"%"
 	return s
 }
 
@@ -26,14 +26,14 @@ function updateTreeOfDecayTab(){
 		var color = colors[c]
 		var shorthand = shorthands[c]
 		var branch = tmp.qu.tod[shorthand]
-		var name = color + " " + getUQName(shorthand) + " quarks"
+		var name = color + " " + getUQName(shorthand) + " 夸克"
 		var rate = getDecayRate(shorthand)
 		var linear = Decimal.pow(2, getRDPower(shorthand))
 		document.getElementById(color + "UnstableGain").className = tmp.qu.usedQuarks[shorthand].gt(0) && getUnstableGain(shorthand).gt(branch.quarks) ? "storebtn" : "unavailablebtn"
-		document.getElementById(color + "UnstableGain").textContent = "Gain " + shortenMoney(getUnstableGain(shorthand)) + " " + name + (player.ghostify.milestones > 3 ? "." : ", but lose all your " + color + " quarks.")
+		document.getElementById(color + "UnstableGain").textContent = "獲得 " + shortenMoney(getUnstableGain(shorthand)) + " " + name + (player.ghostify.milestones > 3 ? "." : "，但是失去你所有的" + color + "夸克。")
 		document.getElementById(color + "QuarkSpin").textContent = shortenMoney(branch.spin)
 		document.getElementById(color + "UnstableQuarks").textContent = shortenMoney(branch.quarks)
-		document.getElementById(color + "QuarksDecayRate").textContent = branch.quarks.lt(linear) && rate.lt(1) ? "You are losing " + shorten(linear.times(rate)) + " " + name + " per second" : "Their half-life is " + timeDisplayShort(Decimal.div(10,rate), true, 2) + (linear.eq(1) ? "" : " until their amount reaches " + shorten(linear))
+		document.getElementById(color + "QuarksDecayRate").textContent = branch.quarks.lt(linear) && rate.lt(1) ? "你每秒正在失去 " + shorten(linear.times(rate)) + " " + name + "" : "它們的半衰期是 " + timeDisplayShort(Decimal.div(10,rate), true, 2) + (linear.eq(1) ? "" : "，直到它們的數量達到 " + shorten(linear))
 		document.getElementById(color + "QuarksDecayTime").textContent = timeDisplayShort(Decimal.div(10, rate).times(branch.quarks.gt(linear) ? branch.quarks.div(linear).log(2) + 1 : branch.quarks.div(linear)))
 		let ret = getQuarkSpinProduction(shorthand)
 		document.getElementById(color + "QuarkSpinProduction").textContent = "+" + shortenMoney(ret) + "/s"
@@ -52,8 +52,8 @@ function updateTreeOfDecayTab(){
 		}
 	} //for loop
 	if (!branchNum) {
-		var start = getLogTotalSpin() > 200 ? "" : "Cost: "
-		var end = getLogTotalSpin() > 200 ? "" : " quark spin"
+		var start = getLogTotalSpin() > 200 ? "" : "價格："
+		var end = getLogTotalSpin() > 200 ? "" : " 夸克自旋"
 		for (var u = 1; u <= 8; u++) {
 			var lvl = getTreeUpgradeLevel(u)
 			document.getElementById("treeupg" + u).className = "gluonupgrade " + (canBuyTreeUpg(u) ? shorthands[getTreeUpgradeLevel(u) % 3] : "unavailablebtn")
@@ -147,15 +147,15 @@ function unstableQuarks(branch) {
 
 function getBranchSpeedText(){
 	let text = ""
-	if (new Decimal(getTreeUpgradeEffect(3)).gt(1)) text += "Tree Upgrade 3: " + shorten(getTreeUpgradeEffect(3)) + "x, "
-	if (new Decimal(getTreeUpgradeEffect(5)).gt(1)) text += "Tree Upgrade 5: " + shorten(getTreeUpgradeEffect(5)) + "x, "
-	if (player.masterystudies.includes("t431")) if (getMTSMult(431).gt(1)) text += "Mastery Study 431: " + shorten(getMTSMult(431)) + "x, "
-	if (tmp.qu.bigRip.active && isBigRipUpgradeActive(19)) text += "19th Big Rip upgrade: " + shorten(tmp.bru[19]) + "x, "
-	if (hasNU(4)) if (tmp.nu[2].gt(1)) text += "Fourth Neutrino Upgrade: " + shorten(tmp.nu[2]) + "x, "
-	if (!tmp.ngp3l) if (player.achievements.includes("ng3p48")) if (player.meta.resets > 1) text += "'Are you currently dying?' reward: " + shorten (Math.sqrt(player.meta.resets + 1)) + "x, "
-	if (player.ghostify.milestones >= 14) text += "Brave Milestone 14: " + shorten(getMilestone14SpinMult()) + "x, "
-	if (todspeed) if (todspeed > 1) text += "ToD Speed: " + shorten(todspeed) + "x, "
-	if (text == "") return "No multipliers currently"
+	if (new Decimal(getTreeUpgradeEffect(3)).gt(1)) text += "第三樹升級：" + shorten(getTreeUpgradeEffect(3)) + "x、"
+	if (new Decimal(getTreeUpgradeEffect(5)).gt(1)) text += "第五樹升級：" + shorten(getTreeUpgradeEffect(5)) + "x、"
+	if (player.masterystudies.includes("t431")) if (getMTSMult(431).gt(1)) text += "精煉研究 431：:" + shorten(getMTSMult(431)) + "x、"
+	if (tmp.qu.bigRip.active && isBigRipUpgradeActive(19)) text += "19th Big Rip upgrade: " + shorten(tmp.bru[19]) + "x、"
+	if (hasNU(4)) if (tmp.nu[2].gt(1)) text += "第四微中子升級：" + shorten(tmp.nu[2]) + "x、"
+	if (!tmp.ngp3l) if (player.achievements.includes("ng3p48")) if (player.meta.resets > 1) text += "'Are you currently dying?' 獎勵：" + shorten (Math.sqrt(player.meta.resets + 1)) + "x、"
+	if (player.ghostify.milestones >= 14) text += "第十四勇敢里程碑：" + shorten(getMilestone14SpinMult()) + "x、"
+	if (todspeed) if (todspeed > 1) text += "衰變之樹速度：" + shorten(todspeed) + "x、"
+	if (text == "") return "目前沒有加成"
 	return text.slice(0, text.length-2)
 }
 
@@ -316,8 +316,8 @@ function buyBranchUpg(branch, upg) {
 	if (bData.upgrades[upg] == undefined) bData.upgrades[upg] = 0
 	bData.upgrades[upg]++
 	extra = bData.spin.log10() > 200
-	start = extra ? "" : "Cost: "
-	end = extra ? colors[branch] : colors[branch] + " quark spin"
+	start = extra ? "" : "價格："
+	end = extra ? colors[branch] : colors[branch] + " 夸克自旋"
 	document.getElementById(colors[branch] + "upg" + upg + "current").textContent = shortenDimensions(getBranchUpgMult(branch, upg))
 	document.getElementById(colors[branch] + "upg" + upg + "cost").textContent = start + shortenMoney(getBranchUpgCost(branch, upg)) + " " + end
 }
@@ -332,7 +332,7 @@ var todspeed = 1
 
 function rotateAutoAssign() {
 	tmp.qu.autoOptions.assignQKRotate = tmp.qu.autoOptions.assignQKRotate ? (tmp.qu.autoOptions.assignQKRotate + 1) % 3 : 1
-	document.getElementById('autoAssignRotate').textContent = "Rotation: " + (tmp.qu.autoOptions.assignQKRotate > 1 ? "Left" : tmp.qu.autoOptions.assignQKRotate ? "Right" : "None")
+	document.getElementById('autoAssignRotate').textContent = "旋轉：" + (tmp.qu.autoOptions.assignQKRotate > 1 ? "左" : tmp.qu.autoOptions.assignQKRotate ? "右" : "無")
 }
 
 function unstableAll() {
@@ -491,12 +491,12 @@ function getMaximumUnstableQuarks() {
 
 function getTreeUpgradeEfficiencyText(){
 	let text = ""
-	if (player.ghostify.neutrinos.boosts >= 7) text += "Neutrino Boost 7: +" + shorten(tmp.nb[7]) + ", "
+	if (player.ghostify.neutrinos.boosts >= 7) text += "第七微中子加成：+" + shorten(tmp.nb[7]) + "、"
 	if (!tmp.ngp3l) {
 		if (player.achievements.includes("ng3p62") && !tmp.qu.bigRip.active) text += "Finite Time Reward: +10%, "
-		if (hasBosonicUpg(43)) text += "Bosonic Lab Upgrade 18: " + shorten(tmp.blu[43]) + "x, "
+		if (hasBosonicUpg(43)) text += "第十八玻色子實驗室升級：" + shorten(tmp.blu[43]) + "x、"
 	}
-	if (text == "") return "No multipliers currently"
+	if (text == "") return "目前沒有加成"
 	return text.slice(0, text.length-2)
 }
 
