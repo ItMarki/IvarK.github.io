@@ -900,9 +900,9 @@ function doInfinityGhostifyResetStuff(implode, bm){
 		document.getElementById("quantumtabbtn").style.display = "inline-block"
 		document.getElementById("ghostifytabbtn").style.display = "inline-block"
 	}
-	document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">" + shortenDimensions(player.infinityPoints) + "</span> Infinity points."
-	document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">" + shortenDimensions(player.infinityPoints) + "</span> Infinity points."
-	document.getElementById("infmultbuyer").textContent = "Max buy IP mult"
+	document.getElementById("infinityPoints1").innerHTML = "你有 <span class=\"IPAmount1\">" + shortenDimensions(player.infinityPoints) + "</span> 無限點數。"
+	document.getElementById("infinityPoints2").innerHTML = "你 <span class=\"IPAmount2\">" + shortenDimensions(player.infinityPoints) + "</span> 無限點數。"
+	document.getElementById("infmultbuyer").textContent = "最大購買無限點數倍數"
 	if (implode) showChallengesTab("normalchallenges")
 	updateChallenges()
 	updateNCVisuals()
@@ -967,8 +967,8 @@ function doEternityGhostifyResetStuff(implode, bm){
 	doNGUpdateGhostifyResetStuff()
 	doTOUSOnGhostify(bm) //thry of ultimate studies
 	document.getElementById("eternitybtn").style.display = "none"
-	document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
-	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: 1x<p>Cost: 500 EP"
+	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。")
+	document.getElementById("epmult").innerHTML = "你獲得 5x 更多永恆點數<p>目前：1x<p>價格：500 永恆點數"
 	if (((document.getElementById("masterystudies").style.display == "block" || document.getElementById("breakEternity").style.display == "block") && !bm) || implode) showEternityTab("timestudies", document.getElementById("eternitystore").style.display == "none")
 	updateLastTenEternities()
 	resetTimeDimensions()
@@ -1033,7 +1033,7 @@ function doQuantumGhostifyResetStuff(implode, bm){
 		document.getElementById("edtabbtn").style.display = "none"
 	}
 	if (tmp.ngp3l && !bm) document.getElementById('rg4toggle').style.display = inQC(1) ? "none" : ""
-	document.getElementById('bestTP').textContent = "Your best Tachyon particles in this Ghostify was " + shorten(player.dilation.bestTP) + "."
+	document.getElementById('bestTP').textContent = "本次幽靈化的最大量超光速粒子是 " + shorten(player.dilation.bestTP) + "。"
 	updateLastTenQuantums()
 	updateSpeedruns()
 	updateColorCharge()
