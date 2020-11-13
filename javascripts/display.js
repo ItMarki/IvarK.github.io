@@ -209,8 +209,8 @@ function dilationStatsDisplay(){
 
 function scienceNumberDisplay(){
 	var scale1 = [2.82e-45,1e-42,7.23e-30,5e-21,9e-17,6.2e-11,5e-8,3.555e-6,7.5e-4,1,2.5e3,2.6006e6,3.3e8,5e12,4.5e17,1.08e21,1.53e24,1.41e27,5e32,8e36,1.7e45,1.7e48,3.3e55,3.3e61,5e68,1e73,3.4e80,1e113,Number.MAX_VALUE,new Decimal("1e65000")];
-	var scale2 = [" protons."," nucleui."," Hydrogen atoms."," viruses."," red blood cells."," grains of sand."," grains of rice."," teaspoons."," wine bottles."," fridge-freezers."," Olympic-sized swimming pools."," Great Pyramids of Giza."," Great Walls of China."," large asteroids.",
-		      " dwarf planets."," Earths."," Jupiters."," Suns."," red giants."," hypergiant stars."," nebulas."," Oort clouds."," Local Bubbles."," galaxies."," Local Groups."," Sculptor Voids."," observable universes."," Dimensions.", " Infinity Dimensions.", " Time Dimensions."];
+	var scale2 = [" 個質子。"," 個原子核。"," 個氫原子。"," 個病毒。","  個紅血球。","  顆沙粒。"," 顆米粒。"," 茶匙。"," 酒瓶。瓶紅酒。"," 個冰箱。"," 個奧林匹克標準游泳池。"," 座吉薩大金字塔。"," 個萬里長城。"," 個大型小行星。",
+		      " 個矮行星。"," 個地球。"," 個木星。"," 個太陽。"," 個紅巨星。"," 個特超巨星。"," 個星雲。"," 個歐特雲。"," 個本地泡。"," 個星系。"," 個本星系群。"," 個玉夫座空洞。"," 個可觀測宇宙。"," 個反物質維度。", " 個無限維度。", " 個時間維度。"];
 	var id = 0;
 	if (player.money.times(4.22419).gt(2.82e60)) {
 		if (player.money.times(4.22419e-105).gt(scale1[scale1.length - 1])) id = scale1.length - 1;
