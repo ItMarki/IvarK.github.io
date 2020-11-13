@@ -368,7 +368,7 @@ function eventsTimeDisplay(years, thisYear){
 }
 
 function universesTimeDisplay(years){
-	var message = "<br>The time needed to finish writing your full antimatter amount at a rate of 3 digits per second would span "
+	var message = "<br>如果你每秒寫 3 個數字，寫完你的反物質數量所需的時間是 "
 	let unis = years / 13.78e9 
 	// 13.78 Billion years as measured by the CMB (cosmic microwave background) and various models, feel free to change if more accurate data comes along
 	let timebit 
@@ -380,7 +380,7 @@ function universesTimeDisplay(years){
 }
 
 function lifetimeTimeDisplay(years){
-	var message = "<br>If you wrote 3 digits of your full antimatter amount every second since you were born as an American,<br> you would "
+	var message = "<br>如果你是一個美國人，並出生後以每秒 3 個數字寫你的反物質數量，<br> "
 	if (years > 79.3) message += "be a ghost for " + ((years - 79.3) / years * 100).toFixed(3) + "% of the session."
 	else message += "waste " + (years / 0.793).toFixed(3) + "% of your projected average lifespan."
 	document.getElementById("infoScale").innerHTML = message
