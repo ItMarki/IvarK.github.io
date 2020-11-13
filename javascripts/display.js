@@ -218,13 +218,13 @@ function scienceNumberDisplay(){
 			while (player.money.times(4.22419e-105).gt(scale1[id])) id++;
 			if (id > 0) id--;
 		}
-		if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to fill " + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
-		else document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to make " + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
+		if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "如果每一個反物質是一個普朗克體積，你可以填滿 " + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
+		else document.getElementById("infoScale").textContent = "如果每一個反物質是一個普朗克體積，你可以製造 " + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
 	} else { //does this part work correctly? i doubt it does
-		if (player.money.lt(2.82e9)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e9 / player.money, 2, 1) + " attometers cubed, you would have enough to make a proton."
-		else if (player.money.lt(2.82e18)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e18 / player.money, 2, 1) + " zeptometers cubed, you would have enough to make a proton."
-		else if (player.money.lt(2.82e27)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e27 / player.money, 2, 1) + " yoctometers cubed, you would have enough to make a proton."
-		else document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, (2.82e-45 / 4.22419e-105 / player.money), 2, 1) + " planck volumes, you would have enough to make a proton."
+		if (player.money.lt(2.82e9)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e9 / player.money, 2, 1) + " 立方阿米，你可以製造一個質子。"
+		else if (player.money.lt(2.82e18)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e18 / player.money, 2, 1) + " 立方介米，你可以製造一個質子。"
+		else if (player.money.lt(2.82e27)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e27 / player.money, 2, 1) + " 立方攸米，你可以製造一個質子。"
+		else document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, (2.82e-45 / 4.22419e-105 / player.money), 2, 1) + " 普朗克體積，你可以製造一個質子。"
 	}
 }
 
