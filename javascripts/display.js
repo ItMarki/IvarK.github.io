@@ -229,7 +229,7 @@ function scienceNumberDisplay(){
 }
 
 function infinityRespecedInfinityDisplay(){
-	if (setUnlocks.length > player.setsUnlocked) document.getElementById("nextset").textContent = "Next set unlocks at " + formatValue(player.options.notation, setUnlocks[player.setsUnlocked], 2, 0, true) + "."
+	if (setUnlocks.length > player.setsUnlocked) document.getElementById("nextset").textContent = "下一套在 " + formatValue(player.options.notation, setUnlocks[player.setsUnlocked], 2, 0, true) + " 解鎖。"
 	document.getElementById("infi1pow").textContent = getFullExpansion(player.infinityUpgradesRespecced[1] * 10)
 	document.getElementById("infi1cost").textContent = shortenCosts(Decimal.pow(10, player.infinityUpgradesRespecced[1]))
 	document.getElementById("infi1").className = player.infinityPoints.lt(Decimal.pow(10, player.infinityUpgradesRespecced[1])) ? "infinistorebtnlocked" : "infinimultbtn"
@@ -300,7 +300,7 @@ function infinityUpgradesDisplay(){
 function preBreakUpgradeDisplay(){
 	if (canBuyIPMult()) document.getElementById("infiMult").className = "infinimultbtn"
 	else document.getElementById("infiMult").className = "infinistorebtnlocked"
-	var infiMultEnding = player.infinityPoints.lt(Decimal.pow(10, 1e10)) ? "<br>Currently: " + shorten(getIPMult()) + "x<br>Cost: " + shortenCosts(player.infMultCost) + " IP" : ""
+	var infiMultEnding = player.infinityPoints.lt(Decimal.pow(10, 1e10)) ? "<br>目前：" + shorten(getIPMult()) + "x<br>價格：" + shortenCosts(player.infMultCost) + " 無限點數" : ""
 	document.getElementById("infiMult").innerHTML = "You get " + (Math.round(getIPMultPower() * 100) / 100) + "x more IP." + infiMultEnding
 	document.getElementById("nextset").textContent = ""
 	if (player.infinityUpgradesRespecced != undefined) {
