@@ -143,9 +143,9 @@ function bestInfinityDisplay(){
 		document.getElementById("infinitied").textContent = ""
 	} else {
 		document.getElementById("infinityStatistics").style.display = ""
-		document.getElementById("bestInfinity").textContent = "Your fastest Infinity is in " + timeDisplay(player.bestInfinityTime) + "."
-		document.getElementById("thisInfinity").textContent = "You have spent " + timeDisplay(player.thisInfinityTime) + " in this Infinity."
-		document.getElementById("infinitied").textContent = "You have Infinitied " + getFullExpansion(player.infinitied) + " time" + (player.infinitied == 1 ? "" : "s") + (player.eternities!==0||player.eternitiesBank>0 ? " this Eternity." : ".")
+		document.getElementById("bestInfinity").textContent = "你最快的無限是" + timeDisplay(player.bestInfinityTime) + "。"
+		document.getElementById("thisInfinity").textContent = "你在本次無限度過了 " + timeDisplay(player.thisInfinityTime) + "。"
+		document.getElementById("infinitied").textContent = "你無限了 " + getFullExpansion(player.infinitied) + " 次。" + (player.eternities!==0||player.eternitiesBank>0 ? " this Eternity." : ".")
 	}
 	if (player.infinitiedBank>0) document.getElementById("infinityStatistics").style.display = ""
 }
