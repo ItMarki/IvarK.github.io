@@ -164,9 +164,9 @@ function updateTimeDimensions() {
 		for (let tier = 1; tier <= 8; ++tier) {
 			if (isTDUnlocked(tier)) {
 				document.getElementById("timeRow" + tier).style.display = "table-row"
-				document.getElementById("timeD" + tier).textContent = DISPLAY_NAMES[tier] + "時間維度 x" + shortenMoney(getTimeDimensionPower(tier));
+				document.getElementById("timeD" + tier).textContent = DISPLAY_NAMES[tier] + " Time Dimension x" + shortenMoney(getTimeDimensionPower(tier));
 				document.getElementById("timeAmount" + tier).textContent = getTimeDimensionDescription(tier);
-				document.getElementById("timeMax" + tier).textContent = (quantumed ? '':"價格：") + shortenDimensions(player["timeDimension" + tier].cost) + (player.aarexModifications.ngmX > 3 ? "" : " 永恆點數")
+				document.getElementById("timeMax" + tier).textContent = (quantumed ? '':"Cost: ") + shortenDimensions(player["timeDimension" + tier].cost) + (player.aarexModifications.ngmX > 3 ? "" : " EP")
 				if (getOrSubResourceTD(tier).gte(player["timeDimension" + tier].cost)) document.getElementById("timeMax"+tier).className = "storebtn"
 			else document.getElementById("timeMax" + tier).className = "unavailablebtn"
 			} else document.getElementById("timeRow" + tier).style.display = "none"
@@ -175,8 +175,8 @@ function updateTimeDimensions() {
 			var isShift = player.tdBoosts < (inNC(4) ? 5 : 7)
 			var req = getTDBoostReq()
 			document.getElementById("tdReset").style.display = ""
-			document.getElementById("tdResetLabel").textContent = "時間維度"+(isShift ? "跳躍" : "提升") + " (" + getFullExpansion(player.tdBoosts) + ")：需要 " + getFullExpansion(req.amount) + " " + DISPLAY_NAMES[req.tier] + " 時間維度"
-			document.getElementById("tdResetBtn").textContent = "重置遊戲以獲得一個" + (isShift ? "新的維度" : "加成")
+			document.getElementById("tdResetLabel").textContent = "Time Dimension "+(isShift ? "Shift" : "Boost") + " (" + getFullExpansion(player.tdBoosts) + "): requires " + getFullExpansion(req.amount) + " " + DISPLAY_NAMES[req.tier] + " Time Dimensions"
+			document.getElementById("tdResetBtn").textContent = "Reset the game for a " + (isShift ? "new dimension" : "boost")
 			document.getElementById("tdResetBtn").className = (player["timeDimension" + req.tier].bought < req.amount) ? "unavailablebtn" : "storebtn"
 		} else document.getElementById("tdReset").style.display = "none"
 	}
@@ -185,11 +185,11 @@ function updateTimeDimensions() {
 function updateTimeShards() {
 	let p = getTimeDimensionProduction(1)
 	if (player.pSac !== undefined) p = p.div(getEC12Mult())
-	document.getElementById("itmult").textContent = tmp.ngp3 && player.achievements.includes('r105') ? '你的 "Infinite Time" 加成目前是 ' + shorten(tmp.it) + 'x。':''
+	document.getElementById("itmult").textContent = tmp.ngp3 && player.achievements.includes('r105') ? 'Your "Infinite Time" multiplier is currently ' + shorten(tmp.it) + 'x.':''
 	document.getElementById("timeShardAmount").textContent = shortenMoney(player.timeShards)
 	document.getElementById("tickThreshold").textContent = shortenMoney(player.tickThreshold)
-	if (player.currentEternityChall == "eterc7") document.getElementById("timeShardsPerSec").textContent = "你每秒正在獲得 " + shortenDimensions(p) + " 第八無限維度。"
-	else document.getElementById("timeShardsPerSec").textContent = "你每秒正在獲得 " + shortenDimensions(p) + " 時間碎片。"
+	if (player.currentEternityChall == "eterc7") document.getElementById("timeShardsPerSec").textContent = "You are getting " + shortenDimensions(p) + " Eighth Infinity Dimensions per second."
+	else document.getElementById("timeShardsPerSec").textContent = "You are getting " + shortenDimensions(p) + " Timeshards per second."
 }
 
 var timeDimCostMults = [[null, 3, 9, 27, 81, 243, 729, 2187, 6561], [null, 1.5, 2, 3, 20, 150, 1e5, 3e6, 1e8]]
@@ -213,7 +213,7 @@ function timeDimCost(tier, bought) {
 function buyTimeDimension(tier) {
 	var dim = player["timeDimension"+tier]
 	if (player.aarexModifications.ngmX > 3 && getAmount(1) < 1) {
-		alert("你需要購買一個第一反物質維度，才能購買時間維度。")
+		alert("You need to buy a first Normal Dimension to be able to buy Time Dimensions.")
 		return
 	}
 	if (!isTDUnlocked(tier)) return false
@@ -318,7 +318,7 @@ function toggleAllTimeDims() {
 	}
 	for (id = 1; id <= 8; id++) {
 		player.autoEterOptions["td" + id] = turnOn
-		document.getElementById("td" + id + 'auto').textContent = "自動：" + (turnOn ? "開啟" : "關閉")
+		document.getElementById("td" + id + 'auto').textContent = "Auto: " + (turnOn ? "ON" : "OFF")
 	}
 	document.getElementById("maxTimeDimensions").style.display = turnOn ? "none" : ""
 }
