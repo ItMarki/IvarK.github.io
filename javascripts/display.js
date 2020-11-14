@@ -1,7 +1,7 @@
 function dimShiftDisplay(){
 	var shiftRequirement = getShiftRequirement(0);
 	var isShift = player.resets < (inNC(4) || player.currentChallenge == "postc1" || player.pSac !== undefined ? 2 : 4)
-	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + '（'+ getFullExpansion(Math.ceil(player.resets)) +'）：需要' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
+	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + ' ('+ getFullExpansion(Math.ceil(player.resets)) +')：需要' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
 	document.getElementById("softReset").textContent = "重置遊戲以獲得一個" + (isShift ? "新的維度" : "加成")
 }
 
@@ -9,7 +9,7 @@ function tickspeedBoostDisplay(){
 	if (isTickspeedBoostPossible()) {
 		var tickReq = getTickspeedBoostRequirement()
 		document.getElementById("tickReset").style.display = ""
-		document.getElementById("tickResetLabel").textContent = "時間速度提升（" + getFullExpansion(player.tickspeedBoosts) + "）：需要 " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + " 維度"
+		document.getElementById("tickResetLabel").textContent = "Tickspeed Boost (" + getFullExpansion(player.tickspeedBoosts) + "): requires " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + " Dimensions"
 		document.getElementById("tickResetBtn").className = getAmount(tickReq.tier) < tickReq.amount ? "unavailablebtn" : "storebtn"
 	} else document.getElementById("tickReset").style.display = "none"
 }
@@ -103,27 +103,27 @@ function paradoxDimDisplay(){
 }
 
 function mainStatsDisplay(){
-	document.getElementById("totalmoney").textContent = '你總共生產了 ' + shortenMoney(player.totalmoney) + ' 反物質。'
-	document.getElementById("totalresets").textContent = '你進行了 ' + getFullExpansion(player.resets) + ' 個維度提升/跳躍。'
-	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"物質重置後，你總共失去了 " + getFullExpansion(player.pSac.lostResets) + " 個維度提升/跳躍。"')
-	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? '你進行了 ' + getFullExpansion(player.tdBoosts) + ' 個時間維度提升/跳躍。':""
+	document.getElementById("totalmoney").textContent = 'You have made a total of ' + shortenMoney(player.totalmoney) + ' antimatter.'
+	document.getElementById("totalresets").textContent = 'You have performed ' + getFullExpansion(player.resets) + ' Dimension Boosts/Shifts.'
+	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"You have lost a total of " + getFullExpansion(player.pSac.lostResets) + " Dimension Boosts/Shifts after matter resets."')
+	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? 'You have performed ' + getFullExpansion(player.tdBoosts) + ' Time Dimension Boosts/Shifts.':""
 	var showBoosts=isTickspeedBoostPossible()
 	document.getElementById("boosts").style.display = showBoosts ? '' : 'none'
-	if (showBoosts) document.getElementById("boosts").textContent = '你進行了 '+getFullExpansion(player.tickspeedBoosts)+' 時間速度提升。'
-	document.getElementById("galaxies").textContent = '你有 ' + getFullExpansion(player.galaxies) + ' 反物質星系。'
+	if (showBoosts) document.getElementById("boosts").textContent = 'You have performed '+getFullExpansion(player.tickspeedBoosts)+' Tickspeed Boosts.'
+	document.getElementById("galaxies").textContent = 'You have ' + getFullExpansion(player.galaxies) + ' Antimatter Galaxies.'
 	var showCancer = player.spreadingCancer > 0 && player.galacticSacrifice
 	document.getElementById("spreadingCancer").style.display = showCancer ? '' : 'none'
 	if (showCancer) document.getElementById("spreadingCancer").textContent = 'You have made '+getFullExpansion(player.spreadingCancer)+' total galaxies while using Cancer notation.'
-	document.getElementById("totalTime").textContent = "你遊玩了 " + timeDisplay(player.totalTimePlayed) + "。"
+	document.getElementById("totalTime").textContent = "You have played for " + timeDisplay(player.totalTimePlayed) + "."
 }
 
 function paradoxSacDisplay(){
 	if (player.pSac && player.pSac.times) {
 		document.getElementById("psStatistics").style.display = ""
-		document.getElementById("pSacrificedNormal").textContent = "你悖論犧牲了 " + getFullExpansion(player.pSac.normalTimes) + " 次。"
-		document.getElementById("pSacrificedForced").textContent = "你被迫悖論犧牲了 " + getFullExpansion(player.pSac.forcedTimes) + " 次。"
-		document.getElementById("pSacrificed").textContent = "你總共悖論犧牲了 " + getFullExpansion(player.pSac.times) + " 次。"
-		document.getElementById("thisPSac").textContent = "你在本次悖論犧牲度過了 " + timeDisplay(player.pSac.time) + "。"
+		document.getElementById("pSacrificedNormal").textContent = "You have Paradox Sacrificed " + getFullExpansion(player.pSac.normalTimes) + " times."
+		document.getElementById("pSacrificedForced").textContent = "You have been forced to do a Paradox Sacrifice " + getFullExpansion(player.pSac.forcedTimes) + " times."
+		document.getElementById("pSacrificed").textContent = "You have Paradox Sacrificed a total of " + getFullExpansion(player.pSac.times) + " times."
+		document.getElementById("thisPSac").textContent = "You have spent " + timeDisplay(player.pSac.time) + " in this Paradox Sacrifice."
 	} else document.getElementById("psStatistics").style.display = "none"
 }
 
@@ -131,8 +131,8 @@ function galaxySacDisplay(){
 	if (player.galacticSacrifice ? player.galacticSacrifice.times < 1 : true) document.getElementById("gsStatistics").style.display = "none"
 	else {
 		document.getElementById("gsStatistics").style.display = ""
-		document.getElementById("sacrificed").textContent = "你星系犧牲了 "+getFullExpansion(player.galacticSacrifice.times) + " 次。"
-		document.getElementById("thisSacrifice").textContent = "你在本次星系度過了 " + timeDisplay(player.galacticSacrifice.time) + "。"
+		document.getElementById("sacrificed").textContent = "You have Galactic Sacrificed "+getFullExpansion(player.galacticSacrifice.times) + " times."
+		document.getElementById("thisSacrifice").textContent = "You have spent " + timeDisplay(player.galacticSacrifice.time) + " in this Galactic Sacrifice."
 	}
 }
 
@@ -144,9 +144,9 @@ function bestInfinityDisplay(){
 		document.getElementById("infinitied").textContent = ""
 	} else {
 		document.getElementById("infinityStatistics").style.display = ""
-		document.getElementById("bestInfinity").textContent = "你最快的無限是 " + timeDisplay(player.bestInfinityTime) + "。"
-		document.getElementById("thisInfinity").textContent = "你在本次無限度過了 " + timeDisplay(player.thisInfinityTime) + "。"
-		document.getElementById("infinitied").textContent = "你" + (player.eternities!==0||player.eternitiesBank>0 ? "在本次永恆" : "") + "無限了 " + getFullExpansion(player.infinitied) + " 次。"
+		document.getElementById("bestInfinity").textContent = "Your fastest Infinity is in " + timeDisplay(player.bestInfinityTime) + "."
+		document.getElementById("thisInfinity").textContent = "You have spent " + timeDisplay(player.thisInfinityTime) + " in this Infinity."
+		document.getElementById("infinitied").textContent = "You have Infinitied " + getFullExpansion(player.infinitied) + " time" + (player.infinitied == 1 ? "" : "s") + (player.eternities!==0||player.eternitiesBank>0 ? " this Eternity." : ".")
 	}
 	if (player.infinitiedBank>0) document.getElementById("infinityStatistics").style.display = ""
 }
@@ -161,9 +161,9 @@ function bestEternityDisplay(){
 		document.getElementById("eternityStatistics").style.display = "inline-block"
 		if (player.bestEternity >= 9999999999) {
 			document.getElementById("besteternity").textContent = ""
-		} else document.getElementById("besteternity").textContent = "你最快的永恆是 "+timeDisplay(player.bestEternity)+"。"
-		document.getElementById("thiseternity").textContent = "你在本次永恆度過了 " + timeDisplay(player.thisEternity) + "。"
-		document.getElementById("eternitied").textContent = "你" + (quantumed ? "在本次量子" : "") + "永恆了 " + getFullExpansion(player.eternities) + " 次。"
+		} else document.getElementById("besteternity").textContent = "Your fastest Eternity is in "+timeDisplay(player.bestEternity)+"."
+		document.getElementById("thiseternity").textContent = "You have spent " + timeDisplay(player.thisEternity) + " in this Eternity."
+		document.getElementById("eternitied").textContent = "You have Eternitied " + getFullExpansion(player.eternities) + " time" + (player.eternities == 1 ? "" : "s") + (quantumed ? " this Quantum." : ".")
 	}
 	if (player.eternitiesBank > 0) document.getElementById("eternityStatistics").style.display = ""
 }
