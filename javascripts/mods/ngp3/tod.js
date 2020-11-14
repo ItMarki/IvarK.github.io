@@ -17,7 +17,7 @@ function getTreeUpgradeEfficiencyDisplayText(){
 
 function updateTreeOfDecayTab(){
 	var branchNum
-	var colors = ["red", "green", "blue"]
+	var colors = ["紅", "green", "blue"]
 	var shorthands = ["r", "g", "b"]
 	if (document.getElementById("redBranch").style.display == "block") branchNum = 1
 	if (document.getElementById("greenBranch").style.display == "block") branchNum = 2
