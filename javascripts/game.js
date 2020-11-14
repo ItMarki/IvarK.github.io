@@ -5288,10 +5288,10 @@ function bigCrunchButtonUpdating(){
 			document.getElementById("postInfinityButton").style.display = "inline-block"
 			var currentIPmin = gainedInfinityPoints().dividedBy(player.thisInfinityTime/600)
 			if (currentIPmin.gt(IPminpeak)) IPminpeak = currentIPmin
-			if (IPminpeak.log10() > 1e9) document.getElementById("postInfinityButton").innerHTML = "Big Crunch"
+			if (IPminpeak.log10() > 1e9) document.getElementById("postInfinityButton").innerHTML = "大坍縮"
 			else {
-				var IPminpart = IPminpeak.log10() > 1e5 ? "" : "<br>" + shortenDimensions(currentIPmin) + " IP/min" + "<br>Peaked at " + shortenDimensions(IPminpeak) + " IP/min"
-				document.getElementById("postInfinityButton").innerHTML = "<b>" + (IPminpeak.log10() > 3e5 ? "Gain " : "Big Crunch for ") + shortenDimensions(gainedInfinityPoints()) + " Infinity points.</b>" + IPminpart
+				var IPminpart = IPminpeak.log10() > 1e5 ? "" : "<br>" + shortenDimensions(currentIPmin) + " 無限點數/分鐘" + "<br>高峰：" + shortenDimensions(IPminpeak) + " 無限點數/分鐘"
+				document.getElementById("postInfinityButton").innerHTML = "<b>" + (IPminpeak.log10() > 3e5 ? "獲得 " : "大坍縮以獲得 ") + shortenDimensions(gainedInfinityPoints()) + " 無限點數。</b>" + IPminpart
 			}
 		}
 	}
@@ -5311,7 +5311,7 @@ function nextICUnlockUpdating(){
 	var nextUnlock = getNextAt(order[player.postChallUnlocked])
 	if (nextUnlock == undefined) document.getElementById("nextchall").textContent = " "
 	else if (!player.achievements.includes("r133")) {
-		document.getElementById("nextchall").textContent = "Next challenge unlocks at "+ shortenCosts(nextUnlock) + " antimatter."
+		document.getElementById("nextchall").textContent = "下一個挑戰在 "+ shortenCosts(nextUnlock) + " 反物質解鎖。"
 		while (player.money.gte(nextUnlock) && nextUnlock != undefined) {
 			if (getEternitied() > 6) {
 				player.challenges.push(order[player.postChallUnlocked])
@@ -5443,14 +5443,14 @@ function doGhostifyButtonDisplayUpdating(diff){
 		}
 	}
 	var ghostifyGains = []
-	if (ghostified) ghostifyGains.push(shortenDimensions(getGHPGain()) + " Ghost Particles")
-	if (ghostified && player.achievements.includes("ng3p78")) ghostifyGains.push(shortenDimensions(Decimal.times(6e3 * tmp.qu.bigRip.bestGals, getGhostifiedGain()).times(getNeutrinoGain())) + " Neutrinos")
+	if (ghostified) ghostifyGains.push(shortenDimensions(getGHPGain()) + " 幽靈粒子")
+	if (ghostified && player.achievements.includes("ng3p78")) ghostifyGains.push(shortenDimensions(Decimal.times(6e3 * tmp.qu.bigRip.bestGals, getGhostifiedGain()).times(getNeutrinoGain())) + " 微中子")
 	if (hasBosonicUpg(15)) ghostifyGains.push(getFullExpansion(getGhostifiedGain()) + " Ghostifies")
-	document.getElementById("ghostifybtnFlavor").textContent = ghostifyGains.length > 1 ? "" : (ghostifyGains.length ? "" : "I need to ascend from this broken universe... ") + "I need to become a ghost."
-	document.getElementById("GHPGain").textContent = ghostifyGains.length ? "Gain " + ghostifyGains[0] + (ghostifyGains.length > 2 ? ", " + ghostifyGains[1] + "," : "") + (ghostifyGains.length > 1 ? " and " + ghostifyGains[ghostifyGains.length-1] : "") + "." : ""
+	document.getElementById("ghostifybtnFlavor").textContent = ghostifyGains.length > 1 ? "" : (ghostifyGains.length ? "" : "我需要超越這個破爛的宇宙……") + "我需要變成一個幽靈。"
+	document.getElementById("GHPGain").textContent = ghostifyGains.length ? "獲得 " + ghostifyGains[0] + (ghostifyGains.length > 2 ? ", " + ghostifyGains[1] + "," : "") + (ghostifyGains.length > 1 ? " 和 " + ghostifyGains[ghostifyGains.length-1] : "") + "。" : ""
 	var showGHPPeakValue = GHPminpeakValue.lt(1e6) || player.options.theme=="Aarex's Modifications"
 	document.getElementById("GHPRate").textContent = ghostifyGains.length == 1 && showGHPPeakValue ? getGHPRate(currentGHPmin) : ""
-	document.getElementById("GHPPeak").textContent = ghostifyGains.length == 1 ? (showGHPPeakValue?"":"Peaked at ")+getGHPRate(GHPminpeak)+(showGHPPeakValue?" at "+shortenDimensions(GHPminpeakValue)+" GhP":"") : ""
+	document.getElementById("GHPPeak").textContent = ghostifyGains.length == 1 ? (showGHPPeakValue?"":"高峰：")+getGHPRate(GHPminpeak)+(showGHPPeakValue?" at "+shortenDimensions(GHPminpeakValue)+" 幽靈粒子":"") : ""
 }
 
 function tickspeedButtonDisplay(){
