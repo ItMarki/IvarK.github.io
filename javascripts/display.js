@@ -21,7 +21,7 @@ function galaxyReqDisplay(){
 	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "反物質" : "") + '星系（'+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'）：需要 ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+'維度'
 }
 
-var galaxyScalings = ["", "Distant ", "Further ", "Remote ", "Dark Matter ", "Ghostly ", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
+var galaxyScalings = ["", "遠處", "更遠處", "遙遠", "暗物質", "幽靈", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
 function getGalaxyScaleName(x) {
 	return galaxyScalings[x]
 }
