@@ -1,7 +1,7 @@
 function dimShiftDisplay(){
 	var shiftRequirement = getShiftRequirement(0);
 	var isShift = player.resets < (inNC(4) || player.currentChallenge == "postc1" || player.pSac !== undefined ? 2 : 4)
-	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + '（'+ getFullExpansion(Math.ceil(player.resets)) +'）：需要' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
+	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + '（'+ getFullExpansion(Math.ceil(player.resets)) +'）：需要 ' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
 	document.getElementById("softReset").textContent = "重置遊戲以獲得一個" + (isShift ? "新的維度" : "加成")
 }
 
@@ -9,7 +9,7 @@ function tickspeedBoostDisplay(){
 	if (isTickspeedBoostPossible()) {
 		var tickReq = getTickspeedBoostRequirement()
 		document.getElementById("tickReset").style.display = ""
-		document.getElementById("tickResetLabel").textContent = "Tickspeed Boost (" + getFullExpansion(player.tickspeedBoosts) + "): requires " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + " Dimensions"
+		document.getElementById("tickResetLabel").textContent = "時間速度提升（" + getFullExpansion(player.tickspeedBoosts) + "）：需要 " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + "維度"
 		document.getElementById("tickResetBtn").className = getAmount(tickReq.tier) < tickReq.amount ? "unavailablebtn" : "storebtn"
 	} else document.getElementById("tickReset").style.display = "none"
 }
@@ -18,7 +18,7 @@ function galaxyReqDisplay(){
 	var nextGal = getGalaxyRequirement(0, true)
 	var totalReplGalaxies = getTotalRG()
 	var totalTypes = tmp.aeg ? 4 : player.dilation.freeGalaxies ? 3 : totalReplGalaxies ? 2 : 1
-	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "Antimatter " : "") + ' Galaxies ('+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'): requires ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+' Dimensions'
+	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "反物質" : "") + '星系（'+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'）：需要 ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+'維度'
 }
 
 var galaxyScalings = ["", "Distant ", "Further ", "Remote ", "Dark Matter ", "Ghostly ", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
