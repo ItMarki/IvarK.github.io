@@ -345,10 +345,10 @@ function eventsTimeDisplay(years, thisYear){
 		      "晚更新期", "舊石器時代晚期", "歐洲早現代人類", "第一個人類聚居地", "最古老的已知的比喻藝術",
 		      "最古老的已知的馴養狗", "末次冰盛期", "最古老的烤箱", "最古老的已知的扭轉繩子", "最古老的人類的永久聚居地（由石頭和長毛象骨頭製作的小村莊）",
 		      "rise of Kerberan culture", "北美洲的殖民地化", "豬的馴養", "史前戰爭", "全新世",
-		      "其他人類品種的死亡", "農業革命", "農夫來到歐洲", "第一個金屬工具", "第一隻馬",
-		      "蘇美爾的楔形文字書寫系統", "埃及的統一", "瑪雅文明的崛起", "長毛象的絕種", "阿卡德帝國的崛起",
-		      "第一個字母書寫系統", "奧爾梅克文明的崛起", "青銅時代的結束", "希臘城邦的崛起", "羅馬的崛起",
-		      "波斯帝國的崛起", "巴比倫帝國的滅亡", "亞歷山大大帝的誕生", "第一張紙", "耶穌的誕生"]
+		      "death of other human breeds", "agricultural revolution", "farmers arrived in Europe", "first metal tools", "first horse",
+		      "Sumerian cuneiform writing system", "union of Egypt", "rise of Maya", "extinct of mammoths", "rise of Akkadian Empire",
+		      "first alphabetic writing", "rise of Olmec civilization", "end of bronze age", "rise of Greek city-states", "rise of Rome",
+		      "rise of Persian Empire", "fall of Babylonian Empire", "birth of Alexander the Great", "first paper", "birth of Jesus Christ"]
 	/*
 	"the homo sapiens" is weird, as is "the homo neanderthaliensis" and "the homo sapiens idaltu"
 	*/
