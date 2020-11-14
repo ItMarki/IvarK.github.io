@@ -86,14 +86,14 @@ function tickspeedDisplay(){
 
 function paradoxDimDisplay(){
 	document.getElementById("pPow").textContent = shortenMoney(player.pSac.dims.power)
-	document.getElementById("pPowProduction").textContent = "You are getting " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " Paradox Power per second."
+	document.getElementById("pPowProduction").textContent = "你每秒正在獲得 " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " 悖論力量。"
 	document.getElementById("pPowEffect").textContent = getFullExpansion(Math.floor(getExtraTime() * getEC12Mult()))
 	var shown
 	for (let t = 8; t > 0; t--) {
 		shown = shown || isDimUnlocked(t)
 		document.getElementById("pR"+t).style.display = shown ? "" : "none"
 		if (shown) {
-			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + " Paradox Dimension x" + shortenMoney(getPDPower(t))
+			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + "悖論維度 x" + shortenMoney(getPDPower(t))
 			document.getElementById("pB"+t).textContent = "Cost: " + shortenDimensions(player.pSac.dims[t].cost) + " Px"
 			document.getElementById("pB"+t).className = (player.pSac.px.gte(player.pSac.dims[t].cost) ? "stor" : "unavailabl") + "ebtn"
 			document.getElementById("pA"+t).textContent = getPDDesc(t)
