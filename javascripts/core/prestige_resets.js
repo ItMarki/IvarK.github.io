@@ -967,7 +967,7 @@ function doEternityGhostifyResetStuff(implode, bm){
 	doNGUpdateGhostifyResetStuff()
 	doTOUSOnGhostify(bm) //thry of ultimate studies
 	document.getElementById("eternitybtn").style.display = "none"
-	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。")
+	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。"
 	document.getElementById("epmult").innerHTML = "你獲得 5x 更多永恆點數<p>目前：1x<p>價格：500 永恆點數"
 	if (((document.getElementById("masterystudies").style.display == "block" || document.getElementById("breakEternity").style.display == "block") && !bm) || implode) showEternityTab("timestudies", document.getElementById("eternitystore").style.display == "none")
 	updateLastTenEternities()
