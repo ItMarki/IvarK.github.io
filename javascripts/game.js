@@ -5691,7 +5691,7 @@ function challengeOverallDisplayUpdating(){
 	if (document.getElementById("challenges").style.display == "block") {
 		if (document.getElementById("eternitychallenges").style.display == "block") ECRewardDisplayUpdating()
 		if (document.getElementById("quantumchallenges").style.display == "block") {
-			if (tmp.qu.autoOptions.sacrifice) document.getElementById("electronsAmount2").textContent="You have " + getFullExpansion(Math.round(tmp.qu.electrons.amount)) + " electrons."
+			if (tmp.qu.autoOptions.sacrifice) document.getElementById("electronsAmount2").textContent="你有 " + getFullExpansion(Math.round(tmp.qu.electrons.amount)) + " 電子。"
 			for (var c=1;c<7;c++) {
 				if (c==5) document.getElementById("qc5reward").textContent = getDimensionPowerMultiplier("linear").toFixed(2)
 				else if (c!=2) document.getElementById("qc"+c+"reward").textContent = shorten(tmp.qcRewards[c])
@@ -5739,7 +5739,7 @@ function newIDDisplayUpdating(){
 		}
 	} else if (player.break && player.currentChallenge == "" && !player.infDimensionsUnlocked[7]) {
 		document.getElementById("newDimensionButton").style.display = "inline-block"
-		document.getElementById("newDimensionButton").textContent = "Get " + shortenCosts(req.money) + " antimatter to unlock a new Dimension."
+		document.getElementById("newDimensionButton").textContent = "達到 " + shortenCosts(req.money) + " 反物質以解鎖一個新的維度。"
 		if (player.money.gte(req.money)) document.getElementById("newDimensionButton").className = "newdim"
 		else document.getElementById("newDimensionButton").className = "newdimlocked"
 	}
@@ -5747,11 +5747,11 @@ function newIDDisplayUpdating(){
 
 function d8SacDisplay(){
 	if (calcTotalSacrificeBoost().lte(Decimal.pow(10, 1e9))) {
-		document.getElementById("sacrifice").setAttribute('ach-tooltip', "Boost the 8th Dimension by " + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x");
-		document.getElementById("sacrifice").textContent = "Dimensional Sacrifice (" + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x)"
+		document.getElementById("sacrifice").setAttribute('ach-tooltip', "將第八維度加強 " + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x");
+		document.getElementById("sacrifice").textContent = "維度犧牲（" + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x）"
 	} else {
-		document.getElementById("sacrifice").setAttribute('ach-tooltip', "Boost the 8th Dimension");
-		document.getElementById("sacrifice").textContent = "Dimensional Sacrifice (Total: " + formatValue(player.options.notation, calcTotalSacrificeBoost(), 2, 2) + "x)"
+		document.getElementById("sacrifice").setAttribute('ach-tooltip', "加強第八維度");
+		document.getElementById("sacrifice").textContent = "維度犧牲（總加成：" + formatValue(player.options.notation, calcTotalSacrificeBoost(), 2, 2) + "x）"
 	}
 }
 
@@ -5759,15 +5759,15 @@ function pSacBtnUpdating(){
 	if (canPSac()) {
 		let px = getPxGain()
 		document.getElementById("pSac").style.display = ""
-		document.getElementById("pSac").innerHTML = "Paradox Sacrifice for " + shortenDimensions(px) + " Paradox" + (px.eq(1) ? "." : "es.")
+		document.getElementById("pSac").innerHTML = "悖論犧牲並獲得 " + shortenDimensions(px) + " 悖論。"
 	} else document.getElementById("pSac").style.display = "none"
 }
 
 function galSacBtnUpdating(){
 	document.getElementById("sacrificebtn").style.display = "none"
 	if (document.getElementById("gSacrifice").style.display === "inline-block") {
-		document.getElementById("gSacrifice").innerHTML = "Galactic Sacrifice (" + formatValue(player.options.notation, getGSAmount(), 2, 0) + " GP)"
-		document.getElementById("gSacrifice").setAttribute('ach-tooltip', "Gain " + formatValue(player.options.notation, getGSAmount(), 2, 0) + " GP")
+		document.getElementById("gSacrifice").innerHTML = "星系犧牲（" + formatValue(player.options.notation, getGSAmount(), 2, 0) + " 星系點數）"
+		document.getElementById("gSacrifice").setAttribute('ach-tooltip', "獲得 " + formatValue(player.options.notation, getGSAmount(), 2, 0) + " 星系點數")
 		if (getGSAmount().gt(0)) {
 			document.getElementById("gSacrifice").className = "storebtn"
 			document.getElementById("sacrificebtn").style.display = ""
