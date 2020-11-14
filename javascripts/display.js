@@ -363,7 +363,8 @@ function eventsTimeDisplay(years, thisYear){
 		since = events[index - 1]
 		sinceYears = bc - dates[index]
 	}
-	var message = "<br>如果你每秒寫 3 個數字，你需要在公元前 " message += getFullExpansion(Math.floor(bc)) + " 開始，才可以現在寫完你的反物質數量。" + (since ? "<br>這個時間在 " + since + "之前的" + getFullExpansion(Math.ceil(sinceYears)) + "左右。" : "")
+	var message = "<br>If you wanted to finish writing out your full antimatter amount at a rate of 3 digits per second, you would need to start it in " 
+	message += getFullExpansion(Math.floor(bc)) + " BC." + (since ? "<br>This is around " + getFullExpansion(Math.ceil(sinceYears)) + " years before the " + since + "." : "")
 	document.getElementById("infoScale").innerHTML = message
 }
 
