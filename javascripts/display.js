@@ -1,15 +1,15 @@
 function dimShiftDisplay(){
 	var shiftRequirement = getShiftRequirement(0);
 	var isShift = player.resets < (inNC(4) || player.currentChallenge == "postc1" || player.pSac !== undefined ? 2 : 4)
-	document.getElementById("resetLabel").textContent = 'Dimension ' + (isShift ? "Shift" : player.resets < getSupersonicStart() ? "Boost" : "Supersonic") + ' ('+ getFullExpansion(Math.ceil(player.resets)) +'): requires ' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + " Dimensions"
-	document.getElementById("softReset").textContent = "Reset the game for a " + (isShift ? "new Dimension" : "Boost")
+	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + '（'+ getFullExpansion(Math.ceil(player.resets)) +'）：需要' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
+	document.getElementById("softReset").textContent = "重置遊戲以獲得一個" + (isShift ? "新的維度" : "加成")
 }
 
 function tickspeedBoostDisplay(){
 	if (isTickspeedBoostPossible()) {
 		var tickReq = getTickspeedBoostRequirement()
 		document.getElementById("tickReset").style.display = ""
-		document.getElementById("tickResetLabel").textContent = "Tickspeed Boost (" + getFullExpansion(player.tickspeedBoosts) + "): requires " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + " Dimensions"
+		document.getElementById("tickResetLabel").textContent = "時間速度提升（" + getFullExpansion(player.tickspeedBoosts) + "）：需要 " + getFullExpansion(tickReq.amount) + " " + DISPLAY_NAMES[tickReq.tier] + " 維度"
 		document.getElementById("tickResetBtn").className = getAmount(tickReq.tier) < tickReq.amount ? "unavailablebtn" : "storebtn"
 	} else document.getElementById("tickReset").style.display = "none"
 }
@@ -18,10 +18,10 @@ function galaxyReqDisplay(){
 	var nextGal = getGalaxyRequirement(0, true)
 	var totalReplGalaxies = getTotalRG()
 	var totalTypes = tmp.aeg ? 4 : player.dilation.freeGalaxies ? 3 : totalReplGalaxies ? 2 : 1
-	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "Antimatter " : "") + ' Galaxies ('+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'): requires ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+' Dimensions'
+	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "反物質" : "") + '星系（'+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'）：需要 ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+' 維度。'
 }
 
-var galaxyScalings = ["", "Distant ", "Further ", "Remote ", "Dark Matter ", "Ghostly ", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
+var galaxyScalings = ["", "遠處 ", "更遠處", "遙遠 ", "暗物質", "幽靈", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
 function getGalaxyScaleName(x) {
 	return galaxyScalings[x]
 }
@@ -52,7 +52,7 @@ function dimensionTabDisplay(){
 			document.getElementById("A" + tier).textContent = getDimensionDescription(tier)
 		}
 	}
-	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'Multiplier per 10 Dimensions: '+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
+	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'每十個維度的加成：'+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
 	dimShiftDisplay()
 	tickspeedBoostDisplay()
 	galaxyReqDisplay()
@@ -65,10 +65,10 @@ function tickspeedDisplay(){
 		var tickmultNum = tickmult.toNumber()
 		var ticklabel
 		var e = Math.floor(Math.log10(Math.round(1/tickmultNum)))
-		if (isNaN(tickmultNum)) ticklabel = 'Break the tick interval by Infinite';
-		else if (e >= 9) ticklabel = "Divide the tick interval by " + shortenDimensions(Decimal.recip(tickmult))
-		else if (tickmultNum > .9) ticklabel = 'Reduce the tick interval by ' + shorten((1 - tickmultNum) * 100) + '%'
-		else ticklabel = 'Reduce the tick interval by ' + ((1 - tickmultNum) * 100).toFixed(e) + '%'
+		if (isNaN(tickmultNum)) ticklabel = '將時間速度打破無限';
+		else if (e >= 9) ticklabel = "將時間間隔除以 " + shortenDimensions(Decimal.recip(tickmult))
+		else if (tickmultNum > .9) ticklabel = '將時間間隔減少 ' + shorten((1 - tickmultNum) * 100) + '%'
+		else ticklabel = '將時間間隔減少 ' + ((1 - tickmultNum) * 100).toFixed(e) + '%'
 		let ic3mult=getPostC3Mult()
 		if (player.galacticSacrifice || player.currentChallenge == "postc3" || isIC3Trapped()) document.getElementById("tickLabel").innerHTML = ((isIC3Trapped() || player.currentChallenge == "postc3") && player.currentChallenge != "postcngmm_3" && !player.challenges.includes("postcngmm_3") && !tmp.be ? "M" : ticklabel + '<br>and m') + 'ultiply all dimensions by ' + (ic3mult > 999.95 ? shorten(ic3mult) : new Decimal(ic3mult).toNumber().toPrecision(4)) + '.'
 		else document.getElementById("tickLabel").textContent = ticklabel + '.'
@@ -87,15 +87,15 @@ function tickspeedDisplay(){
 
 function paradoxDimDisplay(){
 	document.getElementById("pPow").textContent = shortenMoney(player.pSac.dims.power)
-	document.getElementById("pPowProduction").textContent = "You are getting " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " Paradox Power per second."
+	document.getElementById("pPowProduction").textContent = "你每秒正在獲得 " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " 悖論力量。"
 	document.getElementById("pPowEffect").textContent = getFullExpansion(Math.floor(getExtraTime() * getEC12Mult()))
 	var shown
 	for (let t = 8; t > 0; t--) {
 		shown = shown || isDimUnlocked(t)
 		document.getElementById("pR"+t).style.display = shown ? "" : "none"
 		if (shown) {
-			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + " Paradox Dimension x" + shortenMoney(getPDPower(t))
-			document.getElementById("pB"+t).textContent = "Cost: " + shortenDimensions(player.pSac.dims[t].cost) + " Px"
+			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + "悖論維度 x" + shortenMoney(getPDPower(t))
+			document.getElementById("pB"+t).textContent = "價格：" + shortenDimensions(player.pSac.dims[t].cost) + " 悖論"
 			document.getElementById("pB"+t).className = (player.pSac.px.gte(player.pSac.dims[t].cost) ? "stor" : "unavailabl") + "ebtn"
 			document.getElementById("pA"+t).textContent = getPDDesc(t)
 		}
@@ -103,27 +103,27 @@ function paradoxDimDisplay(){
 }
 
 function mainStatsDisplay(){
-	document.getElementById("totalmoney").textContent = 'You have made a total of ' + shortenMoney(player.totalmoney) + ' antimatter.'
-	document.getElementById("totalresets").textContent = 'You have performed ' + getFullExpansion(player.resets) + ' Dimension Boosts/Shifts.'
-	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"You have lost a total of " + getFullExpansion(player.pSac.lostResets) + " Dimension Boosts/Shifts after matter resets."')
-	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? 'You have performed ' + getFullExpansion(player.tdBoosts) + ' Time Dimension Boosts/Shifts.':""
+	document.getElementById("totalmoney").textContent = '你總共生產了 ' + shortenMoney(player.totalmoney) + ' 反物質。'
+	document.getElementById("totalresets").textContent = '你進行了 ' + getFullExpansion(player.resets) + ' 個維度提升/跳躍。'
+	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"物質重置後，你總共失去了 " + getFullExpansion(player.pSac.lostResets) + " 個維度提升/跳躍。"')
+	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? '你進行了 ' + getFullExpansion(player.tdBoosts) + ' 個時間維度提升/跳躍。':""
 	var showBoosts=isTickspeedBoostPossible()
 	document.getElementById("boosts").style.display = showBoosts ? '' : 'none'
-	if (showBoosts) document.getElementById("boosts").textContent = 'You have performed '+getFullExpansion(player.tickspeedBoosts)+' Tickspeed Boosts.'
-	document.getElementById("galaxies").textContent = 'You have ' + getFullExpansion(player.galaxies) + ' Antimatter Galaxies.'
+	if (showBoosts) document.getElementById("boosts").textContent = '你進行了 '+getFullExpansion(player.tickspeedBoosts)+' 時間速度提升。'
+	document.getElementById("galaxies").textContent = '你有 ' + getFullExpansion(player.galaxies) + ' 反物質星系。'
 	var showCancer = player.spreadingCancer > 0 && player.galacticSacrifice
 	document.getElementById("spreadingCancer").style.display = showCancer ? '' : 'none'
 	if (showCancer) document.getElementById("spreadingCancer").textContent = 'You have made '+getFullExpansion(player.spreadingCancer)+' total galaxies while using Cancer notation.'
-	document.getElementById("totalTime").textContent = "You have played for " + timeDisplay(player.totalTimePlayed) + "."
+	document.getElementById("totalTime").textContent = "你遊玩了 " + timeDisplay(player.totalTimePlayed) + "。"
 }
 
 function paradoxSacDisplay(){
 	if (player.pSac && player.pSac.times) {
 		document.getElementById("psStatistics").style.display = ""
-		document.getElementById("pSacrificedNormal").textContent = "You have Paradox Sacrificed " + getFullExpansion(player.pSac.normalTimes) + " times."
-		document.getElementById("pSacrificedForced").textContent = "You have been forced to do a Paradox Sacrifice " + getFullExpansion(player.pSac.forcedTimes) + " times."
-		document.getElementById("pSacrificed").textContent = "You have Paradox Sacrificed a total of " + getFullExpansion(player.pSac.times) + " times."
-		document.getElementById("thisPSac").textContent = "You have spent " + timeDisplay(player.pSac.time) + " in this Paradox Sacrifice."
+		document.getElementById("pSacrificedNormal").textContent = "你悖論犧牲了 " + getFullExpansion(player.pSac.normalTimes) + " 次。"
+		document.getElementById("pSacrificedForced").textContent = "你被迫悖論犧牲了 " + getFullExpansion(player.pSac.forcedTimes) + " 次。"
+		document.getElementById("pSacrificed").textContent = "你總共悖論犧牲了 " + getFullExpansion(player.pSac.times) + " 次。"
+		document.getElementById("thisPSac").textContent = "你在本次悖論犧牲度過了 " + timeDisplay(player.pSac.time) + "。"
 	} else document.getElementById("psStatistics").style.display = "none"
 }
 
@@ -131,8 +131,8 @@ function galaxySacDisplay(){
 	if (player.galacticSacrifice ? player.galacticSacrifice.times < 1 : true) document.getElementById("gsStatistics").style.display = "none"
 	else {
 		document.getElementById("gsStatistics").style.display = ""
-		document.getElementById("sacrificed").textContent = "You have Galactic Sacrificed "+getFullExpansion(player.galacticSacrifice.times) + " times."
-		document.getElementById("thisSacrifice").textContent = "You have spent " + timeDisplay(player.galacticSacrifice.time) + " in this Galactic Sacrifice."
+		document.getElementById("sacrificed").textContent = "你星系犧牲了 "+getFullExpansion(player.galacticSacrifice.times) + " 次。"
+		document.getElementById("thisSacrifice").textContent = "你在本次星系度過了 " + timeDisplay(player.galacticSacrifice.time) + "。"
 	}
 }
 
@@ -144,9 +144,9 @@ function bestInfinityDisplay(){
 		document.getElementById("infinitied").textContent = ""
 	} else {
 		document.getElementById("infinityStatistics").style.display = ""
-		document.getElementById("bestInfinity").textContent = "Your fastest Infinity is in " + timeDisplay(player.bestInfinityTime) + "."
-		document.getElementById("thisInfinity").textContent = "You have spent " + timeDisplay(player.thisInfinityTime) + " in this Infinity."
-		document.getElementById("infinitied").textContent = "You have Infinitied " + getFullExpansion(player.infinitied) + " time" + (player.infinitied == 1 ? "" : "s") + (player.eternities!==0||player.eternitiesBank>0 ? " this Eternity." : ".")
+		document.getElementById("bestInfinity").textContent = "你最快的無限是 " + timeDisplay(player.bestInfinityTime) + "。"
+		document.getElementById("thisInfinity").textContent = "你在本次無限度過了 " + timeDisplay(player.thisInfinityTime) + "。"
+		document.getElementById("infinitied").textContent = "你" + (player.eternities!==0||player.eternitiesBank>0 ? "在本次永恆" : "") + "無限了 " + getFullExpansion(player.infinitied) + " 次。"
 	}
 	if (player.infinitiedBank>0) document.getElementById("infinityStatistics").style.display = ""
 }
@@ -161,9 +161,9 @@ function bestEternityDisplay(){
 		document.getElementById("eternityStatistics").style.display = "inline-block"
 		if (player.bestEternity >= 9999999999) {
 			document.getElementById("besteternity").textContent = ""
-		} else document.getElementById("besteternity").textContent = "Your fastest Eternity is in "+timeDisplay(player.bestEternity)+"."
-		document.getElementById("thiseternity").textContent = "You have spent " + timeDisplay(player.thisEternity) + " in this Eternity."
-		document.getElementById("eternitied").textContent = "You have Eternitied " + getFullExpansion(player.eternities) + " time" + (player.eternities == 1 ? "" : "s") + (quantumed ? " this Quantum." : ".")
+		} else document.getElementById("besteternity").textContent = "你最快的永恆是 "+timeDisplay(player.bestEternity)+"。"
+		document.getElementById("thiseternity").textContent = "你在本次永恆度過了 " + timeDisplay(player.thisEternity) + "。"
+		document.getElementById("eternitied").textContent = "你" + (quantumed ? "在本次量子" : "") + "永恆了 " + getFullExpansion(player.eternities) + " 次。"
 	}
 	if (player.eternitiesBank > 0) document.getElementById("eternityStatistics").style.display = ""
 }
@@ -172,9 +172,9 @@ function bestQuantumDisplay(){
 	if (!quantumed) document.getElementById("quantumStatistics").style.display = "none"
 	else {
 		document.getElementById("quantumStatistics").style.display = ""
-		document.getElementById("quantumed").textContent = "You have gone Quantum " + getFullExpansion(tmp.qu.times) + " times."
-		document.getElementById("thisQuantum").textContent = "You have spent " + timeDisplay(tmp.qu.time) + " in this Quantum."
-		document.getElementById("bestQuantum").textContent = "Your fastest Quantum is in " + timeDisplay(tmp.qu.best) + "."
+		document.getElementById("quantumed").textContent = "你量子了 " + getFullExpansion(tmp.qu.times) + " 次。"
+		document.getElementById("thisQuantum").textContent = "你在本次量子度過了 " + timeDisplay(tmp.qu.time) + " 。"
+		document.getElementById("bestQuantum").textContent = "你最快的量子是 " + timeDisplay(tmp.qu.best) + "。"
 	}
 }
 
@@ -182,9 +182,9 @@ function bestGhostifyDisplay(){
 	if (!ghostified) document.getElementById("ghostifyStatistics").style.display = "none"
 	else {
 		document.getElementById("ghostifyStatistics").style.display = ""
-		document.getElementById("ghostified").textContent = "You have became a ghost and passed Big Ripped universes " + getFullExpansion(player.ghostify.times) + " times."
-		document.getElementById("thisGhostify").textContent = "You have spent " + timeDisplay(player.ghostify.time) + " in this Ghostify."
-		document.getElementById("bestGhostify").textContent = "Your fastest Ghostify is in " + timeDisplay(player.ghostify.best) + "."
+		document.getElementById("ghostified").textContent = "你通過了大撕裂的宇宙並變成了 " + getFullExpansion(player.ghostify.times) + " 次幽靈。"
+		document.getElementById("thisGhostify").textContent = "你在本次幽靈化度過了 " + timeDisplay(player.ghostify.time) + " 。"
+		document.getElementById("bestGhostify").textContent = "你最快的幽靈化是 " + timeDisplay(player.ghostify.best) + "。"
 	}
 }
 
@@ -192,25 +192,25 @@ function ng3p51Display(){
 	if (!player.achievements.includes("ng3p51"))  document.getElementById("bigRipStatistics").style.display = "none"
 	else {
 		document.getElementById("bigRipStatistics").style.display = ""
-		setAndMaybeShow("bigRipped", tmp.qu.bigRip.times, '"You have big ripped the universe " + getFullExpansion(tmp.qu.bigRip.times) + " times."')
-		setAndMaybeShow("bestmoneythisrip", tmp.qu.bigRip.active, "'Your best antimatter for this Big Rip is ' + shortenMoney(tmp.qu.bigRip.bestThisRun) + '.'")
-		document.getElementById("totalmoneybigrip").textContent = 'You have made a total of ' + shortenMoney(tmp.qu.bigRip.totalAntimatter) + ' antimatter in all big rips.'
-		document.getElementById("bestgalsbigrip").textContent = 'Your best amount of normal galaxies for all Big Rips is ' + getFullExpansion(tmp.qu.bigRip.bestGals) + "."
+		setAndMaybeShow("bigRipped", tmp.qu.bigRip.times, '"你大撕裂了 " + getFullExpansion(tmp.qu.bigRip.times) + " 次宇宙。"')
+		setAndMaybeShow("bestmoneythisrip", tmp.qu.bigRip.active, "'你在本次大撕裂的最大量反物質是 ' + shortenMoney(tmp.qu.bigRip.bestThisRun) + '。'")
+		document.getElementById("totalmoneybigrip").textContent = '你在所有大撕裂裡總共生產了 ' + shortenMoney(tmp.qu.bigRip.totalAntimatter) + ' 反物質。'
+		document.getElementById("bestgalsbigrip").textContent = '你在所有大撕裂的最大量反物質星系是 ' + getFullExpansion(tmp.qu.bigRip.bestGals) + "。"
 	}
 }
 
 function dilationStatsDisplay(){
-	if (player.dilation.times) document.getElementById("dilated").textContent = "You have succesfully dilated "+getFullExpansion(player.dilation.times)+" times."
+	if (player.dilation.times) document.getElementById("dilated").textContent = "你成功膨脹了 "+getFullExpansion(player.dilation.times)+" 次。"
 	else document.getElementById("dilated").textContent = ""
 
-	if (player.exdilation == undefined ? false : player.exdilation.times > 1) document.getElementById("exdilated").textContent = "You have reversed Dilation " + getFullExpansion(player.exdilation.times) + " times."
+	if (player.exdilation == undefined ? false : player.exdilation.times > 1) document.getElementById("exdilated").textContent = "你逆轉了 " + getFullExpansion(player.exdilation.times) + " 次膨脹。"
 	else document.getElementById("exdilated").textContent = ""
 }
 
 function scienceNumberDisplay(){
 	var scale1 = [2.82e-45,1e-42,7.23e-30,5e-21,9e-17,6.2e-11,5e-8,3.555e-6,7.5e-4,1,2.5e3,2.6006e6,3.3e8,5e12,4.5e17,1.08e21,1.53e24,1.41e27,5e32,8e36,1.7e45,1.7e48,3.3e55,3.3e61,5e68,1e73,3.4e80,1e113,Number.MAX_VALUE,new Decimal("1e65000")];
-	var scale2 = [" protons."," nucleui."," Hydrogen atoms."," viruses."," red blood cells."," grains of sand."," grains of rice."," teaspoons."," wine bottles."," fridge-freezers."," Olympic-sized swimming pools."," Great Pyramids of Giza."," Great Walls of China."," large asteroids.",
-		      " dwarf planets."," Earths."," Jupiters."," Suns."," red giants."," hypergiant stars."," nebulas."," Oort clouds."," Local Bubbles."," galaxies."," Local Groups."," Sculptor Voids."," observable universes."," Dimensions.", " Infinity Dimensions.", " Time Dimensions."];
+	var scale2 = [" 個質子。"," 個原子核。"," 個氫原子。"," 個病毒。","  個紅血球。","  顆沙粒。"," 顆米粒。"," 茶匙。"," 酒瓶。瓶紅酒。"," 個冰箱。"," 個奧林匹克標準游泳池。"," 座吉薩大金字塔。"," 個萬里長城。"," 個大型小行星。",
+		      " 個矮行星。"," 個地球。"," 個木星。"," 個太陽。"," 個紅巨星。"," 個特超巨星。"," 個星雲。"," 個歐特雲。"," 個本地泡。"," 個星系。"," 個本星系群。"," 個玉夫座空洞。"," 個可觀測宇宙。"," 個反物質維度。", " 個無限維度。", " 個時間維度。"];
 	var id = 0;
 	if (player.money.times(4.22419).gt(2.82e60)) {
 		if (player.money.times(4.22419e-105).gt(scale1[scale1.length - 1])) id = scale1.length - 1;
@@ -218,18 +218,18 @@ function scienceNumberDisplay(){
 			while (player.money.times(4.22419e-105).gt(scale1[id])) id++;
 			if (id > 0) id--;
 		}
-		if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to fill " + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
-		else document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to make " + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
+		if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "如果每一個反物質是一個普朗克體積，你可以填滿 " + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
+		else document.getElementById("infoScale").textContent = "如果每一個反物質是一個普朗克體積，你可以製造 " + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
 	} else { //does this part work correctly? i doubt it does
-		if (player.money.lt(2.82e9)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e9 / player.money, 2, 1) + " attometers cubed, you would have enough to make a proton."
-		else if (player.money.lt(2.82e18)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e18 / player.money, 2, 1) + " zeptometers cubed, you would have enough to make a proton."
-		else if (player.money.lt(2.82e27)) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, 2.82e27 / player.money, 2, 1) + " yoctometers cubed, you would have enough to make a proton."
-		else document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation, (2.82e-45 / 4.22419e-105 / player.money), 2, 1) + " planck volumes, you would have enough to make a proton."
+		if (player.money.lt(2.82e9)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e9 / player.money, 2, 1) + " 立方阿米，你可以製造一個質子。"
+		else if (player.money.lt(2.82e18)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e18 / player.money, 2, 1) + " 立方介米，你可以製造一個質子。"
+		else if (player.money.lt(2.82e27)) document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, 2.82e27 / player.money, 2, 1) + " 立方攸米，你可以製造一個質子。"
+		else document.getElementById("infoScale").textContent = "如果每一個反物質是 " + formatValue(player.options.notation, (2.82e-45 / 4.22419e-105 / player.money), 2, 1) + " 普朗克體積，你可以製造一個質子。"
 	}
 }
 
 function infinityRespecedInfinityDisplay(){
-	if (setUnlocks.length > player.setsUnlocked) document.getElementById("nextset").textContent = "Next set unlocks at " + formatValue(player.options.notation, setUnlocks[player.setsUnlocked], 2, 0, true) + "."
+	if (setUnlocks.length > player.setsUnlocked) document.getElementById("nextset").textContent = "下一套在 " + formatValue(player.options.notation, setUnlocks[player.setsUnlocked], 2, 0, true) + " 解鎖。"
 	document.getElementById("infi1pow").textContent = getFullExpansion(player.infinityUpgradesRespecced[1] * 10)
 	document.getElementById("infi1cost").textContent = shortenCosts(Decimal.pow(10, player.infinityUpgradesRespecced[1]))
 	document.getElementById("infi1").className = player.infinityPoints.lt(Decimal.pow(10, player.infinityUpgradesRespecced[1])) ? "infinistorebtnlocked" : "infinimultbtn"
@@ -300,7 +300,7 @@ function infinityUpgradesDisplay(){
 function preBreakUpgradeDisplay(){
 	if (canBuyIPMult()) document.getElementById("infiMult").className = "infinimultbtn"
 	else document.getElementById("infiMult").className = "infinistorebtnlocked"
-	var infiMultEnding = player.infinityPoints.lt(Decimal.pow(10, 1e10)) ? "<br>Currently: " + shorten(getIPMult()) + "x<br>Cost: " + shortenCosts(player.infMultCost) + " IP" : ""
+	var infiMultEnding = player.infinityPoints.lt(Decimal.pow(10, 1e10)) ? "<br>目前：" + shorten(getIPMult()) + "x<br>價格：" + shortenCosts(player.infMultCost) + " 無限點數" : ""
 	document.getElementById("infiMult").innerHTML = "You get " + (Math.round(getIPMultPower() * 100) / 100) + "x more IP." + infiMultEnding
 	document.getElementById("nextset").textContent = ""
 	if (player.infinityUpgradesRespecced != undefined) {
@@ -340,15 +340,15 @@ function eventsTimeDisplay(years, thisYear){
 		     3000,   2600,  2500,  2300,  1800,
 		     1400,   1175,  800,   753,   653,
 		     539,    356,   200,   4,     0]
-	var events = ["start of Pliocene epoch", "birthdate of Lucy (typical Australopithicus afarensis female)", "Quaternary period", "Calabrian age", "Homo sapiens",
-		      "Homo neanderthalensis", "emergence of anatomically modern humans", "Homo sapiens idaltu", "peak of Eemian interglacial period", "earliest abstract/symbolic art",
-		      "Upper Paleolithic", "Late Stone Age", "European early modern humans", "first human settlement", "oldest known figurative art",
-		      "oldest known domesticated dog", "Last Glacial Maximum", "oldest ovens", "oldest known twisted rope", "oldest human permanent settlement (hamlet considering built of rocks and of mammoth bones)",
-		      "rise of Kerberan culture", "colonization of North America", "domestication of the pig", "prehistoric warfare", "Holocene",
-		      "death of other human breeds", "agricultural revolution", "farmers arrived in Europe", "first metal tools", "first horse",
-		      "Sumerian cuneiform writing system", "union of Egypt", "rise of Maya", "extinct of mammoths", "rise of Akkadian Empire",
-		      "first alphabetic writing", "rise of Olmec civilization", "end of bronze age", "rise of Greek city-states", "rise of Rome",
-		      "rise of Persian Empire", "fall of Babylonian Empire", "birth of Alexander the Great", "first paper", "birth of Jesus Christ"]
+	var events = ["上新世的開始", "南方古猿露西的誕生", "第四紀", "早更新期", "智人",
+		      "尼安德塔人", "身體結構現代化人類的出現", "長者智人", "伊緬間冰期的高峰", "最早的抽象/符號藝術",
+		      "晚更新期", "舊石器時代晚期", "歐洲早現代人類", "第一個人類聚居地", "最古老的已知的比喻藝術",
+		      "最古老的已知的馴養狗", "末次冰盛期", "最古老的烤箱", "最古老的已知的扭轉繩子", "最古老的人類的永久聚居地（由石頭和長毛象骨頭製作的小村莊）",
+		      "rise of Kerberan culture", "北美洲的殖民地化", "豬的馴養", "史前戰爭", "全新世",
+		      "其他人類品種的死亡", "農業革命", "農夫來到歐洲", "第一個金屬工具", "第一隻馬",
+		      "蘇美爾的楔形文字書寫系統", "埃及的統一", "瑪雅文明的崛起", "長毛象的絕種", "阿卡德帝國的崛起",
+		      "第一個字母書寫系統", "奧爾梅克文明的崛起", "青銅時代的結束", "希臘城邦的崛起", "羅馬的崛起",
+		      "波斯帝國的崛起", "巴比倫帝國的滅亡", "亞歷山大大帝的誕生", "第一張紙", "耶穌的誕生"]
 	/*
 	"the homo sapiens" is weird, as is "the homo neanderthaliensis" and "the homo sapiens idaltu"
 	*/
@@ -363,13 +363,12 @@ function eventsTimeDisplay(years, thisYear){
 		since = events[index - 1]
 		sinceYears = bc - dates[index]
 	}
-	var message = "<br>If you wanted to finish writing out your full antimatter amount at a rate of 3 digits per second, you would need to start it in " 
-	message += getFullExpansion(Math.floor(bc)) + " BC." + (since ? "<br>This is around " + getFullExpansion(Math.ceil(sinceYears)) + " years before the " + since + "." : "")
+	var message = "<br>如果你每秒寫 3 個數字，你需要在公元前 " message += getFullExpansion(Math.floor(bc)) + " 開始，才可以現在寫完你的反物質數量。" + (since ? "<br>這個時間在 " + since + "之前的" + getFullExpansion(Math.ceil(sinceYears)) + "左右。" : "")
 	document.getElementById("infoScale").innerHTML = message
 }
 
 function universesTimeDisplay(years){
-	var message = "<br>The time needed to finish writing your full antimatter amount at a rate of 3 digits per second would span "
+	var message = "<br>如果你每秒寫 3 個數字，寫完你的反物質數量所需的時間是 "
 	let unis = years / 13.78e9 
 	// 13.78 Billion years as measured by the CMB (cosmic microwave background) and various models, feel free to change if more accurate data comes along
 	let timebit 
@@ -381,7 +380,7 @@ function universesTimeDisplay(years){
 }
 
 function lifetimeTimeDisplay(years){
-	var message = "<br>If you wrote 3 digits of your full antimatter amount every second since you were born as an American,<br> you would "
+	var message = "<br>如果你是一個美國人，並出生後以每秒 3 個數字寫你的反物質數量，<br> "
 	if (years > 79.3) message += "be a ghost for " + ((years - 79.3) / years * 100).toFixed(3) + "% of the session."
 	else message += "waste " + (years / 0.793).toFixed(3) + "% of your projected average lifespan."
 	document.getElementById("infoScale").innerHTML = message
