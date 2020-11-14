@@ -194,7 +194,7 @@ function setupParadoxUpgrades(){
 		for (let c = 1; c <= puSizes.x; c++) {
 			var col = row.insertCell(c - 1)
 			var id = (r * 10 + c)
-			col.innerHTML = "<button id='pu" + id + "' class='infinistorebtn1' onclick='buyPU("+id+","+(r<2)+")'>"+(typeof(puDescs[id])=="function"?"<span id='pud"+id+"'></span>":puDescs[id]||"???")+(puMults[id]?"<br>目前：<span id='pue"+id+"'></span>":"")+"<br><span id='puc"+id+"'></span></button>"
+			col.innerHTML = "<button id='pu" + id + "' class='infinistorebtn1' onclick='buyPU("+id+","+(r<2)+")'>"+(typeof(puDescs[id])=="function"?"<span id='pud"+id+"'></span>":puDescs[id]||"???")+(puMults[id]?"<br>Currently: <span id='pue"+id+"'></span>":"")+"<br><span id='puc"+id+"'></span></button>"
 		}
 	}
 }
@@ -270,7 +270,7 @@ function setupToDHTMLandData(){
 		html = "<table class='table' align='center' style='margin: auto'><tr>"
 		for (var u = 1; u <= 3; u++) {
 			html += "<td style='vertical-align: 0'><button class='gluonupgrade unavailablebtn' id='" + color + "upg" + u + "' onclick='buyBranchUpg(\"" + shorthand + "\", " + u + ")' style='font-size:10px'>" + branchUpgrades[u - 1] + "<br>" 
-			html += "目前：<span id='" + color + "upg" + u + "current'>1</span>x<br><span id='" + color + "upg" + u + "cost'>?</span></button>"
+			html += "Currently: <span id='" + color + "upg" + u + "current'>1</span>x<br><span id='" + color + "upg" + u + "cost'>?</span></button>"
 			html += (u == 2 ? "<br><button class='storebtn' style='width: 190px' onclick='maxBranchUpg(\"" + shorthand + "\")'>Max all upgrades</button>" + "<br><button class='storebtn' style='width: 190px; font-size:10px' onclick='maxBranchUpg(\"" + shorthand + "\", true)'>最大購買第二和第三升級</button>":"")+"</td>"
 		}
 		html += "</tr></tr><td></td><td><button class='gluonupgrade unavailablebtn' id='" + shorthand + "RadioactiveDecay' style='font-size:9px' onclick='radioactiveDecay(\"" + shorthand + "\")'>重置以加強第一升級，但是削弱該分支。<br><span id='" + shorthand + "RDReq'></span><br>放射衰變：<span id='" + shorthand + "RDLvl'></span></button></td><td></td>"
@@ -328,7 +328,7 @@ function setupBosonicExtraction(){
 			var col = row.insertCell(g1 - 1)
 			var id = (g1 * 10 + g2)
 			col.innerHTML = "<button id='bEn" + id + "' class='gluonupgrade unavailablebtn' style='font-size: 9px' onclick='takeEnchantAction("+id+")'>"+(bEn.descs[id]||"???")+"<br>"+
-			"目前：<span id='bEnEffect" + id + "'>???</span><br>"+
+			"Currently: <span id='bEnEffect" + id + "'>???</span><br>"+
 			"<span id='bEnLvl" + id + "'></span><br>" +
 			"<span id='bEnOn" + id + "'></span><br>" +
 			"Cost: <span id='bEnG1Cost" + id + "'></span> <div class='bRune' type='" + g1 + "'></div> & <span id='bEnG2Cost" + id + "'></span> <div class='bRune' type='" + g2 + "'></div></button><br>"
@@ -349,7 +349,7 @@ function setupBosonicUpgrades(){
 			var col = row.insertCell(c - 1)
 			var id = (r * 10 + c)
 			col.innerHTML = "<button id='bUpg" + id + "' class='gluonupgrade unavailablebtn' style='font-size: 9px' onclick='buyBosonicUpgrade(" + id + ")'>" + (bu.descs[id] || "???") + "<br>" +
-			(bu.effects[id] !== undefined ? "目前：<span id='bUpgEffect" + id + "'>0</span><br>" : "") +
+			(bu.effects[id] !== undefined ? "Currently: <span id='bUpgEffect" + id + "'>0</span><br>" : "") +
 			"Cost: <span id='bUpgCost" + id + "'></span> Bosonic Antimatter<br>" +
 			"Requires: <span id='bUpgG1Req" + id + "'></span> <div class='bRune' type='" + bu.reqData[id][2] + "'></div> & <span id='bUpgG2Req" + id + "'></span> <div class='bRune' type='" + bu.reqData[id][4] + "'></div></button>"
 		}
@@ -1971,7 +1971,7 @@ function buyEPMult() {
 		}
 		player.eternityPoints = player.eternityPoints.minus(player.epmultCost)
 		player.epmultCost = getEPCost(Math.round(player.epmult.ln()/Math.log(5)))
-		document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>目前："+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
+		document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: "+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
 		updateEternityUpgrades()
 	}
 }
@@ -2005,7 +2005,7 @@ function buyMaxEPMult() {
 	if (isNaN(newEP.e)) player.eternityPoints = new Decimal(0)
 	player.epmult = player.epmult.times(Decimal.pow(5, toBuy))
 	player.epmultCost = getEPCost(bought+toBuy)
-	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>目前："+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
+	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: "+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
 }
 
 function playerInfinityUpgradesOnEternity() {
@@ -2643,7 +2643,7 @@ function onNotationChange() {
 		else if (!player.ghostify.wzb.unl) updateBLUnlockDisplay()
 		else if (!tmp.ngp3l && !tmp.hb.unl) updateHiggsUnlockDisplay()
 	}
-	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>目前："+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
+	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: "+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
 	document.getElementById("achmultlabel").textContent = "Current achievement multiplier on each Dimension: " + shortenMoney(player.achPow) + "x"
 	if (player.achievements.includes("ng3p18") || player.achievements.includes("ng3p37")) {
 		document.getElementById('bestTP').textContent="Your best"+(ghostified ? "" : " ever")+" Tachyon particles"+(ghostified ? " in this Ghostify" : "")+" was "+shorten(player.dilation.bestTP)+"."
@@ -3588,8 +3588,8 @@ function doIRCrunchResetStuff(){
 function doGPUpgCrunchUpdating(g11MultShown){
 	var showg11Mult = player.infinitied > 0 || player.eternities !== 0 || quantumed
 	if (player.galacticSacrifice && (showg11Mult != g11MultShown)) {
-		document.getElementById("galaxy11").innerHTML = "Normal" + (player.aarexModifications.ngmX > 3 ? " and Time D" : " d")+"imensions are " + (showg11Mult ? "cheaper based on your infinitied stat.<br>目前：<span id='galspan11'></span>x":"99% cheaper.")+"<br>Cost: 1 GP"
-		document.getElementById("galaxy15").innerHTML = "Normal and Time Dimensions produce " + (showg11Mult ? "faster based on your infinitied stat.<br>目前：<span id='galspan15'></span>x":"100x faster")+".<br>Cost: 1 GP"
+		document.getElementById("galaxy11").innerHTML = "Normal" + (player.aarexModifications.ngmX > 3 ? " and Time D" : " d")+"imensions are " + (showg11Mult ? "cheaper based on your infinitied stat.<br>Currently: <span id='galspan11'></span>x":"99% cheaper.")+"<br>Cost: 1 GP"
+		document.getElementById("galaxy15").innerHTML = "Normal and Time Dimensions produce " + (showg11Mult ? "faster based on your infinitied stat.<br>Currently: <span id='galspan15'></span>x":"100x faster")+".<br>Cost: 1 GP"
 	}
 }
 
@@ -5649,16 +5649,16 @@ function progressBarUpdating(){
 
 function ECRewardDisplayUpdating(){
 	document.getElementById("ec1reward").textContent = "Reward: "+shortenMoney(getECReward(1))+"x on all Time Dimensions (based on time spent this Eternity)"
-	document.getElementById("ec2reward").textContent = "Reward: Infinity Power affects the 1st Infinity Dimension with reduced effect. 目前：" + shortenMoney(getECReward(2)) + "x"
-	document.getElementById("ec3reward").textContent = "Reward: Increase the multiplier for buying 10 Dimensions. 目前：" + shorten(getDimensionPowerMultiplier("no-QC5")) + "x"
-	document.getElementById("ec4reward").textContent = "Reward: Infinity Dimensions gain a multiplier from unspent IP. 目前：" + shortenMoney(getECReward(4)) + "x"
+	document.getElementById("ec2reward").textContent = "Reward: Infinity Power affects the 1st Infinity Dimension with reduced effect. Currently: " + shortenMoney(getECReward(2)) + "x"
+	document.getElementById("ec3reward").textContent = "Reward: Increase the multiplier for buying 10 Dimensions. Currently: " + shorten(getDimensionPowerMultiplier("no-QC5")) + "x"
+	document.getElementById("ec4reward").textContent = "Reward: Infinity Dimensions gain a multiplier from unspent IP. Currently: " + shortenMoney(getECReward(4)) + "x"
 	document.getElementById("ec5reward").textContent = "Reward: Galaxy cost scaling starts " + getECReward(5) + " galaxies later."
-	document.getElementById("ec6reward").textContent = "Reward: Further reduce the dimension cost multiplier increase. 目前：" + player.dimensionMultDecrease.toFixed(1) + "x "
-	document.getElementById("ec7reward").textContent = "Reward: First Time Dimensions produce Eighth Infinity Dimensions. 目前：" + shortenMoney(DimensionProduction(9)) + " per second. "
-	document.getElementById("ec8reward").textContent = "Reward: Infinity Power powers up replicanti galaxies. 目前：" + (getECReward(8) * 100 - 100).toFixed(2) + "%"
-	document.getElementById("ec9reward").textContent = "Reward: Infinity Dimensions gain a " + (player.galacticSacrifice ? "post dilation " : "") + " multiplier based on your Time Shards. 目前："+shortenMoney(getECReward(9))+"x "
-	document.getElementById("ec10reward").textContent = "Reward: Time Dimensions gain a multiplier from your Infinities. 目前：" + shortenMoney(getECReward(10)) + "x "
-	document.getElementById("ec11reward").textContent = "Reward: Further reduce the tickspeed cost multiplier increase. 目前：" + player.tickSpeedMultDecrease.toFixed(2) + "x "
+	document.getElementById("ec6reward").textContent = "Reward: Further reduce the dimension cost multiplier increase. Currently: " + player.dimensionMultDecrease.toFixed(1) + "x "
+	document.getElementById("ec7reward").textContent = "Reward: First Time Dimensions produce Eighth Infinity Dimensions. Currently: " + shortenMoney(DimensionProduction(9)) + " per second. "
+	document.getElementById("ec8reward").textContent = "Reward: Infinity Power powers up replicanti galaxies. Currently: " + (getECReward(8) * 100 - 100).toFixed(2) + "%"
+	document.getElementById("ec9reward").textContent = "Reward: Infinity Dimensions gain a " + (player.galacticSacrifice ? "post dilation " : "") + " multiplier based on your Time Shards. Currently: "+shortenMoney(getECReward(9))+"x "
+	document.getElementById("ec10reward").textContent = "Reward: Time Dimensions gain a multiplier from your Infinities. Currently: " + shortenMoney(getECReward(10)) + "x "
+	document.getElementById("ec11reward").textContent = "Reward: Further reduce the tickspeed cost multiplier increase. Currently: " + player.tickSpeedMultDecrease.toFixed(2) + "x "
 	document.getElementById("ec12reward").textContent = "Reward: Infinity Dimension cost multipliers are reduced. (x^" + getECReward(12) + ")"
 	document.getElementById("ec13reward").textContent = "Reward: Increase the exponent of meta-antimatter's effect. (" + (getECReward(13)+9) + "x)"
 	document.getElementById("ec14reward").textContent = "Reward: Free tickspeed upgrades boost the IC3 reward to be " + getIC3EffFromFreeUpgs().toFixed(0) + "x stronger."
