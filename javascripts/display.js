@@ -1,8 +1,8 @@
 function dimShiftDisplay(){
 	var shiftRequirement = getShiftRequirement(0);
 	var isShift = player.resets < (inNC(4) || player.currentChallenge == "postc1" || player.pSac !== undefined ? 2 : 4)
-	document.getElementById("resetLabel").textContent = '維度' + (isShift ? "跳躍" : player.resets < getSupersonicStart() ? "提升" : "超音速") + ' ('+ getFullExpansion(Math.ceil(player.resets)) +')：需要' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + "維度"
-	document.getElementById("softReset").textContent = "重置遊戲以獲得一個" + (isShift ? "新的維度" : "加成")
+	document.getElementById("resetLabel").textContent = 'Dimension ' + (isShift ? "Shift" : player.resets < getSupersonicStart() ? "Boost" : "Supersonic") + ' ('+ getFullExpansion(Math.ceil(player.resets)) +'): requires ' + getFullExpansion(Math.ceil(shiftRequirement.amount)) + " " + DISPLAY_NAMES[shiftRequirement.tier] + " Dimensions"
+	document.getElementById("softReset").textContent = "Reset the game for a " + (isShift ? "new Dimension" : "Boost")
 }
 
 function tickspeedBoostDisplay(){
@@ -21,7 +21,7 @@ function galaxyReqDisplay(){
 	document.getElementById("secondResetLabel").innerHTML = getGalaxyScaleName(nextGal.scaling) + (nextGal.scaling <= 3 ? "Antimatter " : "") + ' Galaxies ('+ getFullExpansion(player.galaxies) + (totalTypes > 1 ? ' + ' + getFullExpansion(totalReplGalaxies) : '') + (totalTypes > 2 ? ' + ' + getFullExpansion(Math.round(player.dilation.freeGalaxies)) : '') + (totalTypes > 3 ? ' + ' + getFullExpansion(tmp.aeg) : '') +'): requires ' + getFullExpansion(nextGal.amount) + ' '+DISPLAY_NAMES[inNC(4) || player.pSac != undefined ? 6 : 8]+' Dimensions'
 }
 
-var galaxyScalings = ["", "遠處 ", "更遠處", "遙遠 ", "暗物質", "幽靈", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
+var galaxyScalings = ["", "Distant ", "Further ", "Remote ", "Dark Matter ", "Ghostly ", "Ethereal ", "Ethereal+ ", "Ethereal++ ", "Ethereal IV ", "Ethereal V "]
 function getGalaxyScaleName(x) {
 	return galaxyScalings[x]
 }
@@ -52,7 +52,7 @@ function dimensionTabDisplay(){
 			document.getElementById("A" + tier).textContent = getDimensionDescription(tier)
 		}
 	}
-	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'每十個維度的加成：'+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
+	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'Multiplier per 10 Dimensions: '+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
 	dimShiftDisplay()
 	tickspeedBoostDisplay()
 	galaxyReqDisplay()
@@ -65,10 +65,10 @@ function tickspeedDisplay(){
 		var tickmultNum = tickmult.toNumber()
 		var ticklabel
 		var e = Math.floor(Math.log10(Math.round(1/tickmultNum)))
-		if (isNaN(tickmultNum)) ticklabel = '將時間速度打破無限';
-		else if (e >= 9) ticklabel = "將時間間隔除以 " + shortenDimensions(Decimal.recip(tickmult))
-		else if (tickmultNum > .9) ticklabel = '將時間間隔減少 ' + shorten((1 - tickmultNum) * 100) + '%'
-		else ticklabel = '將時間間隔減少 ' + ((1 - tickmultNum) * 100).toFixed(e) + '%'
+		if (isNaN(tickmultNum)) ticklabel = 'Break the tick interval by Infinite';
+		else if (e >= 9) ticklabel = "Divide the tick interval by " + shortenDimensions(Decimal.recip(tickmult))
+		else if (tickmultNum > .9) ticklabel = 'Reduce the tick interval by ' + shorten((1 - tickmultNum) * 100) + '%'
+		else ticklabel = 'Reduce the tick interval by ' + ((1 - tickmultNum) * 100).toFixed(e) + '%'
 		let ic3mult=getPostC3Mult()
 		if (player.galacticSacrifice || player.currentChallenge == "postc3" || isIC3Trapped()) document.getElementById("tickLabel").innerHTML = ((isIC3Trapped() || player.currentChallenge == "postc3") && player.currentChallenge != "postcngmm_3" && !player.challenges.includes("postcngmm_3") && !tmp.be ? "M" : ticklabel + '<br>and m') + 'ultiply all dimensions by ' + (ic3mult > 999.95 ? shorten(ic3mult) : new Decimal(ic3mult).toNumber().toPrecision(4)) + '.'
 		else document.getElementById("tickLabel").textContent = ticklabel + '.'
@@ -87,15 +87,15 @@ function tickspeedDisplay(){
 
 function paradoxDimDisplay(){
 	document.getElementById("pPow").textContent = shortenMoney(player.pSac.dims.power)
-	document.getElementById("pPowProduction").textContent = "你每秒正在獲得 " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " 悖論力量。"
+	document.getElementById("pPowProduction").textContent = "You are getting " + shortenDimensions(getPDProduction(1).div(getEC12Mult())) + " Paradox Power per second."
 	document.getElementById("pPowEffect").textContent = getFullExpansion(Math.floor(getExtraTime() * getEC12Mult()))
 	var shown
 	for (let t = 8; t > 0; t--) {
 		shown = shown || isDimUnlocked(t)
 		document.getElementById("pR"+t).style.display = shown ? "" : "none"
 		if (shown) {
-			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + "悖論維度 x" + shortenMoney(getPDPower(t))
-			document.getElementById("pB"+t).textContent = "價格：" + shortenDimensions(player.pSac.dims[t].cost) + " 悖論"
+			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + " Paradox Dimension x" + shortenMoney(getPDPower(t))
+			document.getElementById("pB"+t).textContent = "Cost: " + shortenDimensions(player.pSac.dims[t].cost) + " Px"
 			document.getElementById("pB"+t).className = (player.pSac.px.gte(player.pSac.dims[t].cost) ? "stor" : "unavailabl") + "ebtn"
 			document.getElementById("pA"+t).textContent = getPDDesc(t)
 		}
