@@ -94,7 +94,7 @@ function paradoxDimDisplay(){
 		document.getElementById("pR"+t).style.display = shown ? "" : "none"
 		if (shown) {
 			document.getElementById("pD"+t).textContent = DISPLAY_NAMES[t] + "悖論維度 x" + shortenMoney(getPDPower(t))
-			document.getElementById("pB"+t).textContent = "Cost: " + shortenDimensions(player.pSac.dims[t].cost) + " Px"
+			document.getElementById("pB"+t).textContent = "價格：" + shortenDimensions(player.pSac.dims[t].cost) + " 悖論"
 			document.getElementById("pB"+t).className = (player.pSac.px.gte(player.pSac.dims[t].cost) ? "stor" : "unavailabl") + "ebtn"
 			document.getElementById("pA"+t).textContent = getPDDesc(t)
 		}
@@ -102,18 +102,18 @@ function paradoxDimDisplay(){
 }
 
 function mainStatsDisplay(){
-	document.getElementById("totalmoney").textContent = 'You have made a total of ' + shortenMoney(player.totalmoney) + ' antimatter.'
-	document.getElementById("totalresets").textContent = 'You have performed ' + getFullExpansion(player.resets) + ' Dimension Boosts/Shifts.'
-	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"You have lost a total of " + getFullExpansion(player.pSac.lostResets) + " Dimension Boosts/Shifts after matter resets."')
-	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? 'You have performed ' + getFullExpansion(player.tdBoosts) + ' Time Dimension Boosts/Shifts.':""
+	document.getElementById("totalmoney").textContent = '你總共生產了 ' + shortenMoney(player.totalmoney) + ' 反物質。'
+	document.getElementById("totalresets").textContent = '你進行了 ' + getFullExpansion(player.resets) + ' 個維度提升/跳躍。'
+	setAndMaybeShow("lostResets", player.pSac && player.pSac.lostResets, '"物質重置後，你總共失去了 " + getFullExpansion(player.pSac.lostResets) + " 個維度提升/跳躍。"')
+	document.getElementById("tdboosts").textContent = player.aarexModifications.ngmX > 3 ? '你進行了 ' + getFullExpansion(player.tdBoosts) + ' 個時間維度提升/跳躍。':""
 	var showBoosts=isTickspeedBoostPossible()
 	document.getElementById("boosts").style.display = showBoosts ? '' : 'none'
-	if (showBoosts) document.getElementById("boosts").textContent = 'You have performed '+getFullExpansion(player.tickspeedBoosts)+' Tickspeed Boosts.'
-	document.getElementById("galaxies").textContent = 'You have ' + getFullExpansion(player.galaxies) + ' Antimatter Galaxies.'
+	if (showBoosts) document.getElementById("boosts").textContent = '你進行了 '+getFullExpansion(player.tickspeedBoosts)+' 時間速度提升。'
+	document.getElementById("galaxies").textContent = '你有 ' + getFullExpansion(player.galaxies) + ' 反物質星系。'
 	var showCancer = player.spreadingCancer > 0 && player.galacticSacrifice
 	document.getElementById("spreadingCancer").style.display = showCancer ? '' : 'none'
 	if (showCancer) document.getElementById("spreadingCancer").textContent = 'You have made '+getFullExpansion(player.spreadingCancer)+' total galaxies while using Cancer notation.'
-	document.getElementById("totalTime").textContent = "You have played for " + timeDisplay(player.totalTimePlayed) + "."
+	document.getElementById("totalTime").textContent = "你遊玩了 " + timeDisplay(player.totalTimePlayed) + "。"
 }
 
 function paradoxSacDisplay(){
