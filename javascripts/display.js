@@ -32,12 +32,11 @@ function intergalacticDisplay(){
 		let nanopart = 1
 		if (isNanoEffectUsed("dil_effect_exp")) nanopart = tmp.nf.effects["dil_effect_exp"] || 1
 		document.getElementById("intergalacticLabel").innerHTML = 
-			getGalaxyScaleName(tmp.igs) + 'Intergalactic Boost ' + 
+			getGalaxyScaleName(tmp.igs) + ' Intergalactic 加成 ' + 
 			(player.dilation.active || player.galacticSacrifice != undefined ? " (estimated)" : "") +
-			" (" + getFullExpansion(player.galaxies) + (Math.floor(tmp.igg - player.galaxies) > 0 ? " + " + 
-			getFullExpansion(Math.floor(tmp.igg - player.galaxies)) : "") + "): " + 
-			shorten(dilates(tmp.ig).pow(player.dilation.active ? nanopart : 1)) + 
-			'x to Eighth Dimensions'
+			"（" + getFullExpansion(player.galaxies) + (Math.floor(tmp.igg - player.galaxies) > 0 ? " + " + 
+			getFullExpansion(Math.floor(tmp.igg - player.galaxies)) : "") + "）：第八維度 " + 
+			shorten(dilates(tmp.ig).pow(player.dilation.active ? nanopart : 1)) + 'x'
 	} else document.getElementById("intergalacticLabel").parentElement.style.display = "none"
 }
 
@@ -48,11 +47,11 @@ function dimensionTabDisplay(){
 		var name = TIER_NAMES[tier];
 		if (shown) {
 			document.getElementById(tier + "Row").style.display = ""
-			document.getElementById("D" + tier).childNodes[0].nodeValue = DISPLAY_NAMES[tier] + " Dimension x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 2, 1)
+			document.getElementById("D" + tier).childNodes[0].nodeValue = DISPLAY_NAMES[tier] + "維度 x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 2, 1)
 			document.getElementById("A" + tier).textContent = getDimensionDescription(tier)
 		}
 	}
-	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'Multiplier per 10 Dimensions: '+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
+	setAndMaybeShow("mp10d", player.aarexModifications.newGameMult, "'每十個維度的加成：'+shorten(getDimensionPowerMultiplier(\"non-random\"))+'x'")
 	dimShiftDisplay()
 	tickspeedBoostDisplay()
 	galaxyReqDisplay()
