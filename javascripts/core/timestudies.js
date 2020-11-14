@@ -90,12 +90,12 @@ function updateTheoremButtons() {
 		document.getElementById("theoremep").innerHTML = "Buy Time Theorems <br>Cost: " + shortenDimensions(player.timestudy.epcost) + " EP"
 		document.getElementById("theoremip").innerHTML = "Buy Time Theorems <br>Cost: " + shortenCosts(player.timestudy.ipcost) + " IP"
 		document.getElementById("theoremam").innerHTML = "Buy Time Theorems <br>Cost: " + shortenCosts(player.timestudy.amcost)
-		document.getElementById("theoremmax").innerHTML = (speedrunMilestonesReached > 2 && player.masterystudies) ? ("自動購買："+(player.autoEterOptions.tt ? "開啟" : "關閉")) : "最大購買時間定理"
+		document.getElementById("theoremmax").innerHTML = (speedrunMilestonesReached > 2 && player.masterystudies) ? ("Auto max: "+(player.autoEterOptions.tt ? "ON" : "OFF")) : "Buy max Theorems"
 	}
 	var tt = player.timestudy.theorem
 	var html = "<span style='display:inline' class=\"TheoremAmount\">" + (tt >= 1e5 ? shortenMoney(tt) : getFullExpansion(Math.floor(tt))) + "</span> "
-	if (tt >= 1e100) html += " 時間定理" + (player.timestudy.theorem == 1e200 ? "（上限）" : "")
-	else if (tt == 1) html = "你有 " + html + " 時間定理。"
+	if (tt >= 1e100) html += " Time Theorems" + (player.timestudy.theorem == 1e200 ? " (cap)" : "")
+	else if (tt == 1) html = "You have " + html + " Time Theorem."
 	else html = "You have " + html + " Time Theorems."
 	document.getElementById("timetheorems").innerHTML = html
 }
@@ -132,8 +132,8 @@ function buyTimeStudy(name, check, quickBuy) {
 			document.getElementById(name).className = "timestudybought"
 		}
 		if (name == 131 && speedrunMilestonesReached < 20) {
-			if (player.replicanti.galaxybuyer) document.getElementById("replicantiresettoggle").textContent = "自動星系開啟（禁用）"
-			else document.getElementById("replicantiresettoggle").textContent = "自動星系關閉（禁用）"
+			if (player.replicanti.galaxybuyer) document.getElementById("replicantiresettoggle").textContent = "Auto galaxy ON (disabled)"
+			else document.getElementById("replicantiresettoggle").textContent = "Auto galaxy OFF (disabled)"
 		}
 		if (quickBuy) return
 		updateTimeStudyButtons(true)
@@ -252,7 +252,7 @@ function updateTimeStudyButtons(changed, forceupdate = false) {
 	performedTS = true
 	if (player.boughtDims) {
 		var locked = getTotalTT(player) < 60
-		document.getElementById("nextstudy").textContent = locked ? "下一套時間研究在 60 總時間定理解鎖。" : ""
+		document.getElementById("nextstudy").textContent = locked ? "Next time study set unlock at 60 total Time Theorems." : ""
 		document.getElementById("tsrow3").style.display = locked ? "none" : ""
 		for (var id = 1; id < (locked ? 5 : 7); id++) {
 			var b = player.timestudy.ers_studies[id]
@@ -316,7 +316,7 @@ function updateTimeStudyButtons(changed, forceupdate = false) {
 	document.getElementById("dilstudy6").style.display = player.meta ? "" : "none"
 	document.getElementById("masteryportal").style.display = player.masterystudies ? "" : "none"
 	if (tmp.ngp3) {
-		document.getElementById("masteryportal").innerHTML = player.dilation.upgrades.includes("ngpp6") ? "精煉傳送門<span>進入精煉研究。</span>" : !player.dilation.studies.includes(1) ? "未完待續……" : "精煉傳送門（" + (player.dilation.studies.includes(6) ? "66%：需要 "+shortenCosts(1e100)+" 膨脹時間升級）" : "33%：需要元維度）") 
+		document.getElementById("masteryportal").innerHTML = player.dilation.upgrades.includes("ngpp6") ? "Mastery portal<span>Continue into mastery studies.</span>" : !player.dilation.studies.includes(1) ? "To be continued...." : "Mastery portal (" + (player.dilation.studies.includes(6) ? "66%: requires "+shortenCosts(1e100)+" dilated time upgrade)" : "33%: requires meta-dimensions)") 
 		document.getElementById("masteryportal").className = player.dilation.upgrades.includes("ngpp6") ? "dilationupg" : "timestudylocked"
 	}
 }
@@ -427,8 +427,8 @@ function respecTimeStudies(force, presetLoad) {
 	if (!presetLoad) updateTimeStudyButtons(true)
 	if (gotAch) giveAchievement("You do know how these work, right?")
 	if (!GUBought("gb3")) ipMultPower = 2
-	if (player.replicanti.galaxybuyer) document.getElementById("replicantiresettoggle").textContent = "自動星系開啟"
-	else document.getElementById("replicantiresettoggle").textContent = "自動星系關閉"
+	if (player.replicanti.galaxybuyer) document.getElementById("replicantiresettoggle").textContent = "Auto galaxy ON"
+	else document.getElementById("replicantiresettoggle").textContent = "Auto galaxy OFF"
 }
 
 function respecUnbuyableTimeStudies() {
@@ -655,7 +655,7 @@ function load_preset(id, reset) {
 }
 
 function delete_preset(presetId) {
-	if (!confirm("你確定要刪除該存檔？刪除後不能恢復！")) return
+	if (!confirm("Do you really want to erase this preset? You will lose access if you do that!")) return
 	var alreadyDeleted = false
 	var newPresetsOrder = []
 	for (var id = 0; id < poData.length; id++) {
@@ -677,7 +677,7 @@ function delete_preset(presetId) {
 }
 
 function rename_preset(id) {
-	presets[id].title = prompt("請輸入該存檔的新名稱。重新命名成相關的名稱是很重要的！")
+	presets[id].title = prompt("Input a new name of this preset. It is necessary to rename it into related names!")
 	localStorage.setItem(btoa(presetPrefix + id), btoa(JSON.stringify(presets[id])))
 	placement = 1
 	while (poData[placement-1] != id) placement++
@@ -745,7 +745,7 @@ function openStudyPresets() {
 }
 
 function getPresetLayout(id) {
-	return "<b id='preset_" + id + "_title'>存檔 #" + (loadedPresets + 1) + "</b><br><button class='storebtn' onclick='save_preset(" + id + ")'>保存</button><button class='storebtn' onclick='load_preset(" + id + ")'>加載</button>" + (onNGP3 ? "<button class='storebtn' style='font-size: 10px' onclick='load_preset(" + id + ", true)'>永恆並加載</button>" : "") + "<button class='storebtn' onclick='rename_preset(" + id + ")'>重新命名</button><button class='storebtn' onclick='move_preset(" + id + ",-1)'>向上移動</button><button class='storebtn' onclick='move_preset(" + id + ",1)'>向下移動</button><button class='storebtn' onclick='delete_preset(" + id + ")'>刪除</button>"
+	return "<b id='preset_" + id + "_title'>Preset #" + (loadedPresets + 1) + "</b><br><button class='storebtn' onclick='save_preset(" + id + ")'>Save</button><button class='storebtn' onclick='load_preset(" + id + ")'>Load</button>" + (onNGP3 ? "<button class='storebtn' style='font-size: 10px' onclick='load_preset(" + id + ", true)'>Eternity and Load</button>" : "") + "<button class='storebtn' onclick='rename_preset(" + id + ")'>Rename</button><button class='storebtn' onclick='move_preset(" + id + ",-1)'>Move up</button><button class='storebtn' onclick='move_preset(" + id + ",1)'>Move down</button><button class='storebtn' onclick='delete_preset(" + id + ")'>Delete</button>"
 }
 
 function changePresetTitle(id, placement) {
