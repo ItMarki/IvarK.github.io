@@ -119,10 +119,10 @@ function mainStatsDisplay(){
 function paradoxSacDisplay(){
 	if (player.pSac && player.pSac.times) {
 		document.getElementById("psStatistics").style.display = ""
-		document.getElementById("pSacrificedNormal").textContent = "You have Paradox Sacrificed " + getFullExpansion(player.pSac.normalTimes) + " times."
-		document.getElementById("pSacrificedForced").textContent = "You have been forced to do a Paradox Sacrifice " + getFullExpansion(player.pSac.forcedTimes) + " times."
-		document.getElementById("pSacrificed").textContent = "You have Paradox Sacrificed a total of " + getFullExpansion(player.pSac.times) + " times."
-		document.getElementById("thisPSac").textContent = "You have spent " + timeDisplay(player.pSac.time) + " in this Paradox Sacrifice."
+		document.getElementById("pSacrificedNormal").textContent = "你悖論犧牲了 " + getFullExpansion(player.pSac.normalTimes) + " 次。"
+		document.getElementById("pSacrificedForced").textContent = "你被迫悖論犧牲了 " + getFullExpansion(player.pSac.forcedTimes) + " 次。"
+		document.getElementById("pSacrificed").textContent = "你總共悖論犧牲了 " + getFullExpansion(player.pSac.times) + " 次。"
+		document.getElementById("thisPSac").textContent = "你在本次悖論犧牲度過了 " + timeDisplay(player.pSac.time) + " 。"
 	} else document.getElementById("psStatistics").style.display = "none"
 }
 
@@ -130,8 +130,8 @@ function galaxySacDisplay(){
 	if (player.galacticSacrifice ? player.galacticSacrifice.times < 1 : true) document.getElementById("gsStatistics").style.display = "none"
 	else {
 		document.getElementById("gsStatistics").style.display = ""
-		document.getElementById("sacrificed").textContent = "You have Galactic Sacrificed "+getFullExpansion(player.galacticSacrifice.times) + " times."
-		document.getElementById("thisSacrifice").textContent = "You have spent " + timeDisplay(player.galacticSacrifice.time) + " in this Galactic Sacrifice."
+		document.getElementById("sacrificed").textContent = "你星系犧牲了 "+getFullExpansion(player.galacticSacrifice.times) + " 次。"
+		document.getElementById("thisSacrifice").textContent = "你在本次星系犧牲度過了 " + timeDisplay(player.galacticSacrifice.time) + " 。"
 	}
 }
 
