@@ -172,9 +172,9 @@ function bestQuantumDisplay(){
 	if (!quantumed) document.getElementById("quantumStatistics").style.display = "none"
 	else {
 		document.getElementById("quantumStatistics").style.display = ""
-		document.getElementById("quantumed").textContent = "你量子了 " + getFullExpansion(tmp.qu.times) + " 次。"
-		document.getElementById("thisQuantum").textContent = "你在本次量子度過了 " + timeDisplay(tmp.qu.time) + " 。"
-		document.getElementById("bestQuantum").textContent = "你最快的量子是 " + timeDisplay(tmp.qu.best) + "。"
+		document.getElementById("quantumed").textContent = "You have gone Quantum " + getFullExpansion(tmp.qu.times) + " times."
+		document.getElementById("thisQuantum").textContent = "You have spent " + timeDisplay(tmp.qu.time) + " in this Quantum."
+		document.getElementById("bestQuantum").textContent = "Your fastest Quantum is in " + timeDisplay(tmp.qu.best) + "."
 	}
 }
 
@@ -182,9 +182,9 @@ function bestGhostifyDisplay(){
 	if (!ghostified) document.getElementById("ghostifyStatistics").style.display = "none"
 	else {
 		document.getElementById("ghostifyStatistics").style.display = ""
-		document.getElementById("ghostified").textContent = "你通過了大撕裂的宇宙並變成了 " + getFullExpansion(player.ghostify.times) + " 次幽靈。"
-		document.getElementById("thisGhostify").textContent = "你在本次幽靈化度過了 " + timeDisplay(player.ghostify.time) + " 。"
-		document.getElementById("bestGhostify").textContent = "你最快的幽靈化是 " + timeDisplay(player.ghostify.best) + "。"
+		document.getElementById("ghostified").textContent = "You have became a ghost and passed Big Ripped universes " + getFullExpansion(player.ghostify.times) + " times."
+		document.getElementById("thisGhostify").textContent = "You have spent " + timeDisplay(player.ghostify.time) + " in this Ghostify."
+		document.getElementById("bestGhostify").textContent = "Your fastest Ghostify is in " + timeDisplay(player.ghostify.best) + "."
 	}
 }
 
@@ -192,18 +192,18 @@ function ng3p51Display(){
 	if (!player.achievements.includes("ng3p51"))  document.getElementById("bigRipStatistics").style.display = "none"
 	else {
 		document.getElementById("bigRipStatistics").style.display = ""
-		setAndMaybeShow("bigRipped", tmp.qu.bigRip.times, '"你大撕裂了 " + getFullExpansion(tmp.qu.bigRip.times) + " 次宇宙。"')
-		setAndMaybeShow("bestmoneythisrip", tmp.qu.bigRip.active, "'你在本次大撕裂的最大量反物質是 ' + shortenMoney(tmp.qu.bigRip.bestThisRun) + '。'")
-		document.getElementById("totalmoneybigrip").textContent = '你在所有大撕裂裡總共生產了 ' + shortenMoney(tmp.qu.bigRip.totalAntimatter) + ' 反物質。'
-		document.getElementById("bestgalsbigrip").textContent = '你在所有大撕裂的最大量反物質星系是 ' + getFullExpansion(tmp.qu.bigRip.bestGals) + "。"
+		setAndMaybeShow("bigRipped", tmp.qu.bigRip.times, '"You have big ripped the universe " + getFullExpansion(tmp.qu.bigRip.times) + " times."')
+		setAndMaybeShow("bestmoneythisrip", tmp.qu.bigRip.active, "'Your best antimatter for this Big Rip is ' + shortenMoney(tmp.qu.bigRip.bestThisRun) + '.'")
+		document.getElementById("totalmoneybigrip").textContent = 'You have made a total of ' + shortenMoney(tmp.qu.bigRip.totalAntimatter) + ' antimatter in all big rips.'
+		document.getElementById("bestgalsbigrip").textContent = 'Your best amount of normal galaxies for all Big Rips is ' + getFullExpansion(tmp.qu.bigRip.bestGals) + "."
 	}
 }
 
 function dilationStatsDisplay(){
-	if (player.dilation.times) document.getElementById("dilated").textContent = "你成功膨脹了 "+getFullExpansion(player.dilation.times)+" 次。"
+	if (player.dilation.times) document.getElementById("dilated").textContent = "You have succesfully dilated "+getFullExpansion(player.dilation.times)+" times."
 	else document.getElementById("dilated").textContent = ""
 
-	if (player.exdilation == undefined ? false : player.exdilation.times > 1) document.getElementById("exdilated").textContent = "你逆轉了 " + getFullExpansion(player.exdilation.times) + " 次膨脹。"
+	if (player.exdilation == undefined ? false : player.exdilation.times > 1) document.getElementById("exdilated").textContent = "You have reversed Dilation " + getFullExpansion(player.exdilation.times) + " times."
 	else document.getElementById("exdilated").textContent = ""
 }
 
