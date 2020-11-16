@@ -122,11 +122,11 @@ function setR7Tooltip(){
 	let blink = document.getElementById("Blink of an eye")
 
 	//ACHIEVEMENT ROW 7
-	not.setAttribute('ach-tooltip',"Big Crunch with only a single First Dimension without Dimension Boosts, Shifts or Galaxies while in the Automatic Galaxies Challenge. Reward: First Dimensions are " + (player.galacticSacrifice ? 909 : 3) + " times stronger" + (player.aarexModifications.ngmX >= 4 ? ", and buff the more expensive Break Infinity upgrade based on Infinities to be more effective" : "") + ".")
-	blink.setAttribute('ach-tooltip', "Big Crunch in under 200 milliseconds. Reward: Start with " + formatValue(player.options.notation, 2e25, 0, 0) + " antimatter, and all Normal Dimensions are stronger in the first 300 milliseconds of this Infinity.");
-	cant.setAttribute('ach-tooltip', "Get all Dimension multipliers over "+shortenCosts(1e308)+". Reward: All Normal Dimensions are 10"+(player.galacticSacrifice?"x":"%")+" stronger.")
-	newDim.setAttribute('ach-tooltip', "Unlock the 4th Infinity Dimension."+(player.boughtDims?"":" Reward: Your achievement bonus affects Infinity Dimensions."))
-	tables.setAttribute('ach-tooltip', "Get 8th Dimension multiplier to be highest, 7th Dimension multiplier second highest, etc. Reward: Each dimension gains a boost proportional to their tier (8th dimension gets 8"+(player.galacticSacrifice?"0":"")+"%, 7th gets 7"+(player.galacticSacrifice?"0":"")+"%, etc.)")
+	not.setAttribute('ach-tooltip',"在星系自動購買器挑戰裡，在沒有維度提升、跳躍和星系的情況下，只用一個第一維度大坍縮。獎勵：第一維度強 " + (player.galacticSacrifice ? 909 : 3) + " 倍" + (player.aarexModifications.ngmX >= 4 ? "，而且基於無限次數，更貴的打破無限升級更強。" : "") + "。")
+	blink.setAttribute('ach-tooltip', "在 200 毫秒內大坍縮。獎勵：開始時有 " + formatValue(player.options.notation, 2e25, 0, 0) + " 反物質，而且在無限的頭 300 毫秒裡，所有發我下我的更強。");
+	cant.setAttribute('ach-tooltip', "將所有維度倍數超過 "+shortenCosts(1e308)+"。獎勵：所有反物質維度強 10"+(player.galacticSacrifice?"x":"%")+"。")
+	newDim.setAttribute('ach-tooltip', "解鎖第四無限維度。"+(player.boughtDims?"":"獎勵：你的成就加強影響無限維度。"))
+	tables.setAttribute('ach-tooltip', "將第八維度的倍數變為最高，第七維度的倍數變為第二高等等。獎勵：基於它們的級數，每一個維度獲得一個加成（第八維度有 8"+(player.galacticSacrifice?"0":"")+"% 的加成，第七維度有 7"+(player.galacticSacrifice?"0":"")+"% 的加成等等。）")
 }
 
 function setR8Tooltip(){
@@ -141,11 +141,11 @@ function setR8Tooltip(){
 	let reference = document.getElementById("Yet another infinity reference")
 
 	//ACHIEVEMENT ROW 8
-	IPBelongs.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e150)+" IP. " + (!player.aarexModifications.newGameMinusVersion ? "Reward: Gain an additional 4x multiplier to IP." : ""))
-	reference.setAttribute('ach-tooltip', "Get a x"+shortenDimensions(Number.MAX_VALUE)+" multiplier in a single sacrifice. Reward: Sacrifices are stronger.")
-	spare.setAttribute('ach-tooltip', "Reach " +formatValue(player.options.notation, new Decimal("1e35000"), 0, 0)+" antimatter. Reward: Dimensions are more powerful the more unspent antimatter you have.");
-	twomillion.setAttribute('ach-tooltip', "Get 2,000,000 Infinities. Reward: Infinities longer than 5 seconds give 250 Infinities" + (player.galacticSacrifice ? ", and you gain an additive +249 Infinities per crunch post multipliers" : "") + ".")
-	hevipelledidnothing.setAttribute('ach-tooltip', "Beat Infinity Challenge " + (player.galacticSacrifice ? (player.tickspeedBoosts != undefined ? 13 : 7 ) : 5) + " in 10 seconds or less" + (player.galacticSacrifice == undefined ? "" : " Reward: g13's effect is more powerful when outside of Eternity Challenges") + ".")
+	IPBelongs.setAttribute('ach-tooltip', "大坍縮並獲得 "+shortenCosts(1e150)+" 無限點數。" + (!player.aarexModifications.newGameMinusVersion ? "獎勵：你獲得 4x 更多無限點數。" : ""))
+	reference.setAttribute('ach-tooltip', "在一次犧牲裡獲得 "+shortenDimensions(Number.MAX_VALUE)+"x 加成。獎勵：犧牲更強。")
+	spare.setAttribute('ach-tooltip', "達到 " +formatValue(player.options.notation, new Decimal("1e35000"), 0, 0)+" 反物質。獎勵：你未花費的反物質越多，反物質維度越強。");
+	twomillion.setAttribute('ach-tooltip', "達到 2,000,000 無限次數。獎勵：多於 5 秒長的無限給 250 無限次數" + (player.galacticSacrifice ? "，而且每一個大坍縮後的加成使大坍縮的無限次數多 249 個。" : "") + "。")
+	hevipelledidnothing.setAttribute('ach-tooltip', "在 10 秒內完成無限挑戰 " + (player.galacticSacrifice ? (player.tickspeedBoosts != undefined ? 13 : 7 ) : 5) + "。" + (player.galacticSacrifice == undefined ? "" : "獎勵：在永恆挑戰外，星系升級 13 的效果更強。"))
 }
 
 function setR9Tooltip(){
