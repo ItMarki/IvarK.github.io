@@ -10,7 +10,7 @@ function unlockReplicantis() {
 
 function replicantiGalaxyBulkModeToggle() {
 	player.galaxyMaxBulk = !player.galaxyMaxBulk
-	document.getElementById('replicantibulkmodetoggle').textContent = "Mode: " + (player.galaxyMaxBulk ? "Max" : "Singles")
+	document.getElementById('replicantibulkmodetoggle').textContent = "模式：" + (player.galaxyMaxBulk ? "最大" : "單個")
 }
 
 function getReplMult(next) {
@@ -32,7 +32,7 @@ function upgradeReplicantiChance() {
 		else player.infinityPoints = player.infinityPoints.minus(player.replicanti.chanceCost)
 		player.replicanti.chance = Math.round(player.replicanti.chance * 100 + 1) / 100
 		if (player.currentEternityChall == "eterc8") player.eterc8repl -= 1
-		document.getElementById("eterc8repl").textContent = "You have " + player.eterc8repl + " purchases left."
+		document.getElementById("eterc8repl").textContent = "你還能購買 " + player.eterc8repl + " 次。"
 		player.replicanti.chanceCost = player.replicanti.chanceCost.times(1e15)
 	}
 }
@@ -53,7 +53,7 @@ function upgradeReplicantiInterval() {
 	else player.replicanti.intervalCost = player.replicanti.intervalCost.times(1e10)
 	if (!isIntervalAffordable()) player.replicanti.interval = (player.timestudy.studies.includes(22) || player.boughtDims ? 1 : 50)
 	if (player.currentEternityChall == "eterc8") player.eterc8repl -= 1
-	document.getElementById("eterc8repl").textContent = "You have " + player.eterc8repl + " purchases left."
+	document.getElementById("eterc8repl").textContent = "你還能購買 " + player.eterc8repl + " 次。"
 }
 
 function getReplicantiLimit() {
@@ -108,7 +108,7 @@ function upgradeReplicantiGalaxy() {
 		player.replicanti.galCost = getRGCost(1)
 		player.replicanti.gal += 1
 		if (player.currentEternityChall == "eterc8") player.eterc8repl -= 1
-		document.getElementById("eterc8repl").textContent = "You have "+player.eterc8repl+" purchases left."
+		document.getElementById("eterc8repl").textContent = "你還能購買 "+player.eterc8repl+" 次。"
 		return true
 	}
 	return false
@@ -204,7 +204,7 @@ function getTotalRG() {
 
 function replicantiGalaxyAutoToggle() {
 	player.replicanti.galaxybuyer=!player.replicanti.galaxybuyer
-	document.getElementById("replicantiresettoggle").textContent="Auto galaxy "+(player.replicanti.galaxybuyer?"ON":"OFF")+(!canAutoReplicatedGalaxy()?" (disabled)":"")
+	document.getElementById("replicantiresettoggle").textContent="自動星系"+(player.replicanti.galaxybuyer?"開啟":"關閉")+(!canAutoReplicatedGalaxy()?"（禁用）":"")
 }
 
 function getReplSpeed() {
@@ -294,26 +294,26 @@ function toggleReplAuto(i) {
 	if (i == "chance") {
 		if (player.replicanti.auto[0]) {
 			player.replicanti.auto[0] = false
-			document.getElementById("replauto1").textContent = "Auto: OFF"
+			document.getElementById("replauto1").textContent = "自動：關閉"
 		} else {
 			player.replicanti.auto[0] = true
-			document.getElementById("replauto1").textContent = "Auto: ON"
+			document.getElementById("replauto1").textContent = "自動：開啟"
 		}
 	} else if (i == "interval") {
 		if (player.replicanti.auto[1]) {
 			player.replicanti.auto[1] = false
-			document.getElementById("replauto2").textContent = "Auto: OFF"
+			document.getElementById("replauto2").textContent = "自動：關閉"
 		} else {
 			player.replicanti.auto[1] = true
-			document.getElementById("replauto2").textContent = "Auto: ON"
+			document.getElementById("replauto2").textContent = "自動：開啟"
 		}
 	} else if (i == "galaxy") {
 		if (player.replicanti.auto[2]) {
 			player.replicanti.auto[2] = false
-			document.getElementById("replauto3").textContent = "Auto: OFF"
+			document.getElementById("replauto3").textContent = "自動：關閉"
 		} else {
 			player.replicanti.auto[2] = true
-			document.getElementById("replauto3").textContent = "Auto: ON"
+			document.getElementById("replauto3").textContent = "自動：開啟"
 		}
 	}
 }
