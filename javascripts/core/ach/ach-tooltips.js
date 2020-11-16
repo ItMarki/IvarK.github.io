@@ -10,7 +10,7 @@ function setR1Tooltip(){
 	//r18/////
 
 	//ACHIEVEMENT ROW 1 
-	alot.setAttribute('ach-tooltip', "Buy a single Second Dimension." + (player.aarexModifications.ngmX > 3 ? " Reward: You gain 100x more Time Shards." : ""))
+	alot.setAttribute('ach-tooltip', "購買一個第二維度。" + (player.aarexModifications.ngmX > 3 ? "獎勵：你獲得 100x 更多時間碎片。" : ""))
 }
 
 function setR2Tooltip(){
@@ -25,12 +25,12 @@ function setR2Tooltip(){
 	let noPointAchieve = document.getElementById("There's no point in doing that");
 
 	//ACHIEVEMENT ROW 2
-	ndial.setAttribute('ach-tooltip', "Have exactly 99 Eighth Dimensions. Reward: Eighth Dimensions are 10% stronger" + (player.tickspeedBoosts==undefined ? "." : " and you gain more GP based on your Eighth Dimensions and your Tickspeed Boosts."));
-	apocAchieve.setAttribute('ach-tooltip', "Get over " + formatValue(player.options.notation, 1e80, 0, 0) + " antimatter.");
-	gal.setAttribute('ach-tooltip', 'Buy an Antimatter Galaxy. ' + (player.aarexModifications.ngmX > 3 ? "Reward: Upon a Time Dimension Boost, your Dimension Boosts don’t reset unless you have more Time Dimension Boosts than your Dimension Boosts." : ''));
-	doubleGal.setAttribute('ach-tooltip', 'Buy 2 Antimatter Galaxies. ' + (player.tickspeedBoosts !== undefined ? "Reward: Upon a Tickspeed Boost, your Dimension Boosts" + (player.aarexModifications.ngmX > 3 ? " and Time Dimension Boosts" : "") + " don’t reset unless you have more Tickspeed Boosts than five times your Antimatter Galaxies minus eight." : '') + (player.aarexModifications.ngmX > 3 ? " You start with 3 Time Dimension Boosts." : ""));
-	noPointAchieve.setAttribute('ach-tooltip', "Buy a single First Dimension when you have over " + formatValue(player.options.notation, 1e150, 0, 0) + " of them. Reward: First Dimensions are 10% stronger" + (player.tickspeedBoosts == undefined ? "." : " and you can max buy Dimension and Tickspeed Boosts."));
-	infinity.setAttribute('ach-tooltip', "Big Crunch for the first time. Reward: Start with 100 antimatter" + (player.galacticSacrifice ? " and always have at least 10x lower Dimension costs." : "."));
+	ndial.setAttribute('ach-tooltip', "剛好有 99 個第八維度。獎勵：第八維度強 10%" + (player.tickspeedBoosts==undefined ? "。" : "，而且基於你的第八維度和時間速度提升，你獲得更多星系點數。"));
+	apocAchieve.setAttribute('ach-tooltip', "達到 " + formatValue(player.options.notation, 1e80, 0, 0) + " 反物質。");
+	gal.setAttribute('ach-tooltip', '購買一個反物質星系。' + (player.aarexModifications.ngmX > 3 ? "獎勵：時間維度提升時，除非你的時間維度提升多於你的維度提升，否則維度提升不會重置。" : ''));
+	doubleGal.setAttribute('ach-tooltip', '購買 2 個反物質星系。' + (player.tickspeedBoosts !== undefined ? "獎勵：時間維度提升時，你的維度提升" + (player.aarexModifications.ngmX > 3 ? "和時間維度提升" : "") + "不會重置，除非你的時間速度提升比你的反物質星系的五倍減八個更多。" : '') + (player.aarexModifications.ngmX > 3 ? "你開始時會有 3 個時間維度提升。" : ""));
+	noPointAchieve.setAttribute('ach-tooltip', "在有多於 " + formatValue(player.options.notation, 1e150, 0, 0) + " 第一維度的情況下購買一個。獎勵：第一維度強 10%" + (player.tickspeedBoosts == undefined ? "。" : "，而且你可以最大購買維度和時間速度提升。"));
+	infinity.setAttribute('ach-tooltip', "大坍縮。獎勵：開始時有 100 反物質" + (player.galacticSacrifice ? "，而且維度價格至少低 10x。" : "。"));
 }
 
 function setR3Tooltip(){
