@@ -160,7 +160,7 @@ function setR9Tooltip(){
 	let zerodeg = document.getElementById("0 degrees from infinity")
 
 	//ACHIEVEMENT ROW 9
-	speed.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e200)+" IP in 2 seconds or less. Reward: All Normal Dimensions are significantly stronger in the first 5 seconds of an Infinity.")
+	speed.setAttribute('ach-tooltip', "在 2 秒內大坍縮並獲得 "+shortenCosts(1e200)+" 無限點數。獎勵：在無限的頭 5 秒裡，所有反物質維度大幅增強。")
 	speed2.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e250)+" IP in 20 seconds or less. Reward: All Normal Dimensions are significantly stronger in the first 60 seconds of an Infinity.")
 	overdrive.setAttribute('ach-tooltip', "Big Crunch with " + shortenCosts(1e300) + " IP/min. Reward: Gain an additonal 4x multiplier to IP.")
 	minute.setAttribute('ach-tooltip', "Reach " + shortenCosts(1e260) + " infinity power. Reward: Double infinity power gain.")
