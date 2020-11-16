@@ -161,12 +161,12 @@ function setR9Tooltip(){
 
 	//ACHIEVEMENT ROW 9
 	speed.setAttribute('ach-tooltip', "在 2 秒內大坍縮並獲得 "+shortenCosts(1e200)+" 無限點數。獎勵：在無限的頭 5 秒裡，所有反物質維度大幅增強。")
-	speed2.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e250)+" IP in 20 seconds or less. Reward: All Normal Dimensions are significantly stronger in the first 60 seconds of an Infinity.")
-	overdrive.setAttribute('ach-tooltip', "Big Crunch with " + shortenCosts(1e300) + " IP/min. Reward: Gain an additonal 4x multiplier to IP.")
-	minute.setAttribute('ach-tooltip', "Reach " + shortenCosts(1e260) + " infinity power. Reward: Double infinity power gain.")
-	hell.setAttribute('ach-tooltip', "Get the sum of Infinity Challenge times under 6.66 seconds." + (player.boughtDims ? " Reward: Sacrifice is again slightly stronger." : ""))
-	zerodeg.setAttribute('ach-tooltip', "Unlock the 8th Infinity Dimension."+(player.boughtDims?" Reward: Normal Dimensions are multiplied by the amount of 8th Infinity Dimensions you have.":"") + (player.tickspeedBoosts != undefined ? " Reward: Each replicanti galaxy counts twice in the reward of 'Is this safe?'." : ""))
-	isthissafe.setAttribute('ach-tooltip', "Gain Infinite replicanti in 30 minutes. Reward: Infinity doesn't reset your replicanti amount" + (player.tickspeedBoosts != undefined ? ", each replicanti galaxy multiplies GP gain by your Eighth Dimensions, and multiply IP by the squared amount of Eighth Dimensions if you have more than 5,000" : "") + ".")
+	speed2.setAttribute('ach-tooltip', "在 20 秒內大坍縮並獲得 "+shortenCosts(1e250)+" 無限點數。在無限的頭 60 秒裡，所有反物質維度大幅增強。")
+	overdrive.setAttribute('ach-tooltip', "在達到每分鐘 " + shortenCosts(1e300) + " 無限點數的情況下大坍縮。獎勵：你獲得 4x 更多無限點數。")
+	minute.setAttribute('ach-tooltip', "達到 " + shortenCosts(1e260) + " 無限力量。獎勵：無限力量的獲得量增加兩倍。")
+	hell.setAttribute('ach-tooltip', "將無限點數的時間的總和低於 6.66 秒。" + (player.boughtDims ? "獎勵：犧牲再次稍微更強。" : ""))
+	zerodeg.setAttribute('ach-tooltip', "解鎖第八無限維度。"+(player.boughtDims?"獎勵：反物質維度獲得等同於第八無限維度數量的加成。":"") + (player.tickspeedBoosts != undefined ? "獎勵：每一個複製器星系在 'Is this safe' 的獎勵裡計兩次。" : ""))
+	isthissafe.setAttribute('ach-tooltip', "在 30 分鐘內達到無限複製器。獎勵：無限不會重置你的複製器數量" + (player.tickspeedBoosts != undefined ? "，而且每一個複製器星系將你的星系點數獲得量乘以第八維度的數量。如果數量多於 5000 個，每一個複製器星系將無限點數乘以第八維度的數量的平方" : "") + "。")
 }
 
 function setR10Tooltip(){
@@ -201,9 +201,9 @@ function setR11Tooltip(){
 	let over9000 = document.getElementById("IT'S OVER 9000")
 
 	//ACHIEVEMENT ROW 11
-	over9000.setAttribute('ach-tooltip', "Get a total Sacrifice multiplier of "+shortenCosts(new Decimal("1e9000"))+". Reward: Sacrifice doesn't reset your dimensions.")
-	dawg.setAttribute('ach-tooltip', "Have all your past 10 Infinities be at least "+shortenMoney(Number.MAX_VALUE)+" times higher IP than the previous one. Reward: Your antimatter doesn't reset when buying a Dimension Boost or Galaxy.")
-	nobodygottime.setAttribute('ach-tooltip', "Eternity while only buying 8th Normal Dimensions. " + (player.galacticSacrifice == undefined ? "" : "Reward: Boost g13 based on your Dimension Boosts and the square root of g13's effect."))
+	over9000.setAttribute('ach-tooltip', "將總犧牲加成達到 "+shortenCosts(new Decimal("1e9000"))+"。獎勵：犧牲不會重置你的維度。")
+	dawg.setAttribute('ach-tooltip', "在你過去的 10 次無限裡，將所有無限的無限點數比前一個至少高 "+shortenMoney(Number.MAX_VALUE)+" 倍。獎勵：購買維度提升或星系時，你的反物質不會重置。")
+	nobodygottime.setAttribute('ach-tooltip', "在只購買第八反物質維度的情況下永恆。" + (player.galacticSacrifice == undefined ? "" : "獎勵：基於維度提升和星系升級 13 的效果的平方根，星系升級 13 更強。"))
 }
 
 function setR12Tooltip(){
@@ -218,13 +218,13 @@ function setR12Tooltip(){
 	let fkoff = document.getElementById("What do I have to do to get rid of you")
 
 	//ACHIEVEMENT ROW 12
-	infiniteIP.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e30008"))+" IP." + (player.galacticSacrifice == undefined || (player.tickspeedBoosts != undefined) ? "" : " Reward: Your total galaxies boost Galaxy points gain."))
-	fiveMore.setAttribute('ach-tooltip', "Complete 50 unique Eternity Challenge tiers." + (player.galacticSacrifice !== undefined ? " Reward: Divide Infinity Dimension costs based on the multiplier of g11." : ""))
-	newI.setAttribute('ach-tooltip', "Eternity in under 200 milliseconds." + (player.galacticSacrifice !== undefined ? " Reward: The Dimension Boost effect to Galaxy points gain is buffed based on a specific value (~43 galaxies), and boost g13 based on your fastest Eternity time in Eternity Challenges." : "")) // by how much?
-	eatass.setAttribute('ach-tooltip', "Reach "+shortenCosts(1e100)+" IP without any infinities or first dimensions. Reward: Gain an IP multiplier based on time spent in this Infinity.")
-	layer.setAttribute('ach-tooltip', "Reach "+shortenMoney(Number.MAX_VALUE)+" EP." + (player.galacticSacrifice !== undefined ? " Reward: The Galaxy boost to Galaxy points gain is buffed." : "")) // by how much?
-	fkoff.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e22000"))+" IP without any time studies. Reward: Gain a multiplier to Time Dimensions based on the amount of bought Time Studies.")
-	minaj.setAttribute('ach-tooltip', "Have 180 times more non-bonus replicanti galaxies than normal galaxies. Reward: Replicanti galaxies divide your replicanti by "+shortenMoney(Number.MAX_VALUE)+" instead of resetting them to 1.")
+	infiniteIP.setAttribute('ach-tooltip', "達到 "+shortenCosts(new Decimal("1e30008"))+" 無限點數。" + (player.galacticSacrifice == undefined || (player.tickspeedBoosts != undefined) ? "" : "獎勵：你的總星系加強星系點數獲得量。"))
+	fiveMore.setAttribute('ach-tooltip', "完成 50 個不同的永恆挑戰等級。" + (player.galacticSacrifice !== undefined ? "獎勵：基於星系升級 11 的加成，無限維度更便宜。" : ""))
+	newI.setAttribute('ach-tooltip', "在 200 毫秒內永恆。" + (player.galacticSacrifice !== undefined ? "獎勵：基於一個特定的數值（~43 星系），維度提升對星系點數獲得量的效果更強，而且基於在永恆挑戰裡的最快永恆時間，永恆升級 13 更強。" : "")) // by how much?
+	eatass.setAttribute('ach-tooltip', "在沒有無限和第一維度的情況下 "+shortenCosts(1e100)+" 無限點數。獎勵：基於在本次無限的時間，你獲得更多無限點數。")
+	layer.setAttribute('ach-tooltip', "達到 "+shortenMoney(Number.MAX_VALUE)+" 無限點數。" + (player.galacticSacrifice !== undefined ? "獎勵：星系對星系點數獲得量的加成更強。" : "")) // by how much?
+	fkoff.setAttribute('ach-tooltip', "在沒有時間研究的情況下達到  "+shortenCosts(new Decimal("1e22000"))+" 無限點數。獎勵：基於已購買的時間研究的數量，時間維度更強。")
+	minaj.setAttribute('ach-tooltip', "將複製器星系的數量超過反物質星系的數量的 180 倍。獎勵：複製器星系將你的複製器除以 "+shortenMoney(Number.MAX_VALUE)+"，而不是將它們重置到 1。")
 }
 
 function setR13Tooltip(){
