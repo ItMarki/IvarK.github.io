@@ -84,10 +84,10 @@ function setR5Tooltip(){
 	let is = document.getElementById("Is this hell?")
 
 	//ACHIEVEMENT ROW 5
-	forever.setAttribute('ach-tooltip', "Big Crunch in 1 minute or less. Reward: Start with "+shortenCosts(1e10)+" antimatter" + (player.galacticSacrifice && player.tickspeedBoosts == undefined ? ", and gain a multiplier to IP based on your best Infinity time." : "."))
-	many.setAttribute('ach-tooltip', "Complete the Second Dimension Autobuyer challenge in 3 minutes or less. Reward: All Normal Dimensions are stronger in the first 3 minutes of an Infinity" + (player.tickspeedBoosts == undefined ? "." : ", and you gain 1% of GP gained on Galactic Sacrifice per second."));
-	is.setAttribute('ach-tooltip', "Complete the Tickspeed Autobuyer challenge in 3 minutes or less. Reward: The multiplier per-10 dimensions" + (player.tickspeedBoosts != undefined ? " is boosted based on your best time of the Tickspeed Autobuyer challenge." : player.galacticSacrifice ? " is raised to the power of ^1.0666.":" is 1% more powerful."))
-	limitBreak.setAttribute('ach-tooltip', "Break Infinity."+(player.galacticSacrifice&&player.tickspeedBoosts==undefined?" Reward: Gain a multiplier to IP based on galaxies.":""))
+	forever.setAttribute('ach-tooltip', "在 1 分鐘內大坍縮。獎勵：開始時有 "+shortenCosts(1e10)+" 反物質" + (player.galacticSacrifice && player.tickspeedBoosts == undefined ? "，而且基於你最佳的無限時間，你獲得更多無限點數。" : "。"))
+	many.setAttribute('ach-tooltip', "在 3 分鐘內完成第二維度自動購買器挑戰。獎勵：在無限的頭 3 分鐘裡，所有反物質維度更強" + (player.tickspeedBoosts == undefined ? "。" : "，而且你每秒獲得星系犧牲時獲得的星系點數的 1%。"));
+	is.setAttribute('ach-tooltip', "在 3 分鐘內完成時間速度升級自動購買器挑戰。獎勵：每十個維度的加成" + (player.tickspeedBoosts != undefined ? "隨着你時間速度升級自動購買器挑戰的最佳時間而增加。" : player.galacticSacrifice ? "變為自己的 1.0666 次方·。":"強 1%。"))
+	limitBreak.setAttribute('ach-tooltip', "打破無限。"+(player.galacticSacrifice&&player.tickspeedBoosts==undefined?"獎勵：基於你的星系，你獲得更多無限點數。":""))
 }
 
 function setR6Tooltip(){
@@ -102,12 +102,12 @@ function setR6Tooltip(){
 	let right = document.getElementById("You did this again just for the achievement right?")
 
 	//ACHIEVEMENT ROW 6
-	potato2.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e58, 0, 0) + " ticks per second. Reward: Reduces starting tick interval by 2%.");
-	oh.setAttribute('ach-tooltip', "Reach " + shortenCosts(1e8) + " IP per minute."+(player.galacticSacrifice&&player.tickspeedBoosts==undefined?" Reward: Gain a multiplier to GP based on the logarithm of your IP.":""))
-	mil.setAttribute('ach-tooltip',"Reach " + shortenCosts(1e6) + " infinity power." + (player.galacticSacrifice ? " Reward: First Dimensions are " + shortenCosts(1e6) + " times stronger":"") + (player.aarexModifications.ngmX >= 4 ? " and each IC boosts g32 by 2%." : "."))
-	right.setAttribute('ach-tooltip',"Complete the Third Dimension Autobuyer challenge in 10 seconds or less. Reward: First Dimensions are 5"+(player.galacticSacrifice?"x":"0%")+" stronger.")
-	infchall.setAttribute('ach-tooltip', "Complete an Infinity Challenge."+(player.galacticSacrifice?" Reward: Galaxies and "+(player.tickspeedBoosts === undefined ? "g11 is" : "Tickspeed Boosts are") + " more effective based on IC's completed.":""))
-	begin.setAttribute('ach-tooltip', "Begin generation of infinity power." + (player.aarexModifications.ngmX >= 4 ? " Reward: Each galaxy upgrade boosts g32 by 1%." : ""))
+	potato2.setAttribute('ach-tooltip', "將時間速度超過 " + formatValue(player.options.notation, 1e58, 0, 0) + " 每秒。獎勵：將開始時的時間速度加快 2%。");
+	oh.setAttribute('ach-tooltip', "達到每分鐘 " + shortenCosts(1e8) + " 無限點數。"+(player.galacticSacrifice&&player.tickspeedBoosts==undefined?"獎勵：基於你的無限點數的對數，你獲得更多星系點數。":""))
+	mil.setAttribute('ach-tooltip',"達到 " + shortenCosts(1e6) + " 無限力量。" + (player.galacticSacrifice ? " 獎勵：第一維度強 " + shortenCosts(1e6) + " 倍":"") + (player.aarexModifications.ngmX >= 4 ? "，而且每一個無限挑戰將星系升級 32 加強 2%。" : "。"))
+	right.setAttribute('ach-tooltip',"在 10 秒內完成第三位度自動購買器挑戰。獎勵：第一維度強 5"+(player.galacticSacrifice?"x":"0%")+"。")
+	infchall.setAttribute('ach-tooltip', "完成一個無限挑戰。"+(player.galacticSacrifice?"獎勵：基於完成的無限挑戰，星系和 "+(player.tickspeedBoosts === undefined ? "星系升級 11 " : "時間速度提升") + "更強。":""))
+	begin.setAttribute('ach-tooltip', "開始生產無限力量。" + (player.aarexModifications.ngmX >= 4 ? "獎勵：每一個星系升級將星系升級 32 加強 1%。" : ""))
 }
 
 function setR7Tooltip(){
