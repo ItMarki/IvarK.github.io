@@ -181,9 +181,9 @@ function setR10Tooltip(){
 	let nine = document.getElementById("We could afford 9")
 
 	//ACHIEVEMENT ROW 10
-	costco.setAttribute('ach-tooltip', "Bulk buy 750 Dimension Boosts at once. Reward: Dimension Boosts are " + (player.boughtDims?"cheaper based on EP":"1% more powerful (to Normal Dimensions)") + (player.tickspeedBoosts != undefined ? " and g13 is boosted by the cube root of Galaxies" : "") + ".")
-	mile.setAttribute('ach-tooltip', "Get "+(tmp.ngp3 ? "the 100 Eternities milestone." : "all Eternity milestones."))
-	swarm.setAttribute('ach-tooltip', "Get 10 replicanti galaxies within the first 15 seconds of this Infinity." + (player.boughtDims ? " Reward: Unlock replicanti galaxy power control, and uncap replicanti chance and interval." : ""))
+	costco.setAttribute('ach-tooltip', "一次批量購買 750 個維度提升。獎勵：維度提升" + (player.boughtDims?"隨着永恆點數而變得更便宜":"對反物質維度的效果強 1%") + (player.tickspeedBoosts != undefined ? "，而且星系升級 13 受星系的立方根影響" : "") + "。")
+	mile.setAttribute('ach-tooltip', "獲得 "+(tmp.ngp3 ? " 100 永恆次數里程碑。" : "所有永恆里程碑。"))
+	swarm.setAttribute('ach-tooltip', "在本次無限的頭 15 秒裡達到 10 個複製器星系。" + (player.boughtDims ? "獎勵：解鎖複製器星系效果的控制，而且複製機率和間隔沒有限制。" : ""))
 	inftime.setAttribute('ach-tooltip', player.boughtDims ? "Eternity without buying dimensions 1-7. Reward: Time Dimensions gain a multiplier based on the eighth root of eighth dimensions." : "Get 308 tickspeed upgrades (in one eternity) from Time Dimensions. Reward: Time Dimensions are affected slightly more by tickspeed.")
 	guide.setAttribute('ach-tooltip', player.boughtDims ? "Reach " + shortenCosts(new Decimal("1e1000000")) + " replicanti. Reward: Replicanti increases faster the more you have." : "Eternity with less than 10 infinities.")
 	nine.setAttribute('ach-tooltip', "Eternity with exactly 9 replicanti." + (player.boughtDims ? " Reward: The replicanti multiplier to ID is 9% stronger (after time studies)." : ""))
