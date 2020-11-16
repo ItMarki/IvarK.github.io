@@ -45,11 +45,11 @@ function setR3Tooltip(){
 	//r38/////
 
 	//ACHIEVEMENT ROW 3
-	claustrophobic.setAttribute('ach-tooltip', "Big Crunch with just 1 Antimatter Galaxy. Reward: Reduce the starting tick interval by 2%" + (player.galacticSacrifice && player.tickspeedBoosts == undefined ? " and keep Galaxy upgrades on Infinity" : "") + (player.aarexModifications.ngmX >= 4 ? ", Time Dimension Boosts do not reset anything, and you can buy Time Dimensions beyond " + shortenMoney(Number.MAX_VALUE) +" antimatter" : "") + "." );
-	nerf.setAttribute('ach-tooltip',"Get the first dimension multiplier over " + shortenCosts(1e31) + ". Reward: First Dimensions are 5% stronger.")
-	didnt.setAttribute('ach-tooltip',"Big Crunch without having any 8th Dimensions. Reward: Dimensions 1-7 are 2" + (player.galacticSacrifice ? "x" : "%") + " stronger.")
-	fast.setAttribute('ach-tooltip', "Big Crunch in under 2 hours. Reward: Start with " + shortenCosts(1e3) + " antimatter" + (player.galacticSacrifice ? " and get a multiplier to galaxy points based on fastest infinity (5 hours / x, 10x softcap)." : "."));
-	lot.setAttribute('ach-tooltip', "Get at least 10 Infinities." + (player.galacticSacrifice ? " Reward: " + (player.tickspeedBoosts == undefined ? "Start Infinities with Galaxy points based on your infinities (x^2/100)." : " Keep Galaxy upgrades on Infinity.") : ""));
+	claustrophobic.setAttribute('ach-tooltip', "在只有 1 反物質星系的情況下大坍縮。獎勵：將開始時的時間速度加快 2%" + (player.galacticSacrifice && player.tickspeedBoosts == undefined ? "，而且大坍縮時，你會保留你的星系升級" : "") + (player.aarexModifications.ngmX >= 4 ? "。時間維度提升不會重置任何東西，而且你可以在 " + shortenMoney(Number.MAX_VALUE) +" 反物質外購買時間維度。" : "") + "。" );
+	nerf.setAttribute('ach-tooltip',"將第一維度的倍數超過 " + shortenCosts(1e31) + "。獎勵：第一維度強 5%。")
+	didnt.setAttribute('ach-tooltip',"在沒有第八維度的情況下大坍縮。第一至第七維度強 2" + (player.galacticSacrifice ? "x" : "%") + "。")
+	fast.setAttribute('ach-tooltip', "在 2 小時內大坍縮。獎勵：開始時有 " + shortenCosts(1e3) + " 反物質" + (player.galacticSacrifice ? "，而且基於你最快的無限，星系點數獲得一個加成（5 小時 / x，10x 軟限制）。" : "。"));
+	lot.setAttribute('ach-tooltip', "無限 10 次。" + (player.galacticSacrifice ? " 獎勵：" + (player.tickspeedBoosts == undefined ? "基於無限次數，開始無限時會有一些星系點數（x^2/100）。" : "無限時保留星系升級。") : ""));
 }
 
 function setR4Tooltip(){
@@ -64,12 +64,12 @@ function setR4Tooltip(){
 	let anti = document.getElementById("AntiChallenged")
 
 	//ACHIEVEMENT ROW 4
-	sanic.setAttribute('ach-tooltip', "Get over " + formatValue(player.options.notation, 1e63, 0, 0) + " antimatter" + (player.aarexModifications.ngmX >= 4 ? " and unlock new galaxy upgrades at " + formatValue(player.options.notation, 1e666, 0, 0) + " antimatter" : "") + ".")
-	cancer.setAttribute('ach-tooltip', "Buy " + (!player.aarexModifications.newGameMinusVersion ? "ten" : "10,000") + " Galaxies in total while using Cancer notation."+(player.galacticSacrifice && player.tickspeedBoosts==undefined?" Reward: Gain a multiplier to IP based on the number of galaxies bought in Cancer Notation.":""))
-	zero.setAttribute('ach-tooltip',"Big Crunch without Dimension Shifts, Boosts or Galaxies in a challenge. Reward: Dimensions 1-4 are 25% stronger"+(player.galacticSacrifice && player.tickspeedBoosts == undefined ? " and you get 1.25x more IP" : "") + (player.aarexModifications.ngmX >= 4 ? " and gain more passive GP gain based on GP." : "."))
-	potato.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e29, 0, 0) + " ticks per second. Reward: Reduce the starting tick interval by 2%.");
-	dimensional.setAttribute('ach-tooltip', "Reach " + formatValue(player.options.notation, 1e12, 0, 0) + " of all Normal Dimensions, except for the 8th Dimension.");
-	anti.setAttribute('ach-tooltip', "Complete all the challenges. Reward: All Normal Dimensions are 10% stronger"+(player.galacticSacrifice && player.tickspeedBoosts==undefined?", and the tickspeed cost is also reduced based on your Dimension cost reduction." : "."))
+	sanic.setAttribute('ach-tooltip', "達到 " + formatValue(player.options.notation, 1e63, 0, 0) + " 反物質" + (player.aarexModifications.ngmX >= 4 ? "並在 " + formatValue(player.options.notation, 1e666, 0, 0) + " 反物質解鎖新星系升級" : "") + "。")
+	cancer.setAttribute('ach-tooltip', "在使用 'Cancer' 標記法的情況下總共購買" + (!player.aarexModifications.newGameMinusVersion ? "十個" : " 10,000 ") + "星系。"+(player.galacticSacrifice && player.tickspeedBoosts==undefined?"獎勵：基於使用 'Cancer' 標記法時購買的星系，無限點數獲得一個加成。。":""))
+	zero.setAttribute('ach-tooltip',"在挑戰裡，在沒有維度跳躍、提升和星系的情況下大坍縮。獎勵第一至第四維度強 25%"+(player.galacticSacrifice && player.tickspeedBoosts == undefined ? "，而且你獲得 1.25x 更多無限點數" : "") + (player.aarexModifications.ngmX >= 4 ? "，而且基於你的星系點數，你自動生產更多星系點數。" : "."))
+	potato.setAttribute('ach-tooltip', "將時間速度超過 " + formatValue(player.options.notation, 1e29, 0, 0) + " 每秒。獎勵：將開始時的時間速度加快 2%。");
+	dimensional.setAttribute('ach-tooltip', "除了第八維度外，將所有反物質維度達到 " + formatValue(player.options.notation, 1e12, 0, 0) + " 個。");
+	anti.setAttribute('ach-tooltip', "完成所有挑戰。獎勵：所有反物質維度強 10%"+(player.galacticSacrifice && player.tickspeedBoosts==undefined?"，而且基於你的維度價格減少，時間速度價格會減少。" : "。"))
 }
 
 function setR5Tooltip(){
