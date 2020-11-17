@@ -422,13 +422,13 @@ function setR20Tooltip(){
 	willenoughReward = wordizeList(willenoughReward, true)
 
 	//ACHIEVEMENT ROW 20
-	finite.setAttribute('ach-tooltip', "Get " + shortenCosts(1e33) + " Space Shards without Breaking Eternity within this Ghostify." + (tmp.ngp3l ? "" : " Reward: Outside of Big Rips, Tree Upgrades are 10% stronger. In Big Rips, 8th Time Dimensions gain an small exponent boost based on your current Ghostify time."))
-	really.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 5000)) + " matter in Big Rip." + (tmp.ngp3l ? "":" Reward: Buying Electron upgrades doesn't consume Meta-Dimension Boosts."))
-	grind.setAttribute('ach-tooltip', "Get the 21st Nanofield reward without having Tree Upgrades. " + (tmp.ngp3l ? "" : "Reward: Gain more Quarks based on Radioactive Decays."))
-	willenough.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, player.aarexModifications.ngudpV ? 268435456 : 36000000))+" replicanti." + (willenoughReward != "" ? " Reward: " + willenoughReward + "." : ""))
-	oppose.setAttribute('ach-tooltip', "Become a ghost with at most 1x quantumed stat." + (tmp.ngp3l ? "" : " Reward: You gain more Quarks based on your quantumed stat."))
-	pls.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 9.5e5)) + " IP in Big Rip while dilated, with no EP multiplier upgrades, time studies, and Break Eternity within this Ghostify. Reward: Each time you become a ghost, you gain "+shortenDimensions(2e3)+" galaxies worth of generated neutrinos, multiplied by your best-ever galaxy amount across all Big Rips.")
-	keeheehee.setAttribute('ach-tooltip', "Become a ghost. Reward: Multiply Eternities gained by 100x (weakens as you have more), all quantum mechanic unlocks only require Time Theorems, assignation options are kept permanently, Nanofield is 3x faster until you reach 16 rewards, " + (tmp.ngp3l ? "" : " get all achievements prior to Paired Challenges, ") + "and start with 1 Eighth Time Dimension in Big Rips.")
+	finite.setAttribute('ach-tooltip', "在本次幽靈化裡，在不打破永恆的情況下達到 " + shortenCosts(1e33) + " 空間碎片。" + (tmp.ngp3l ? "" : "獎勵：在大撕裂外，樹升級強 10%。在大撕裂裡，基於你本次幽靈化的時間，第八時間維度獲得一個小小的指數加成。"))
+	really.setAttribute('ach-tooltip', "在大撕裂裡達到 " + shortenCosts(Decimal.pow(10, 5000)) + " 物質。" + (tmp.ngp3l ? "":"獎勵：購買電子升級不會花費元維度提升。"))
+	grind.setAttribute('ach-tooltip', "在沒有樹升級的情況下達到第 21 個納米場獎勵。" + (tmp.ngp3l ? "" : "獎勵：基於輻射衰變，你獲得更多夸克。"))
+	willenough.setAttribute('ach-tooltip', "達到 " + shortenCosts(Decimal.pow(10, player.aarexModifications.ngudpV ? 268435456 : 36000000))+" 複製器。" + (willenoughReward != "" ? "獎勵：" + willenoughReward + "." : ""))
+	oppose.setAttribute('ach-tooltip', "在最多有 1 量子次數的情況下變成一隻幽靈。" + (tmp.ngp3l ? "" : "獎勵：基於你的量子次數，你獲得更多夸克。"))
+	pls.setAttribute('ach-tooltip', "在本次幽靈化、大撕裂和時間膨脹裡，在不購買永恆點數倍數升級和時間定理且不打破永恆的情況下達到 " + shortenCosts(Decimal.pow(10, 9.5e5)) + " 無限點數。獎勵：你每次變成一隻幽靈，你會獲得相當於 "+shortenDimensions(2e3)+" 星系的微中子，再乘以在所有大撕裂裡的最大量的星系的數量。")
+	keeheehee.setAttribute('ach-tooltip', "變成一隻幽靈。獎勵：永恆次數獲得量多 100 倍（永恆次數越多，效果越弱），所有量子功能只需要時間定律就可以解鎖，分配選項永久保留，納米場快 3 倍，到 16 個獎勵為止， " + (tmp.ngp3l ? "" : "。獲得在配對挑戰之前的所有成就，") + "而且開始大撕裂時，你有一個第八時間維度。")
 }
 
 function setBMTooltip(){
