@@ -495,9 +495,9 @@ function setR23Tooltip(){
 	let metae18 = document.getElementById("Meta-Quintillion")
 
 	//ACHIEVEMENT ROW 23
-	ghostliest.setAttribute('ach-tooltip', "Get " + shorten(Math.pow(Number.MAX_VALUE, 1/4)) + " Ghostifies. Reward: Ghostifies boost the gain of Ghost Particles at a reduced rate.")
-	metae18.setAttribute('ach-tooltip', "Get " + shortenCosts(Decimal.pow(10, 1e18)) + " antimatter. Reward: Distant Antimatter Galaxies scaling is 10% weaker and Higgs Bosons produce Bosonic Antimatter at a linear rate.")
-	aretheseanother.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 40000)) + " Quarks. Reward: Gain 500x more Quarks and Ghost Particles.")
+	ghostliest.setAttribute('ach-tooltip', "達到 " + shorten(Math.pow(Number.MAX_VALUE, 1/4)) + " 幽靈化。獎勵：幽靈化稍微影響幽靈粒子的獲得量。")
+	metae18.setAttribute('ach-tooltip', "達到 " + shortenCosts(Decimal.pow(10, 1e18)) + " 反物質。獎勵：遠處反物質星系的價格增幅弱 10%，而且希格斯玻色子對玻色子反物質的生產是線性的。")
+	aretheseanother.setAttribute('ach-tooltip', "達到 " + shortenCosts(Decimal.pow(10, 40000)) + " 夸克。獎勵：你獲得 500x 更多夸克和幽靈粒子。")
 }
 
 function setPreNGP3AchievementTooltip() {
