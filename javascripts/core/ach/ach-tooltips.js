@@ -285,10 +285,10 @@ function setR14Tooltip(){
 	onlywarReward = wordizeList(onlywarReward, true)
 
 	//ACHIEVEMENT ROW 14 (NG++)
-	onlywar.setAttribute('ach-tooltip', "Reach "+shortenMoney(new Decimal('1e40000'))+" EP."+(onlywarReward!=""?" Reward: " + onlywarReward + ".":""))
-	thecap.setAttribute('ach-tooltip', "Get "+shortenDimensions(1e12)+" eternities. Reward: Eternity Upgrade 2 uses a better formula.")
-	neverenough.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e100000"))+" replicanti. Reward: You unlock the option to buy the maximum Replicanti Galaxies available.")
-	harmony.setAttribute('ach-tooltip', player.meta?"Have at least 700 normal, replicanti, and free dilated galaxies. Reward: Galaxies are 0.1% stronger.":"Get the same amount (at least 300) of normal, replicanti, and free galaxies.")
+	onlywar.setAttribute('ach-tooltip', "達到 "+shortenMoney(new Decimal('1e40000'))+" 永恆點數。"+(onlywarReward!=""?"獎勵：" + onlywarReward + ".":""))
+	thecap.setAttribute('ach-tooltip', "達到 "+shortenDimensions(1e12)+" 永恆次數。獎勵：第二永恆升級使用一個更好的公式。")
+	neverenough.setAttribute('ach-tooltip', "達到 "+shortenCosts(new Decimal("1e100000"))+" 複製器。獎勵：你可以購買最大量的複製器星系。")
+	harmony.setAttribute('ach-tooltip', player.meta?"至少有 700 個反物質星系、複製器星系和免費膨脹星系、獎勵：星系強 0.1%。":"將反物質星系、複製器星系和免費星系的數量相同（至少 300）。")
 }
 
 function setR15Tooltip(){
@@ -303,11 +303,11 @@ function setR15Tooltip(){
 	let winner = document.getElementById("And the winner is...")
 
 	//ACHIEVEMENT ROW 15
-	notenough.setAttribute('ach-tooltip', "Reach " + shorten(Number.MAX_VALUE) + " meta-antimatter." + (tmp.ngp3l ? "" : " Reward: You produce more dilated time based on your normal galaxies, and gain more Tachyon particles based on your replicated galaxies."))
-	hadron.setAttribute('ach-tooltip', "Have colored quarks, but have no color charge." + (tmp.ngp3l ? "" : " Reward: Quantum worth boosts all Meta Dimensions."))
-	old.setAttribute('ach-tooltip', "Reach " + shortenCosts(getOldAgeRequirement()) + " antimatter." + (tmp.ngp3l ? "":" Reward: Get a multiplier to the 1st Meta Dimension based on total antimatter.") )
-	rid.setAttribute('ach-tooltip', "Reach " + shortenCosts(new Decimal("1e400000")) + " IP while dilated, without having time studies and electrons. Reward: Generate Time Theorems based on your best-ever Tachyon particles.")
-	winner.setAttribute('ach-tooltip', "Quantum in under 30 seconds." + (tmp.ngp3l ? "" : " Reward: Your EP multiplies Quark gain."))
+	notenough.setAttribute('ach-tooltip', "達到 " + shorten(Number.MAX_VALUE) + " 元反物質。" + (tmp.ngp3l ? "" : "獎勵：基於你的反物質星系，你生產更多膨脹時間。基於你的複製器星系，你獲得更多超光速粒子。"))
+	hadron.setAttribute('ach-tooltip', "有有色夸克但沒有色荷。" + (tmp.ngp3l ? "" : "獎勵：量子價值加強所有元維度。"))
+	old.setAttribute('ach-tooltip', "達到 " + shortenCosts(getOldAgeRequirement()) + " 反物質。" + (tmp.ngp3l ? "":"獎勵：基於總反物質，第一元維度更強。") )
+	rid.setAttribute('ach-tooltip', "膨脹時間時，在沒有時間研究和電子的情況下達到 " + shortenCosts(new Decimal("1e400000")) + " 無限點數。獎勵：基於你最大量的超光速粒子生成時間定理。")
+	winner.setAttribute('ach-tooltip', "在 30 秒內量子。" + (tmp.ngp3l ? "" : "獎勵：你的永恆點數使你獲得更多夸克。"))
 }
 
 function setR16Tooltip(){
