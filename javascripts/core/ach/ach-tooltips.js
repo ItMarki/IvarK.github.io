@@ -184,9 +184,9 @@ function setR10Tooltip(){
 	costco.setAttribute('ach-tooltip', "一次批量購買 750 個維度提升。獎勵：維度提升" + (player.boughtDims?"隨着永恆點數而變得更便宜":"對反物質維度的效果強 1%") + (player.tickspeedBoosts != undefined ? "，而且星系升級 13 受星系的立方根影響" : "") + "。")
 	mile.setAttribute('ach-tooltip', "獲得 "+(tmp.ngp3 ? " 100 永恆次數里程碑。" : "所有永恆里程碑。"))
 	swarm.setAttribute('ach-tooltip', "在本次無限的頭 15 秒裡達到 10 個複製器星系。" + (player.boughtDims ? "獎勵：解鎖複製器星系效果的控制，而且複製機率和間隔沒有限制。" : ""))
-	inftime.setAttribute('ach-tooltip', player.boughtDims ? "Eternity without buying dimensions 1-7. Reward: Time Dimensions gain a multiplier based on the eighth root of eighth dimensions." : "Get 308 tickspeed upgrades (in one eternity) from Time Dimensions. Reward: Time Dimensions are affected slightly more by tickspeed.")
-	guide.setAttribute('ach-tooltip', player.boughtDims ? "Reach " + shortenCosts(new Decimal("1e1000000")) + " replicanti. Reward: Replicanti increases faster the more you have." : "Eternity with less than 10 infinities.")
-	nine.setAttribute('ach-tooltip', "Eternity with exactly 9 replicanti." + (player.boughtDims ? " Reward: The replicanti multiplier to ID is 9% stronger (after time studies)." : ""))
+	inftime.setAttribute('ach-tooltip', player.boughtDims ? "在不購買第一至第七維度的情況下永恆。獎勵：基於第八維度的八次方根，時間維度更強。" : "在一次永恆裡從時間維度獲得 308 個時間速度升級。獎勵：時間速度對時間維度的效果更強。")
+	guide.setAttribute('ach-tooltip', player.boughtDims ? "達到 " + shortenCosts(new Decimal("1e1000000")) + " 複製器。獎勵：複製器越多，複製速度越快。" : "在有少於 10 個無限次數的情況下永恆。")
+	nine.setAttribute('ach-tooltip', "在剛好有 9 複製器的情況下永恆。" + (player.boughtDims ? "獎勵：複製器對無限維度的效果強 9%（在時間研究後）。" : ""))
 }
 
 function setR11Tooltip(){
@@ -246,11 +246,11 @@ function setR13Tooltip(){
 	thisisReward = wordizeList(thisisReward, true)
 
 	//ACHIEVEMENT ROW 13
-	potato3.setAttribute('ach-tooltip', "Get more than "+shortenCosts(new Decimal("1e8296262"))+" ticks per second." + (player.galacticSacrifice !== undefined ? " Reward: The Galaxy boost to Galaxy points gain is buffed based on a specific value (~663 galaxies)." : ""))
-	infstuff.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e140000"))+" IP without buying IDs or IP multipliers. Reward: You start eternities with all Infinity Challenges unlocked and completed" + (player.meta ? ", and your Infinity gain is multiplied by dilated time^(1/4)." : "."))
-	when.setAttribute('ach-tooltip', "Reach "+shortenCosts( new Decimal(tmp.ngex?"1e15000":"1e20000"))+" replicanti. Reward: You gain replicanti 2 times faster under " + shortenMoney(Number.MAX_VALUE) + " replicanti.")
-	thinking.setAttribute('ach-tooltip', "Eternity for " + shortenCosts( new Decimal("1e600")) + " EP in 1 minute or less while dilated." + (tmp.ngp3l ? "" : " Reward: Multiply dilated time gain based on replicanti."))
-	thisis.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal('1e20000'))+" IP without any time studies while dilated."+(thisisReward != "" ? " Reward: " + thisisReward + "." : ""))
+	potato3.setAttribute('ach-tooltip', "將時間速度超過 "+shortenCosts(new Decimal("1e8296262"))+" 每秒。" + (player.galacticSacrifice !== undefined ? "獎勵：基於一個特定的數值（~663 星系），星系對星系點數獲得量的加成更強。" : ""))
+	infstuff.setAttribute('ach-tooltip', "在不購買無限維度和無限點數倍數升級的情況下達到 "+shortenCosts(new Decimal("1e140000"))+" 無限點數。獎勵：開始永恆時，所有無限挑戰會解鎖並完成" + (player.meta ? "，而且無限點數受膨脹時間^(1/4) 受影響。" : "。"))
+	when.setAttribute('ach-tooltip', "達到 "+shortenCosts( new Decimal(tmp.ngex?"1e15000":"1e20000"))+" 複製器。獎勵：如果複製器少於 " + shortenMoney(Number.MAX_VALUE) + "，複製速度快 2 倍。")
+	thinking.setAttribute('ach-tooltip', "膨脹時間時，在 1 分鐘內永恆並獲得 " + shortenCosts( new Decimal("1e600")) + " 永恆點數。" + (tmp.ngp3l ? "" : "獎勵：基於複製器，你獲得更多膨脹時間。"))
+	thisis.setAttribute('ach-tooltip', "膨脹時間時，在沒有時間研究的情況下達到 "+shortenCosts(new Decimal('1e20000'))+" 無限點數。"+(thisisReward != "" ? "獎勵：" + thisisReward + "。" : ""))
 }
 
 function setR13p5Tooltip(){
@@ -263,9 +263,9 @@ function setR13p5Tooltip(){
 	let ridNGud = document.getElementById("I already got rid of you.")
 
 	//NGUD ACHIEVEMENT ROW (13.5)
-	stillamil.setAttribute('ach-tooltip', "Reach "+shortenCosts(1e6)+" black hole power.")
-	out.setAttribute('ach-tooltip',"Get more than "+shortenCosts(1e5)+" ex-dilation." + (player.aarexModifications.nguspV !== undefined ? " Reward: You can equally distribute ex-dilation to all repeatable dilation upgrades." : ""))
-	ridNGud.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e20000"))+" IP without any time studies or dilation upgrades while dilated.")
+	stillamil.setAttribute('ach-tooltip', "達到 "+shortenCosts(1e6)+" 黑洞力量。")
+	out.setAttribute('ach-tooltip',"達到 "+shortenCosts(1e5)+" 後膨脹。" + (player.aarexModifications.nguspV !== undefined ? " Reward: You can equally distribute ex-dilation to all repeatable dilation upgrades." : ""))
+	ridNGud.setAttribute('ach-tooltip', "膨脹時間時，在沒有時間研究和膨脹升級的情況下達到 "+shortenCosts(new Decimal("1e20000"))+" 無限點數。")
 }
 
 function setR14Tooltip(){
