@@ -438,9 +438,9 @@ function setBMTooltip(){
 	let bm14 = document.getElementById("braveMilestone14")
 
 	//BRAVE MILESTONES
-	bm1.setAttribute('ach-tooltip', "Reward: Start Ghostifies with all Speedrun Milestones and all "+shorten(Number.MAX_VALUE)+" QK assignation features unlocked, all Paired Challenges completed, all Big Rip upgrades bought, Nanofield is 2x faster until you reach 16 rewards, and you get quarks based on your best MA this quantum.")
-	bm10.setAttribute('ach-tooltip', "Reward: Start Ghostifies with 10 Fourth Emperor Dimensions" + (player.aarexModifications.ngudpV ? ", and start Big Rips with the 3rd row of Eternity upgrades." : "."))
-	bm14.setAttribute('ach-tooltip', "Reward: Start Ghostifies with " + shortenCosts(1e25) + " Quark Spins and Branches are faster based on spins (at least 10x).")
+	bm1.setAttribute('ach-tooltip', "獎勵：開始幽靈化時，你會解鎖所有快速里程碑和 "+shorten(Number.MAX_VALUE)+" 夸克分配功能，完成所有配對挑戰並購買所有大撕裂升級，納米場快 2x，到 16 個獎勵為止，而且基於在本次量子的最大量的元反物質。你獲得更多夸克。")
+	bm10.setAttribute('ach-tooltip', "獎勵：開始幽靈化時，你有 10 個第四皇帝維度" + (player.aarexModifications.ngudpV ? "，而且開始大撕裂時購買第三列永恆升級。" : "。"))
+	bm14.setAttribute('ach-tooltip', "獎勵：開始幽靈化時，你有 " + shortenCosts(1e25) + " 夸克自旋，而且基於自旋，分支更快（至少 10x）。")
 }
 
 function setR21Tooltip(){
