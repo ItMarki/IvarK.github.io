@@ -394,11 +394,11 @@ function setR19Tooltip(){
 	let soLife = document.getElementById("And so your life?")
 
 	//ACHIEVEMENT ROW 19
-	gofast.setAttribute('ach-tooltip', "Get "+shorten(Decimal.pow(10, 1185))+" EP first, and then square your EP by disabling dilation while Big Ripped." + (tmp.ngp3l ? "" : " Reward: Space shards multiply quark gain."))
-	immunity.setAttribute('ach-tooltip', "Get " + shorten(Decimal.pow(10, 8e7)) + " antimatter with one normal galaxy while in Eternity Challenge 7 and big ripped." + (tmp.ngp3l ? "" : " Reward: Infinite Time is 3% stronger."))
-	notSmart.setAttribute('ach-tooltip', "Get "+shorten(1e215)+" Time Shards without having Time Study 11 while Big Ripped." + (tmp.ngp3l ? "" : " Reward: Meta Dimensions get a multiplier based on time shards."))
-	timeBreak.setAttribute('ach-tooltip', "Break Eternity. Reward: Galaxies don't reset Dimension Boosts" + (!tmp.ngp3l ? ", and Quantum Challenges now cost 0 electrons" : "") + ".")
-	soLife.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 3.5e5)) + " IP in Big Rip while dilated, with no EP multiplier upgrades and time studies." + (tmp.ngp3l ? "" : " Reward: Square the Ghost Particle gain, with a hardcap at " + shortenCosts(1e10) + "x, and the hardcap is further lowered if you have more than " + shortenCosts(1e60) + " Ghost Particles."))
+	gofast.setAttribute('ach-tooltip', "在大撕裂裡，首先達到 "+shorten(Decimal.pow(10, 1185))+" 永恆點數，然後通過取消膨脹將你的永恆點數變為它的平方。" + (tmp.ngp3l ? "" : "獎勵：空間碎片加強夸克獲得量。"))
+	immunity.setAttribute('ach-tooltip', "在第七永恆挑戰和大撕裂裡，只用一個反物質星系達到 " + shorten(Decimal.pow(10, 8e7)) + " 反物質。" + (tmp.ngp3l ? "" : "獎勵：'Infinite Time' 的獎勵強 3%。"))
+	notSmart.setAttribute('ach-tooltip', "在大撕裂裡，在沒有時間研究 11 的情況下達到 "+shorten(1e215)+" 時間碎片。" + (tmp.ngp3l ? "" : "獎勵：基於時間碎片，元維度更強。"))
+	timeBreak.setAttribute('ach-tooltip', "打破永恆。獎勵：星系不會重置維度提升" + (!tmp.ngp3l ? "，而且量子挑戰不需要電子" : "") + "。")
+	soLife.setAttribute('ach-tooltip', "在大撕裂和時間膨脹裡，在不購買永恆點數倍數升級和時間研究的情況下達到 " + shortenCosts(Decimal.pow(10, 3.5e5)) + " 無限點數。" + (tmp.ngp3l ? "" : "獎勵：將幽靈粒子的獲得量變為它的平方，但是它的硬限制為 " + shortenCosts(1e10) + "x，而且如果你有多於 " + shortenCosts(1e60) + " 幽靈粒子，硬限制更低。"))
 }
 
 function setR20Tooltip(){
