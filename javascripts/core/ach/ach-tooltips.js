@@ -424,7 +424,7 @@ function setR20Tooltip(){
 	//ACHIEVEMENT ROW 20
 	finite.setAttribute('ach-tooltip', "在本次幽靈化裡，在不打破永恆的情況下達到 " + shortenCosts(1e33) + " 空間碎片。" + (tmp.ngp3l ? "" : "獎勵：在大撕裂外，樹升級強 10%。在大撕裂裡，基於你本次幽靈化的時間，第八時間維度獲得一個小小的指數加成。"))
 	really.setAttribute('ach-tooltip', "在大撕裂裡達到 " + shortenCosts(Decimal.pow(10, 5000)) + " 物質。" + (tmp.ngp3l ? "":"獎勵：購買電子升級不會花費元維度提升。"))
-	grind.setAttribute('ach-tooltip', "在沒有樹升級的情況下達到第 21 個納米場獎勵。" + (tmp.ngp3l ? "" : "獎勵：基於輻射衰變，你獲得更多夸克。"))
+	grind.setAttribute('ach-tooltip', "在沒有樹升級的情況下達到第 21 個納米場獎勵。" + (tmp.ngp3l ? "" : "獎勵：基於放射衰變，你獲得更多夸克。"))
 	willenough.setAttribute('ach-tooltip', "達到 " + shortenCosts(Decimal.pow(10, player.aarexModifications.ngudpV ? 268435456 : 36000000))+" 複製器。" + (willenoughReward != "" ? "獎勵：" + willenoughReward + "." : ""))
 	oppose.setAttribute('ach-tooltip', "在最多有 1 量子次數的情況下變成一隻幽靈。" + (tmp.ngp3l ? "" : "獎勵：基於你的量子次數，你獲得更多夸克。"))
 	pls.setAttribute('ach-tooltip', "在本次幽靈化、大撕裂和時間膨脹裡，在不購買永恆點數倍數升級和時間定理且不打破永恆的情況下達到 " + shortenCosts(Decimal.pow(10, 9.5e5)) + " 無限點數。獎勵：你每次變成一隻幽靈，你會獲得相當於 "+shortenDimensions(2e3)+" 星系的微中子，再乘以在所有大撕裂裡的最大量的星系的數量。")
@@ -455,11 +455,11 @@ function setR21Tooltip(){
 	let arent = document.getElementById("Aren't you already dead?")
 
 	//ACHIEVEMENT ROW 21
-	uc.setAttribute('ach-tooltip', "Become a ghost with at least "+shortenCosts(Decimal.pow(10, 2.2e5))+" EP without starting Eternity Challenge 10 while Big Ripped." + (tmp.ngp3l ? "" : " Reward: Meta-Dimension Boosts no longer reset Meta Dimensions."))
-	mi.setAttribute('ach-tooltip', "Get "+shorten(Number.MAX_VALUE)+" infinities. Reward: You gain banked infinites and eternities when going Quantum or Big Ripping the universe.")
-	wd.setAttribute('ach-tooltip', "Get "+shortenCosts(Decimal.pow(10, 1e12))+" Infinity Unstable Quarks for each Branch without Big Ripping in this Ghostify." + (tmp.ngp3l ? "" : " Reward: Normal replicant autobuyer buys max."))
-	radioDecay.setAttribute('ach-tooltip', "Get 10 total Radioactive Decays." + (!tmp.ngp3l ? " Reward: You get 1 galaxy worth of generated neutrinos per second." : ""))
-	arent.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 1.8e6)) + " IP while dilated and Big Ripped and without having studies, EP mult upgrades, Tree Upgrades, and Break Eternity within this Ghostify." + (tmp.ngp3l ? "" : " Reward: Your 8th Tree Upgrade's level speeds up Nanofield."))
+	uc.setAttribute('ach-tooltip', "大撕裂時，在不開始第十永恆挑戰的情況下在達到 "+shortenCosts(Decimal.pow(10, 2.2e5))+" 永恆點數時變成一隻幽靈。" + (tmp.ngp3l ? "" : "獎勵：元維度提升不會重置元維度。"))
+	mi.setAttribute('ach-tooltip', "達到 "+shorten(Number.MAX_VALUE)+" 無限次數。獎勵：量子或大撕裂時，你會保留無限次數和永恆次數。")
+	wd.setAttribute('ach-tooltip', "在本次幽靈化裡，在不大撕裂的情況下在所有分支裡達到 "+shortenCosts(Decimal.pow(10, 1e12))+" 無限不穩定夸克。" + (tmp.ngp3l ? "" : "獎勵：普通複製體自動會購買最大量。"))
+	radioDecay.setAttribute('ach-tooltip', "總共達到 10 個放射衰變。" + (!tmp.ngp3l ? "獎勵：你每秒獲得相當於 1 個星系的微中子。" : ""))
+	arent.setAttribute('ach-tooltip', "在本次幽靈化、大撕裂和時間膨脹裡，在不購買時間研究、永恆點數倍數升級、樹升級且不打破永恆的情況下達到 " + shortenCosts(Decimal.pow(10, 1.8e6)) + " 無限點數。" + (tmp.ngp3l ? "" : "獎勵：你的第八樹升級的等級加快納米場。"))
 }
 
 function setR22Tooltip(){
@@ -474,13 +474,13 @@ function setR22Tooltip(){
 	let igu = document.getElementById("I give up.")
 
 	//ACHIEVEMENT ROW 22
-	ghostierthanbefore.setAttribute("ach-tooltip", "Unlock Bosonic Lab." + (tmp.ngp3l ? "" : " Reward: The meta-antimatter effect uses your best meta-antimatter in your current Ghostify instead of your best in the current Quantum, and unlock all achievements prior to Ghostly Photons."))
-	ee.setAttribute('ach-tooltip', "Get "+shorten(Number.MAX_VALUE)+" eternities." + (tmp.ngp3l ? "" : " Reward: Boost quark gain by 10 per Light Empowerment squared."))
-	oc.setAttribute('ach-tooltip', "Become a ghost with at least "+shortenCosts(Decimal.pow(10, 3.75e5)) + " EP while Big Ripped with the Anti-Dilation modifier." + (tmp.ngp3l ? "" : " Reward: Remove the second nanofield reward scaling."))
-	btco.setAttribute('ach-tooltip', "Complete Paired Challenge 1 after getting "+shortenCosts(Decimal.pow(10, 1.65e9)) + " antimatter in Quantum Challenges 6 and 8." + (tmp.ngp3l ? "" : " Reward: Ghostifies only makes you lose 25% of your radiocative decays."))
-	tdc.setAttribute('ach-tooltip', "Complete Eternity Challenge 11 with "+shortenCosts(Decimal.pow(10, 15500)) + " IP in a Paired Challenge with the Quantum Challenges 6 and 8 combination and the Anti-Dilation modifier." + (tmp.ngp3l ? "" : " Reward: Remove the quadratic cost scaling and the level softcap of fifth Tree of Decay upgrade and make it based on best meta-antimatter over Ghostifies, instead of over quantums."))
-	igu.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 2.25e4)) + " IP while dilated and Big Ripped with Anti-Dilation modifier and without having studies, EP mult upgrades, Tree Upgrades, and Break Eternity within this Ghostify.")
-	isnotenough.setAttribute('ach-tooltip', "Complete a Paired Challenge with Quantum Challenges 6 and 8 combinations." + (tmp.ngp3l ? "" : " Reward: Remove the hardcap reduction of 'And so your life?'."))
+	ghostierthanbefore.setAttribute("ach-tooltip", "解鎖玻色子實驗室。" + (tmp.ngp3l ? "" : "獎勵：元反物質的效果會使用本次幽靈化裡最佳的元反物質，而不是本次量子裡的，並解鎖在幽靈光子之前的所有成就。"))
+	ee.setAttribute('ach-tooltip', "達到 "+shorten(Number.MAX_VALUE)+" 永恆次數。" + (tmp.ngp3l ? "" : "獎勵：基於光束強化的平方，將夸克獲得量乘以 10。"))
+	oc.setAttribute('ach-tooltip', "在有反膨脹模組的大撕裂裡，在至少有 "+shortenCosts(Decimal.pow(10, 3.75e5)) + " 永恆點數的情況下變成一隻幽靈。" + (tmp.ngp3l ? "" : "獎勵：第二個納米場獎勵沒有增幅。"))
+	btco.setAttribute('ach-tooltip', "在第六和第八量子挑戰裡達到 "+shortenCosts(Decimal.pow(10, 1.65e9)) + " 反物質後完成第一配對挑戰。" + (tmp.ngp3l ? "" : "獎勵：幽靈化只會使你失去你的放射衰變的 25%。"))
+	tdc.setAttribute('ach-tooltip', "在有反膨脹模組的第六和第八量子挑戰的配對挑戰裡，在有 "+shortenCosts(Decimal.pow(10, 15500)) + " 無限點數的情況下完成完成第十一永恆挑戰。" + (tmp.ngp3l ? "" : "獎勵：第五衰變之樹的升級沒有二次價格增幅和等級軟限制，而且它會使用在幽靈化裡的最大量的元反物質，而不是在量子裡的。"))
+	igu.setAttribute('ach-tooltip', "在本次幽靈化和有反膨脹的大撕裂和時間膨脹裡，在沒有研究、永恆點數倍數升級和樹升級且不打破永恆的情況下達到 " + shortenCosts(Decimal.pow(10, 2.25e4)) + " 無限點數。")
+	isnotenough.setAttribute('ach-tooltip', "完成第六和第八量子挑戰的配對挑戰。" + (tmp.ngp3l ? "" : "獎勵：'And so your life?' 的獎勵沒有硬限制。"))
 }
 
 function setR23Tooltip(){
