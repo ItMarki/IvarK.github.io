@@ -326,7 +326,7 @@ function setR16Tooltip(){
 	memories.setAttribute('ach-tooltip', "在本次量子裡，在沒有第五至第八元維度或多於 4 個維度提升的情況下達到 " + shortenCosts(new Decimal("1e1700")) + " 元反物質。"  + (tmp.ngp3l ? "" : "獎勵：基於你的元維度提升，4 紅綠膠子升級更強。"))
 	squared.setAttribute('ach-tooltip', "在剛好有 8 個元維度提升的情況下達到 "+shortenCosts(new Decimal("1e1500"))+" 元反物質。" + (tmp.ngp3l?"":"獎勵：基於你的第一元維度，第八元維度更強。"))
 	morals.setAttribute('ach-tooltip', "在沒有元維度提升的情況下量子。" + (tmp.ngp3l ? "" : "獎勵：元維度提升稍微影響自己。"))
-	seriously.setAttribute('ach-tooltip', "進行第二量子挑戰和時間膨脹時，在沒有時間研究的情況下達到 " + shortenCosts(new Decimal("1e354000")) + " 無限點數。" + (tmp.ngp3l ? "" : "獎勵：永恆點數對夸克獲得量的加成強 1%。"))
+	seriously.setAttribute('ach-tooltip', "在第二量子挑戰和時間膨脹裡，在沒有時間研究的情況下達到 " + shortenCosts(new Decimal("1e354000")) + " 無限點數。" + (tmp.ngp3l ? "" : "獎勵：永恆點數對夸克獲得量的加成強 1%。"))
 }
 
 function setQSRTooltip(){
@@ -353,12 +353,12 @@ function setR17Tooltip(){
 	let dontWant = document.getElementById("I don't want you to live anymore.")
 
 	//ACHIEVEMENT ROW 17
-	internal.setAttribute('ach-tooltip', "Reach " + shortenCosts(new Decimal("1e333")) + " MA without having 2nd Meta Dimensions and Meta-Dimension Boosts." + (tmp.ngp3l?"":" Reward: 1st Meta Dimensions are stronger based on meta antimatter.") )
-	truth.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 7.88e13)) + " antimatter without having completed any paired challenges.")
-	cantGet.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 6.2e11)) + " antimatter in Eternity Challenge 11.")
-	noDil.setAttribute('ach-tooltip', "Reach " + shortenCosts(Decimal.pow(10, 2e6)) + " replicanti without having Tachyon particles. Reward: You start Quantums with the square root of your best TP as your Tachyon particle amount.")
-	dontWant.setAttribute('ach-tooltip', "Reach " + shorten(Decimal.pow(Number.MAX_VALUE, 1000)) + " IP while dilated, in QC2, and without having studies and First Dimensions during your current Eternity.")
-	noparadox.setAttribute('ach-tooltip', "Quantum without any dilation upgrades." + (tmp.ngp3l ? "" : " Reward: The sum of your best Quantum Challenge times boosts Quark gain."))
+	internal.setAttribute('ach-tooltip', "在沒有第二元維度和元維度提升的情況下達到 " + shortenCosts(new Decimal("1e333")) + " 元反物質。" + (tmp.ngp3l?"":"獎勵：基於元反物質，第一元維度更強。") )
+	truth.setAttribute('ach-tooltip', "在沒有完成任何配對挑戰的情況下達到 " + shortenCosts(Decimal.pow(10, 7.88e13)) + " 反物質。")
+	cantGet.setAttribute('ach-tooltip', "在第十一永恆挑戰裡達到 " + shortenCosts(Decimal.pow(10, 6.2e11)) + " 反物質。")
+	noDil.setAttribute('ach-tooltip', "在沒有超光速粒子的情況下達到 " + shortenCosts(Decimal.pow(10, 2e6)) + " 複製器。獎勵：開始量子時，你的超光速粒子數量是你最大量的超光速粒子的平方根。")
+	dontWant.setAttribute('ach-tooltip', "在你本次永恆，第二量子挑戰和時間膨脹裡，在沒有時間研究和第一維度的情況下達到 " + shorten(Decimal.pow(Number.MAX_VALUE, 1000)) + " 無限點數。")
+	noparadox.setAttribute('ach-tooltip', "在沒有膨脹時間的情況下量子。" + (tmp.ngp3l ? "" : "獎勵：你最佳的量子挑戰時間的總和加強夸克獲得量。"))
 }
 
 function setR18Tooltip(){
@@ -373,13 +373,13 @@ function setR18Tooltip(){
 	let dying = document.getElementById("Are you currently dying?")
 
 	//ACHIEVEMENT ROW 18
-	notrelative.setAttribute('ach-tooltip', "Get " + shorten(Decimal.pow(10, 411))+" dilated time without gaining tachyon particles." + (tmp.ngp3l ? "" : " Reward: You gain more DT based on the amount of Nanofield rewards."))
-	error404.setAttribute('ach-tooltip', "Get " + shorten(Decimal.pow(10, 1.6e12))+" antimatter while having only the 1st Dimensions of each type of Dimension and at least 2 normal galaxies.")
-	ie.setAttribute('ach-tooltip', "Get " + shorten(Decimal.pow(10, 8e6)) + " antimatter in a paired challenge with the PC6+8 combination." + (tmp.ngp3l ? "" : " Reward: Automatically buy the Quark multiplier to dimensions every second if you have the 8th brave milestone."))
-	wasted.setAttribute('ach-tooltip', "Get " + shorten(1.1e7) + " TT without having TT generation, keeping your previous TT, and respeccing studies. Reward: While you have less than 1 hour worth of TT production, you gain 10x as much TT.")
-	protonsDecay.setAttribute('ach-tooltip', "Unlock Tree of Decay." + (!tmp.ngp3l ? " Reward: You keep the two thirds power of your preons upon quantum when outside of a Quantum Challenge." : ""))
-	stop.setAttribute('ach-tooltip', "Get the replicanti reset requirement to " + shorten(Decimal.pow(10, 1.25e7)) + ". Reward: Getting a normal replicant manually doesn't reset your replicanti and can be automated.")
-	dying.setAttribute('ach-tooltip', "Reach " + shorten(Decimal.pow(10, 2.75e5)) + " IP while dilated, in PC6+8, and without having time studies." + (tmp.ngp3l ? "" : " Reward: Branches are faster based on your Meta-Dimension Boosts."))
+	notrelative.setAttribute('ach-tooltip', "在不獲得超光速粒子的情況下達到 " + shorten(Decimal.pow(10, 411))+" 膨脹時間。" + (tmp.ngp3l ? "" : "獎勵：基於納米場獎勵的數量，你獲得更多膨脹時間。"))
+	error404.setAttribute('ach-tooltip', "在至少有 2 個普通星系並只有所有維度種類的第一維度的情況下達到 " + shorten(Decimal.pow(10, 1.6e12))+" 反物質。")
+	ie.setAttribute('ach-tooltip', "在第六和第八量子挑戰的配對挑戰裡達到 " + shorten(Decimal.pow(10, 8e6)) + " 反物質。" + (tmp.ngp3l ? "" : "獎勵：如果你有第八勇敢里程碑，每秒自動購買夸克的維度的加成。"))
+	wasted.setAttribute('ach-tooltip', "在沒有時間定理生產，保留之前的時間定理以及重置研究的情況下達到 " + shorten(1.1e7) + " 時間定理。獎勵：如果你有少於 1 小時的時間定理生產的數量，你獲得時間定理的速度快 10x。")
+	protonsDecay.setAttribute('ach-tooltip', "解鎖衰變之樹。" + (!tmp.ngp3l ? "獎勵：在量子挑戰外，量子時，你會保留前子力量的 2/3。" : ""))
+	stop.setAttribute('ach-tooltip', "將複製器重置需求達到 " + shorten(Decimal.pow(10, 1.25e7)) + "。獎勵：手動獲得一個普通複製體不會重置你的複製器，而且它可以自動進行。")
+	dying.setAttribute('ach-tooltip', "在第六和第八量子挑戰的配對挑戰和時間膨脹裡，在沒有時間研究的情況下達到 " + shorten(Decimal.pow(10, 2.75e5)) + " 無限點數。" + (tmp.ngp3l ? "" : "獎勵：基於你的元維度提升，分支更快。"))
 }
 
 function setR19Tooltip(){
