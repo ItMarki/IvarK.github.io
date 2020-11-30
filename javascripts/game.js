@@ -3969,7 +3969,7 @@ function eternity(force, auto, presetLoad, dilated) {
 	hideDimensions()
 	tmp.tickUpdate = true;
 	playerInfinityUpgradesOnEternity()
-	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。")
+	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。"
 	updateEternityChallenges()
 	if (player.eternities <= 1) {
 		showTab("dimensions")
