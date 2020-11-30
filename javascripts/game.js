@@ -3954,22 +3954,22 @@ function eternity(force, auto, presetLoad, dilated) {
 	}
 	if (getEternitied() > 2 && player.replicanti.galaxybuyer === undefined) player.replicanti.galaxybuyer = false
 	var IPshortened = shortenDimensions(player.infinityPoints)
-	document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">" + IPshortened + "</span> Infinity points."
-	document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">" + IPshortened + "</span> Infinity points."
+	document.getElementById("infinityPoints1").innerHTML = "你有 <span class=\"IPAmount1\">" + IPshortened + "</span> 無限點數。"
+	document.getElementById("infinityPoints2").innerHTML = "你有 <span class=\"IPAmount2\">" + IPshortened + "</span> 無限點數。"
 	if (getEternitied() > 0 && oldStat < 1) {
 		document.getElementById("infmultbuyer").style.display = "inline-block"
-		document.getElementById("infmultbuyer").textContent = "Autobuy IP mult O" + (player.infMultBuyer ? "N" : "FF")
+		document.getElementById("infmultbuyer").textContent = "自動購買無限點數倍數：" + (player.infMultBuyer ? "開啟" : "關閉")
 	}
 	hideMaxIDButton()
 	document.getElementById("eternitybtn").style.display = player.infinityPoints.gte(player.eternityChallGoal) ? "inline-block" : "none"
 	document.getElementById("eternityPoints2").style.display = "inline-block"
 	document.getElementById("eternitystorebtn").style.display = "inline-block"
 	updateEternityUpgrades()
-	document.getElementById("totaltickgained").textContent = "You've gained "+getFullExpansion(player.totalTickGained)+" tickspeed upgrades."
+	document.getElementById("totaltickgained").textContent = "你獲得了 "+getFullExpansion(player.totalTickGained)+" 時間速度升級。"
 	hideDimensions()
 	tmp.tickUpdate = true;
 	playerInfinityUpgradesOnEternity()
-	document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
+	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。")
 	updateEternityChallenges()
 	if (player.eternities <= 1) {
 		showTab("dimensions")
