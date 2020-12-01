@@ -5377,26 +5377,26 @@ function IPMultBuyUpdating() {
 
 function doEternityButtonDisplayUpdating(diff){
 	var isSmartPeakActivated = tmp.ngp3 && getEternitied() >= 1e13 && player.dilation.upgrades.includes("ngpp6")
-	var EPminpeakUnits = isSmartPeakActivated ? (player.dilation.active ? 'TP' : tmp.be ? 'EM' : 'EP') : 'EP'
+	var EPminpeakUnits = isSmartPeakActivated ? (player.dilation.active ? '超光速粒子' : tmp.be ? '永恆物質' : '永恆點數') : '永恆點數'
 	var currentEPmin = updateEPminpeak(diff, EPminpeakUnits)
-	EPminpeakUnits = (EPminpeakType == 'logarithm' ? ' log(' + EPminpeakUnits + ')' : ' ' + EPminpeakUnits) + '/min'
+	EPminpeakUnits = (EPminpeakType == 'logarithm' ? ' log(' + EPminpeakUnits + ')' : ' ' + EPminpeakUnits) + ' 每分鐘'
 	if (document.getElementById("eternitybtn").style.display == "inline-block") {
 		document.getElementById("eternitybtnFlavor").textContent = (((!player.dilation.active&&gainedEternityPoints().lt(1e6))||player.eternities<1||player.currentEternityChall!==""||(player.options.theme=="Aarex's Modifications"&&player.options.notation!="Morse code"))
-									    ? ((player.currentEternityChall!=="" ? "Other challenges await..." : player.eternities>0 ? "" : "Other times await...") + " I need to become Eternal.") : "")
-		if (player.dilation.active && player.dilation.totalTachyonParticles.gte(getDilGain())) document.getElementById("eternitybtnEPGain").innerHTML = "Reach " + shortenMoney(getReqForTPGain()) + " antimatter to gain more Tachyon Particles."
+									    ? ((player.currentEternityChall!=="" ? "其他挑戰正在等待……" : player.eternities>0 ? "" : "其他時間正在等待……") + "我需要變成永恆。") : "")
+		if (player.dilation.active && player.dilation.totalTachyonParticles.gte(getDilGain())) document.getElementById("eternitybtnEPGain").innerHTML = "達到 " + shortenMoney(getReqForTPGain()) + " 反物質才可以獲得更多超光速粒子。"
 		else {
 			if ((EPminpeak.lt(Decimal.pow(10,9)) && EPminpeakType == "logarithm") || (EPminpeakType == 'normal' && EPminpeak.lt(Decimal.pow(10, 1e9)))) {
 				document.getElementById("eternitybtnEPGain").innerHTML = ((player.eternities > 0 && (player.currentEternityChall==""||player.options.theme=="Aarex's Modifications"))
-											  ? "Gain <b>"+(player.dilation.active?shortenMoney(getDilGain().sub(player.dilation.totalTachyonParticles)):shortenDimensions(gainedEternityPoints()))+"</b> "+(player.dilation.active?"Tachyon particles.":tmp.be?"EP and <b>"+shortenDimensions(getEMGain())+"</b> Eternal Matter.":"Eternity points.") : "")
+											  ? "獲得 <b>"+(player.dilation.active?shortenMoney(getDilGain().sub(player.dilation.totalTachyonParticles)):shortenDimensions(gainedEternityPoints()))+"</b> "+(player.dilation.active?"超光速粒子。":tmp.be?"永恆點數和 <b>"+shortenDimensions(getEMGain())+"</b> 永恆物質。":"永恆點數。") : "")
 			} else {
-				document.getElementById("eternitybtnEPGain").innerHTML = "Go Eternal"
+				document.getElementById("eternitybtnEPGain").innerHTML = "永恆"
 			}
 		}
 		var showEPmin=(player.currentEternityChall===""||player.options.theme=="Aarex's Modifications")&&EPminpeak>0&&player.eternities>0&&player.options.notation!='Morse code'&&player.options.notation!='Spazzy'&&(!(player.dilation.active||tmp.be)||isSmartPeakActivated)
 		if (EPminpeak.log10() < 1e5) {
 			document.getElementById("eternitybtnRate").textContent = (showEPmin&&(EPminpeak.lt("1e30003")||player.options.theme=="Aarex's Modifications")
 										  ? (EPminpeakType == "normal" ? shortenDimensions(currentEPmin) : shorten(currentEPmin))+EPminpeakUnits : "")
-			document.getElementById("eternitybtnPeak").textContent = showEPmin ? "Peaked at "+(EPminpeakType == "normal" ? shortenDimensions(EPminpeak) : shorten(EPminpeak))+EPminpeakUnits : ""
+			document.getElementById("eternitybtnPeak").textContent = showEPmin ? "高峰："+(EPminpeakType == "normal" ? shortenDimensions(EPminpeak) : shorten(EPminpeak))+EPminpeakUnits : ""
 		} else {
 			document.getElementById("eternitybtnRate").textContent = ''
 			document.getElementById("eternitybtnPeak").textContent = ''
@@ -5418,18 +5418,18 @@ function doQuantumButtonDisplayUpdating(diff){
 		}
 	}
 	
-	document.getElementById("quantumbtnFlavor").textContent = ((tmp.qu!==undefined?!tmp.qu.times&&(player.ghostify!==undefined?!player.ghostify.milestones:true):false)||!inQC(0)?((tmp.ngp3 ? tmp.qu.bigRip.active : false)?"I am":inQC(0)?"My computer is":tmp.qu.challenge.length>1?"These paired challenges are":"This challenge is")+" not powerful enough... ":"") + "I need to go quantum."
+	document.getElementById("quantumbtnFlavor").textContent = ((tmp.qu!==undefined?!tmp.qu.times&&(player.ghostify!==undefined?!player.ghostify.milestones:true):false)||!inQC(0)?((tmp.ngp3 ? tmp.qu.bigRip.active : false)?"我":inQC(0)?"我的電腦":tmp.qu.challenge.length>1?"這個配對挑戰":"這個挑戰")+"不夠強……":"") + "我需要量子。"
 	var showGain = ((quantumed && tmp.qu.times) || (ghostified && player.ghostify.milestones)) && (inQC(0)||player.options.theme=="Aarex's Modifications") ? "QK" : ""
 	if (tmp.ngp3) if (tmp.qu.bigRip.active) showGain = "SS"
-	document.getElementById("quantumbtnQKGain").textContent = showGain == "QK" ? "Gain "+shortenDimensions(quarkGain())+" quark"+(quarkGain().eq(1)?".":"s.") : ""
-	if (showGain == "SS") document.getElementById("quantumbtnQKGain").textContent = "Gain " + shortenDimensions(getSpaceShardsGain()) + " Space Shards."
+	document.getElementById("quantumbtnQKGain").textContent = showGain == "QK" ? "獲得 "+shortenDimensions(quarkGain())+" 夸克。" : ""
+	if (showGain == "SS") document.getElementById("quantumbtnQKGain").textContent = "獲得 " + shortenDimensions(getSpaceShardsGain()) + " 空間碎片。"
 	if (showGain == "QK" && currentQKmin.gt(Decimal.pow(10, 1e5))) {
 		document.getElementById("quantumbtnRate").textContent = ''
 		document.getElementById("quantumbtnPeak").textContent = ''
 	} else {
-		document.getElementById("quantumbtnRate").textContent = showGain == "QK" ? shortenMoney(currentQKmin)+" QK/min" : ""
+		document.getElementById("quantumbtnRate").textContent = showGain == "QK" ? shortenMoney(currentQKmin)+" 夸克每分鐘" : ""
 		var showQKPeakValue = QKminpeakValue.lt(1e30) || player.options.theme=="Aarex's Modifications"
-		document.getElementById("quantumbtnPeak").textContent = showGain == "QK" ? (showQKPeakValue ? "" : "Peaked at ") + shortenMoney(QKminpeak)+" QK/min" + (showQKPeakValue ? " at " + shortenDimensions(QKminpeakValue) + " QK" : "") : ""
+		document.getElementById("quantumbtnPeak").textContent = showGain == "QK" ? (showQKPeakValue ? "" : "高峰：") + shortenMoney(QKminpeak)+" 夸克每分鐘" + (showQKPeakValue ? " at " + shortenDimensions(QKminpeakValue) + " 夸克" : "") : ""
 	}
 }
 
