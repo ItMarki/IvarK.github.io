@@ -423,20 +423,20 @@ function updateEnchantDescs() {
 		else if (bEn.action == "use") document.getElementById("bEn" + id).className = "gluonupgrade " + (canUseEnchant(id) ? "storebtn" : "unavailablebtn")
 		if (id == 14) document.getElementById("bEn14").style = "font-size: 8px"
 		if (shiftDown) document.getElementById("bEnLvl" + id).textContent = "Enchant id: " + id
-		else document.getElementById("bEnLvl" + id).textContent = "Level: " + shortenDimensions(tmp.bEn.lvl[id])
+		else document.getElementById("bEnLvl" + id).textContent = "等級：" + shortenDimensions(tmp.bEn.lvl[id])
 		if (bEn.action == "max") document.getElementById("bEnOn"+id).textContent = "+" + shortenDimensions(getMaxEnchantLevelGain(id)) + " levels"
-		else document.getElementById("bEnOn" + id).textContent = data.usedEnchants.includes(id) ? "Enabled" : "Disabled"
+		else document.getElementById("bEnOn" + id).textContent = data.usedEnchants.includes(id) ? "啟動" : "禁用"
 		if (tmp.bEn[id] != undefined) {
 			let effect = getEnchantEffect(id, true)
 			let effectDesc = bEn.effectDescs[id]
 			document.getElementById("bEnEffect" + id).textContent = effectDesc !== undefined ? effectDesc(effect) : shorten(effect) + "x"	
 		}
 	}
-	document.getElementById("usedEnchants").textContent = "You have used " + data.usedEnchants.length + " / " + bEn.limit + " Bosonic Enchants."
+	document.getElementById("usedEnchants").textContent = "你使用了 " + data.usedEnchants.length + " / " + bEn.limit + " 玻色子附魔。"
 }
 
 var br = {
-	names: [null, "Infinity", "Eternity", "Quantum", "Ghostly", "Ethereal", "Sixth", "Seventh", "Eighth", "Ninth"], //Current maximum limit of 9.
+	names: [null, "無限", "永恆", "量子", "幽靈", "Ethereal", "Sixth", "Seventh", "Eighth", "Ninth"], //Current maximum limit of 9.
 	maxLimit: 4,
 	scalings: {
 		1: 60,
@@ -456,12 +456,12 @@ var bEn = {
 		34: [1,0]
 	},
 	descs: {
-		12: "You automatically extract Bosonic Runes.",
-		13: "Speed up the production and use of Anti-Preons.",
-		23: "Bosonic Antimatter boosts oscillate speed.",
-		14: "Divide the requirement of Higgs and start with some Bosonic Upgrades even it is inactive.",
-		24: "You gain more Bosonic Battery.",
-		34: "Higgs Bosons produce more Bosonic Antimatter."
+		12: "你可以自動提取玻色子符文。",
+		13: "加快反前子的生產速度和使用速度。",
+		23: "玻色子反物質加快振盪速度。",
+		14: "減少希格斯玻色子的需求，而且開始時會有一些玻色子升級，儘管它們未啟動。",
+		24: "你獲得更多玻色子電池。",
+		34: "希格斯玻色子產生更多玻色子反物質。"
 	},
 	effects: {
 		12: function(l) {
@@ -499,11 +499,11 @@ var bEn = {
 			var blData = player.ghostify.bl
 
 			x = x.times(blData.speed * (blData.battery.gt(0) ? blData.odSpeed : 1))
-			if (x.lt(1) && x.gt(0)) return x.m.toFixed(2) + "/" + shortenCosts(Decimal.pow(10, -x.e)) + " seconds"
-			return shorten(x) + "/second"
+			if (x.lt(1) && x.gt(0)) return x.m.toFixed(2) + "/" + shortenCosts(Decimal.pow(10, -x.e)) + " 秒"
+			return shorten(x) + "/秒"
 		},
 		14: function(x) {
-			return "/" + shorten(x.higgs) + " to Higgs requirement, " + getFullExpansion(x.bUpgs) + " starting upgrades"
+			return "希格斯玻色子的需求 /" + shorten(x.higgs) + "，" + getFullExpansion(x.bUpgs) + " 個升級"
 		}
 	},
 	action: "upgrade",
@@ -688,26 +688,26 @@ var bu = {
 	},
 	reqData: {},
 	descs: {
-		11: "Bosonic Antimatter increases blue Light effect.",
-		12: "For every 100% of green power effect, decrease the free galaxy threshold increase by 0.0007.",
-		13: "Radioactive Decays boost the effect of Light Empowerments.",
-		14: "Sacrificed galaxies cancel less galaxies based on your free galaxies.",
-		15: "Ghostifies and dilated time power up each other.",
-		21: "Replace first Nanofield reward with a boost to slow down Dimension Supersonic scaling.",
-		22: "Replace seventh Nanofield reward with a boost to neutrino gain and preon charge.",
-		23: "Assigning gives more colored quarks based on your meta-antimatter.",
-		24: "You produce 1% of Space Shards on Big Rip per second, but Break Eternity upgrades that boost space shard gain are nerfed.",
-		25: "Electrons boost the per-ten Meta Dimensions multiplier.",
-		31: "Bosonic Antimatter boosts all Nanofield rewards.",
-		32: "Unlock a new boost until every third LE from LE7 until LE25.",
-		33: "Higgs Bosons reduce the costs of all electron upgrades.",
-		34: "All types of galaxies boost each other.",
-		35: "Replicantis and Emperor Dimensions boost each other.",
-		41: "Intergalactic and Infinite Time rewards boost each other.",
-		42: "Red power boosts the first Bosonic Upgrade.",
-		43: "Green power effect boosts Tree Upgrades.",
-		44: "Blue power makes replicate interval increase slower.",
-		45: "Dilated time weakens the Distant Antimatter Galaxies scaling."
+		11: "玻色子反物質加強藍光效果。",
+		12: "每 100% 個綠色力量效果，免費星系門檻增幅減少 0.0007。",
+		13: "放射衰變加強光強化的效果。",
+		14: "基於你的免費星系，犧牲星系抵消更少的星系。",
+		15: "幽靈化和膨脹時間互相加強。",
+		21: "將第一納米場獎勵替換成一個加成，減慢維度超音速價格增幅。",
+		22: "將第七納米場獎勵替換成一個加成，加強微中子和前子動力的獲得量。",
+		23: "基於你的元反物質，分配會給予更多的有色夸克。",
+		24: "你每秒獲得大擠壓能夠獲得的空間碎片的 1%，但是削弱加強空間碎片獲得量的打破永恆升級。",
+		25: "電子加強每十個元維度加成。",
+		31: "玻色子反物質加強所有納米場獎勵。",
+		32: "從第七個光強化到第二十五個，每三個光強化會解鎖一個新的加成，。",
+		33: "希格斯玻色子減少所有電子升級的價格。",
+		34: "各種類型的星系互相加強。",
+		35: "複製器和皇帝維度互相加強。",
+		41: "Intergalactic 和 Infinite Time 獎勵互相加強。",
+		42: "紅色力量加強第一玻色子升級。",
+		43: "綠色力量效果加強衰變之樹升級。",
+		44: "藍色力量減慢複製間隔增幅。",
+		45: "膨脹時間減慢遠處反物質星系的價格增幅。"
 	},
 	effects: {
 		11: function() {
@@ -829,37 +829,37 @@ var bu = {
 			return getFullExpansion(x) + (x > tmp.qu.electrons.sacGals && !tmp.qu.bigRip.active ? " (+" + getFullExpansion(Math.max(x - tmp.qu.electrons.sacGals, 0)) + " Antielectronic Galaxies)" : "")
 		},
 		15: function(x) {
-			return shorten(x.gh) + "x more Ghostifies & " + shorten(x.dt) + "x more DT"
+			return "幽靈化次數：" + shorten(x.gh) + "x，膨脹時間：" + shorten(x.dt) + "x"
 		},
 		25: function(x) {
 			return "^" + x.toFixed(2)
 		},
 		31: function(x) {
-			return (x * 100 - 100).toFixed(1) + "% stronger"
+			return "強 " + (x * 100 - 100).toFixed(1) + "%"
 		},
 		33: function(x) {
-			return "-" + x.toFixed(2) + " levels worth"
+			return "-" + x.toFixed(2) + " 等級"
 		},
 		34: function(x) {
-			return (x * 100 - 100).toFixed(2) + "% stronger"
+			return "強 " + (x * 100 - 100).toFixed(2) + "%"
 		},
 		35: function(x) {
-			return "+" + shorten(x.rep) + " OoMs to replicate interval increase, " + shorten(x.eds) + "x to all EDs"
+			return "複製間隔增幅 +" + shorten(x.rep) + " 數量級，所有皇帝維度 " + shorten(x.eds) + "x"
 		},
 		41: function(x) {
-			return shorten(x.ig) + "x to Intergalactic, " + shorten(x.it) + "x to Infinite Time"
+			return "Intergalactic " + shorten(x.ig) + "x，Infinite Time" + shorten(x.it) + "x"
 		},
 		42: function(x) {
-			return (x * 100).toFixed(2) + "% to growth and softcap slowdown"
+			return "增長速度加快、軟上限減慢 " + (x * 100).toFixed(2) + "%"
 		},
 		43: function(x) {
 			return (x * 100).toFixed(2) + "%"
 		},
 		44: function(x) {
-			return "+" + x.toFixed(1) + " OoMs"
+			return "+" + x.toFixed(1) + " 數量級"
 		},
 		45: function(x) {
-			return "/" + shorten(x) + " to efficiency"
+			return "效率 /" + shorten(x)
 		}
 	}
 }
@@ -916,9 +916,9 @@ function updateWZBosonsTab() {
 	else r = getAntiPreonLoss().times(speed)
 	document.getElementById("ap").textContent = shorten(data3.dP)
 	document.getElementById("apProduction").textContent = (data3.dPUse ? "-" : "+") + shorten(r) + "/s"
-	document.getElementById("apUse").textContent = data3.dPUse == 0 ? "" : "You are currently consuming Anti-Preons to " + (["", "decay W Bosons", "oscillate Z Bosons", "convert W- to W+ Bosons"])[data3.dPUse] + "."
+	document.getElementById("apUse").textContent = data3.dPUse == 0 ? "" : "你正在消耗反前子來" + (["", "使 W 玻色子衰變", "振盪 Z 玻色子", "將 W- 玻色子轉換成 W+ 玻色子"])[data3.dPUse] + "。"
 	document.getElementById("wQkType").textContent = data3.wQkUp ? "positive" : "negative"
-	document.getElementById("wQkProgress").textContent = data3.wQkProgress.times(100).toFixed(1) + "% to turn W Boson to a" + (data3.wQkUp ? " negative" : " positive")+" Boson."
+	document.getElementById("wQkProgress").textContent = "將 W 玻色子轉換成" + (data3.wQkUp ? "負" : "正") + "玻色子：" + data3.wQkProgress.times(100).toFixed(1) + "%。"
 	document.getElementById("wQk").className = show0 ? "zero" : data3.wQkUp ? "up" : "down"
 	document.getElementById("wQkSymbol").textContent = show0 ? "0" : data3.wQkUp ? "+" : "−"
 	document.getElementById("wpb").textContent = shortenDimensions(data3.wpb)
@@ -927,12 +927,12 @@ function updateWZBosonsTab() {
 	document.getElementById("wbOscillate").textContent = shorten(data2.wbo)
 	document.getElementById("wbProduction").textContent = shorten(data2.wbp)
 	document.getElementById("zNeGen").textContent = (["electron", "Mu", "Tau"])[data3.zNeGen - 1]
-	document.getElementById("zNeProgress").textContent = data3.zNeProgress.times(100).toFixed(1) + "% to oscillate Z Boson to " + (["Mu", "Tau", "electron"])[data3.zNeGen-1] + "."
-	document.getElementById("zNeReq").textContent = "Oscillate progress gain speed is currently " + (gainSpeed.gt(1) ? shorten(gainSpeed) : "1 / " + shorten(Decimal.div(1, gainSpeed))) + "x."
+	document.getElementById("zNeProgress").textContent = "將 Z 玻色子振盪成" + (["緲", "濤", "電子"]) + "玻色子：" + [data3.zNeGen-1] + data3.zNeProgress.times(100).toFixed(1) + "%。"
+	document.getElementById("zNeReq").textContent = "振盪速度目前是 " + (gainSpeed.gt(1) ? shorten(gainSpeed) : "1 / " + shorten(Decimal.div(1, gainSpeed))) + "x。"
 	document.getElementById("zNe").className = (["electron","mu","tau"])[data3.zNeGen - 1]
 	document.getElementById("zNeSymbol").textContent = (["e", "μ", "τ"])[data3.zNeGen - 1]
 	document.getElementById("zb").textContent = shortenDimensions(data3.zb)
-	document.getElementById("zbGain").textContent = "You will gain " + shortenDimensions(data3.zNeReq.pow(0.75)) + " Z Bosons on next oscillation."
+	document.getElementById("zbGain").textContent = "你下一次振盪會獲得 " + shortenDimensions(data3.zNeReq.pow(0.75)) + " Z 玻色子。"
 	document.getElementById("zbSpeed").textContent = shorten(data2.zbs)
 }
 
