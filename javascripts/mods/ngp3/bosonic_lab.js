@@ -13,7 +13,7 @@ function updateBLUnlocks() {
 }
 
 function updateBLUnlockDisplay() {
-	document.getElementById("blUnl").textContent = "To unlock Bosonic Lab, you need to get " + shortenCosts(Decimal.pow(10, tmp.ngp3l ? 1e10 : 5e10)) + " Ghostly Unstable Quarks" + (tmp.ngp3l ? "" : " and 3 Light Empowerments") + " first."
+	document.getElementById("blUnl").textContent = "要解鎖玻色子實驗室，必先獲得 " + shortenCosts(Decimal.pow(10, tmp.ngp3l ? 1e10 : 5e10)) + " 幽靈不穩定夸克" + (tmp.ngp3l ? "" : " 和 3 個光強化") + "。"
 }
 
 function getBosonicWattGain() {
@@ -227,9 +227,9 @@ function updateBosonicLabTab(){
 	document.getElementById("bTotalSpeed").textContent = shorten(speed)
 	document.getElementById("bTicks").textContent = shorten(data.ticks)
 	document.getElementById("bAM").textContent = shorten(data.am)
-	document.getElementById("bAMProduction").textContent = "+" + shorten(getBosonicAMFinalProduction().times(speed)) + "/s"
+	document.getElementById("bAMProduction").textContent = "+" + shorten(getBosonicAMFinalProduction().times(speed)) + " /s"
 	document.getElementById("bAMProductionReduced").style.display = !tmp.ngp3l && data.am.gt(tmp.badm.start) ? "" : "none"
-	document.getElementById("bAMProductionReduced").textContent = "(reduced by " + shorten(tmp.badm.preDim) + "x)"
+	document.getElementById("bAMProductionReduced").textContent = "（減少 " + shorten(tmp.badm.preDim) + "倍）"
 	document.getElementById("bBt").textContent = shorten(data.battery)
 	let x = getEstimatedNetBatteryGain()
 	s = shorten(x[1]) + "/s"
@@ -237,7 +237,7 @@ function updateBosonicLabTab(){
 	document.getElementById("bBtProduction").textContent = s
 	document.getElementById("odSpeed").textContent=(data.battery.gt(0)?data.odSpeed:1).toFixed(2) + "x"
 	document.getElementById("odSpeedWBBt").style.display = data.battery.eq(0) && data.odSpeed > 1 ? "" : "none"
-	document.getElementById("odSpeedWBBt").textContent = " (" + data.odSpeed.toFixed(2) + "x if you have Bosonic Battery)"
+	document.getElementById("odSpeedWBBt").textContent = "（如果有玻色子電池則是 " + data.odSpeed.toFixed(2) + "x）"
 	for (var g = 1;g <= br.limit; g++) document.getElementById("bRune"+g).textContent = shortenDimensions(data.glyphs[g-1])
 	if (document.getElementById("bextab").style.display=="block") updateBosonExtractorTab()
 	if (document.getElementById("butab").style.display=="block") updateBosonicUpgradeDescs()
@@ -407,11 +407,11 @@ function updateBosonExtractorTab(){
 	let data = player.ghostify.bl
 	let speed = data.speed * (data.battery.gt(0) ? data.odSpeed : 1)
 	let time = getExtractTime().div(speed)
-	if (data.extracting) document.getElementById("extract").textContent = "Extracting" + (time.lt(0.1)?"":" ("+data.extractProgress.times(100).toFixed(1)+"%)")
-	else document.getElementById("extract").textContent="Extract"
-	if (time.lt(0.1)) document.getElementById("extractTime").textContent="This would automatically take "+shorten(Decimal.div(1,time))+" runes per second."
-	else if (data.extracting) document.getElementById("extractTime").textContent=shorten(time.times(Decimal.sub(1,data.extractProgress)))+" seconds left to extract."
-	else document.getElementById("extractTime").textContent="This will take "+shorten(time)+" seconds."
+	if (data.extracting) document.getElementById("extract").textContent = "提取中" + (time.lt(0.1)?"":" ("+data.extractProgress.times(100).toFixed(1)+"%)")
+	else document.getElementById("extract").textContent="提取"
+	if (time.lt(0.1)) document.getElementById("extractTime").textContent="每秒自動提取 "+shorten(Decimal.div(1,time))+" 符文。"
+	else if (data.extracting) document.getElementById("extractTime").textContent="提取符文剩下 "+shorten(time.times(Decimal.sub(1,data.extractProgress)))+" 秒。"
+	else document.getElementById("extractTime").textContent="提取需要 "+shorten(time)+" 秒。"
 	updateEnchantDescs()
 }
 
