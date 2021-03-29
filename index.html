@@ -186,7 +186,7 @@
 					<tr>
 						<td><button id="81" onclick="buyTimeStudy(81)">維度提升效果變為 <span id="81desc" style="display:inline"></span><span>價格：4 時間定理</button></td>
 						<td><button id="82" onclick="buyTimeStudy(82)">維度提升影響無限維度<span id="82desc">目前：1x</span>價格：6 時間定理</button></td>
-						<td><button id="83" onclick="buyTimeStudy(83)">每個時間維度提供的時間速度升級使維度提升效果增強 0.04%<span>價格：5 時間定理</button></td>
+						<td><button id="83" onclick="buyTimeStudy(83)">每個時間維度提供的時間速度升級使維度提升效果加強 0.04%<span>價格：5 時間定理</button></td>
 					</tr>
 					<tr>
 						<td><button id="91" onclick="buyTimeStudy(91)">基於本次永恆時間，反物質維度更強<span id="91desc">目前：1x</span>價格：4 時間定理</button></td>
@@ -220,7 +220,7 @@
 						<td><button class="eternitychallengestudy" id="ec6unl">永恆挑戰 6<span>要求：40 複製器星系<span>價格：100 時間定理</button></td>
 						<td><button id="131" onclick="buyTimeStudy(131)">禁用複製器星系自動購買器，但是你可以購買 50% 更多個<span>價格：5 時間定理</button></td>
 						<td><button id="132" onclick="buyTimeStudy(132)">複製器星系效果提升 40%<span>價格：5 時間定理</button></td>
-						<td><button id="133" onclick="buyTimeStudy(133)">複製器複製速度在複製器到達無限前慢 10x，但是複製器星系效果增強 50%<span>價格：5 時間定理</button></td>
+						<td><button id="133" onclick="buyTimeStudy(133)">複製器複製速度在複製器到達無限前慢 10x，但是複製器星系效果加強 50%<span>價格：5 時間定理</button></td>
 						<td><button class="eternitychallengestudy" id="ec8unl">永恆挑戰 8<span>價格：100 時間定理</button></td>
 					</tr>
 				</table>
@@ -261,7 +261,7 @@
 				</table>
 				<table class="table" id="studytable">
 					<tr>
-						<td><button id="181" onclick="buyTimeStudy(181)">你每秒獲得 <span id="181desc" style="display:inline"></span> 。<span>價格：200 時間定理</button></td>
+						<td><button id="181" onclick="buyTimeStudy(181)">你每秒正在獲得 <span id="181desc" style="display:inline"></span> 。<span>價格：200 時間定理</button></td>
 					</tr>
 					<tr>
 						<td><button class="eternitychallengestudy" id="ec10unl">永恆挑戰 10<span>要求：1e100 EP<span>價格：200 時間定理</button></td>
@@ -3799,7 +3799,7 @@
 							<td><button class='gluonupgrade unavailablebtn' id="bigripupg17" onclick='buyBigRipUpg(17)'>重新啟動第一升級，並使它的效果強 <span id="bigripupg17current">3</span>x。<br>價格：<span id="bigripupg17cost"></span> 空間碎片</button></td>
 							<td><button class='gluonupgrade unavailablebtn' id="bigripupg18" onclick='buyBigRipUpg(18)'>空間碎片加強夸克自旋生產力。<br>目前：<span id="bigripupg18current"></span>x<br>價格：<span id="bigripupg18cost"></span> 空間碎片</button></td>
 							<td><button class='gluonupgrade unavailablebtn' id="bigripupg19" onclick='buyBigRipUpg(19)'>時間碎片使分支加速。<br>目前：<span id="bigripupg19current"></span>x<br>價格：<span id="bigripupg19cost"></span> 空間碎片</button></td>
-							<td><button class='gluonupgrade unavailablebtn' id="bigripupg20" onclick='buyBigRipUpg(20)'>在大撕裂裡，你可以不膨脹時間的情況下獲得超光速粒子。<br>價格：<span id="bigripupg20cost"></span> 空間碎片</button></td>
+							<td><button class='gluonupgrade unavailablebtn' id="bigripupg20" onclick='buyBigRipUpg(20)'>大撕裂時，你可以不膨脹時間的情況下獲得超光速粒子。<br>價格：<span id="bigripupg20cost"></span> 空間碎片</button></td>
 						</tr>
 					</table>
 				</div>
@@ -4948,7 +4948,7 @@
 						- 當你獲得 1 前子力量，如果你在生產前子動力，你會更快地失去前子。<br>
 						- 當你獲得 1 前子力量，前子動力的生產力慢 1.41x。<br>
 						- 當你獲得 1 前子力量，前子反能量的生產力快 1.41x。<br>
-						- 獎勵級別有軟限制。<br><br>
+						- 獎勵級別有軟上限。<br><br>
 						但是，玻色子實驗室的幽靈科學家創造了一個特殊的力量。他醒來時，你目前的獎勵會額外增加 0.5 個級別。<br>
 						祝你獲得更多的獎勵。:)
 					</div>
@@ -5029,17 +5029,17 @@
 					</tr>
 					<tr class="neutrinoBoosts" id="neutrinoBoostRow2">
 						<td>它們將 "Infinite Time" 獎勵加強 <span class="neutrinos" id="neutrinoBoost4">0.0</span>%。</td>
-						<td id="neutrinoBoostCell5">它們將紅色力量加成大於 130% 的削弱減少 <span class="neutrinos" id="neutrinoBoost5">100.0</span>%。</td>
-						<td id="neutrinoBoostCell6">它們將遠處反物質星系的價格增幅減慢 <span class="neutrinos" id="neutrinoBoost6">0.0</span>%。<br>（這個效果在大撕裂裡更弱）</td>
+						<td id="neutrinoBoostCell5">它們將紅色力量加成大於 130% 的削弱減輕 <span class="neutrinos" id="neutrinoBoost5">100.0</span>%。</td>
+						<td id="neutrinoBoostCell6">它們將遠處反物質星系的價格增幅減慢 <span class="neutrinos" id="neutrinoBoost6">0.0</span>%。<br>（這個效果大撕裂時更弱）</td>
 					</tr>
 					<tr class="neutrinoBoosts" id="neutrinoBoostRow3">
-						<td>在大撕裂裡，它們將樹升級的效果加強 <span class="neutrinos" id="neutrinoBoost7">0.0</span>%。(從 <span id="preNeutrinoBoost7Eff">100.0</span>% 到 <span class="neutrinos" id="neutrinoBoost7Eff" style="font-size:25px">100.0</span>%）</td>
-						<td id="neutrinoBoostCell8">在大撕裂裡，它們將第一個大撕裂升級加強 <span class="neutrinos" id="neutrinoBoost8">0.0</span>%。</td>
-						<td id="neutrinoBoostCell9">在大撕裂裡，它們將第三無限挑戰對每個時間速度升級購買的獎勵乘以 <span class="neutrinos" id="neutrinoBoost9">1.00</span>x。</td>
+						<td>大撕裂時，它們將樹升級的效果加強 <span class="neutrinos" id="neutrinoBoost7">0.0</span>%。(從 <span id="preNeutrinoBoost7Eff">100.0</span>% 到 <span class="neutrinos" id="neutrinoBoost7Eff" style="font-size:25px">100.0</span>%）</td>
+						<td id="neutrinoBoostCell8">大撕裂時，它們將第一個大撕裂升級加強 <span class="neutrinos" id="neutrinoBoost8">0.0</span>%。</td>
+						<td id="neutrinoBoostCell9">大撕裂時，它們將第三無限挑戰對每個時間速度升級購買的獎勵乘以 <span class="neutrinos" id="neutrinoBoost9">1.00</span> 倍。</td>
 					</tr>
 					<tr class="neutrinoBoosts" id="neutrinoBoostRow4">
 						<td>它們將免費時間速度升級的門檻減少 <span class="neutrinos" id="neutrinoBoost10"></span>。</td>
-						<td id="neutrinoBoostCell11">它們將幽靈光束的生產力和上限增加 <span class="neutrinos" id="neutrinoBoost11">1.00</span>x。</td>
+						<td id="neutrinoBoostCell11">它們將幽靈光束的生產力和上限增加 <span class="neutrinos" id="neutrinoBoost11">1.00</span> 倍。</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -5251,25 +5251,25 @@
 			<div id="gphtab" class="ghostifytab">
 				<div id="gphUnl"></div>
 				<div id="gphDiv">
-					你有 <span id="dtGPH">0</span> dilated time.<br>
-					You are getting <span class="gphAmount" id="gphProduction">0</span> <span id="gphProductionType">Ghostly Photons</span> per second.<br>
+					你有 <span id="dtGPH">0</span> 膨脹時間。<br>
+					你每秒正在獲得 <span class="gphAmount" id="gphProduction">0</span> <span id="gphProductionType">Ghostly Photons</span>。<br>
 					<table class='qtable'><tr>
 						<td>
-							你有 <span class="gphAmount" id="gph" style="font-size:35px"></span> Ghostly Photons.<br>
-							They increase your Ghostly Rays production to <span class="gphAmount" id="ghrProduction"></span> per second.
+							你有 <span class="gphAmount" id="gph" style="font-size:35px"></span> 幽靈光子。<br>
+							它們將幽靈光束的每秒獲得量增加至 <span class="gphAmount" id="ghrProduction"></span>。
 						</td>
 						<td>
 							你有 <span class="ghr" id="ghr" style="font-size:35px"></span> 幽靈光束。
 						</td>
 						<td>
-							你有 <span class="dmAmount" id="dm" style="font-size:35px"></span> Dark Matter.<br>
-							They increase your limit amount of Ghostly Rays to <span class="dmAmount" id="ghrCap"></span>.
+							你有 <span class="dmAmount" id="dm" style="font-size:35px"></span> 暗物質。<br>
+							它們將幽靈光束的上限增加至 <span class="dmAmount" id="ghrCap"></span>。
 						</td>
 					</tr></table>
 					<table class="qtable_4col"><tr>
 						<td class="red">
 							你有 <span id="light1" style="font-size:35px"></span> 紅光。<br>
-							你有 made a best amount of <span class="red" id="lightMax1"></span> red Light.
+							你的紅光最大量是 <span class="red" id="lightMax1"></span> 。
 						</td>
 						<td class="orange">
 							你有 <span id="light2" style="font-size:35px"></span> 橙光。
@@ -5295,29 +5295,29 @@
 						</td>
 					</tr><tr>
 						<td>
-							They boost Tachyon particles boost to dilated time production by ^<span class="red" id="lightBoost1" style="font-size:35px"></span>.
+							它們將超光速粒子對膨脹時間的加成加強 ^<span class="red" id="lightBoost1" style="font-size:35px"></span>。
 						</td>
 						<td>
-							They boost red Light strength by <span class="orange" id="lightStrength1" style="font-size:35px"></span>x and reduce preon power threshold increase to <span class="orange" id="lightBoost2" style="font-size:35px"></span>th root.
+							它們將紅光的效果加強 <span class="orange" id="lightStrength1" style="font-size:35px"></span> 倍並將前子力量的門檻增加減少到 <span class="orange" id="lightBoost2" style="font-size:35px"></span> 次方根。
 						</td>
 						<td>
-							They boost orange Light strength by <span class="yellow" id="lightStrength2" style="font-size:35px"></span>x and make electrons effect softcap starts <span class="yellow" id="lightBoost3" style="font-size:35px"></span> later.
+							它們將橙光的效果加強 <span class="yellow" id="lightStrength2" style="font-size:35px"></span> 倍並將電子效果的軟上限延後 <span class="yellow" id="lightBoost3" style="font-size:35px"></span> 個。
 						</td>
 						<td>
-							They boost yellow Light strength by <span class="green" id="lightStrength3" style="font-size:35px"></span>x and boost <span id="lightBoost4Type">preon</span> boost by <span class="green" id="lightBoost4" style="font-size:35px"></span>%.
+							它們將黃光的效果加強 <span class="green" id="lightStrength3" style="font-size:35px"></span> 倍並將<span id="lightBoost4Type">preon</span>加成加強 <span class="green" id="lightBoost4" style="font-size:35px"></span>%。
 						</td>
 					</tr><tr>
 						<td id="le3">
-							In non-Big Rips, Red Light multiplies normal galaxy amount of 'Intergalactic' reward by <span class="red" id="leBoost3" style="font-size:35px"></span>x.<br>(Your best red Light doesn't boost this.)
+							不在大撕裂時，紅光將 'Intergalactic' 獎勵的星系數量乘以 <span class="red" id="leBoost3" style="font-size:35px"></span> 倍。<br>（你最大量的紅光不會影響這個。）
 						</td>
 						<td id="le9">
-							They make that Anti-Preontius wakes up <span class="orange" id="leBoost9" style="font-size:35px"></span> later.
+							它們將反前子之靈的醒來延後 <span class="orange" id="leBoost9" style="font-size:35px"></span> 個。
 						</td>
 						<td id="le6">
-							They boost 時間定理 production by <span class="yellow" id="leBoost6" style="font-size:35px"></span>x.
+							它們將時間定理生產力加強 <span class="yellow" id="leBoost6" style="font-size:35px"></span> 倍。
 						</td>
 						<td id="le1">
-							Every 100% of green power effect, they add <span class="green" id="leBoost1" style="font-size:35px"></span> to free galaxies amount in TS431.<br>(<span class="green" id="leBoost1Total" style="font-size:25px"></span> added to free galaxies amount)
+							每 100% 個綠色力量效果，TS431 的免費星系數量多 <span class="green" id="leBoost1" style="font-size:35px"></span> 個。<br>（已增加 <span class="green" id="leBoost1Total" style="font-size:25px"></span> 個星系）
 						</td>
 					</tr><tr>
 						<td class="blue">
@@ -5347,27 +5347,27 @@
 						</td>
 					</tr><tr>
 						<td>
-							They boost green Light strength by <span class="blue" id="lightStrength4" style="font-size:35px"></span>x and reduce the nerf to blue power boost by <span class="blue" id="lightBoost5" style="font-size:35px"></span>%.
+							它們將綠光的效果加強 <span class="blue" id="lightStrength4" style="font-size:35px"></span> 倍並將藍色力量加強的削弱減輕 <span class="blue" id="lightBoost5" style="font-size:35px"></span>%。
 						</td>
 						<td>
-							They boost blue Light strength by <span class="indigo" id="lightStrength5" style="font-size:35px"></span>x and increase your Neutrino gain by <span class="indigo" id="lightBoost6" style="font-size:35px"></span>x.
+							它們將藍光的效果加強 <span class="indigo" id="lightStrength5" style="font-size:35px"></span> 倍並將微中子獲得量增加 <span class="indigo" id="lightBoost6" style="font-size:35px"></span> 倍。
 						</td>
 						<td>
-							They boost indigo Light strength by <span class="violet" id="lightStrength6" style="font-size:35px"></span>x and in Big Rips, your tickspeed multiplier boosts sixth 時間維度s by <span class="violet" id="lightBoost7" style="font-size:35px"></span>x.<br>(Your tickspeed multiplier boosts more if you have more violet Light.)
+							它們將靛光的效果加強 <span class="violet" id="lightStrength6" style="font-size:35px"></span> 倍。在大撕裂時，你的時間速度將第六時間維度加強 <span class="violet" id="lightBoost7" style="font-size:35px"></span> 倍。<br>（紫光越多，效果越強。）
 						</td>
 						<td>
-							Violet Light strength is currently <span class="uv" id="lightStrength7" style="font-size:35px"></span>x.<br>
-							<span id="le4">Sharing with the power of Light Empowerments, they boost Violet Light.</span>
+							紫光強度目前是 <span class="uv" id="lightStrength7" style="font-size:35px"></span> 倍。<br>
+							<span id="le4">在光強化的效果之下，它們會加強紫光。</span>
 						</td>
 					</tr><tr>
 						<td id="le2">
-							In Big Rips, they slow down Ghostly Galaxies scaling by <span class="blue" id="leBoost2" style="font-size:35px"></span>%.
+							大撕裂時，它們將幽靈星系的價格增幅減慢 <span class="blue" id="leBoost2" style="font-size:35px"></span>%。
 						</td>
 						<td id="le7">
-							They boost Neutrino Boosts 1, 6, and 9 by <span class="indigo" id="leBoost7" style="font-size:35px"></span>%.
+							它們將微中子家加成 1、6 和 9 加強 <span class="indigo" id="leBoost7" style="font-size:35px"></span>%。
 						</td>
 						<td id="le8">
-							They make Infinite Time reward <span class="violet" id="leBoost8" style="font-size:35px"></span>% stronger.
+							它們將 Infinite Time 獎勵加強 <span class="violet" id="leBoost8" style="font-size:35px"></span>%。
 						</td>
 						<td></td>
 					</tr><tr>
@@ -5376,15 +5376,15 @@
 						</td>
 					</tr><tr>
 						<td colspan=4>
-							<button class="gluonupgrade gph" id="lightEmpowerment" onclick="lightEmpowerment()">Gain 1 Light Empowerment, but become a ghost and reset this mechanic.<br>(requires <span id="lightEmpowermentReq"></span> ultraviolet light.)</button>
+							<button class="gluonupgrade gph" id="lightEmpowerment" onclick="lightEmpowerment()">獲得 1 個光強化，但是你會變成幽靈並重置這個機制。<br>（需要 <span id="lightEmpowermentReq"></span> 紫外光。）</button>
 						</td>
 					</tr><tr>
 						<td></td>
 						<td>
-							Translated to +<span class="lEp" id="lightEmpowermentsEffect" style="font-size:35px"></span>x multiplier to all Light strength boosts.
+							將所有光加成加強 <span class="lEp" id="lightEmpowermentsEffect" style="font-size:35px"></span> 倍。
 						</td>
 						<td id="le5">
-							They make that all Lights boost other Lights from (x+1)^0.5 to <span class="lEp" id="leBoost5" style="font-size:35px"></span>.
+							它們將所有光對其他光的加成從 (x+1)^0.5 加強至 <span class="lEp" id="leBoost5" style="font-size:35px"></span>。
 						</td>
 						<td></td>
 					</tr></table>
@@ -5395,21 +5395,21 @@
 				<div id="blDiv">
 					<table class='qtable'><tr>
 						<td>
-							你有 <span id="bWatt" style="font-size:35px"></span> Bosonic Watts.<br>Bosonic Speed: <span id="bSpeed" style="font-size:25px"></span>x<br>Bosonic Lab is currently running at <span id="bTotalSpeed" style="font-size:25px"></span>x.<br>你有 played Bosonic Lab for <span id="bTicks"></span> ticks.
+							你有 <span id="bWatt" style="font-size:35px"></span> 玻色子瓦特。<br>玻色子速度：<span id="bSpeed" style="font-size:25px"></span>x<br>玻色子實驗室的目前速度是 <span id="bTotalSpeed" style="font-size:25px"></span> 倍。<br>你遊玩玻色子實驗室有 <span id="bTicks"></span> 指令周期了。
 						</td>
 						<td>
-							你有 <span id="bAM" style="font-size:35px"></span> Bosonic Antimatter. <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">(reduced)<b>
+							你有 <span id="bAM" style="font-size:35px"></span> 玻色子反物質。 <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">(reduced)<b>
 						</td>
 						<td>
-							你有 <span id="bBt" style="font-size:35px"></span> Bosonic Battery. <span id="bBtProduction" style="font-size:25px"></span><br>
-							Overdrive Speed: <span id="odSpeed" style="font-size:25px"></span><span id="odSpeedWBBt"></span><br>
+							你有 <span id="bBt" style="font-size:35px"></span> 玻色子電池。 <span id="bBtProduction" style="font-size:25px"></span><br>
+							過速速度：<span id="odSpeed" style="font-size:25px"></span><span id="odSpeedWBBt"></span><br>
 							<input id="odSlider" style="width: 180px;" type="range" min="0" max="30" class="slider" oninput="changeOverdriveSpeed()">
 						</td>
 					</tr><tr id="bosonicResets">
 						<td colspan=3>
-							你有 <span class="yellow" id="hb" style="font-size:35px">0</span> Higgs Bosons.
+							你有 <span class="yellow" id="hb" style="font-size:35px">0</span> 希格斯玻色子。.
 							<br>
-							<button class="gluonupgrade hb" id="hbReset" onclick="higgsReset()">Reset Bosonic Lab for <span id="hbResetGain">1</span> Higgs.<br>(Requires <span id="hbResetReq"></span> Bosonic Antimatter)</button>
+							<button class="gluonupgrade hb" id="hbReset" onclick="higgsReset()">重置玻色子實驗室並獲得 <span id="hbResetGain">1</span> 個希格斯玻色子。<br>（需要 <span id="hbResetReq"></span> 玻色子反物質）</button>
 						</td>
 					</tr></table>
 					<span id="nextParticle"></span><br>
