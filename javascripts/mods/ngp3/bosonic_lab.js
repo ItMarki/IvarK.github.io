@@ -927,7 +927,7 @@ function updateWZBosonsTab() {
 	document.getElementById("wbOscillate").textContent = shorten(data2.wbo)
 	document.getElementById("wbProduction").textContent = shorten(data2.wbp)
 	document.getElementById("zNeGen").textContent = (["electron", "Mu", "Tau"])[data3.zNeGen - 1]
-	document.getElementById("zNeProgress").textContent = "將 Z 玻色子振盪成" + (["緲", "濤", "電子"]) + "玻色子：" + [data3.zNeGen-1] + data3.zNeProgress.times(100).toFixed(1) + "%。"
+	document.getElementById("zNeProgress").textContent = "將 Z 玻色子振盪成" + (["緲", "濤", "電子"])[data3.zNeGen-1] + "玻色子：" + data3.zNeProgress.times(100).toFixed(1) + "%。"
 	document.getElementById("zNeReq").textContent = "振盪速度目前是 " + (gainSpeed.gt(1) ? shorten(gainSpeed) : "1 / " + shorten(Decimal.div(1, gainSpeed))) + "x。"
 	document.getElementById("zNe").className = (["electron","mu","tau"])[data3.zNeGen - 1]
 	document.getElementById("zNeSymbol").textContent = (["e", "μ", "τ"])[data3.zNeGen - 1]
