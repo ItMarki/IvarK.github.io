@@ -5288,10 +5288,10 @@ function bigCrunchButtonUpdating(){
 			document.getElementById("postInfinityButton").style.display = "inline-block"
 			var currentIPmin = gainedInfinityPoints().dividedBy(player.thisInfinityTime/600)
 			if (currentIPmin.gt(IPminpeak)) IPminpeak = currentIPmin
-			if (IPminpeak.log10() > 1e9) document.getElementById("postInfinityButton").innerHTML = "大坍縮"
+			if (IPminpeak.log10() > 1e9) document.getElementById("postInfinityButton").innerHTML = "大擠壓"
 			else {
 				var IPminpart = IPminpeak.log10() > 1e5 ? "" : "<br>" + shortenDimensions(currentIPmin) + " 無限點數/分鐘" + "<br>高峰：" + shortenDimensions(IPminpeak) + " 無限點數/分鐘"
-				document.getElementById("postInfinityButton").innerHTML = "<b>" + (IPminpeak.log10() > 3e5 ? "獲得 " : "大坍縮以獲得 ") + shortenDimensions(gainedInfinityPoints()) + " 無限點數。</b>" + IPminpart
+				document.getElementById("postInfinityButton").innerHTML = "<b>" + (IPminpeak.log10() > 3e5 ? "獲得 " : "大擠壓以獲得 ") + shortenDimensions(gainedInfinityPoints()) + " 無限點數。</b>" + IPminpart
 			}
 		}
 	}
