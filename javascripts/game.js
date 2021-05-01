@@ -4361,8 +4361,8 @@ function startEternityChallenge(n) {
 		document.getElementById("replicantiunlock").style.display="inline-block"
 	}
 	if (getEternitied() > 2 && player.replicanti.galaxybuyer === undefined) player.replicanti.galaxybuyer = false
-	document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-	document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+	document.getElementById("infinityPoints1").innerHTML = "你有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 無限點數。"
+	document.getElementById("infinityPoints2").innerHTML = "你有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 無限點數。"
 	if (getEternitied() > 0 && oldStat < 1) {
 		document.getElementById("infmultbuyer").style.display = "inline-block"
 		document.getElementById("infmultbuyer").textContent = "Autobuy IP mult O" + (player.infMultBuyer?"N":"FF")
@@ -5973,8 +5973,8 @@ function gameLoop(diff) {
 
 	thisQuantumTimeUpdating()
 	var s = shortenDimensions(player.infinityPoints)
-	document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+s+"</span> Infinity points."
-	document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+s+"</span> Infinity points."
+	document.getElementById("infinityPoints1").innerHTML = "你有 <span class=\"IPAmount1\">"+s+"</span> 無限點數。"
+	document.getElementById("infinityPoints2").innerHTML = "你有 <span class=\"IPAmount2\">"+s+"</span> 無限點數。"
 
 	if (document.getElementById("loadmenu").style.display == "block") changeSaveDesc(metaSave.current, savePlacement)
 
