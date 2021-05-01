@@ -717,10 +717,10 @@ function quantumReset(force, auto, challid, bigRip, implode = false) {
 function updateQuarkDisplay() {
 	let msg = ""
 	if (quantumed) {
-		msg += "You have <b class='QKAmount'>"+shortenDimensions(tmp.qu.quarks)+"</b> "	
-		if (tmp.ngp3&&player.masterystudies.includes("d14")) msg += " QK and <b class='SSAmount'>" + shortenDimensions(tmp.qu.bigRip.spaceShards) + "</b> Space Shard" + (tmp.qu.bigRip.spaceShards.round().eq(1) ? "" : "s")
-		else msg += "quark" + (tmp.qu.quarks.round().eq(1) ? "" : "s")
-		msg += "."
+		msg += "你有 <b class='QKAmount'>"+shortenDimensions(tmp.qu.quarks)+"</b> "	
+		if (tmp.ngp3&&player.masterystudies.includes("d14")) msg += " 夸克和 <b class='SSAmount'>" + shortenDimensions(tmp.qu.bigRip.spaceShards) + "</b> 太空碎片"
+		else msg += "夸克"
+		msg += "。"
 	}
 	document.getElementById("quarks").innerHTML=msg
 }
