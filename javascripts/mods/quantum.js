@@ -4,8 +4,8 @@ function quantum(auto, force, challid, bigRip = false, quick) {
 	if (player.masterystudies !== undefined) if (!auto && !force && tmp.qu.bigRip.active) force = true
 	if (!(isQuantumReached()||force)||implosionCheck) return
 	var headstart = player.aarexModifications.newGamePlusVersion > 0 && !tmp.ngp3
-	if (player.aarexModifications.quantumConf&&!(auto||force)) if (!confirm(player.masterystudies?"Quantum will reset everything Eternity resets, and "+(headstart?"other things like Dilation":"including Time Studies, Eternity Challenges, Dilation, "+(tmp.ngp3?"Meta Dimensions, and Mastery Studies":"and Meta Dimensions"))+". You will gain a quark and unlock various upgrades.":"WARNING! Quantum wasn't fully implemented in NG++, so if you go Quantum now, you will gain quarks, but they'll have no use. Everything up to and including Eternity features will be reset.")) return
-	if (!quantumed) if (!confirm("Are you sure you want to do this? You will lose everything you have!")) return
+	if (player.aarexModifications.quantumConf&&!(auto||force)) if (!confirm(player.masterystudies?"量子會重置永恆重置的一切，"+(headstart?"以及諸如時間膨脹的東西":"包括時間研究、永恆挑戰、時間膨脹"+(tmp.ngp3?"、元維度和精煉研究":"和元維度"))+"、你會獲得一個夸克並解鎖各種升級。":"警告！NG++的量子還沒有完全實現，所以如果你現在量子的話，你會獲得夸克，但是它們會沒用。永恆及之前的一切都會被重置。")) return
+	if (!quantumed) if (!confirm("你確定你要做這個嗎？你會失去你所有的一切！")) return
 	var pc = challid - 8
 	if (tmp.ngp3) {
 		tmp.preQCMods=tmp.qu.qcsMods.current
@@ -24,9 +24,9 @@ function quantum(auto, force, challid, bigRip = false, quick) {
 					var qc1st = Math.min(qc1, qc2)
 					var qc2st = Math.max(qc1, qc2)
 					if (qc1st != 6 || qc2st != 8) return
-					if (tmp.qu.bigRip.conf && !auto) if (!confirm("大撕裂預祝會開始 PC6+8，但是除了提升超光速粒子獲得量的升級外，只有膨脹升級能加強膨脹，直到你購買第十一個升級，一些諸如時間定理和時間研究的資源會有改變，而只有一部分升級在大撕裂裡有效。如果你能打敗 PC6+8，你可以解鎖下一個重置層次。你可以復原大撕裂以找回你的時間定理和時間研究。")) return
+					if (tmp.qu.bigRip.conf && !auto) if (!confirm("大撕裂預祝會開始 PC6+8，但是除了提升超光速粒子獲得量的升級外，只有膨脹升級能加強膨脹，直到你購買第十一個升級，一些諸如時間定理和時間研究的資源會有改變，而只有一部分升級在大撕裂裡有效。如果你能打敗 PC6+8，你可以解鎖下一個重置層次。你可以復原大撕裂來找回你的時間定理和時間研究。")) return
 				} else if (pc > 0) {
-					if (player.options.challConf || (tmp.qu.pairedChallenges.completions.length < 1 && !ghostified)) if (!confirm("You will start a Quantum Challenge, but as a Paired Challenge, there will be two challenges at once. Completing it boosts the rewards of the Quantum Challenges that you chose in this Paired Challenge. You will keep electrons & sacrificed galaxies, but they don't work in this Challenge.")) return
+					if (player.options.challConf || (tmp.qu.pairedChallenges.completions.length < 1 && !ghostified)) if (!confirm("你會開始一個量子挑戰，但是一個配對挑戰會同時開始兩個挑戰。Completing it boosts the rewards of the Quantum Challenges that you chose in this Paired Challenge. You will keep electrons & sacrificed galaxies, but they don't work in this Challenge.")) return
 				} else if (player.options.challConf || (QCIntensity(1) == 0 && !ghostified)) if (!confirm("You will do a Quantum reset, but you will not gain quarks, you keep your electrons & sacrificed galaxies, and you can't buy electron upgrades. You have to reach the set goal of antimatter while getting the meta-antimatter requirement to Quantum to complete this challenge. Electrons and banked eternities have no effect in Quantum Challenges and your electrons and sacrificed galaxies don't reset until you end the challenge.")) return
 				tmp.qu.electrons.amount -= getQCCost(challid)
 				if (!quick) for (var m = 0; m < qcm.on.length; m++) if (ranking >= qcm.reqs[qcm.on[m]] || !qcm.reqs[qcm.on[m]]) tmp.qu.qcsMods.current.push(qcm.on[m])
@@ -166,7 +166,7 @@ function getQuarkMult() {
 
 function toggleQuantumConf() {
 	player.aarexModifications.quantumConf = !player.aarexModifications.quantumConf
-	document.getElementById("quantumConfirmBtn").textContent = "Quantum confirmation: " + (player.aarexModifications.quantumConf ? "ON" : "OFF")
+	document.getElementById("quantumConfirmBtn").textContent = "量子確認：" + (player.aarexModifications.quantumConf ? "開" : "關")
 }
 
 var averageQk = new Decimal(0)
@@ -179,8 +179,8 @@ function updateLastTenQuantums() {
 	for (var i = 0; i < 10; i++) {
 		if (tmp.qu.last10[i][1].gt(0)) {
 			var qkpm = tmp.qu.last10[i][1].dividedBy(tmp.qu.last10[i][0] / 600)
-			var tempstring = shorten(qkpm) + " QK/min"
-			if (qkpm<1) tempstring = shorten(qkpm*60) + " QK/hour"
+			var tempstring = shorten(qkpm) + " 夸克/分鐘"
+			if (qkpm<1) tempstring = shorten(qkpm*60) + " 夸克/小時"
 			var msg = "The quantum " + (i == 0 ? '1 quantum' : (i + 1) + ' quantums') + " ago took " + timeDisplayShort(tmp.qu.last10[i][0], false, 3)
 			if (tmp.qu.last10[i][2]) {
 				if (typeof(tmp.qu.last10[i][2]) == "number") " in Quantum Challenge " + tmp.qu.last10[i][2]
@@ -228,12 +228,12 @@ function doQuantumProgress() {
 		var percentage = Math.min(player.meta.antimatter.max(1).log10() / quantumReq.log10() * 100, 100).toFixed(2) + "%"
 		document.getElementById("progressbar").style.width = percentage
 		document.getElementById("progresspercent").textContent = percentage
-		document.getElementById("progresspercent").setAttribute('ach-tooltip', (player.masterystudies ? "Meta-antimatter p" : "P") + 'ercentage to quantum')
+		document.getElementById("progresspercent").setAttribute('ach-tooltip', '到達量子的' (player.masterystudies ? "元反物質百分比" : "百分比"))
 	} else if (id == 2) {
 		var percentage = Math.min(player.money.max(1).log10() / getQCGoal() * 100, 100).toFixed(2) + "%"
 		document.getElementById("progressbar").style.width = percentage
 		document.getElementById("progresspercent").textContent = percentage
-		document.getElementById("progresspercent").setAttribute('ach-tooltip','Percentage to Quantum Challenge goal')
+		document.getElementById("progresspercent").setAttribute('ach-tooltip','到達量子挑戰目標的百分比')
 	} else if (id == 3) {
 		var gqkLog = gqk.log2()
 		var goal = Math.pow(2, Math.ceil(Math.log10(gqkLog) / Math.log10(2)))
