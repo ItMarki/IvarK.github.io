@@ -24,7 +24,7 @@ function quantum(auto, force, challid, bigRip = false, quick) {
 					var qc1st = Math.min(qc1, qc2)
 					var qc2st = Math.max(qc1, qc2)
 					if (qc1st != 6 || qc2st != 8) return
-					if (tmp.qu.bigRip.conf && !auto) if (!confirm("Big Ripping the universe starts PC6+8, however, only dilation upgrades boost dilation except upgrades that multiply TP gain until you buy the eleventh upgrade, certain resources like Time Theorems and Time Studies will be changed, and only certain upgrades work in Big Rip. If you can beat PC6+8, you will be able to unlock the next layer. You can give your Time Theorems and Time Studies back by undoing Big Rip.")) return
+					if (tmp.qu.bigRip.conf && !auto) if (!confirm("大撕裂預祝會開始 PC6+8，但是除了提升超光速粒子獲得量的升級外，只有膨脹升級能加強膨脹，直到你購買第十一個升級，一些諸如時間定理和時間研究的資源會有改變，而只有一部分升級在大撕裂裡有效。如果你能打敗 PC6+8，你可以解鎖下一個重置層次。你可以復原大撕裂以找回你的時間定理和時間研究。")) return
 				} else if (pc > 0) {
 					if (player.options.challConf || (tmp.qu.pairedChallenges.completions.length < 1 && !ghostified)) if (!confirm("You will start a Quantum Challenge, but as a Paired Challenge, there will be two challenges at once. Completing it boosts the rewards of the Quantum Challenges that you chose in this Paired Challenge. You will keep electrons & sacrificed galaxies, but they don't work in this Challenge.")) return
 				} else if (player.options.challConf || (QCIntensity(1) == 0 && !ghostified)) if (!confirm("You will do a Quantum reset, but you will not gain quarks, you keep your electrons & sacrificed galaxies, and you can't buy electron upgrades. You have to reach the set goal of antimatter while getting the meta-antimatter requirement to Quantum to complete this challenge. Electrons and banked eternities have no effect in Quantum Challenges and your electrons and sacrificed galaxies don't reset until you end the challenge.")) return
@@ -718,7 +718,7 @@ function updateQuarkDisplay() {
 	let msg = ""
 	if (quantumed) {
 		msg += "你有 <b class='QKAmount'>"+shortenDimensions(tmp.qu.quarks)+"</b> "	
-		if (tmp.ngp3&&player.masterystudies.includes("d14")) msg += " 夸克和 <b class='SSAmount'>" + shortenDimensions(tmp.qu.bigRip.spaceShards) + "</b> 太空碎片"
+		if (tmp.ngp3&&player.masterystudies.includes("d14")) msg += " 夸克和 <b class='SSAmount'>" + shortenDimensions(tmp.qu.bigRip.spaceShards) + "</b> 空間碎片"
 		else msg += "夸克"
 		msg += "。"
 	}
