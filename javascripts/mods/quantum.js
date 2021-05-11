@@ -331,7 +331,7 @@ function quantumReset(force, auto, challid, bigRip, implode = false) {
 				tmp.qu.reachedInfQK = true
 				if (!ghostified) {
 					document.getElementById("welcome").style.display = "flex"
-					document.getElementById("welcomeMessage").innerHTML = "Congratulations for getting " + shorten(Number.MAX_VALUE) + " quarks! You have unlocked new QoL features, like quantum autobuyer modes, assign all, and auto-assignation!"
+					document.getElementById("welcomeMessage").innerHTML = "恭喜你獲得 " + shorten(Number.MAX_VALUE) + " 夸克！你解鎖了新的生活質素功能，例如夸克自動購買模式、分配全部以及自動分配！"
 					document.getElementById('assignAll').style.display = ""
 					document.getElementById('autoAssign').style.display = ""
 					document.getElementById('autoAssignRotate').style.display = ""
@@ -349,7 +349,7 @@ function quantumReset(force, auto, challid, bigRip, implode = false) {
 	var oldTime = tmp.qu.time
 	tmp.qu.time = 0
 	updateQuarkDisplay()
-	document.getElementById("galaxyPoints2").innerHTML = "You have <span class='GPAmount'>0</span> Galaxy points."
+	document.getElementById("galaxyPoints2").innerHTML = "你有 <span class='GPAmount'>0</span> 星系點數。"
 	if (tmp.ngp3) {
 		var aea = {
 			dilMode: player.eternityBuyer.dilMode,
@@ -618,7 +618,7 @@ function quantumReset(force, auto, challid, bigRip, implode = false) {
 		document.getElementById("infmultbuyer").textContent = "Autobuy IP mult OFF"
 		document.getElementById("togglecrunchmode").textContent = "Auto crunch mode: amount"
 		document.getElementById("limittext").textContent = "Amount of IP to wait until reset:"
-		document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: " + shortenDimensions(player.epmult) + "x<p>Cost: " + shortenDimensions(player.epmultCost) + " EP"
+		document.getElementById("epmult").innerHTML = "你獲得 5 倍更多永恆點數<p>目前：" + shortenDimensions(player.epmult) + "x<p>價格：" + shortenDimensions(player.epmultCost) + " 永恆點數"
 	}
 	if (!oheHeadstart) {
 		player.autobuyers[9].bulk = Math.ceil(player.autobuyers[9].bulk)
@@ -670,18 +670,18 @@ function quantumReset(force, auto, challid, bigRip, implode = false) {
 		delete player.replicanti.galaxybuyer
 	}
 	var shortenedIP = shortenDimensions(player.infinityPoints)
-	document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">" + shortenedIP + "</span> Infinity points."
-	document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">" + shortenedIP + "</span> Infinity points."
+	document.getElementById("infinityPoints1").innerHTML = "你有 <span class=\"IPAmount1\">" + shortenedIP + "</span> 無限點數。"
+	document.getElementById("infinityPoints2").innerHTML = "你有 <span class=\"IPAmount2\">" + shortenedIP + "</span> 無限點數。"
 	document.getElementById("eternitybtn").style.display = player.infinityPoints.gte(player.eternityChallGoal) ? "inline-block" : "none"
 	document.getElementById("eternityPoints2").style.display = "inline-block"
 	document.getElementById("eternitystorebtn").style.display = "inline-block"
 	updateEternityUpgrades()
-	document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
+	document.getElementById("totaltickgained").textContent = "你獲得了 "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" 時間速度升級。"
 	hideDimensions()
 	tmp.tickUpdate = true
 	playerInfinityUpgradesOnEternity()
-	document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
-	document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: 1x<p>Cost: 500 EP"
+	document.getElementById("eternityPoints2").innerHTML = "你有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恆點數。"
+	document.getElementById("epmult").innerHTML = "你獲得 5 倍更多永恆點數<p>目前：1x<p>價格：500 永恆點數"
 	updateEternityChallenges()
 	updateTheoremButtons()
 	updateTimeStudyButtons()

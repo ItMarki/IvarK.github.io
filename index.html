@@ -4556,7 +4556,7 @@
 			<br>
 			<button class="storebtn" id="singularityunlock" onclick="unlockSingularity()" style="width:200px; height: 80px">Unlock Singularity<br>價格：<span id="singularityunlcost"></span> IP</button>
 			<div id="singularitydiv" style="display: none;">
-				你有 sacrificed <span id="sacrificedIP"></span> Infinity points.
+				你有 sacrificed <span id="sacrificedIP"></span> 無限點數。
 				<p>你有 <span id="singularityPower" style="font-size:35px; color: black">0</span> singularity power.</p>
 				<button class="storebtn" id="sacrificeIP" onclick="sacrificeIP()" style="width: 200px; height: 70px; font-size: 12px">Sacrifice all of your infinity points, but gain <span id='singularityPowerGain'></span> singularity power.</button>
 				<p>你有 <span id="darkMatter" style="font-size:35px; color: black">0.0</span> dark matter. Translated to <span id="darkMatterMult" style="font-size:35px; color: black">1.0</span>x faster tickspeed.</p>
@@ -5398,22 +5398,22 @@
 							你有 <span id="bWatt" style="font-size:35px"></span> 玻色子瓦特。<br>玻色子速度：<span id="bSpeed" style="font-size:25px"></span>x<br>玻色子實驗室的目前速度是 <span id="bTotalSpeed" style="font-size:25px"></span> 倍。<br>你遊玩玻色子實驗室有 <span id="bTicks"></span> 指令周期了。
 						</td>
 						<td>
-							你有 <span id="bAM" style="font-size:35px"></span> 玻色子反物質。 <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">(reduced)<b>
+							你有 <span id="bAM" style="font-size:35px"></span> 玻色子反物質。 <span id="bAMProduction" style="font-size:25px"></span> <b class="warning" id="bAMProductionReduced">（減弱）<b>
 						</td>
 						<td>
-							你有 <span id="bBt" style="font-size:35px"></span> 玻色子電池。 <span id="bBtProduction" style="font-size:25px"></span><br>
+							你有 <span id="bBt" style="font-size:35px"></span> 玻色子電池。<span id="bBtProduction" style="font-size:25px"></span><br>
 							過速速度：<span id="odSpeed" style="font-size:25px"></span><span id="odSpeedWBBt"></span><br>
 							<input id="odSlider" style="width: 180px;" type="range" min="0" max="30" class="slider" oninput="changeOverdriveSpeed()">
 						</td>
 					</tr><tr id="bosonicResets">
 						<td colspan=3>
-							你有 <span class="yellow" id="hb" style="font-size:35px">0</span> 希格斯玻色子。.
+							你有 <span class="yellow" id="hb" style="font-size:35px">0</span> 希格斯玻色子。
 							<br>
 							<button class="gluonupgrade hb" id="hbReset" onclick="higgsReset()">重置玻色子實驗室並獲得 <span id="hbResetGain">1</span> 個希格斯玻色子。<br>（需要 <span id="hbResetReq"></span> 玻色子反物質）</button>
 						</td>
 					</tr></table>
 					<span id="nextParticle"></span><br>
-					<b style="font-size: 35px">Bosonic Runes</b><br>
+					<b style="font-size: 35px">玻色子符文</b><br>
 					<table id="bRunes" align="center" style="margin: auto"><tr></tr></table>
 					<table class="table" align="center" style="margin: auto">
 						<tr>
@@ -5423,13 +5423,13 @@
 						</tr>
 					</table>
 					<div id="bextab" class="bltab">
-						Type of Bosonic Rune to extract:<br>
+						提取的玻色子符文類型：<br>
 						<div id="typeToExtract"></div><br>
 						<button class="storebtn" id="extract" onclick="extract()" style="width: 180px"></button><br>
 						<span id="extractTime"></span><br><br>
-						<button class="storebtn" onclick="changeEnchantAction(1)" style="width: 150px">Upgrade enchants</button>
-						<button class="storebtn" onclick="changeEnchantAction(2)" style="width: 150px">Max enchants</button>
-						<button class="storebtn" onclick="changeEnchantAction(3)" style="width: 150px">Use enchants</button><br>
+						<button class="storebtn" onclick="changeEnchantAction(1)" style="width: 150px">升級附魔Upgrade enchants</button>
+						<button class="storebtn" onclick="changeEnchantAction(2)" style="width: 150px">最大升級附魔</button>
+						<button class="storebtn" onclick="changeEnchantAction(3)" style="width: 150px">使用附魔</button><br>
 						<span id="usedEnchants"></span><br>
 						<table class="table" id="enchants" align="center" style="margin: auto"></table>
 					</div>
@@ -5439,19 +5439,19 @@
 						<table class='qtable'>
 							<tr>
 								<td>
-									你有 <span id="wpb" style="font-size:35px"></span> W+ Bosons and <span id="wnb" style="font-size:35px"></span> W- Bosons.<br>
-									Translated to <span id="wbTime" style="font-size:35px"></span>x faster extracting time, <span id="wbOscillate" style="font-size:35px"></span>x faster oscillate progression gain, <span id="wbProduction" style="font-size:35px"></span>x Bosonic Antimatter production speed.
+									你有 <span id="wpb" style="font-size:35px"></span> W+ 玻色子和 <span id="wnb" style="font-size:35px"></span> W- 玻色子。<br>
+									將提取速度加快 <span id="wbTime" style="font-size:35px"></span>x，將振盪速度加快 <span id="wbOscillate" style="font-size:35px"></span>x，並將玻色子反物質生產速度加快 <span id="wbProduction" style="font-size:35px"></span>x。
 								</td>
 								<td></td>
 								<td>
-									你有 <span id="zb" style="font-size:35px"></span> Z Bosons.<br>
-									Translated to <span id="zbSpeed" style="font-size:35px"></span>x faster decay speed of W Boson and faster conversion speed of W- to W+.
+									你有 <span id="zb" style="font-size:35px"></span> Z 玻色子。<br>
+									將 W 玻色子的衰變速度和 W- 至 W+ 的轉化速度加快 <span id="zbSpeed" style="font-size:35px"></span>x。
 								</td>
 							</tr>
 							<tr><td colspan=3>
-									你有 <span id="ap" style="font-size:35px"></span> Anti-Preons. <span id="apProduction" style="font-size:25px"></span><br>
+									你有 <span id="ap" style="font-size:35px"></span> 反前子。<span id="apProduction" style="font-size:25px"></span><br>
 									<span id="apUse"></span><br>
-									<button class="storebtn" style="width:150px" onclick="useAntiPreon(0)">Gain Anti-Preons</button> <button class="storebtn" onclick="useAntiPreon(1)">Decay W Boson</button> <button class="storebtn" style="width:150px" onclick="useAntiPreon(3)">Convert W- to W+</button> <button class="storebtn" style="width:180px" onclick="useAntiPreon(2)">Oscillate Z Boson</button>
+									<button class="storebtn" style="width:150px" onclick="useAntiPreon(0)">獲得反前子</button> <button class="storebtn" onclick="useAntiPreon(1)">衰變 W 玻色子</button> <button class="storebtn" style="width:150px" onclick="useAntiPreon(3)">將 W- 轉化成 W+</button> <button class="storebtn" style="width:180px" onclick="useAntiPreon(2)">振盪 Z 玻色子</button>
 							</td></tr>
 							<tr>
 								<td>
@@ -5461,7 +5461,7 @@
 								</td>
 								<td></td>
 								<td>
-									Z Boson is currently <span id="zNeGen">electron</span>.<br>
+									Z 玻色子目前是 <span id="zNeGen">electron</span>。<br>
 									<span id="zNeProgress"></span><br>
 									<span id="zNeReq"></span><br>
 									<span id="zbGain"></span><br>
